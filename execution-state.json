@@ -1,7 +1,8 @@
 {
   "schema_version": 1,
   "status": "blocked_preparation_only",
-  "root_agent_id": "01a087fb-ef18-75e1-8aad-76e0dfcc595b",
+  "root_agent_id": "/root",
+  "resume_evidence_ref": "docs/evidence/resume-preflight.json",
   "source_lock_ref": "integration/source-lock.json",
   "integration_lock_ref": "integration/candidate-lock.json",
   "task_ledger_ref": "orchestration/tasks.json",
@@ -33,7 +34,8 @@
     {
       "id": "B-001",
       "owner": "runtime/client owner",
-      "reason": "D1 has no native recursive collaboration tools"
+      "reason": "Native D1/D2/D3 delegation now succeeds; effective model/effort metadata remains unexposed",
+      "status": "recursion_resolved_model_attestation_qualified"
     },
     {
       "id": "B-002",

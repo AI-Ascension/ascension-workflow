@@ -14,13 +14,19 @@ or accepted. No existing owner repository was edited by this execution.
 | Candidate | Observed exact head | Relevant overlap |
 | --- | --- | --- |
 | [Harness PR 40](https://github.com/AI-Ascension/sts2-harness/pull/40) | `baabf9767264de11e09cd65cc7262ba36664ec2d` | Durable execution, SQLite dependency, authenticated worker commands, cancellation, recovery, allocation context |
-| [Harness PR 41](https://github.com/AI-Ascension/sts2-harness/pull/41) | `d549027ad15abc66c901f1e9c4a99e0c53122447` | Map context, expert rest/selection, retained receipt identities, replay, runner changes |
+| [Harness PR 41](https://github.com/AI-Ascension/sts2-harness/pull/41) | `30eaf19ccb5b2ed118b5cf1baaef3793a408f499` | Map context, expert rest/selection, retained receipt identities, replay, runner changes |
 | [Harness PR 45](https://github.com/AI-Ascension/sts2-harness/pull/45) | See machine-readable lock | Explicit seeded setup/campaign invocation |
 
 These are unmerged dependency candidates, not an integrated baseline. PR 40's body cites
 `ffa3e61a...`, while the fetched head is `baabf976...`; use current exact-head source and checks,
 not the stale body claim. PR descriptions and reported CI results are source-derived evidence
 until independently reproduced. No candidate was cherry-picked or merged.
+
+During resume, all eight default remote heads were rechecked and remained unchanged.
+PR 41 advanced from `d549027` to `30eaf19`; the fetched delta adds a two-reobserve budget when
+expert generation advances between normal and expert reads. Equal-generation identity changes
+and retrograde generations remain errors. The delta includes composition and exhaustion tests.
+This is inspected source only: the tests were not run, and the candidate was not integrated.
 
 ## Inspected harness seams
 

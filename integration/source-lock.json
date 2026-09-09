@@ -96,7 +96,9 @@
           "title": "Add bounded map and replay support with REST expert recovery",
           "url": "https://github.com/AI-Ascension/sts2-harness/pull/41",
           "head_ref": "recovery/harness-607-executable-composition-fix-20260909",
-          "head_commit": "d549027ad15abc66c901f1e9c4a99e0c53122447",
+          "head_commit": "30eaf19ccb5b2ed118b5cf1baaef3793a408f499",
+          "head_rechecked_on": "2026-09-09",
+          "previous_observed_head": "d549027ad15abc66c901f1e9c4a99e0c53122447",
           "base_ref": "main",
           "base_commit": "e72de4d560448b0452cbbab8855e754617c6eb77",
           "draft": true

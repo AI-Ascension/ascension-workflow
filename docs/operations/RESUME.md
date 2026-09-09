@@ -3,7 +3,9 @@
 This handoff is blocked preparation. Do not start from an empty plan or treat seed fixtures as
 implemented features. Preserve this branch, the original archive, all stable IDs, and source locks.
 
-1. Restore a supported runtime where a Luna Max D1 can call native collaboration tools to create
+1. The latest [preflight](../evidence/resume-preflight.json) confirms native D1/D2/D3 delegation.
+   Effective model metadata remains unavailable; preserve configuration-only attestation.
+   If the runtime changes, recheck that a Luna Max D1 can call native collaboration tools to create
    D2, and D2 can create D3. Rerun the read-only preflight, recording actual parentage/effective
    metadata and enforcing the D3 no-spawn rule. Do not use another account, flattening, or hidden
    CLI/API process ancestry to bypass the missing tools. Four concurrent slots can fit one chain.

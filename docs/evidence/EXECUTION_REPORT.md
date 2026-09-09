@@ -1,5 +1,20 @@
 # Phase 1 execution report
 
+## Resume update
+
+The latest [runtime recheck](resume-preflight.json) supersedes the historical recursion blocker:
+native D1 to D2 to D3 delegation now succeeds. Explicit Luna/Max spawn requests succeeded,
+but effective model/effort metadata was not exposed. Model attestation remains configuration-only.
+Rust, Cargo and rustup remain absent from PATH; workspace-local installation authorization
+has been requested again and remains pending. No product build or acceptance test has run.
+
+All eight default remote heads remain unchanged. Harness PR 41 advanced to
+`30eaf19ccb5b2ed118b5cf1baaef3793a408f499`; its branch was fetched without integration.
+The existing private delivery repository and open draft PR 2 were verified live.
+The same native chain completed a [bounded source review](../discovery/RESUME_SEAMS.md).
+All three descendants finished, with no source write leases or pending external operations.
+The sections below describe the earlier preparation execution.
+
 Outcome: **partially prepared; runtime implementation blocked**. This is not source/component
 completion, production readiness, native compatibility, or unattended restart safety.
 
