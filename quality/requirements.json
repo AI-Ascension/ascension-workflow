@@ -24,8 +24,11 @@
       ],
       "implementation_commit": null,
       "independent_reviewer": null,
-      "implementation_status": "not_started",
-      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T00 with a different D3 verifier."
+      "implementation_status": "attempted_blocked",
+      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T00 with a different D3 verifier.",
+      "preparation_refs": [
+        "orchestration/agents/preflight-lead.json"
+      ]
     },
     {
       "id": "WF-002",
@@ -49,8 +52,11 @@
       ],
       "implementation_commit": null,
       "independent_reviewer": null,
-      "implementation_status": "not_started",
-      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T00 with a different D3 verifier."
+      "implementation_status": "partially_observed_explicitly_qualified",
+      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T00 with a different D3 verifier.",
+      "preparation_refs": [
+        "docs/evidence/runtime-preflight.json"
+      ]
     },
     {
       "id": "WF-003",
@@ -74,8 +80,11 @@
       ],
       "implementation_commit": null,
       "independent_reviewer": null,
-      "implementation_status": "not_started",
-      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T00 with a different D3 verifier."
+      "implementation_status": "recorded_pending_independent_verification",
+      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T00 with a different D3 verifier.",
+      "preparation_refs": [
+        "orchestration/authorization.json"
+      ]
     },
     {
       "id": "WF-004",
@@ -99,8 +108,11 @@
       ],
       "implementation_commit": null,
       "independent_reviewer": null,
-      "implementation_status": "not_started",
-      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T01 with a different D3 verifier."
+      "implementation_status": "partial_source_discovery",
+      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T01 with a different D3 verifier.",
+      "preparation_refs": [
+        "integration/source-lock.json"
+      ]
     },
     {
       "id": "WF-005",
@@ -124,8 +136,11 @@
       ],
       "implementation_commit": null,
       "independent_reviewer": null,
-      "implementation_status": "not_started",
-      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T01 with a different D3 verifier."
+      "implementation_status": "preservation_observed_pending_independent_verification",
+      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T01 with a different D3 verifier.",
+      "preparation_refs": [
+        "integration/source-lock.json"
+      ]
     },
     {
       "id": "WF-006",
@@ -149,8 +164,11 @@
       ],
       "implementation_commit": null,
       "independent_reviewer": null,
-      "implementation_status": "not_started",
-      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T02 with a different D3 verifier."
+      "implementation_status": "repository_created_pending_independent_verification",
+      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T02 with a different D3 verifier.",
+      "preparation_refs": [
+        "docs/evidence/delivery.json"
+      ]
     },
     {
       "id": "WF-007",
@@ -174,8 +192,11 @@
       ],
       "implementation_commit": null,
       "independent_reviewer": null,
-      "implementation_status": "not_started",
-      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T02 with a different D3 verifier."
+      "implementation_status": "preparation_delivered_product_incomplete",
+      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T02 with a different D3 verifier.",
+      "preparation_refs": [
+        "docs/evidence/delivery.json"
+      ]
     },
     {
       "id": "WF-008",
@@ -2226,8 +2247,11 @@
       ],
       "implementation_commit": null,
       "independent_reviewer": null,
-      "implementation_status": "not_started",
-      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T31 with a different D3 verifier."
+      "implementation_status": "preparation_issue_pr_assigned_product_prs_not_created",
+      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T31 with a different D3 verifier.",
+      "preparation_refs": [
+        "docs/evidence/delivery.json"
+      ]
     },
     {
       "id": "WF-090",
@@ -2251,8 +2275,11 @@
       ],
       "implementation_commit": null,
       "independent_reviewer": null,
-      "implementation_status": "not_started",
-      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T31 with a different D3 verifier."
+      "implementation_status": "blocked_preparation_report_delivered",
+      "next_safe_action": "Restore native D1/D2 spawning and verify T00; then finish source/standards admission and execute T31 with a different D3 verifier.",
+      "preparation_refs": [
+        "docs/evidence/EXECUTION_REPORT.md"
+      ]
     }
   ]
 }

@@ -19,7 +19,8 @@
     }
   ],
   "issue_pr_ids": [
-    "https://github.com/AI-Ascension/ascension-workflow/issues/1"
+    "https://github.com/AI-Ascension/ascension-workflow/issues/1",
+    "https://github.com/AI-Ascension/ascension-workflow/pull/2"
   ],
   "last_verified_gate": "original package integrity and unit checks only; no product gate",
   "next_tasks": [

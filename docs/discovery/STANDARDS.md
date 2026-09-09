@@ -20,5 +20,6 @@ No organization registry, organization policy, branch protection, or visibility 
 The new delivery repository defaults private under the package's bounded bootstrap policy.
 No dummy Rust workspace or always-green CI job is added to represent missing product validation.
 
-Original docs/data use the organization MIT license. The instruction archive preserves its own
-license/authorization status as documented in `prompts/phase1/provenance.json`.
+Original execution documents/annotations use the organization MIT license. The instruction
+archive and imported ledger text preserve their own license/authorization status as documented
+in `prompts/phase1/provenance.json`.

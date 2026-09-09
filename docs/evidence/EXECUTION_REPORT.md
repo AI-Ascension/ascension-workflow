@@ -65,6 +65,14 @@ unmerged dependency candidates. No compatible product candidate has been selecte
 The original package is retained byte-for-byte with provenance; imported archive assets
 are not installed tools or canonical harness contracts.
 
+Private repository `AI-Ascension/ascension-workflow` was created (ID `1363224464`) with initial
+main commit `20bb8fe06708ae70666711fc975baf475d827c2a`. The isolated preparation branch is
+`codex/phase1-preflight-20260909`; its initial content commit is
+`6bfb47fe8edb63ef326fa8172356cbecd743b82f`. The delivery-receipt follow-up is retained in its Git
+history. [Tracking issue 1](https://github.com/AI-Ascension/ascension-workflow/issues/1) and
+[draft PR 2](https://github.com/AI-Ascension/ascension-workflow/pull/2) were created and both
+assignments to `CompleteDotTech` were read back. No CI status checks are configured or reported.
+
 No existing owner source was changed. Nothing was merged, released, installed, deployed,
 or used to launch a game/provider. No gameplay operation, store, valued profile, receipt,
 or lease was created, so no unresolved game effect needs reconciliation.

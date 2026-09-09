@@ -16,3 +16,6 @@ They are not active tooling for this repository or evidence of a gameplay workfl
 
 The live records in this repository intentionally differ from the package's untouched templates.
 Use the live execution state when resuming; preserve the original package for provenance.
+The requirement assertions, fault cases, task descriptions and template fields copied into the
+live ledgers have the same imported provenance; original execution annotations do not relicense
+that imported text. Source mappings are recorded in the provenance document.

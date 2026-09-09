@@ -11,6 +11,15 @@
   "source_manifest_sha256": "b427250ee5122afa4a00a105062e0d512882f1ea18a270fa825bdeb69eb18334",
   "source_inventory_sha256": "b094f44d54072c0b6b35143b2c13b1082cf0f8886bcfac72075869e48d11dd73",
   "file_count": 74,
+  "derived_ledger_sources": {
+    "orchestration/tasks.json": "orchestration/tasks.json",
+    "quality/requirements.json": "quality/requirements.json",
+    "quality/fault-injection-cases.json": "quality/fault-injection-cases.json",
+    "execution-state.json": "templates/execution-state.template.json",
+    "orchestration/authorization.json": "templates/authorization.template.json",
+    "orchestration/agents/preflight-lead.json": "templates/agent-attestation.template.json"
+  },
+  "derived_text_license": "Imported assertions/templates retain original user-supplied provenance; execution annotations do not relicense the imported text",
   "preservation": "Every original distributed file byte retained; no pycache or personal paths",
   "generator": "Python standard-library zipfile; deterministic member order/time/mode; source bytes unchanged"
 }

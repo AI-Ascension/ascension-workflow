@@ -15,6 +15,14 @@
     "AI-Ascension/ai-agent-observability"
   ],
   "active_leases": [],
+  "completed_preparation_lease": {
+    "owner": "/root",
+    "base_commit": "20bb8fe06708ae70666711fc975baf475d827c2a",
+    "branch": "codex/phase1-preflight-20260909",
+    "scope": "Explicit preparation paths reviewed in content commit 6bfb47fe8edb63ef326fa8172356cbecd743b82f; delivery metadata follow-up by root",
+    "status": "released",
+    "independent_review": "blocked; no D3 review occurred"
+  },
   "descendant_source_write_leases_granted": [],
   "contracts_frozen": false,
   "independent_reviewer": null
