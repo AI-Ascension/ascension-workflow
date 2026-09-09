@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "root_integration_owner": "/root",
+  "write_scope": [
+    "delivery repository preparation documents, provenance archive, metadata ledgers"
+  ],
+  "read_only_scope": [
+    "AI-Ascension/sts2-harness",
+    "AI-Ascension/.github",
+    "AI-Ascension/sts2-gateway",
+    "AI-Ascension/sts2-mcp-server",
+    "AI-Ascension/sts2-protocol",
+    "AI-Ascension/sts2-game-mod",
+    "AI-Ascension/ascension-watchdog",
+    "AI-Ascension/ai-agent-observability"
+  ],
+  "active_leases": [],
+  "descendant_source_write_leases_granted": [],
+  "contracts_frozen": false,
+  "independent_reviewer": null
+}

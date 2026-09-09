@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "repository_and_tracking_issue_created_draft_pending",
+  "repository": "AI-Ascension/ascension-workflow",
+  "repository_created": true,
+  "repository_id": 1363224464,
+  "visibility": "private",
+  "default_branch": "main",
+  "bootstrap_commit": "20bb8fe06708ae70666711fc975baf475d827c2a",
+  "branch": "codex/phase1-preflight-20260909",
+  "tracking_issue": "https://github.com/AI-Ascension/ascension-workflow/issues/1",
+  "requested_assignee": "CompleteDotTech",
+  "tracking_issue_assignee_verified": "CompleteDotTech",
+  "draft_pr": null,
+  "merged": false,
+  "released": false,
+  "installed": false,
+  "deployed": false,
+  "native_game_executed": false,
+  "gameplay_provider_executed": false
+}

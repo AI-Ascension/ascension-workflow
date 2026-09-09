@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "status": "blocked_preparation_only",
+  "root_agent_id": "01a087fb-ef18-75e1-8aad-76e0dfcc595b",
+  "source_lock_ref": "integration/source-lock.json",
+  "integration_lock_ref": "integration/candidate-lock.json",
+  "task_ledger_ref": "orchestration/tasks.json",
+  "requirement_ledger_ref": "quality/requirements.json",
+  "active_agents": [],
+  "write_leases": [],
+  "pending_commands": [],
+  "pending_external_operations": [],
+  "candidate_branches": [
+    {
+      "repository": "AI-Ascension/ascension-workflow",
+      "branch": "codex/phase1-preflight-20260909",
+      "base_commit": "20bb8fe06708ae70666711fc975baf475d827c2a",
+      "kind": "preparation_only_not_product_candidate"
+    }
+  ],
+  "issue_pr_ids": [
+    "https://github.com/AI-Ascension/ascension-workflow/issues/1"
+  ],
+  "last_verified_gate": "original package integrity and unit checks only; no product gate",
+  "next_tasks": [
+    "T00",
+    "T01",
+    "T02",
+    "T03"
+  ],
+  "blockers": [
+    {
+      "id": "B-001",
+      "owner": "runtime/client owner",
+      "reason": "D1 has no native recursive collaboration tools"
+    },
+    {
+      "id": "B-002",
+      "owner": "operator/environment owner",
+      "reason": "Rust 1.97.1 absent; workspace installation authorization pending"
+    },
+    {
+      "id": "B-003",
+      "owner": "WS-A and boundary owners",
+      "reason": "Complete source/standards admission and compatible candidate selection pending"
+    },
+    {
+      "id": "B-004",
+      "owner": "operator/native owner",
+      "reason": "No native disposable environment or provider budget authorized"
+    },
+    {
+      "id": "B-005",
+      "owner": "WS-G",
+      "reason": "No different-D3 verification or final integrated product validation"
+    }
+  ]
+}

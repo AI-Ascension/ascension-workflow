@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "status": "not_selected",
+  "candidate_revisions": [],
+  "accepted_contract_artifacts": [],
+  "reason": "B-001 and B-003; no contracts frozen or implementation integrated"
+}

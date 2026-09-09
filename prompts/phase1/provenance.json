@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "origin": "User-supplied ascension-workflow-phase1-package 1.0.0",
+  "original_prepared_on": "2026-09-09",
+  "distribution": "private instruction provenance",
+  "source_authorization": "User-launched package explicitly authorizes provenance-preserving copy",
+  "license": "No explicit package license supplied; no relicensing or public redistribution claim",
+  "kind": "inert_instruction_archive_not_runtime_or_active_product_tooling",
+  "archive_path": "instruction-package.zip",
+  "archive_sha256": "b707226d27e36339166c79eeb80af0013e7c57380fcda8d7027df912bcef7c5c",
+  "source_manifest_sha256": "b427250ee5122afa4a00a105062e0d512882f1ea18a270fa825bdeb69eb18334",
+  "source_inventory_sha256": "b094f44d54072c0b6b35143b2c13b1082cf0f8886bcfac72075869e48d11dd73",
+  "file_count": 74,
+  "preservation": "Every original distributed file byte retained; no pycache or personal paths",
+  "generator": "Python standard-library zipfile; deterministic member order/time/mode; source bytes unchanged"
+}

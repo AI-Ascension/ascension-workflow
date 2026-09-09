@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "bounded_launch_authorization",
+  "authenticated_operator": "CompleteDotTech",
+  "target_repository": "AI-Ascension/ascension-workflow",
+  "allowed_scope": [
+    "read_current_source",
+    "scoped_source_test_docs_changes",
+    "isolated_worktrees_branches",
+    "local_deterministic_component_tests",
+    "bounded_repository_creation",
+    "scoped_commits_pushes",
+    "linked_draft_prs",
+    "assign_authenticated_operator"
+  ],
+  "separate_authorization_required": [
+    "merge",
+    "public_publication_of_private_work",
+    "release",
+    "deployment",
+    "installation",
+    "native_game_profile_mutation",
+    "live_gameplay_provider_expenditure",
+    "host_or_machine_restart",
+    "network_exposure_beyond_loopback",
+    "global_configuration_changes",
+    "branch_protection_or_secrets_changes"
+  ],
+  "native_profile": null,
+  "native_budget": null,
+  "evidence_refs": [
+    "prompts/phase1/provenance.json",
+    "docs/evidence/runtime-preflight.json"
+  ],
+  "toolchain_installation": "pending separate user response; not attempted",
+  "permission_mode_change": "User resumed after environment changed to unrestricted/never; product authority unchanged"
+}
