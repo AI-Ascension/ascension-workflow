@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "status": "local_candidates_validated",
-  "captured_at": "2026-09-10T11:24:38Z",
+  "captured_at": "2026-09-10T11:28:50Z",
   "delivery_repository": {
     "repository": "AI-Ascension/ascension-workflow",
     "branch": "codex/phase1-preflight-20260909",
-    "commit": "0766106da8830cf395a51e1d1342fdfb28d72365",
+    "commit": "d8ea0b4178639406e957df2037ed7100bd466b6d",
     "base": "20bb8fe06708ae70666711fc975baf475d827c2a",
     "claim": "catalog and delivery artifacts are present on this local candidate"
   },

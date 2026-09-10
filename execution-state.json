@@ -2,7 +2,7 @@
   "schema_version": 1,
   "status": "integrated_candidate_validation",
   "root_agent_id": "/root",
-  "captured_at": "2026-09-10T11:24:38Z",
+  "captured_at": "2026-09-10T11:28:50Z",
   "resume_evidence_ref": "docs/evidence/EXECUTION_REPORT.md",
   "source_lock_ref": "integration/source-lock-20260910.json",
   "integration_lock_ref": "integration/candidate-lock.json",
@@ -18,7 +18,7 @@
       "branch": "codex/phase1-preflight-20260909",
       "base_commit": "20bb8fe06708ae70666711fc975baf475d827c2a",
       "head_before_delivery_edits": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
-      "head": "0766106da8830cf395a51e1d1342fdfb28d72365",
+      "head": "d8ea0b4178639406e957df2037ed7100bd466b6d",
       "kind": "delivery_candidate"
     },
     {
