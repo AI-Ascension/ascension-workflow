@@ -2,42 +2,56 @@
 
 ## Current continuation — 2026-09-10
 
-The implementation is split across an exact local harness candidate and a
-separate gateway authority candidate. The delivery branch contains the catalog,
+The implementation is split across an exact local harness candidate, a
+separate gateway authority candidate and an MCP mapping candidate. The delivery branch contains the catalog,
 contract artifact, conformance inputs, process driver, ADR set and evidence
 ledgers. The exact revisions and publication limits are recorded in
 [`integration/candidate-lock.json`](../../integration/candidate-lock.json) and
 [`integration/source-lock-20260910.json`](../../integration/source-lock-20260910.json).
 
-The harness candidate is `623848ed6dc8b2bbfa07cd287df7aa4feba18c87`, based on
-default head `68e4f935f251c5e20d07b929c6b1c096d0b7b183`. It contains the
+The harness candidate is `2239c8e31a40a3076a1bbaf86c4d9aae155b67b6`, based on
+refreshed default head `33437ddb18f69f68d88521d947efa3568a32a3bf`. It contains
+the current owner recovery and telemetry implementation integrated with the
 workflow-v1 decoder, typed definitions, canonical compiler/artifact boundary,
 three-valued guards, strict reducer, bounded dynamic plan registry/runtime,
 provider and budget boundaries, durable workflow event/invocation storage,
 protected episode ports, authenticated loopback management API, `sts2-workflow`
-CLI, and a synthetic management adapter that invokes the shared runtime.
+CLI, and the synthetic management adapter. Served management now uses a
+transactional SQLite store with a durable synthetic runtime snapshot; persisted
+events carry integrity seals and offline replay rejects tampering. The management
+export applies a bounded redaction projection and has sentinel coverage.
 
-The gateway authority candidate is `e5543403e7ac0fa13929c296adfab877bea4212a`,
+The gateway authority candidate is `1a29e425eca96eba6d88caf85c1b2dc71c4b072c`,
 based on `6b6c7f2fac67de22fdf78c9fd818c6781f689ba0`. It passed its owner policy,
-format, Clippy and full test suite with 147 passing tests. Neither candidate is
-merged to its default branch.
+format, Clippy and full test suite with the new authority-route test included.
+The harness and gateway candidates are not merged to their default branches.
+
+The MCP candidate is `16ca0cb06dc93564c14963bc544bef282b38d26d`, based on
+`73e777b96700917cca5ff8f6ce0f5a72009384bc`. It keeps Runtime-v2 mapping thin,
+advertises the optional bounded `workflow_boot_epoch` on the three Runtime-v2
+tools, forwards it as `x-sts2-workflow-boot-epoch`, and rejects malformed values
+before gateway access. It passed strict policy, format, Clippy, and the full
+workspace suite. This is an isolated boundary candidate; it does not prove a
+live MCP-to-gateway process or owner-issued authority flow.
 
 The following harness checks passed on the integrated candidate:
 
 - `cargo fmt --all --check`
-- `cargo run -p repo-policy -- --strict` — 560 sized files, zero warnings/errors
+- `cargo run --locked --package repo-policy -- --strict` — 644 sized files, zero warnings/errors
 - `cargo clippy --workspace --all-targets --all-features --locked -- -D warnings`
-- `cargo test --workspace --all-targets --all-features --locked` — 128 runtime
-  tests passed in the final successful run; repository operator-only tests remain
-  explicitly ignored
-- the Rust delivery conformance driver validated all 13 catalog definitions,
-  rejected the missing-map capability case with a structured diagnostic, and
-  exercised authenticated run/status/events, pause/resume/step and offline replay
+- `cargo test --workspace --all-targets --all-features --locked` — all workspace
+  targets passed, including 167 runtime tests; repository operator-only tests
+  remain explicitly ignored; the SQLite management integration target passed its
+  3 tests
+- the Rust delivery conformance driver required `valid:true` for all 13 catalog
+  definitions, rejected the missing-map capability case with a structured
+  diagnostic, and exercised authenticated run/status/events, pause/resume/step,
+  offline replay with tamper rejection, durable served-management restart, and the
+  redacted export path
 
-One full-suite attempt had a transient existing `MCP process failed to start`
-failure in an operator lifecycle test. The exact test passed on immediate rerun;
-the final full-suite run is the evidence cited above. No code change was made for
-that environment race.
+The integrated full-suite run passed after clearing stale task-generated temporary
+build artifacts that had filled `/tmp` and caused two 16 MiB corruption fixtures
+to report SQLite `disk full`. The final run is the evidence cited above.
 
 The implementation currently proves deterministic synthetic source/component
 behavior. The default synthetic management profile has no provider or game
@@ -63,6 +77,10 @@ The requested D0→D1→D2→D3 native hierarchy was not observed. The D1 worker
 callable native collaboration tools, so D2/D3 could not be created. No flat or
 subprocess substitute was used. This is an orchestration evidence limitation,
 separate from the component tests above; it prevents a complete Phase 1 claim.
+Three fresh D1 review lanes independently held acceptance for the integrated
+candidate. Their findings and the unavailable-recursion evidence are recorded in
+[`review-wave-20260910.json`](review-wave-20260910.json); those reviews do not
+close the required D3/G6 gate.
 
 Scoped branches, commits, pushes, private repository bootstrap, issue and draft
 PR preparation were authorized by the launch package. No merge, release,
@@ -79,8 +97,9 @@ above supersedes its “not implemented” product table and missing-toolchain n
 ## Remaining gates
 
 - D2/D3 independent review and exact hierarchy evidence remain unavailable.
-- Cross-repository MCP/protocol/watchdog conformance is not complete; only the
-  harness and gateway candidates were built and tested in this continuation.
+- Cross-repository MCP/protocol/watchdog conformance is not complete; the
+  harness, gateway and isolated MCP mapping candidates were built and tested,
+  while protocol/watchdog integration remains open.
 - Full crash/fault matrix, independent adversarial review, legacy differential
   measurements, redacted telemetry integration and complete offline replay
   artifact retention still require additional evidence.

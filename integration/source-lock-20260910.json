@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "captured_at": "2026-09-10T08:30:00Z",
+  "captured_at": "2026-09-10T10:03:26Z",
   "scope": "Phase 1 exact-head discovery and candidate admission",
   "repositories": [
-    {"repository": "AI-Ascension/sts2-harness", "default_branch": "main", "commit": "68e4f935f251c5e20d07b929c6b1c096d0b7b183", "candidate": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87"},
-    {"repository": "AI-Ascension/sts2-gateway", "default_branch": "main", "commit": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0", "candidate": "e5543403e7ac0fa13929c296adfab877bea4212a"},
-    {"repository": "AI-Ascension/sts2-game-mod", "default_branch": "main", "commit": "903b645bf4dc5b299fbf16e4cef498b9bcd0ea18", "candidate": null},
-    {"repository": "AI-Ascension/sts2-mcp-server", "default_branch": "main", "commit": "73e777b96700917cca5ff8f6ce0f5a72009384bc", "candidate": null},
-    {"repository": "AI-Ascension/ai-ascension-protocol", "default_branch": "main", "commit": "e5e545c2ff7166e073f6d44256016f85d7ea7e83", "candidate": null},
+    {"repository": "AI-Ascension/sts2-harness", "default_branch": "main", "commit": "33437ddb18f69f68d88521d947efa3568a32a3bf", "candidate": "2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"},
+    {"repository": "AI-Ascension/sts2-gateway", "default_branch": "main", "commit": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0", "candidate": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c"},
+    {"repository": "AI-Ascension/sts2-game-mod", "default_branch": "main", "commit": "b9754b803cbff79836143d5c115146f65b55184c", "candidate": null},
+    {"repository": "AI-Ascension/sts2-mcp-server", "default_branch": "main", "commit": "73e777b96700917cca5ff8f6ce0f5a72009384bc", "candidate": "16ca0cb06dc93564c14963bc544bef282b38d26d"},
+    {"repository": "AI-Ascension/sts2-protocol", "default_branch": "main", "commit": "e5e545c2ff7166e073f6d44256016f85d7ea7e83", "candidate": null},
     {"repository": "AI-Ascension/.github", "default_branch": "main", "commit": "92ab3ed900272703dbbe892bd333ead2a6cf1a86", "candidate": null},
     {"repository": "AI-Ascension/ai-agent-observability", "default_branch": "main", "commit": "28a48590afb75b07590e1b78ea47dae08f5c3ade", "candidate": null},
     {"repository": "AI-Ascension/ascension-watchdog", "default_branch": "bootstrap", "commit": "bc8ebf2054d2e3d2d74c1c7e5f775ae01952215d", "candidate": null}
@@ -28,7 +28,7 @@
   },
   "claims": {
     "source_discovery": "confirmed at exact heads",
-    "cross_repository_conformance": "candidate-level only for harness and gateway",
+    "cross_repository_conformance": "candidate-level only for harness, gateway and MCP mapping; protocol and watchdog remain default-head only",
     "native_compatibility": "not tested",
     "merge_status": "no candidate merged by this run"
   }

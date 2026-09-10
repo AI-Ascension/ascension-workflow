@@ -92,7 +92,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -103,7 +103,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
@@ -120,7 +120,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -131,7 +131,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
@@ -148,7 +148,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -159,7 +159,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
@@ -176,7 +176,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -187,7 +187,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
@@ -204,7 +204,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -215,7 +215,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -229,7 +229,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -240,7 +240,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -254,7 +254,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -265,7 +265,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -279,7 +279,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -290,7 +290,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -304,7 +304,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -315,7 +315,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -329,7 +329,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -340,7 +340,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -354,7 +354,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -365,7 +365,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -379,7 +379,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -390,7 +390,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -404,7 +404,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -415,7 +415,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -429,7 +429,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -440,7 +440,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -454,7 +454,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -465,7 +465,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -479,7 +479,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -490,7 +490,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -504,7 +504,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -515,7 +515,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -529,7 +529,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -540,7 +540,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -554,7 +554,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -565,7 +565,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -579,7 +579,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -590,7 +590,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -604,7 +604,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -615,7 +615,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -629,7 +629,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -640,7 +640,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -654,7 +654,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -665,7 +665,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -679,7 +679,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -690,7 +690,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -704,7 +704,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -715,7 +715,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -729,7 +729,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -740,7 +740,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -754,7 +754,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -765,7 +765,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -779,7 +779,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -790,7 +790,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -804,7 +804,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -815,7 +815,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -829,7 +829,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -840,7 +840,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -854,7 +854,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -865,7 +865,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -879,7 +879,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -890,7 +890,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -904,7 +904,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -915,7 +915,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -929,7 +929,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -940,7 +940,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -954,7 +954,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -965,7 +965,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -979,7 +979,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-gateway@e5543403e7ac0fa13929c296adfab877bea4212a"
+        "AI-Ascension/sts2-gateway@1a29e425eca96eba6d88caf85c1b2dc71c4b072c"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -990,7 +990,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-gateway@e5543403e7ac0fa13929c296adfab877bea4212a",
+      "implementation_commit": "AI-Ascension/sts2-gateway@1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1004,7 +1004,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-gateway@e5543403e7ac0fa13929c296adfab877bea4212a"
+        "AI-Ascension/sts2-gateway@1a29e425eca96eba6d88caf85c1b2dc71c4b072c"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1015,7 +1015,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-gateway@e5543403e7ac0fa13929c296adfab877bea4212a",
+      "implementation_commit": "AI-Ascension/sts2-gateway@1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1029,7 +1029,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-gateway@e5543403e7ac0fa13929c296adfab877bea4212a"
+        "AI-Ascension/sts2-gateway@1a29e425eca96eba6d88caf85c1b2dc71c4b072c"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1040,7 +1040,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-gateway@e5543403e7ac0fa13929c296adfab877bea4212a",
+      "implementation_commit": "AI-Ascension/sts2-gateway@1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1053,7 +1053,9 @@
       "expected_assertion": "One declared mapping per route with artifact conformance and no embedded workflow policy.",
       "mandatory": true,
       "status": "blocked",
-      "implementation_refs": [],
+      "implementation_refs": [
+        "AI-Ascension/sts2-mcp-server@16ca0cb06dc93564c14963bc544bef282b38d26d"
+      ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -1064,7 +1066,7 @@
         "B-003",
         "B-005"
       ],
-      "implementation_commit": null,
+      "implementation_commit": "AI-Ascension/sts2-mcp-server@16ca0cb06dc93564c14963bc544bef282b38d26d",
       "independent_reviewer": null,
       "implementation_status": "blocked_pending_required_gate",
       "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
@@ -1102,7 +1104,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1113,7 +1115,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1127,7 +1129,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1138,7 +1140,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1152,7 +1154,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1163,7 +1165,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1177,7 +1179,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1188,7 +1190,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1202,7 +1204,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1213,7 +1215,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1227,7 +1229,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1238,7 +1240,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1252,7 +1254,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1263,7 +1265,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1277,7 +1279,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1288,7 +1290,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1302,7 +1304,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1313,7 +1315,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1327,7 +1329,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1338,7 +1340,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1352,7 +1354,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1363,7 +1365,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1377,7 +1379,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1388,7 +1390,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1402,7 +1404,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1413,7 +1415,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1427,7 +1429,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1439,7 +1441,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1453,7 +1455,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1465,7 +1467,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1479,7 +1481,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1491,7 +1493,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1505,7 +1507,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1517,7 +1519,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1531,7 +1533,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1543,7 +1545,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1557,7 +1559,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1569,7 +1571,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1583,7 +1585,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1595,7 +1597,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1609,7 +1611,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1621,7 +1623,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1635,7 +1637,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1647,7 +1649,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1661,7 +1663,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1673,7 +1675,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1687,7 +1689,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1699,7 +1701,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1713,7 +1715,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1725,7 +1727,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1739,7 +1741,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1751,7 +1753,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1765,11 +1767,12 @@
       "mandatory": true,
       "status": "blocked",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
-        "integration/candidate-lock.json"
+        "integration/candidate-lock.json",
+        "docs/evidence/candidate-validation-20260910.json"
       ],
       "owner_workstream": "WS-E",
       "owner_repository": "AI-Ascension/sts2-harness",
@@ -1777,7 +1780,7 @@
         "B-003",
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "blocked_pending_required_gate",
       "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
@@ -1791,11 +1794,13 @@
       "mandatory": true,
       "status": "blocked",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
-        "integration/candidate-lock.json"
+        "integration/candidate-lock.json",
+        "docs/evidence/candidate-validation-20260910.json",
+        "AI-Ascension/sts2-harness/tests/management.rs::redacted_export_removes_untrusted_operation_and_cursor_fields"
       ],
       "owner_workstream": "WS-E",
       "owner_repository": "AI-Ascension/sts2-harness",
@@ -1803,7 +1808,7 @@
         "B-003",
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "blocked_pending_required_gate",
       "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
@@ -1817,7 +1822,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1828,7 +1833,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1842,7 +1847,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1853,7 +1858,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1867,7 +1872,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1878,7 +1883,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1892,7 +1897,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1904,7 +1909,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1918,7 +1923,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1930,7 +1935,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -1944,7 +1949,7 @@
       "mandatory": true,
       "status": "blocked",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1956,7 +1961,7 @@
         "B-003",
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "blocked_pending_required_gate",
       "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
@@ -1970,7 +1975,7 @@
       "mandatory": true,
       "status": "blocked",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -1982,7 +1987,7 @@
         "B-003",
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "blocked_pending_required_gate",
       "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
@@ -1996,11 +2001,12 @@
       "mandatory": true,
       "status": "blocked",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
-        "integration/candidate-lock.json"
+        "integration/candidate-lock.json",
+        "docs/evidence/review-wave-20260910.json"
       ],
       "owner_workstream": "WS-G",
       "owner_repository": "AI-Ascension/ascension-workflow",
@@ -2008,7 +2014,7 @@
         "B-003",
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "blocked_pending_required_gate",
       "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
@@ -2022,7 +2028,7 @@
       "mandatory": true,
       "status": "blocked",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -2034,7 +2040,7 @@
         "B-003",
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "blocked_pending_required_gate",
       "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
@@ -2048,7 +2054,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -2059,7 +2065,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -2073,7 +2079,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+        "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -2084,7 +2090,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/sts2-harness@623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "implementation_commit": "AI-Ascension/sts2-harness@2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -2098,7 +2104,7 @@
       "mandatory": true,
       "status": "blocked",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -2110,7 +2116,7 @@
         "B-003",
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "blocked_pending_required_gate",
       "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
@@ -2124,7 +2130,7 @@
       "mandatory": true,
       "status": "blocked",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -2136,7 +2142,7 @@
         "B-003",
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "blocked_pending_required_gate",
       "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
@@ -2150,7 +2156,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -2161,7 +2167,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -2175,7 +2181,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -2186,7 +2192,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -2200,7 +2206,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -2211,7 +2217,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -2225,7 +2231,7 @@
       "mandatory": true,
       "status": "verification",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -2236,7 +2242,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
@@ -2250,7 +2256,7 @@
       "mandatory": true,
       "status": "in_progress",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -2261,7 +2267,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "in_progress_candidate_delivery",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
@@ -2278,7 +2284,7 @@
       "mandatory": true,
       "status": "in_progress",
       "implementation_refs": [
-        "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+        "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127"
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
@@ -2289,7 +2295,7 @@
       "blocker_refs": [
         "B-005"
       ],
-      "implementation_commit": "AI-Ascension/ascension-workflow@c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "implementation_commit": "AI-Ascension/ascension-workflow@ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
       "independent_reviewer": null,
       "implementation_status": "in_progress_candidate_delivery",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",

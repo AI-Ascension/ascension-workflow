@@ -6,9 +6,9 @@ default branch). These are source-refresh evidence, not integrated candidate rev
 
 | Repository | Default ref | Remote head |
 |---|---|---|
-| `AI-Ascension/sts2-harness` | `main` | `68e4f935f251c5e20d07b929c6b1c096d0b7b183` |
+| `AI-Ascension/sts2-harness` | `main` | `33437ddb18f69f68d88521d947efa3568a32a3bf` |
 | `AI-Ascension/sts2-gateway` | `main` | `6b6c7f2fac67de22fdf78c9fd818c6781f689ba0` |
-| `AI-Ascension/sts2-game-mod` | `main` | `903b645bf4dc5b299fbf16e4cef498b9bcd0ea18` |
+| `AI-Ascension/sts2-game-mod` | `main` | `b9754b803cbff79836143d5c115146f65b55184c` |
 | `AI-Ascension/sts2-mcp-server` | `main` | `73e777b96700917cca5ff8f6ce0f5a72009384bc` |
 | `AI-Ascension/sts2-protocol` | `main` | `e5e545c2ff7166e073f6d44256016f85d7ea7e83` |
 | `AI-Ascension/.github` | `main` | `92ab3ed900272703dbbe892bd333ead2a6cf1a86` |

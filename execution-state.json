@@ -2,7 +2,7 @@
   "schema_version": 1,
   "status": "integrated_candidate_validation",
   "root_agent_id": "/root",
-  "captured_at": "2026-09-10T08:35:00Z",
+  "captured_at": "2026-09-10T10:03:26Z",
   "resume_evidence_ref": "docs/evidence/EXECUTION_REPORT.md",
   "source_lock_ref": "integration/source-lock-20260910.json",
   "integration_lock_ref": "integration/candidate-lock.json",
@@ -23,23 +23,30 @@
     {
       "repository": "AI-Ascension/sts2-harness",
       "branch": "codex/workflow-integration-20260910",
-      "base_commit": "68e4f935f251c5e20d07b929c6b1c096d0b7b183",
-      "head": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "base_commit": "33437ddb18f69f68d88521d947efa3568a32a3bf",
+      "head": "2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "kind": "integrated_component_candidate"
     },
     {
       "repository": "AI-Ascension/sts2-gateway",
       "branch": "codex/workflow-authority-integration",
       "base_commit": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0",
-      "head": "e5543403e7ac0fa13929c296adfab877bea4212a",
+      "head": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
       "kind": "authority_component_candidate"
+    },
+    {
+      "repository": "AI-Ascension/sts2-mcp-server",
+      "branch": "codex/workflow-authority-mapping",
+      "base_commit": "73e777b96700917cca5ff8f6ce0f5a72009384bc",
+      "head": "16ca0cb06dc93564c14963bc544bef282b38d26d",
+      "kind": "thin_mapping_component_candidate"
     }
   ],
   "issue_pr_ids": [
     "https://github.com/AI-Ascension/ascension-workflow/issues/1",
     "https://github.com/AI-Ascension/ascension-workflow/pull/2"
   ],
-  "last_verified_gate": "harness strict policy, format, clippy, full tests, and authenticated catalog process conformance",
+  "last_verified_gate": "harness strict policy, format, clippy, full tests, authenticated catalog process conformance, and isolated MCP mapping checks",
   "next_tasks": ["T22", "T23", "T25", "T26", "T27", "T28", "T30", "T31"],
   "blockers": [
     {

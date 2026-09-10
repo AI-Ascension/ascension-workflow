@@ -2,14 +2,15 @@
   "schema_version": 1,
   "date": "2026-09-10",
   "harness_repository": "AI-Ascension/sts2-harness",
-  "harness_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
-  "harness_base": "68e4f935f251c5e20d07b929c6b1c096d0b7b183",
+  "harness_commit": "2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
+  "harness_base": "33437ddb18f69f68d88521d947efa3568a32a3bf",
   "commands": [
     {"command": "cargo fmt --all --check", "exit_code": 0},
-    {"command": "cargo run -p repo-policy -- --strict", "exit_code": 0, "result": "560 sized files; zero warnings; zero errors"},
+    {"command": "cargo run --locked --package repo-policy -- --strict", "exit_code": 0, "result": "644 sized files; zero warnings; zero errors"},
     {"command": "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings", "exit_code": 0},
-    {"command": "cargo test --workspace --all-targets --all-features --locked", "exit_code": 0, "result": "128 runtime tests passed; operator-only tests explicitly ignored"},
-    {"command": "cargo test -p sts2-harness --test management --locked", "exit_code": 0, "result": "5 passed"}
+    {"command": "cargo test --workspace --all-targets --all-features --locked", "exit_code": 0, "result": "all workspace targets passed; 167 runtime tests passed and operator-only tests were explicitly ignored"},
+    {"command": "cargo test -p sts2-harness --test management --locked", "exit_code": 0, "result": "6 passed"},
+    {"command": "cargo test -p sts2-harness --test management_sqlite --locked", "exit_code": 0, "result": "3 passed"}
   ],
   "process_conformance": {
     "driver": "tools/conformance-driver",
@@ -18,18 +19,32 @@
     "negative_required_capability": "passed",
     "authenticated_loopback_run": "passed",
     "status_events_pause_resume_step": "passed",
-    "offline_replay": "passed",
+    "offline_replay": "passed; tampered persisted event rejected",
+    "redacted_export": "passed; export response is bounded and contains no serialized operation identifier",
+    "served_management_restart": "passed; SQLite store and synthetic runtime snapshot restored after service restart",
     "native_game": false,
     "live_provider": false
   },
   "gateway_candidate": {
-    "commit": "e5543403e7ac0fa13929c296adfab877bea4212a",
+    "commit": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
     "base": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0",
-    "tests_passed": 147
+    "tests_passed": 148
+  },
+  "mcp_candidate": {
+    "commit": "16ca0cb06dc93564c14963bc544bef282b38d26d",
+    "base": "73e777b96700917cca5ff8f6ce0f5a72009384bc",
+    "pull_request": "https://github.com/AI-Ascension/sts2-mcp-server/pull/37",
+    "policy_sized_files": 195,
+    "policy_warnings": 0,
+    "targeted_runtime_v2_tests": 7,
+    "executable_runtime_v2_session_tests": 3,
+    "workspace_tests": "passed",
+    "authority_forwarding": "optional workflow_boot_epoch maps to x-sts2-workflow-boot-epoch through the executable loopback path; malformed values rejected before gateway access"
   },
   "orchestration": {
     "d2_d3_observed": false,
     "reason": "native collaboration tools unavailable in D1 environments",
-    "independent_review": false
+    "independent_review": false,
+    "review_wave": "docs/evidence/review-wave-20260910.json"
   }
 }

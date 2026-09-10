@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "candidate_validation_and_delivery",
-  "captured_at": "2026-09-10T08:35:00Z",
+  "captured_at": "2026-09-10T10:03:26Z",
   "root": "/root",
   "requested_descendant_model": "gpt-5.6-luna",
   "requested_descendant_effort": "max",
@@ -24,7 +24,7 @@
       "id": "01a08a02-51a7-7fe1-a48b-a5370a84e1b5",
       "role": "gateway authority",
       "candidate": "1aa0d32a1f5fd7784cb4754efb09f27169fbb898",
-      "integrated": "e5543403e7ac0fa13929c296adfab877bea4212a"
+      "integrated": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c"
     },
     {
       "id": "01a08a00-ac64-7663-afdd-ddcd3d6fe7c0",
@@ -58,7 +58,7 @@
       "branch": "codex/workflow-integration-20260910",
       "paths": ["crates/harness/src/workflow/", "crates/harness/src/execution/", "crates/harness/src/management/", "crates/harness/tests/"],
       "status": "integrated_local_candidate",
-      "commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+      "commit": "2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"
     },
     {
       "repository": "AI-Ascension/ascension-workflow",

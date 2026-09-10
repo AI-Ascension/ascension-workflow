@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "status": "local_candidates_validated",
-  "captured_at": "2026-09-10T08:30:00Z",
+  "captured_at": "2026-09-10T10:03:26Z",
   "delivery_repository": {
     "repository": "AI-Ascension/ascension-workflow",
     "branch": "codex/phase1-preflight-20260909",
-    "commit": "7853fc5e0e7b480f825ace284a456c5b65a525fb",
+    "commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
     "base": "20bb8fe06708ae70666711fc975baf475d827c2a",
     "claim": "catalog and delivery artifacts are present on this local candidate"
   },
@@ -13,58 +13,77 @@
     {
       "repository": "AI-Ascension/sts2-harness",
       "branch": "codex/workflow-integration-20260910",
-      "commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
-      "base": "68e4f935f251c5e20d07b929c6b1c096d0b7b183",
+      "commit": "2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
+      "base": "33437ddb18f69f68d88521d947efa3568a32a3bf",
       "components": [
         "workflow-v1 contract/compiler/decoder",
         "strict and bounded dynamic runtime",
         "durable workflow store and invocation journal",
         "protected episode ports",
         "authenticated management API and sts2-workflow CLI",
-        "synthetic management process adapter"
+        "SQLite-backed served management store and durable synthetic runtime adapter"
       ],
       "evidence": [
         "cargo fmt --all --check",
-        "cargo run -p repo-policy -- --strict",
+        "cargo run --locked --package repo-policy -- --strict",
         "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings",
         "cargo test --workspace --all-targets --all-features --locked",
-        "authenticated loopback catalog/process conformance"
+        "authenticated loopback catalog/process conformance",
+        "SQLite service/runtime restart and tampered-event replay tests"
       ],
       "publication": "draft PR https://github.com/AI-Ascension/sts2-harness/pull/52; not merged to main"
     },
     {
       "repository": "AI-Ascension/sts2-gateway",
       "branch": "codex/workflow-authority-integration",
-      "commit": "e5543403e7ac0fa13929c296adfab877bea4212a",
+      "commit": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
       "base": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0",
-      "components": ["workflow authority boot/fence/receipt recovery contract"],
+        "components": ["workflow authority boot/fence/receipt recovery contract and opt-in runtime route enforcement"],
       "evidence": [
         "cargo fmt --all --check",
         "cargo run --locked --package repo-policy -- --strict",
         "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings",
-        "cargo test --workspace --all-targets --all-features --locked (147 passed)"
+        "cargo test --workspace --all-targets --all-features --locked (148 candidate tests; full workspace targets passed)"
       ],
       "publication": "draft PR https://github.com/AI-Ascension/sts2-gateway/pull/36; not merged to main"
+    },
+    {
+      "repository": "AI-Ascension/sts2-mcp-server",
+      "branch": "codex/workflow-authority-mapping",
+      "commit": "16ca0cb06dc93564c14963bc544bef282b38d26d",
+      "base": "73e777b96700917cca5ff8f6ce0f5a72009384bc",
+      "components": ["Runtime-v2 catalog and thin mapping for optional workflow boot authority forwarding"],
+      "evidence": [
+        "cargo fmt --all --check",
+        "cargo run --locked --package repo-policy -- --strict",
+        "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings",
+        "cargo test --workspace --all-targets --all-features --locked",
+        "mapping and executable loopback tests forward x-sts2-workflow-boot-epoch; malformed input is rejected before gateway access"
+      ],
+      "publication": "draft PR https://github.com/AI-Ascension/sts2-mcp-server/pull/37; not merged to main"
     }
   ],
   "accepted_contract_artifacts": [
     {
       "path": "contract-artifact/workflow-v1/manifest.json",
       "producer": "AI-Ascension/sts2-harness",
-      "producer_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "producer_commit": "2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
       "semantic_contract": "ascension.workflow/v1",
       "schema_sha256": "f8f79e115cd3bd736125ad17e33676bfe110f8a1b2673577cbbe93f1d5cc937d"
     }
   ],
   "authority": {
     "gateway_default_branch": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0",
-    "harness_default_branch": "68e4f935f251c5e20d07b929c6b1c096d0b7b183",
+    "harness_default_branch": "33437ddb18f69f68d88521d947efa3568a32a3bf",
+    "mcp_default_branch": "73e777b96700917cca5ff8f6ce0f5a72009384bc",
+    "mcp_candidate": "16ca0cb06dc93564c14963bc544bef282b38d26d",
     "native_game": "not invoked",
     "live_provider": "not invoked"
   },
   "limitations": [
     "D2/D3 native recursive delegation was unavailable and is recorded in orchestration evidence.",
     "The candidate lock does not claim a merge, release, deployment, installation, or native compatibility.",
-    "The synthetic management adapter is the only default execution profile; live ports remain capability-gated."
+    "The default served profile uses durable SQLite management/runtime state but remains synthetic; live ports remain capability-gated.",
+    "The MCP authority-forwarding candidate is tested in isolation; no live MCP-to-gateway process conformance or owner-issued boot/lease authority issuance is claimed."
   ]
 }
