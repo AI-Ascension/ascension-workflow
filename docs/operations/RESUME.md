@@ -27,7 +27,9 @@ installed in the workspace-local toolchain; B-002 is resolved.
 
 The MCP candidate `16ca0cb06dc93564c14963bc544bef282b38d26d` forwards the optional bounded
 `workflow_boot_epoch` authority header through the Runtime-v2 mapping. Its isolated workspace checks
-passed; live cross-repository MCP-to-gateway conformance and owner-issued authority remain unverified.
+passed, and the executable composition checks exercise the candidate MCP and gateway child
+processes over synthetic loopback. Owner-issued authority and protocol/watchdog integration remain
+unverified.
 
 Remaining work is the cross-repository protocol/watchdog conformance, full crash/privacy/
 telemetry/replay evidence, independent review, legacy differential measurements and the separately

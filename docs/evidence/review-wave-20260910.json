@@ -62,7 +62,7 @@
     "The MCP Runtime-v2 mapper now optionally forwards a bounded workflow boot epoch to the gateway authority boundary.",
     "The served SQLite store now explicitly enables WAL, synchronous=FULL and foreign-key pragmas, with direct management coverage.",
     "Durable management command admission now serializes unresolved commands across independent SQLite connections and returns typed pending to the later caller.",
-    "Authoritative reconciliation now replaces provisional Accepted/Unknown transport evidence for the same operation, and direct Settled receipts are idempotent; explicitly built gateway/MCP/harness composition tests cover the recovery boundary."
+    "Authoritative reconciliation now replaces provisional Accepted/Unknown transport evidence for the same operation, and direct Settled receipts are idempotent; explicitly built gateway/MCP/harness child-process composition tests cover the synthetic recovery boundary."
   ],
   "acceptance": "held; this wave is independent D1 review evidence and does not close the D3/G6 gate"
 }

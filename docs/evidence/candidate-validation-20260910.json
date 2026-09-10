@@ -32,6 +32,11 @@
     "durable_command_admission": "passed; independent SQLite connections return typed pending for a second command while the first command is in flight and leave the durable run revision unchanged",
     "authoritative_recovery_boundary": "passed; authoritative reconciliation replaces provisional Accepted/Unknown transport evidence for the same operation, and direct Settled receipts are idempotent"
   },
+  "executable_process_composition": {
+    "processes": ["sts2-gateway", "sts2-mcp-server", "sts2-harness-runtime"],
+    "scope": "candidate gateway and MCP child processes over synthetic loopback fixtures; REST tests include synthetic and native-shaped selector IDs",
+    "status": "passed; owner-issued authority flow, protocol/watchdog integration and native compatibility remain unverified"
+  },
   "gateway_candidate": {
     "commit": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
     "base": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0",

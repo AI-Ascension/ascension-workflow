@@ -37,8 +37,9 @@ The MCP candidate is `16ca0cb06dc93564c14963bc544bef282b38d26d`, based on
 advertises the optional bounded `workflow_boot_epoch` on the three Runtime-v2
 tools, forwards it as `x-sts2-workflow-boot-epoch`, and rejects malformed values
 before gateway access. It passed strict policy, format, Clippy, and the full
-workspace suite. This is an isolated boundary candidate; it does not prove a
-live MCP-to-gateway process or owner-issued authority flow.
+workspace suite. The explicitly built composition checks below also run the
+candidate MCP server and gateway as child processes over synthetic loopback; they
+do not prove owner-issued authority flow or protocol/watchdog integration.
 
 The following harness checks passed on the integrated candidate:
 
@@ -51,9 +52,9 @@ The following harness checks passed on the integrated candidate:
 - the targeted management suites passed: 6 management tests and 5 SQLite
   management tests, including independent-connection serialization of an
   unresolved command
-- the explicitly built gateway/MCP/harness process composition tests passed: 1
-  standard expert composition test, 1 synthetic REST selector chain and 1
-  native-shaped REST selector chain
+- the explicitly built gateway/MCP/harness child-process composition tests
+  passed: 1 standard expert composition test, 1 synthetic REST selector chain
+  and 1 native-shaped REST selector chain
 - the Rust delivery conformance driver required `valid:true` for all 13 catalog
   definitions, rejected the missing-map capability case with a structured
   diagnostic, and exercised authenticated run/status/events, pause/resume/step,
@@ -110,9 +111,9 @@ above supersedes its “not implemented” product table and missing-toolchain n
 ## Remaining gates
 
 - D2/D3 independent review and exact hierarchy evidence remain unavailable.
-- Cross-repository MCP/protocol/watchdog conformance is not complete; the
-  harness, gateway and isolated MCP mapping candidates were built and tested,
-  while protocol/watchdog integration remains open.
+- Cross-repository MCP/protocol/watchdog conformance is not complete; synthetic
+  MCP-to-gateway child-process composition passed, while owner-issued authority
+  and protocol/watchdog integration remain open.
 - Full crash/fault matrix, independent adversarial review, legacy differential
   measurements, redacted telemetry integration and complete offline replay
   artifact retention still require additional evidence.

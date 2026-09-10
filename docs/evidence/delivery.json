@@ -19,7 +19,7 @@
   "candidate_lock": "integration/candidate-lock.json",
   "catalog_definition_count": 13,
   "conformance_driver": "tools/conformance-driver",
-  "conformance_status": "synthetic loopback process driver passed catalog validity, capability-negative, restart-aware management, typed safely-resumable recovery admission before and after restart, offline replay and redacted export assertions; the harness management component also passed independent-connection durable command admission and authoritative recovery-boundary checks; explicitly built gateway/MCP/harness composition tests passed",
+  "conformance_status": "synthetic loopback process driver passed catalog validity, capability-negative, restart-aware management, typed safely-resumable recovery admission before and after restart, offline replay and redacted export assertions; the harness management component also passed independent-connection durable command admission and authoritative recovery-boundary checks; explicitly built gateway/MCP/harness child-process composition tests passed",
   "ci_state": "No status checks configured or observed; no product CI pass claimed",
   "merged": false,
   "released": false,

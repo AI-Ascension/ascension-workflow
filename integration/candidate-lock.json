@@ -35,7 +35,7 @@
         "SQLite service/runtime restart and tampered-event replay tests",
         "process conformance assertion for bounded safely-resumable recovery admission",
         "independent-connection command admission test returns typed pending while a prior command is unresolved",
-        "executable gateway/MCP/harness composition: standard expert and synthetic/native-shaped REST selector chains"
+        "executable gateway/MCP/harness child-process composition: standard expert and synthetic/native-shaped REST selector chains"
       ],
       "publication": "draft PR https://github.com/AI-Ascension/sts2-harness/pull/52; not merged to main"
     },
@@ -90,7 +90,7 @@
     "D2/D3 native recursive delegation was unavailable and is recorded in orchestration evidence.",
     "The candidate lock does not claim a merge, release, deployment, installation, or native compatibility.",
     "The default served profile uses durable SQLite management/runtime state but remains synthetic; live ports remain capability-gated.",
-    "The MCP authority-forwarding candidate is tested in isolation; no live MCP-to-gateway process conformance or owner-issued boot/lease authority issuance is claimed.",
+    "The MCP authority-forwarding candidate's owner-issued boot/lease authority issuance and protocol/watchdog integration remain unverified; the executable composition tests cover only synthetic loopback MCP-to-gateway child processes.",
     "The executable composition fixtures exercise synthetic boundary processes and native-shaped selector IDs; they do not establish native game compatibility or the complete real-process fault and authority matrix."
   ]
 }
