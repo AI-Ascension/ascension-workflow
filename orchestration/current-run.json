@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "candidate_validation_and_delivery",
-  "captured_at": "2026-09-10T10:03:26Z",
+  "captured_at": "2026-09-10T10:07:53Z",
   "root": "/root",
   "requested_descendant_model": "gpt-5.6-luna",
   "requested_descendant_effort": "max",

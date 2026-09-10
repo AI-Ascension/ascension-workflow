@@ -14,7 +14,7 @@
   "draft_pr": "https://github.com/AI-Ascension/ascension-workflow/pull/2",
   "draft_state_verified": true,
   "draft_assignee_verified": "CompleteDotTech",
-  "content_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+  "content_commit": "c4bd3b214a96729ded46437d02a858b3bf38f8fa",
   "content_commit_scope": "First-party STS2 catalog, restart-aware conformance driver, and Phase 1 delivery evidence candidate",
   "candidate_lock": "integration/candidate-lock.json",
   "catalog_definition_count": 13,
