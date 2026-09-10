@@ -179,7 +179,7 @@ fn exercise_process(
         .map_err(|error| format!("wait for service restart: {error}"))?;
     *server = start_server(&arguments.binary, address, store)?;
     wait_for_health(address, server)?;
-    let _ = run_cli(
+    let status = run_cli(
         &arguments.binary,
         &[
             "status",
@@ -192,6 +192,7 @@ fn exercise_process(
             "synthetic",
         ],
     )?;
+    assert_safely_resumable_status(&status)?;
     let _ = run_cli(
         &arguments.binary,
         &[
@@ -341,14 +342,28 @@ fn json_bool(body: &str, key: &str) -> Result<bool, String> {
 }
 
 fn assert_safely_resumable_status(body: &str) -> Result<(), String> {
-    if body.contains("\"recovery_admission\":{")
-        && body.contains("\"kind\":\"safely_resumable\"")
-        && body.contains("\"capability\":\"synthetic.workflow.resume.v1\"")
+    let marker = "\"recovery_admission\":{";
+    let start = body
+        .find(marker)
+        .map(|index| index + marker.len())
+        .ok_or("status did not expose typed recovery admission")?;
+    let object = body
+        .get(start..)
+        .and_then(|value| value.split_once('}'))
+        .map(|(value, _)| value)
+        .ok_or("status had an unterminated recovery admission object")?;
+    if !object.contains("\"kind\":\"safely_resumable\"")
+        || !object.contains("\"capability\":\"synthetic.workflow.resume.v1\"")
     {
-        Ok(())
-    } else {
-        Err("status did not expose the typed safely-resumable admission".to_owned())
+        return Err("status did not expose the typed safely-resumable admission".to_owned());
     }
+    if ["cursor", "action", "operation", "provider", "authority"]
+        .iter()
+        .any(|field| object.contains(&format!("\"{field}\"")))
+    {
+        return Err("recovery admission exposed mutation or provider authority".to_owned());
+    }
+    Ok(())
 }
 
 fn http_status(
