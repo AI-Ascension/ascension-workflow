@@ -9,7 +9,7 @@
   "task_ledger_ref": "orchestration/tasks.json",
   "requirement_ledger_ref": "quality/requirements.json",
   "active_agents": [],
-  "write_leases": ["orchestration/current-run.json"],
+  "write_leases": [],
   "pending_commands": [],
   "pending_external_operations": [],
   "candidate_branches": [
@@ -18,7 +18,7 @@
       "branch": "codex/phase1-preflight-20260909",
       "base_commit": "20bb8fe06708ae70666711fc975baf475d827c2a",
       "head_before_delivery_edits": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
-      "head": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "head": "6772cbf69efa7d7f6ba0c19a5eff4c3781cfcf8c",
       "kind": "delivery_candidate"
     },
     {

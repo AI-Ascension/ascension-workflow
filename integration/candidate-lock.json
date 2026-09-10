@@ -5,7 +5,7 @@
   "delivery_repository": {
     "repository": "AI-Ascension/ascension-workflow",
     "branch": "codex/phase1-preflight-20260909",
-    "commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+    "commit": "6772cbf69efa7d7f6ba0c19a5eff4c3781cfcf8c",
     "base": "20bb8fe06708ae70666711fc975baf475d827c2a",
     "claim": "catalog and delivery artifacts are present on this local candidate"
   },

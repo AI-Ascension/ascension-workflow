@@ -57,14 +57,14 @@
       "repository": "AI-Ascension/sts2-harness",
       "branch": "codex/workflow-integration-20260910",
       "paths": ["crates/harness/src/workflow/", "crates/harness/src/execution/", "crates/harness/src/management/", "crates/harness/tests/"],
-      "status": "integrated_local_candidate",
+      "status": "closed_integrated_local_candidate",
       "commit": "30ae44e814b1bf16a73b1f3253a3cf555ac5bce6"
     },
     {
       "repository": "AI-Ascension/ascension-workflow",
       "branch": "codex/phase1-preflight-20260909",
       "paths": ["orchestration/", "integration/", "docs/", "quality/", "conformance/", "tools/"],
-      "status": "root_delivery_lease",
+      "status": "closed_root_delivery_lease",
       "commit_before_delivery": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
     }
   ],
