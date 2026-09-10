@@ -81,7 +81,7 @@
         "Baseline drift and overlapping PRs documented without duplicating work."
       ],
       "write_lease": null,
-      "candidate_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -130,7 +130,7 @@
         "Substantive deliverable layout, approved standards, and linked tracking issue established."
       ],
       "write_lease": null,
-      "candidate_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -174,7 +174,7 @@
         "Semantics, durability, authority, dynamic, API and privacy decisions recorded."
       ],
       "write_lease": null,
-      "candidate_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -927,7 +927,7 @@
         "Strict/dynamic combat and map paths preserve authority/capability boundaries."
       ],
       "write_lease": null,
-      "candidate_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json",
@@ -980,7 +980,7 @@
         "Blocked modals, supported selection and terminal states are tested."
       ],
       "write_lease": null,
-      "candidate_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json",
@@ -1134,7 +1134,7 @@
         "Synthetic sentinel/private/hidden data excluded from every export surface."
       ],
       "write_lease": null,
-      "candidate_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -1235,7 +1235,7 @@
         "Exact producer artifact digests and candidate source heads are bound."
       ],
       "write_lease": null,
-      "candidate_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json",
@@ -1338,7 +1338,7 @@
         "Actual requested/accepted/observed model settings and parentage are not conflated."
       ],
       "write_lease": null,
-      "candidate_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -1436,7 +1436,7 @@
         "Exact native support/failure domains recorded; unavailable permission remains blocked."
       ],
       "write_lease": null,
-      "candidate_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -1488,7 +1488,7 @@
         "No phase-2/browser feature or unsupported live-recovery claim."
       ],
       "write_lease": null,
-      "candidate_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -1537,7 +1537,7 @@
         "No test weakening, broad cleanup or unrelated code changes."
       ],
       "write_lease": null,
-      "candidate_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -1586,7 +1586,7 @@
         "Every requirement has implementation/evidence or a precise blocker, and agents are closed."
       ],
       "write_lease": null,
-      "candidate_commit": "ec5a554ab6c39c59d04f4bc37e9fff97f0e3e127",
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"

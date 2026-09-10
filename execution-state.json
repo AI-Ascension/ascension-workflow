@@ -2,7 +2,7 @@
   "schema_version": 1,
   "status": "integrated_candidate_validation",
   "root_agent_id": "/root",
-  "captured_at": "2026-09-10T10:11:35Z",
+  "captured_at": "2026-09-10T10:37:50Z",
   "resume_evidence_ref": "docs/evidence/EXECUTION_REPORT.md",
   "source_lock_ref": "integration/source-lock-20260910.json",
   "integration_lock_ref": "integration/candidate-lock.json",
@@ -18,7 +18,7 @@
       "branch": "codex/phase1-preflight-20260909",
       "base_commit": "20bb8fe06708ae70666711fc975baf475d827c2a",
       "head_before_delivery_edits": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
-      "head": "c4bd3b214a96729ded46437d02a858b3bf38f8fa",
+      "head": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "kind": "delivery_candidate"
     },
     {
@@ -47,7 +47,7 @@
     "https://github.com/AI-Ascension/ascension-workflow/issues/1",
     "https://github.com/AI-Ascension/ascension-workflow/pull/2"
   ],
-  "last_verified_gate": "harness strict policy, format, clippy, full tests, authenticated catalog process conformance, and isolated MCP mapping checks",
+  "last_verified_gate": "harness strict policy, format, clippy, full tests, authenticated catalog process conformance with typed recovery admission before and after restart, and isolated MCP mapping checks",
   "next_tasks": ["T22", "T23", "T25", "T26", "T27", "T28", "T30", "T31"],
   "blockers": [
     {
