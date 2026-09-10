@@ -9,14 +9,15 @@ ledgers. The exact revisions and publication limits are recorded in
 [`integration/candidate-lock.json`](../../integration/candidate-lock.json) and
 [`integration/source-lock-20260910.json`](../../integration/source-lock-20260910.json).
 
-The harness candidate is `9c281717ed257476b179f186ee3d174b8a5cf0f2`, based on
+The harness candidate is `30ae44e814b1bf16a73b1f3253a3cf555ac5bce6`, based on
 refreshed default head `33437ddb18f69f68d88521d947efa3568a32a3bf`. It contains
 the current owner recovery and telemetry implementation integrated with the
 workflow-v1 decoder, typed definitions, canonical compiler/artifact boundary,
 three-valued guards, strict reducer, bounded dynamic plan registry/runtime,
 provider and budget boundaries, durable workflow event/invocation storage,
 protected episode ports, authenticated loopback management API, `sts2-workflow`
-CLI, and the synthetic management adapter. Served management now uses a
+CLI, the synthetic management adapter, and a typed recovery-admission status
+contract for supervision consumers. Served management now uses a
 transactional SQLite store with a durable synthetic runtime snapshot; persisted
 events carry integrity seals and offline replay rejects tampering. The management
 export applies a bounded redaction projection and has sentinel coverage.
@@ -46,8 +47,10 @@ The following harness checks passed on the integrated candidate:
 - the Rust delivery conformance driver required `valid:true` for all 13 catalog
   definitions, rejected the missing-map capability case with a structured
   diagnostic, and exercised authenticated run/status/events, pause/resume/step,
-  offline replay with tamper rejection, durable served-management restart, and the
-  redacted export path
+  typed safely-resumable recovery admission, offline replay with tamper rejection,
+  durable served-management restart, and the redacted export path. The recovery
+  admission object exposes only a bounded kind/capability result and carries no
+  workflow cursor, action identity or provider output.
 
 The integrated full-suite run passed after clearing stale task-generated temporary
 build artifacts that had filled `/tmp` and caused two 16 MiB corruption fixtures

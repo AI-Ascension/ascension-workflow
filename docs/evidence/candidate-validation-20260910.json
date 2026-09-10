@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date": "2026-09-10",
   "harness_repository": "AI-Ascension/sts2-harness",
-  "harness_commit": "9c281717ed257476b179f186ee3d174b8a5cf0f2",
+  "harness_commit": "30ae44e814b1bf16a73b1f3253a3cf555ac5bce6",
   "harness_base": "33437ddb18f69f68d88521d947efa3568a32a3bf",
   "commands": [
     {"command": "cargo fmt --all --check", "exit_code": 0},
@@ -19,6 +19,7 @@
     "negative_required_capability": "passed",
     "authenticated_loopback_run": "passed",
     "status_events_pause_resume_step": "passed",
+    "typed_recovery_admission": "passed; process status exposes safely_resumable with synthetic.workflow.resume.v1 and the typed recovery object carries no cursor, action or provider fields",
     "offline_replay": "passed; tampered persisted event rejected",
     "redacted_export": "passed; export response is bounded and contains no serialized operation identifier",
     "served_management_restart": "passed; SQLite store and synthetic runtime snapshot restored after service restart",
@@ -44,6 +45,19 @@
   "orchestration": {
     "d2_d3_observed": false,
     "reason": "native collaboration tools unavailable in D1 environments",
+    "fresh_d1_probe": {
+      "agent_id": "01a08ad5-4011-72c1-8396-7a0e1a0dd680",
+      "requested_model": "gpt-5.6-luna",
+      "requested_effort": "max",
+      "d2_d3_spawned": false,
+      "delegation_tool_observed": false,
+      "result": "read-only probe; no source changes",
+      "findings": [
+        "current harness serve path remains SQLite-backed synthetic management/runtime",
+        "restart and tamper evidence remains synthetic process evidence",
+        "no descendant model, effort or parentage evidence was available"
+      ]
+    },
     "independent_review": false,
     "review_wave": "docs/evidence/review-wave-20260910.json"
   }

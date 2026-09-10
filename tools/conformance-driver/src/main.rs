@@ -123,7 +123,7 @@ fn exercise_process(
         ],
     )?;
     let run_id = json_string(&run_response, "workflow_run_id")?;
-    let _ = run_cli(
+    let status = run_cli(
         &arguments.binary,
         &[
             "status",
@@ -136,6 +136,7 @@ fn exercise_process(
             "synthetic",
         ],
     )?;
+    assert_safely_resumable_status(&status)?;
     let _ = run_cli(
         &arguments.binary,
         &[
@@ -336,6 +337,17 @@ fn json_bool(body: &str, key: &str) -> Result<bool, String> {
         Ok(false)
     } else {
         Err(format!("JSON response field {key} is not boolean"))
+    }
+}
+
+fn assert_safely_resumable_status(body: &str) -> Result<(), String> {
+    if body.contains("\"recovery_admission\":{")
+        && body.contains("\"kind\":\"safely_resumable\"")
+        && body.contains("\"capability\":\"synthetic.workflow.resume.v1\"")
+    {
+        Ok(())
+    } else {
+        Err("status did not expose the typed safely-resumable admission".to_owned())
     }
 }
 

@@ -25,7 +25,7 @@
       "repository": "AI-Ascension/sts2-harness",
       "branch": "codex/workflow-integration-20260910",
       "base_commit": "33437ddb18f69f68d88521d947efa3568a32a3bf",
-      "head": "9c281717ed257476b179f186ee3d174b8a5cf0f2",
+      "head": "30ae44e814b1bf16a73b1f3253a3cf555ac5bce6",
       "kind": "integrated_component_candidate"
     },
     {
