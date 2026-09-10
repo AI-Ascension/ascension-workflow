@@ -1,0 +1,17 @@
+test_distributed_package_is_valid (test_verify_package.PackageTests.test_distributed_package_is_valid) ... ok
+test_duplicate_json_keys_rejected (test_verify_package.PackageTests.test_duplicate_json_keys_rejected) ... ok
+test_minimal_tampered_payload_is_detected (test_verify_package.PackageTests.test_minimal_tampered_payload_is_detected) ... ok
+test_missing_manifest_is_failure (test_verify_package.PackageTests.test_missing_manifest_is_failure) ... ok
+test_nonfinite_json_rejected (test_verify_package.PackageTests.test_nonfinite_json_rejected) ... ok
+test_pending_operation_not_safely_terminal (test_verify_package.PackageTests.test_pending_operation_not_safely_terminal) ... ok
+test_positive_workflow_and_plan_seeds (test_verify_package.PackageTests.test_positive_workflow_and_plan_seeds) ... ok
+test_task_cycle_detected (test_verify_package.PackageTests.test_task_cycle_detected) ... ok
+test_traceability_is_complete (test_verify_package.PackageTests.test_traceability_is_complete) ... ok
+test_unbounded_workflow_cycle_rejected (test_verify_package.PackageTests.test_unbounded_workflow_cycle_rejected) ... ok
+test_unknown_task_dependency_detected (test_verify_package.PackageTests.test_unknown_task_dependency_detected) ... ok
+test_unsafe_paths_rejected (test_verify_package.PackageTests.test_unsafe_paths_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.015s
+
+OK

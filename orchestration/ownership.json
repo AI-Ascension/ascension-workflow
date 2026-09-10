@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "root_integration_owner": "/root",
+  "write_scope": [
+    "delivery repository catalog, contract artifacts, conformance, integration locks, evidence and metadata ledgers",
+    "harness isolated workflow/runtime/management candidate in codex/workflow-integration-20260910",
+    "gateway isolated authority candidate in codex/workflow-authority-integration"
+  ],
+  "read_only_scope": [
+    "AI-Ascension/sts2-harness",
+    "AI-Ascension/.github",
+    "AI-Ascension/sts2-gateway",
+    "AI-Ascension/sts2-mcp-server",
+    "AI-Ascension/sts2-protocol",
+    "AI-Ascension/sts2-game-mod",
+    "AI-Ascension/ascension-watchdog",
+    "AI-Ascension/ai-agent-observability"
+  ],
+  "active_leases": [
+    {
+      "repository": "AI-Ascension/ascension-workflow",
+      "branch": "codex/phase1-preflight-20260909",
+      "paths": ["docs/", "integration/", "orchestration/", "quality/", "conformance/", "tools/"],
+      "owner": "/root",
+      "status": "delivery_evidence"
+    }
+  ],
+  "completed_preparation_lease": {
+    "owner": "/root",
+    "base_commit": "20bb8fe06708ae70666711fc975baf475d827c2a",
+    "branch": "codex/phase1-preflight-20260909",
+    "scope": "Delivery catalog, contract artifact, conformance driver and current evidence update",
+    "status": "active_root_delivery",
+    "independent_review": "blocked; no D3 review occurred"
+  },
+  "descendant_source_write_leases_granted": [],
+  "contracts_frozen": true,
+  "independent_reviewer": null
+}

@@ -1,0 +1,5 @@
+PASS: strict JSON, local links, bounded Markdown, preparation privacy/source inventory
+PASS: 90 preserved WF/AT assertions, 32 original dependency-ordered tasks, 40 preserved fault cases
+PASS: no complete requirements/tasks, fabricated D3 IDs, or product acceptance passes
+PASS: bounded attestation fields, 74 exact archive members, archive and command-log digests
+Scope: root preparation checks only; no product or independent D3 verification

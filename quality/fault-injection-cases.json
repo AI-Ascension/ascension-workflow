@@ -1,0 +1,686 @@
+{
+  "schema_version": 1,
+  "status": "required_cases_not_executed",
+  "cases": [
+    {
+      "id": "FI-001",
+      "boundary": "Before intent commit",
+      "injection": "Store fails commit",
+      "expected": "No external send; typed storage failure; budget not falsely consumed.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-002",
+      "boundary": "After intent commit before send",
+      "injection": "Kill harness",
+      "expected": "Treat send as uncertain unless there is reliable external no-send proof; reconcile same operation.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-003",
+      "boundary": "Immediately after send before sent marker",
+      "injection": "Kill harness",
+      "expected": "Original operation remains pending; no replacement mutation.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-004",
+      "boundary": "After gateway admission before host effect",
+      "injection": "Lose connection",
+      "expected": "Accepted is not settled; reconcile/await original operation.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-005",
+      "boundary": "After host effect before receipt delivery",
+      "injection": "Drop receipt",
+      "expected": "Recover correlated retained receipt; do not reapply effect.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-006",
+      "boundary": "After receipt received before journal update",
+      "injection": "Kill harness",
+      "expected": "Reconcile original operation and commit once.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-007",
+      "boundary": "During completion transaction",
+      "injection": "Abort database transaction",
+      "expected": "No split cursor/receipt completion; recover from prior committed state.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-008",
+      "boundary": "After completion commit before client response",
+      "injection": "Drop API connection",
+      "expected": "Duplicate command lookup returns durable state; no repeated effect.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-009",
+      "boundary": "Provider intent before output",
+      "injection": "Timeout provider",
+      "expected": "Retain conservative cost reservation and explicit request uncertainty.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-010",
+      "boundary": "Provider result after observation changed",
+      "injection": "Deliver delayed output",
+      "expected": "Reject stale decision before dispatch.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-011",
+      "boundary": "Plan accepted before first node",
+      "injection": "Kill harness",
+      "expected": "Resume exact persisted plan without replanning/provider call by default.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-012",
+      "boundary": "Plan superseded during analysis",
+      "injection": "Deliver late old results",
+      "expected": "Old plan revision cannot feed outer execute node.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-013",
+      "boundary": "Read-only analysis parallel join",
+      "injection": "Reverse completion ordering",
+      "expected": "Stable declared output ordering; no race-selected strategy.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-014",
+      "boundary": "Nested loop checkpoint",
+      "injection": "Kill/restart repeatedly",
+      "expected": "Iteration/depth/replan budgets never reset.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-015",
+      "boundary": "Pending mutation during pause",
+      "injection": "Request pause",
+      "expected": "Close admission but continue required reconciliation.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-016",
+      "boundary": "Pending mutation during cancel",
+      "injection": "Request cancel",
+      "expected": "No safe-cancelled claim while effect remains unresolved.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-017",
+      "boundary": "Primary dispatch and cleanup failure",
+      "injection": "Fail both adapters",
+      "expected": "Preserve both errors and original operation identity.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-018",
+      "boundary": "Two control clients",
+      "injection": "Same ID different payload / stale revision",
+      "expected": "Conflict and no double command application.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-019",
+      "boundary": "Two workflow runs one instance",
+      "injection": "Concurrent execute nodes",
+      "expected": "At most one admitted pending mutation; other run waits/conflicts safely.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-020",
+      "boundary": "Two harness processes",
+      "injection": "Both claim the same run",
+      "expected": "Store ownership plus downstream fence prevent conflicting mutation authority.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-021",
+      "boundary": "Gateway restart",
+      "injection": "Change durable boot epoch",
+      "expected": "Old authority is rejected; explicit recovery handoff or NeedsOperator.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-022",
+      "boundary": "Host restart with lost receipts",
+      "injection": "Lookup original operation",
+      "expected": "Unsupported recovery/NeedsOperator; fresh generation is not evidence of old effect.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-023",
+      "boundary": "Receipt retention expired",
+      "injection": "Return expired/missing",
+      "expected": "Do not reissue action or infer no effect.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-024",
+      "boundary": "Mismatched operation receipt",
+      "injection": "Return another operation/instance/epoch",
+      "expected": "Reject receipt; preserve uncertainty.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-025",
+      "boundary": "Database disk full",
+      "injection": "Fail write before and after dispatch",
+      "expected": "No unjournaled new work; preserve pending effect recovery.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-026",
+      "boundary": "Database corrupt or newer schema",
+      "injection": "Open invalid store",
+      "expected": "Quarantine/reject; no empty-ledger reset or destructive downgrade.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-027",
+      "boundary": "Filesystem or sync mode unsupported",
+      "injection": "Reject WAL/FULL/local setting",
+      "expected": "Fail durable-mode admission or select explicitly approved tested alternative; no false durability claim.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-028",
+      "boundary": "Telemetry sink outage",
+      "injection": "Stop sink / overflow queue",
+      "expected": "Bounded loss reporting; authoritative journal remains usable.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-029",
+      "boundary": "Slow/disconnected event client",
+      "injection": "Backpressure and reconnect",
+      "expected": "No gameplay blocking; cursor replay or explicit retention gap.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-030",
+      "boundary": "Clock across reboot",
+      "injection": "Reset monotonic epoch / wall jump",
+      "expected": "Timeout accounting remains conservative; no negative or reset budget.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-031",
+      "boundary": "Hidden fields and secret sentinels",
+      "injection": "Inject into every untrusted surface",
+      "expected": "No prohibited data in provider context or logs/exports/telemetry.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-032",
+      "boundary": "Malicious plan/definition",
+      "injection": "Script/provider/policy/authority fields",
+      "expected": "Reject before external effects.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-033",
+      "boundary": "Definition/artifact changed in place",
+      "injection": "Digest conflict",
+      "expected": "Reject incompatible version; existing run stays pinned.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-034",
+      "boundary": "Unknown stage or blocked modal",
+      "injection": "Unexpected observation",
+      "expected": "Bounded reobserve or NeedsOperator; no guessed click-through.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-035",
+      "boundary": "Missing map/expert/co-op capability",
+      "injection": "Request optional analysis",
+      "expected": "Explicit unavailable/fallback; no hidden/native capability inference.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-036",
+      "boundary": "Offline replay missing artifact",
+      "injection": "Remove exact definition/input",
+      "expected": "Explicit missing-data error, zero provider/game calls.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-037",
+      "boundary": "Operator command tries skip/force-settle",
+      "injection": "Submit malicious command",
+      "expected": "Typed rejection; unknown effect cannot be manually relabeled by unauthenticated or unsupported command.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-038",
+      "boundary": "Artifact export path escape",
+      "injection": "Traversal/symlink/absolute unsafe path",
+      "expected": "No write outside approved destination; no credential exposure.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-039",
+      "boundary": "Shutdown while analysis/stream tasks active",
+      "injection": "Cancel parent and join",
+      "expected": "Bounded owned shutdown; no orphan task or released mutation identity.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    },
+    {
+      "id": "FI-040",
+      "boundary": "Repeated identical replans",
+      "injection": "Return same no-progress plan",
+      "expected": "Bounded halt/fallback with budgets retained.",
+      "profile": "synthetic_real_store_and_processes",
+      "status": "blocked",
+      "evidence_refs": [],
+      "blocker_refs": [
+        "B-001",
+        "B-002",
+        "B-003",
+        "B-005"
+      ],
+      "owner_workstream": "WS-G",
+      "requirement_mapping_status": "pending implementation source and contract admission"
+    }
+  ]
+}

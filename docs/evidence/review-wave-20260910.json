@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-10",
+  "candidate_harness": "5deb48e3dd2c275d3cc7ae2c0ad5c75840c42b20",
+  "current_candidate_harness": "6e0272511997165ebba337a15d22f73acd36a4c4",
+  "review_scope": "Reviewers inspected candidate_harness and candidate_gateway; current component candidates contain the listed post-review changes and have not received a new independent D3 review.",
+  "candidate_gateway": "e5543403e7ac0fa13929c296adfab877bea4212a",
+  "current_candidate_gateway": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
+  "candidate_mcp": "73e777b96700917cca5ff8f6ce0f5a72009384bc",
+  "current_candidate_mcp": "16ca0cb06dc93564c14963bc544bef282b38d26d",
+  "reviewers": [
+    {
+      "agent_id": "01a08a73-7e1c-75b2-9d48-08a31cf3b3aa",
+      "lane": "harness runtime and management",
+      "requested_model": "gpt-5.6-luna",
+      "requested_effort": "max",
+      "result": "hold",
+      "findings": [
+        "serve still uses the synthetic process adapter and process-local runtime map",
+        "strict and dynamic component paths do not prove the protected live action kernel",
+        "command failure recovery and tamper-evident replay remain incomplete",
+        "redacted export now has a sentinel test, but complete privacy evidence is still open"
+      ]
+    },
+    {
+      "agent_id": "01a08a73-7f81-7c71-9f6c-0d67a7adb06f",
+      "lane": "gateway authority boundary",
+      "requested_model": "gpt-5.6-luna",
+      "requested_effort": "max",
+      "result": "hold",
+      "findings": [
+        "live service routes are not yet wired to owner-issued recovery authority",
+        "boot and lease issuance remain process-local and declarative",
+        "uncertain receipt admission, expiry and cross-process fencing need real-process evidence"
+      ]
+    },
+    {
+      "agent_id": "01a08a73-8102-7bb1-9c08-43570f0a5b0d",
+      "lane": "delivery privacy and conformance",
+      "requested_model": "gpt-5.6-luna",
+      "requested_effort": "max",
+      "result": "hold",
+      "findings": [
+        "the conformance driver previously discarded positive validation responses; it now asserts valid:true",
+        "the conformance driver now exercises and checks redacted export output",
+        "telemetry, full fault cases, exact cross-repository conformance and independent D3 review remain open"
+      ]
+    }
+  ],
+  "hierarchy": {
+    "d2_spawned": false,
+    "d3_spawned": false,
+    "reason": "review environments exposed no callable recursive delegation tool",
+    "independent_d3_review": false
+  },
+  "post_review_changes": [
+    "The served CLI now opens a SQLite-backed management store instead of the JSON fixture store.",
+    "The synthetic runtime persists its definition, snapshot and cancellation state and restores them after service restart.",
+    "Persisted run events carry integrity seals and offline replay rejects tampered events.",
+    "The conformance driver and delivery evidence now exercise positive validation and bounded redacted export.",
+    "The management status contract now exposes bounded typed recovery admission; the delivery process driver asserts safely-resumable capability without cursor/action fields.",
+    "The MCP Runtime-v2 mapper now optionally forwards a bounded workflow boot epoch to the gateway authority boundary.",
+    "The served SQLite store now explicitly enables WAL, synchronous=FULL and foreign-key pragmas, with direct management coverage.",
+    "Durable management command admission now serializes unresolved commands across independent SQLite connections and returns typed pending to the later caller.",
+    "Authoritative reconciliation now replaces provisional Accepted/Unknown transport evidence for the same operation, and direct Settled receipts are idempotent; explicitly built gateway/MCP/harness child-process composition tests cover the synthetic recovery boundary."
+  ],
+  "acceptance": "held; this wave is independent D1 review evidence and does not close the D3/G6 gate"
+}

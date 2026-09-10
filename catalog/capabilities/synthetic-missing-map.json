@@ -1,0 +1,31 @@
+{
+  "schema_version": "ascension.capabilities/v1",
+  "producer": "runtime.synthetic.sts2",
+  "profile": "sts2-synthetic-v1",
+  "artifact_digest": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "instance_id": "instance.synthetic.no-map",
+  "boot_epoch": "boot.synthetic.3",
+  "capabilities": [
+    "observe.fair-play.v1",
+    "actions.catalog.v1",
+    "actions.settlement.v1",
+    "authority.generation-fence.v1",
+    "actions.setup.v1",
+    "actions.combat.v1",
+    "actions.reward.v1",
+    "actions.shop.v1",
+    "actions.event.v1",
+    "actions.rest.v1",
+    "actions.selection.v1",
+    "operations.reconcile.v1",
+    "terminal.observation.v1"
+  ],
+  "recovery": {
+    "harness_restart": true,
+    "gateway_restart": false,
+    "host_restart": false,
+    "machine_reboot": false,
+    "receipt_retention_seconds": 3600
+  },
+  "evidence_scope": "synthetic"
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-09",
+  "client_version": "codex-cli 0.153.4",
+  "root_id": "/root",
+  "identity_kind": "native collaboration canonical task name",
+  "requested_model": "gpt-5.6-luna",
+  "requested_effort": "max",
+  "effective_model": null,
+  "effective_effort": null,
+  "configuration_evidence": "Explicit model and reasoning_effort spawn arguments succeeded; responses expose task_name and nickname only.",
+  "lineage": [
+    {"id": "/root/preflight", "parent": "/root", "depth": 1, "nickname": "Darwin"},
+    {"id": "/root/preflight/d2", "parent": "/root/preflight", "depth": 2, "nickname": "Einstein"},
+    {"id": "/root/preflight/d2/d3", "parent": "/root/preflight/d2", "depth": 3, "nickname": "Lorentz"}
+  ],
+  "hierarchy_check": "passed_synthetic_native_delegation",
+  "source_review": "docs/discovery/RESUME_SEAMS.md",
+  "descendant_status": "completed",
+  "model_attestation": "configuration_only",
+  "d3_spawning": "prohibited by packet; no D4 attempted",
+  "depth_enforcement": "instruction enforced; no hard runtime cap asserted",
+  "peak_descendants": 3,
+  "runtime_ceiling": null,
+  "toolchain": {
+    "cargo_on_path": false,
+    "rustc_on_path": false,
+    "rustup_on_path": false,
+    "installation": "separate authorization requested; pending"
+  },
+  "delivery": {
+    "repository": "AI-Ascension/ascension-workflow",
+    "private": true,
+    "pr": 2,
+    "draft": true,
+    "state": "OPEN",
+    "verified_remote_head": "aa52cfa44a76e415c703c35ee39d1b2c0227c2ea",
+    "authenticated_operator": "CompleteDotTech"
+  },
+  "source_refresh": {
+    "all_eight_default_remote_heads_match_previous_lock": true,
+    "all_eight_local_checkouts_clean": true,
+    "harness_pr_40": "baabf9767264de11e09cd65cc7262ba36664ec2d",
+    "harness_pr_41": "30eaf19ccb5b2ed118b5cf1baaef3793a408f499",
+    "harness_pr_45": "f9b99184bdf74511345b4f54dbd2d8822c7ff681",
+    "pr_41_fetched": true,
+    "candidate_integrated": false
+  },
+  "preparation_validation": {
+    "command": "python3 phase1-run-20260909/verify_preparation.py worktrees/workflow-phase1-preflight",
+    "exit_code": 0,
+    "scope": "root-only JSON, local links, original ledger assertions, archive and existing log digests, whitespace",
+    "limit": "The historical validator checks historical agent attestations; the new lineage is supported by native tool results, not this validator."
+  },
+  "product_validation": "not executed",
+  "documentation_reference": "https://learn.chatgpt.com/docs/agent-configuration/subagents",
+  "documentation_limit": "Documentation is not account-specific effective-model evidence."
+}

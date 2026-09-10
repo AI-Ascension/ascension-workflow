@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "status": "integrated_candidate_validation",
+  "root_agent_id": "/root",
+  "captured_at": "2026-09-10T11:28:50Z",
+  "resume_evidence_ref": "docs/evidence/EXECUTION_REPORT.md",
+  "source_lock_ref": "integration/source-lock-20260910.json",
+  "integration_lock_ref": "integration/candidate-lock.json",
+  "task_ledger_ref": "orchestration/tasks.json",
+  "requirement_ledger_ref": "quality/requirements.json",
+  "active_agents": [],
+  "write_leases": [],
+  "pending_commands": [],
+  "pending_external_operations": [],
+  "candidate_branches": [
+    {
+      "repository": "AI-Ascension/ascension-workflow",
+      "branch": "codex/phase1-preflight-20260909",
+      "base_commit": "20bb8fe06708ae70666711fc975baf475d827c2a",
+      "head_before_delivery_edits": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "head": "d8ea0b4178639406e957df2037ed7100bd466b6d",
+      "kind": "delivery_candidate"
+    },
+    {
+      "repository": "AI-Ascension/sts2-harness",
+      "branch": "codex/workflow-integration-20260910",
+      "base_commit": "33437ddb18f69f68d88521d947efa3568a32a3bf",
+      "head": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "kind": "integrated_component_candidate"
+    },
+    {
+      "repository": "AI-Ascension/sts2-gateway",
+      "branch": "codex/workflow-authority-integration",
+      "base_commit": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0",
+      "head": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
+      "kind": "authority_component_candidate"
+    },
+    {
+      "repository": "AI-Ascension/sts2-mcp-server",
+      "branch": "codex/workflow-authority-mapping",
+      "base_commit": "73e777b96700917cca5ff8f6ce0f5a72009384bc",
+      "head": "16ca0cb06dc93564c14963bc544bef282b38d26d",
+      "kind": "thin_mapping_component_candidate"
+    }
+  ],
+  "issue_pr_ids": [
+    "https://github.com/AI-Ascension/ascension-workflow/issues/1",
+    "https://github.com/AI-Ascension/ascension-workflow/pull/2"
+  ],
+  "last_verified_gate": "harness strict policy, format, clippy, full tests, authenticated catalog process conformance with typed recovery admission before and after restart, durable per-run command admission, executable gateway/MCP/harness composition, and isolated MCP mapping checks",
+  "next_tasks": ["T22", "T23", "T25", "T26", "T27", "T28", "T30", "T31"],
+  "blockers": [
+    {
+      "id": "B-001",
+      "owner": "runtime/client owner",
+      "reason": "D1 environments exposed no callable native collaboration tools; D2/D3 hierarchy was not created",
+      "status": "active_orchestration_blocker"
+    },
+    {
+      "id": "B-002",
+      "owner": "operator/environment owner",
+      "reason": "resolved: workspace-local Rust 1.97.1, rustfmt and Clippy are installed and verified",
+      "status": "resolved"
+    },
+    {
+      "id": "B-003",
+      "owner": "boundary owners",
+      "reason": "cross-repository MCP/protocol/watchdog candidate conformance is not complete",
+      "status": "active"
+    },
+    {
+      "id": "B-004",
+      "owner": "operator/native owner",
+      "reason": "no native disposable environment or live provider budget is authorized",
+      "status": "active_native_gate"
+    },
+    {
+      "id": "B-005",
+      "owner": "independent review owner",
+      "reason": "no independent D3 reviewer or final G6 review was available",
+      "status": "active_review_gate"
+    }
+  ]
+}

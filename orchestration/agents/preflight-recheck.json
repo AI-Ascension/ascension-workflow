@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "agent_id": "/root/preflight_recheck",
+  "parent_id": "/root",
+  "depth": 1,
+  "role": "workstream_lead",
+  "task_ids": ["T00"],
+  "requested_model": "gpt-5.6-luna",
+  "requested_effort": "max",
+  "accepted_model": null,
+  "accepted_effort": null,
+  "observed_model": null,
+  "observed_effort": null,
+  "evidence_level": "requested_only",
+  "evidence_refs": ["docs/evidence/runtime-recheck.json"],
+  "may_spawn": false
+}

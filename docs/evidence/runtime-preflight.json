@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-09-09T21:16:05.231994+00:00",
+  "client_version": "0.153.4",
+  "source": "Local structured session_meta line 1 and first turn_context line 8; root independently projected allowlisted metadata only",
+  "root": {
+    "agent_path": "/root",
+    "thread_id": "01a087fb-ef18-75e1-8aad-76e0dfcc595b",
+    "parent_thread_id": null,
+    "depth": 0,
+    "observed_model": "gpt-6-astra",
+    "observed_effort": "xhigh"
+  },
+  "d1": {
+    "agent_path": "/root/preflight_lead",
+    "thread_id": "01a087fd-20c6-7e22-8e7a-5db1ca360142",
+    "parent_thread_id": "01a087fb-ef18-75e1-8aad-76e0dfcc595b",
+    "depth": 1,
+    "requested_model": "gpt-5.6-luna",
+    "requested_effort": "max",
+    "accepted_model": null,
+    "accepted_effort": null,
+    "observed_model": "gpt-5.6-luna",
+    "observed_effort": "max",
+    "accepted_field_note": "Spawn returned canonical task name only; no accepted-settings fields",
+    "status": "finished"
+  },
+  "d2": null,
+  "d3": null,
+  "hierarchy_compliant": false,
+  "native_tool_observation": "D1 reports no callable collaboration tools; root child-tool-schema inspection unavailable",
+  "tool_failure": "No D2 spawn call could be issued. No fabricated API error or child ID is recorded.",
+  "depth3_no_spawn_runtime_verification": "not exercised; D3 not launched",
+  "capacity_total": 4,
+  "capacity_descendants": 3,
+  "peak_observed_live_descendants": 1,
+  "capacity_scope": "Configured runtime ceiling, not a saturation or parked-parent test",
+  "configuration_changed": false,
+  "external_agent_processes": false,
+  "official_model_reference": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+  "official_config_reference": "https://learn.chatgpt.com/docs/config-file/config-reference",
+  "limitation": "Official documentation does not establish session/account availability or recursive tool access"
+}

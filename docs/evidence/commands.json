@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "tools/verify_package.py"
+      ],
+      "cwd": "original package root",
+      "exit_code": 0,
+      "source_manifest_sha256": "b427250ee5122afa4a00a105062e0d512882f1ea18a270fa825bdeb69eb18334",
+      "scope": "instruction package only",
+      "status": "passed",
+      "log": "docs/evidence/logs/package-check-1.txt",
+      "sha256": "ee05fc4c269419855233a262ce4c9db0cd8da1c5c799784cd50f9fac67646b78",
+      "executed_at": "2026-09-09T21:16:05.313298+00:00"
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "original package root",
+      "exit_code": 0,
+      "source_manifest_sha256": "b427250ee5122afa4a00a105062e0d512882f1ea18a270fa825bdeb69eb18334",
+      "scope": "instruction package only",
+      "status": "passed",
+      "log": "docs/evidence/logs/package-check-2.txt",
+      "sha256": "bfaa2ab5fa5658e30e25bff2de8fa24b4c367d79f8ccb57bdb6523fe39bf4279",
+      "executed_at": "2026-09-09T21:16:05.392863+00:00"
+    },
+    {
+      "argv": [
+        "python3",
+        "tools/validate_artifacts.py"
+      ],
+      "cwd": "original package root",
+      "exit_code": 2,
+      "source_manifest_sha256": "b427250ee5122afa4a00a105062e0d512882f1ea18a270fa825bdeb69eb18334",
+      "scope": "instruction package only",
+      "status": "skipped",
+      "log": "docs/evidence/logs/package-check-3.txt",
+      "sha256": "827bb0504d63aca82879bf52fdeeba719814f334a8bca885c1e3527bf484b16a",
+      "executed_at": "2026-09-09T21:16:05.424995+00:00"
+    },
+    {
+      "argv": [
+        "cargo",
+        "run",
+        "--locked",
+        "--package",
+        "repo-policy",
+        "--",
+        "--strict"
+      ],
+      "cwd": "AI-Ascension/sts2-harness",
+      "source_commit": "fc44d3ef65fefa6d13ecd5f690e5335a6ef60080",
+      "exit_code": null,
+      "status": "blocked_not_executed",
+      "reason": "Cargo unavailable; no toolchain installed",
+      "scope": "required owner checks, not replaced by archive tests"
+    },
+    {
+      "argv": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--check"
+      ],
+      "cwd": "AI-Ascension/sts2-harness",
+      "source_commit": "fc44d3ef65fefa6d13ecd5f690e5335a6ef60080",
+      "exit_code": null,
+      "status": "blocked_not_executed",
+      "reason": "Cargo unavailable; no toolchain installed",
+      "scope": "required owner checks, not replaced by archive tests"
+    },
+    {
+      "argv": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "cwd": "AI-Ascension/sts2-harness",
+      "source_commit": "fc44d3ef65fefa6d13ecd5f690e5335a6ef60080",
+      "exit_code": null,
+      "status": "blocked_not_executed",
+      "reason": "Cargo unavailable; no toolchain installed",
+      "scope": "required owner checks, not replaced by archive tests"
+    },
+    {
+      "argv": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--locked"
+      ],
+      "cwd": "AI-Ascension/sts2-harness",
+      "source_commit": "fc44d3ef65fefa6d13ecd5f690e5335a6ef60080",
+      "exit_code": null,
+      "status": "blocked_not_executed",
+      "reason": "Cargo unavailable; no toolchain installed",
+      "scope": "required owner checks, not replaced by archive tests"
+    },
+    {
+      "argv": [
+        "python3",
+        "phase1-run-20260909/verify_preparation.py",
+        "worktrees/workflow-phase1-preflight"
+      ],
+      "cwd": "execution workspace",
+      "exit_code": 0,
+      "status": "passed",
+      "scope": "root preparation checks only; not product conformance or independent D3 verification",
+      "script_sha256": "eb7d86ffe4bd4c379f2f3f5d1a4a9adfe2affcff75ff4be1f054c6772f456be6",
+      "script_location": "original execution workspace run directory; not active delivery tooling",
+      "executed_at": "2026-09-09T21:21:58.989Z"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "ascension.sts2.fixtures/v1",
+  "suite_id": "sts2.catalog.phase1",
+  "provenance": {
+    "kind": "synthetic",
+    "generator": "hand-authored-catalog-fixtures",
+    "claims_live_observation": false,
+    "proprietary_data": false,
+    "provider_calls": false,
+    "source_seeds": [
+      "ascension-workflow-phase1-package/examples/workflows/strict-fixture.json",
+      "ascension-workflow-phase1-package/examples/workflows/dynamic-fixture.json"
+    ]
+  },
+  "positive": ["synthetic/stage-suite.json"],
+  "negative": ["negative/admission-and-boundary.json"]
+}

@@ -1,0 +1,8 @@
+/target/
+/tools/conformance-driver/target/
+/.local/
+*.db
+*.db-shm
+*.db-wal
+.env
+__pycache__/

@@ -1,0 +1,13 @@
+[package]
+name = "ascension-conformance-driver"
+version = "0.0.0"
+edition = "2024"
+license = "MIT"
+publish = false
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[[bin]]
+name = "ascension-conformance-driver"
+path = "src/main.rs"

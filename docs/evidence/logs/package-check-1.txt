@@ -1,0 +1,2 @@
+PASS: package inventory, SHA-256, JSON/TOML, task DAG, traceability and local links
+Scope: instruction-package checks only; no product, model, host or deployment proof.

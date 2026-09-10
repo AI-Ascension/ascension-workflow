@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-09",
+  "authorization": "User approved workspace-local Rust 1.97.1, rustfmt and Clippy installation",
+  "source": "https://sh.rustup.rs",
+  "scope": "workspace-local Cargo and rustup homes; no shell profile or global configuration changes",
+  "installation_exit_code": 0,
+  "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)",
+  "cargo": "cargo 1.97.1 (c980f4866 2026-06-30)",
+  "installed_components": ["cargo", "clippy", "rust-std", "rustc", "rustfmt"],
+  "target": "x86_64-unknown-linux-gnu",
+  "harness_baseline": "fc44d3ef65fefa6d13ecd5f690e5335a6ef60080",
+  "policy": {
+    "command": "cargo run --locked --package repo-policy -- --strict",
+    "working_directory": "sts2-harness repository root",
+    "exit_code": 0,
+    "result": "404 sized files; zero warnings; zero errors"
+  },
+  "initial_policy_attempt": {
+    "exit_code": 1,
+    "reason": "Invoked from workspace parent; checker expected policy.toml in current directory",
+    "repair": "Reran from harness repository root"
+  },
+  "scope_limit": "Toolchain and baseline policy evidence only; no workflow implementation or native validation"
+}

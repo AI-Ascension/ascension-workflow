@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "agent_id": "01a087fd-20c6-7e22-8e7a-5db1ca360142",
+  "parent_id": "01a087fb-ef18-75e1-8aad-76e0dfcc595b",
+  "depth": 1,
+  "role": "workstream_lead",
+  "task_ids": [
+    "T00"
+  ],
+  "requested_model": "gpt-5.6-luna",
+  "requested_effort": "max",
+  "accepted_model": null,
+  "accepted_effort": null,
+  "observed_model": "gpt-5.6-luna",
+  "observed_effort": "max",
+  "evidence_level": "effective_metadata_verified",
+  "evidence_refs": [
+    "docs/evidence/runtime-preflight.json"
+  ],
+  "may_spawn": false
+}

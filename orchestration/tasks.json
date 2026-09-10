@@ -1,0 +1,1605 @@
+{
+  "schema_version": 1,
+  "status": "candidate_validation",
+  "tasks": [
+    {
+      "id": "T00",
+      "workstream": "WS-A",
+      "title": "Verify runtime, model, depth, and permission envelope",
+      "dependencies": [],
+      "state": "blocked",
+      "depth1_owner": "/root/preflight_lead",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "orchestration/",
+        "docs/discovery/"
+      ],
+      "requirements": [
+        "WF-001",
+        "WF-002",
+        "WF-003"
+      ],
+      "acceptance_tests": [
+        "AT-001",
+        "AT-002",
+        "AT-003"
+      ],
+      "exit_criteria": [
+        "Actual Luna Max settings and real D1/D2/D3 parentage recorded.",
+        "Permission envelope excludes native/provider/deployment writes unless separately admitted."
+      ],
+      "write_lease": null,
+      "candidate_commit": null,
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "orchestration/agents/preflight-lead.json",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-001",
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "preparation_only": false,
+      "independent_reviewer": null,
+      "next_safe_action": "Restore native D1/D2/D3 tools and obtain independent review before final completion."
+    },
+    {
+      "id": "T01",
+      "workstream": "WS-A",
+      "title": "Refresh source, capabilities, current issues and standards",
+      "dependencies": [
+        "T00"
+      ],
+      "state": "verification",
+      "depth1_owner": "/root/preflight",
+      "depth2_coordinator": "/root/preflight/d2",
+      "depth3_implementer": "/root/preflight/d2/d3",
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "docs/discovery/",
+        "integration/source-lock.json"
+      ],
+      "requirements": [
+        "WF-004",
+        "WF-005"
+      ],
+      "acceptance_tests": [
+        "AT-004",
+        "AT-005"
+      ],
+      "exit_criteria": [
+        "Current exact heads and relevant full source/tests inspected.",
+        "Baseline drift and overlapping PRs documented without duplicating work."
+      ],
+      "write_lease": null,
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "preparation_only": false,
+      "independent_reviewer": null,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T02",
+      "workstream": "WS-A",
+      "title": "Bootstrap new delivery repository non-destructively",
+      "dependencies": [
+        "T01"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-A",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "README.md",
+        "AGENTS.md",
+        "docs/",
+        "prompts/phase1/",
+        "quality/"
+      ],
+      "requirements": [
+        "WF-006",
+        "WF-007"
+      ],
+      "acceptance_tests": [
+        "AT-006",
+        "AT-007"
+      ],
+      "exit_criteria": [
+        "Exact repository created or safely reused with actual identity and visibility evidence.",
+        "Substantive deliverable layout, approved standards, and linked tracking issue established."
+      ],
+      "write_lease": null,
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "preparation_only": false,
+      "independent_reviewer": null,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T03",
+      "workstream": "WS-A",
+      "title": "Approve ownership and contract ADR set",
+      "dependencies": [
+        "T01",
+        "T02"
+      ],
+      "state": "verification",
+      "depth1_owner": "/root/contracts_review",
+      "depth2_coordinator": "/root/contracts_review/d2_coordinator",
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "docs/decisions/"
+      ],
+      "requirements": [
+        "WF-008"
+      ],
+      "acceptance_tests": [
+        "AT-008"
+      ],
+      "exit_criteria": [
+        "Single harness runtime and owner responsibilities accepted.",
+        "Semantics, durability, authority, dynamic, API and privacy decisions recorded."
+      ],
+      "write_lease": null,
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T04",
+      "workstream": "WS-A",
+      "title": "Complete canonical schemas, types, registries and artifact export",
+      "dependencies": [
+        "T03"
+      ],
+      "state": "verification",
+      "depth1_owner": "/root/contracts_review",
+      "depth2_coordinator": "/root/contracts_review/d2_contracts",
+      "depth3_implementer": "/root/contracts_review/d2_contracts/implementer",
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "schemas/",
+        "conformance/",
+        "contract-artifact/"
+      ],
+      "requirements": [
+        "WF-009",
+        "WF-010",
+        "WF-011",
+        "WF-012"
+      ],
+      "acceptance_tests": [
+        "AT-009",
+        "AT-010",
+        "AT-011",
+        "AT-012"
+      ],
+      "exit_criteria": [
+        "Strict node-specific schemas and local-only references implemented.",
+        "Canonical digest and immutable artifact consumption tested."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T05",
+      "workstream": "WS-B",
+      "title": "Implement compiler, typed guards and graph validation",
+      "dependencies": [
+        "T04"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-B",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/workflow/",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-013",
+        "WF-014",
+        "WF-015",
+        "WF-016",
+        "WF-017"
+      ],
+      "acceptance_tests": [
+        "AT-013",
+        "AT-014",
+        "AT-015",
+        "AT-016",
+        "AT-017"
+      ],
+      "exit_criteria": [
+        "Duplicate keys, unknown fields, cycles, type errors and policy escalation rejected.",
+        "Bounded loops/subworkflows and deterministic guard routing compile."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T06",
+      "workstream": "WS-B",
+      "title": "Extract legacy protected execution operations",
+      "dependencies": [
+        "T03"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-B",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/episode/",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-018",
+        "WF-019"
+      ],
+      "acceptance_tests": [
+        "AT-018",
+        "AT-019"
+      ],
+      "exit_criteria": [
+        "Existing public behavior preserved behind reusable owner-local ports.",
+        "Primary and cleanup errors plus pending operation identity preserved."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T07",
+      "workstream": "WS-B",
+      "title": "Implement strict scheduler and durable-ready reducer",
+      "dependencies": [
+        "T05",
+        "T06"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-B",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/workflow/",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-020",
+        "WF-021",
+        "WF-022"
+      ],
+      "acceptance_tests": [
+        "AT-020",
+        "AT-021",
+        "AT-022"
+      ],
+      "exit_criteria": [
+        "Fixed graphs execute actual synthetic episodes with typed outcomes.",
+        "No pending transition can be bypassed by graph cursor changes."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T08",
+      "workstream": "WS-B",
+      "title": "Integrate protected action transaction",
+      "dependencies": [
+        "T06",
+        "T09",
+        "T10"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-B",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/workflow/",
+        "crates/harness/src/episode/",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-023",
+        "WF-024",
+        "WF-025",
+        "WF-026",
+        "WF-027",
+        "WF-028"
+      ],
+      "acceptance_tests": [
+        "AT-023",
+        "AT-024",
+        "AT-025",
+        "AT-026",
+        "AT-027",
+        "AT-028"
+      ],
+      "exit_criteria": [
+        "Intent commits before dispatch and verified completion advances atomically.",
+        "Current catalog, policy, identity and no-parallel-mutation checks enforced."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T09",
+      "workstream": "WS-C",
+      "title": "Implement event, invocation and journal model",
+      "dependencies": [
+        "T04"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-C",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/workflow/",
+        "schemas/",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-029",
+        "WF-030"
+      ],
+      "acceptance_tests": [
+        "AT-029",
+        "AT-030"
+      ],
+      "exit_criteria": [
+        "Namespaces, typed pending states and event sequence are distinct and bounded.",
+        "Reducer reconstructs state from recorded normalized events."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T10",
+      "workstream": "WS-C",
+      "title": "Implement real transactional local store",
+      "dependencies": [
+        "T09"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-C",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/",
+        "crates/harness/tests/",
+        "docs/decisions/"
+      ],
+      "requirements": [
+        "WF-031",
+        "WF-032",
+        "WF-033",
+        "WF-034"
+      ],
+      "acceptance_tests": [
+        "AT-031",
+        "AT-032",
+        "AT-033",
+        "AT-034"
+      ],
+      "exit_criteria": [
+        "Actual local database adapter with verified pragmas/migrations/uniqueness constraints.",
+        "No lock/transaction held over external effects; disk/corruption behavior tested."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T11",
+      "workstream": "WS-C",
+      "title": "Implement recovery, persistent budgets and ownership admission",
+      "dependencies": [
+        "T08",
+        "T10",
+        "T12",
+        "T13"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-C",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/workflow/",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-035",
+        "WF-036",
+        "WF-037",
+        "WF-038"
+      ],
+      "acceptance_tests": [
+        "AT-035",
+        "AT-036",
+        "AT-037",
+        "AT-038"
+      ],
+      "exit_criteria": [
+        "Original operations reconciled; intent/send ambiguity stays uncertain.",
+        "Changed authorities and missing receipts gate automatic resume."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T12",
+      "workstream": "WS-C",
+      "title": "Implement minimum gateway/host authority prerequisites",
+      "dependencies": [
+        "T03",
+        "T09"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-C",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "sts2-gateway owned paths",
+        "sts2-game-mod owned paths"
+      ],
+      "requirements": [
+        "WF-039",
+        "WF-040",
+        "WF-041"
+      ],
+      "acceptance_tests": [
+        "AT-039",
+        "AT-040",
+        "AT-041"
+      ],
+      "exit_criteria": [
+        "Restart identities, fencing and receipt retention capability have explicit owner contracts.",
+        "Harness/gateway/host/machine failure domains separately supported or safely blocked."
+      ],
+      "write_lease": null,
+      "candidate_commit": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-gateway",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T13",
+      "workstream": "WS-C",
+      "title": "Implement admitted MCP/protocol/watchdog integration",
+      "dependencies": [
+        "T12",
+        "T04"
+      ],
+      "state": "blocked",
+      "depth1_owner": "WS-C",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "sts2-mcp-server owned paths",
+        "sts2-protocol admitted artifacts",
+        "ascension-watchdog owned adapter paths"
+      ],
+      "requirements": [
+        "WF-042",
+        "WF-043"
+      ],
+      "acceptance_tests": [
+        "AT-042",
+        "AT-043"
+      ],
+      "exit_criteria": [
+        "Mappings remain thin; shared artifacts have admitted consumers.",
+        "Watchdog receives typed admission/progress only and never dispatches gameplay."
+      ],
+      "write_lease": null,
+      "candidate_commit": null,
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before marking complete."
+    },
+    {
+      "id": "T14",
+      "workstream": "WS-D",
+      "title": "Implement provider/context/analysis registry and budgets",
+      "dependencies": [
+        "T04",
+        "T09"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-D",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/workflow/",
+        "crates/harness/src/provider.rs",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-044",
+        "WF-045",
+        "WF-046"
+      ],
+      "acceptance_tests": [
+        "AT-044",
+        "AT-045",
+        "AT-046"
+      ],
+      "exit_criteria": [
+        "Typed allowlisted context and structured outputs through existing provider ports.",
+        "Reservations survive uncertain provider costs and no hidden provider fallback."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T15",
+      "workstream": "WS-D",
+      "title": "Implement dynamic plan syntax and semantic validation",
+      "dependencies": [
+        "T05",
+        "T14"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-D",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/workflow/",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-047",
+        "WF-048",
+        "WF-049",
+        "WF-050"
+      ],
+      "acceptance_tests": [
+        "AT-047",
+        "AT-048",
+        "AT-049",
+        "AT-050"
+      ],
+      "exit_criteria": [
+        "Registered subworkflow selection and bounded typed DAG plans admitted.",
+        "Mutation/script/policy/unknown-provider/stale revision plans rejected."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T16",
+      "workstream": "WS-D",
+      "title": "Implement adaptive execution and bounded parallel pure work",
+      "dependencies": [
+        "T07",
+        "T10",
+        "T15"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-D",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/workflow/",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-051",
+        "WF-052",
+        "WF-053"
+      ],
+      "acceptance_tests": [
+        "AT-051",
+        "AT-052",
+        "AT-053"
+      ],
+      "exit_criteria": [
+        "Two controlled inputs produce different validated topologies.",
+        "Outputs join deterministically; outer graph alone invokes action kernel."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T17",
+      "workstream": "WS-D",
+      "title": "Implement plan invalidation, supersession and no-progress limits",
+      "dependencies": [
+        "T11",
+        "T16"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-D",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/workflow/",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-054",
+        "WF-055",
+        "WF-056"
+      ],
+      "acceptance_tests": [
+        "AT-054",
+        "AT-055",
+        "AT-056"
+      ],
+      "exit_criteria": [
+        "Dependency changes invalidate reuse and late outputs are rejected.",
+        "Budgets/replan/loop counts persist without resetting on restart."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T18",
+      "workstream": "WS-F",
+      "title": "Build complete first-party STS2 workflow catalog",
+      "dependencies": [
+        "T07",
+        "T16",
+        "T19"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-F",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "workflows/sts2/",
+        "conformance/",
+        "integration/"
+      ],
+      "requirements": [
+        "WF-057",
+        "WF-058"
+      ],
+      "acceptance_tests": [
+        "AT-057",
+        "AT-058"
+      ],
+      "exit_criteria": [
+        "Every coarse stage has a meaningful compiler-valid workflow and synthetic scenario.",
+        "Strict/dynamic combat and map paths preserve authority/capability boundaries."
+      ],
+      "write_lease": null,
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T19",
+      "workstream": "WS-F",
+      "title": "Implement capability admission and fair-play stage fixtures",
+      "dependencies": [
+        "T04",
+        "T06"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-F",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/workflow/",
+        "crates/harness/tests/",
+        "conformance/"
+      ],
+      "requirements": [
+        "WF-059",
+        "WF-060",
+        "WF-061",
+        "WF-062"
+      ],
+      "acceptance_tests": [
+        "AT-059",
+        "AT-060",
+        "AT-061",
+        "AT-062"
+      ],
+      "exit_criteria": [
+        "Required/optional/unavailable/unknown capability behaviors are explicit.",
+        "Blocked modals, supported selection and terminal states are tested."
+      ],
+      "write_lease": null,
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T20",
+      "workstream": "WS-E",
+      "title": "Implement real headless CLI",
+      "dependencies": [
+        "T07",
+        "T11",
+        "T14"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-E",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/bin/",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-063",
+        "WF-064",
+        "WF-065"
+      ],
+      "acceptance_tests": [
+        "AT-063",
+        "AT-064",
+        "AT-065"
+      ],
+      "exit_criteria": [
+        "Serve/validate/inspect/diff/run/status/events/pause/resume/step/cancel/export execute; the submitting client does not own accepted run lifetime.",
+        "Read/validate/offline operations have no game/provider side effects."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T21",
+      "workstream": "WS-E",
+      "title": "Implement authenticated management API and event delivery",
+      "dependencies": [
+        "T09",
+        "T11",
+        "T20"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-E",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-066",
+        "WF-067",
+        "WF-068",
+        "WF-069"
+      ],
+      "acceptance_tests": [
+        "AT-066",
+        "AT-067",
+        "AT-068",
+        "AT-069"
+      ],
+      "exit_criteria": [
+        "Real loopback process supports scoped commands and expected revisions.",
+        "Duplicate commands, reconnect/gaps/slow clients and auth failures tested."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T22",
+      "workstream": "WS-E",
+      "title": "Implement redacted telemetry and artifact export",
+      "dependencies": [
+        "T09",
+        "T14",
+        "T21"
+      ],
+      "state": "blocked",
+      "depth1_owner": "WS-E",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/",
+        "ai-agent-observability admitted configuration",
+        "docs/"
+      ],
+      "requirements": [
+        "WF-070",
+        "WF-071"
+      ],
+      "acceptance_tests": [
+        "AT-070",
+        "AT-071"
+      ],
+      "exit_criteria": [
+        "Telemetry is bounded/non-authoritative and operational through backend outage.",
+        "Synthetic sentinel/private/hidden data excluded from every export surface."
+      ],
+      "write_lease": null,
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before marking complete."
+    },
+    {
+      "id": "T23",
+      "workstream": "WS-E",
+      "title": "Implement offline workflow replay",
+      "dependencies": [
+        "T09",
+        "T10",
+        "T16"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-E",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/src/workflow/",
+        "crates/harness/tests/"
+      ],
+      "requirements": [
+        "WF-072",
+        "WF-073",
+        "WF-074"
+      ],
+      "acceptance_tests": [
+        "AT-072",
+        "AT-073",
+        "AT-074"
+      ],
+      "exit_criteria": [
+        "Exact definitions/plans/decisions reconstruct state with zero providers/game effects.",
+        "Missing, redacted or incompatible replay data yields explicit unavailability/divergence."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T24",
+      "workstream": "WS-F",
+      "title": "Build catalog conformance and real process integration driver",
+      "dependencies": [
+        "T18",
+        "T20",
+        "T21",
+        "T23"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-F",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "conformance/",
+        "integration/",
+        "tools/"
+      ],
+      "requirements": [
+        "WF-075",
+        "WF-076"
+      ],
+      "acceptance_tests": [
+        "AT-075",
+        "AT-076"
+      ],
+      "exit_criteria": [
+        "Built harness is exercised as sole interpreter through declared CLI/API.",
+        "Exact producer artifact digests and candidate source heads are bound."
+      ],
+      "write_lease": null,
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T25",
+      "workstream": "WS-G",
+      "title": "Execute full crash, uncertainty and authority matrix",
+      "dependencies": [
+        "T11",
+        "T13",
+        "T17",
+        "T21"
+      ],
+      "state": "blocked",
+      "depth1_owner": "WS-G",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/tests/",
+        "conformance/",
+        "quality/",
+        "docs/evidence/"
+      ],
+      "requirements": [
+        "WF-077",
+        "WF-078"
+      ],
+      "acceptance_tests": [
+        "AT-077",
+        "AT-078"
+      ],
+      "exit_criteria": [
+        "Real store/process kills cover each fault case at the effect-owning boundary.",
+        "No original uncertain operation is replaced by a new mutating identity."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before marking complete."
+    },
+    {
+      "id": "T26",
+      "workstream": "WS-G",
+      "title": "Run independent security and model/depth audit",
+      "dependencies": [
+        "T17",
+        "T21",
+        "T22",
+        "T24"
+      ],
+      "state": "blocked",
+      "depth1_owner": "WS-G",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "quality/",
+        "docs/evidence/",
+        "separately leased negative test paths"
+      ],
+      "requirements": [
+        "WF-079",
+        "WF-080"
+      ],
+      "acceptance_tests": [
+        "AT-079",
+        "AT-080"
+      ],
+      "exit_criteria": [
+        "Original adversarial cases falsify or validate the invariants.",
+        "Actual requested/accepted/observed model settings and parentage are not conflated."
+      ],
+      "write_lease": null,
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before marking complete."
+    },
+    {
+      "id": "T27",
+      "workstream": "WS-G",
+      "title": "Run legacy parity, full regressions and bounded overhead measurements",
+      "dependencies": [
+        "T08",
+        "T17",
+        "T24"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-G",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "crates/harness/tests/",
+        "quality/",
+        "docs/evidence/"
+      ],
+      "requirements": [
+        "WF-081",
+        "WF-082"
+      ],
+      "acceptance_tests": [
+        "AT-081",
+        "AT-082"
+      ],
+      "exit_criteria": [
+        "Full current owner suites and old/new normalized traces checked at candidate heads.",
+        "Measured synthetic overhead reported without invented performance targets."
+      ],
+      "write_lease": null,
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T28",
+      "workstream": "WS-G",
+      "title": "Run separately authorized native checks or record explicit gate",
+      "dependencies": [
+        "T25",
+        "T26",
+        "T27"
+      ],
+      "state": "blocked",
+      "depth1_owner": "WS-G",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "docs/evidence/",
+        "quality/"
+      ],
+      "requirements": [
+        "WF-083",
+        "WF-084"
+      ],
+      "acceptance_tests": [
+        "AT-083",
+        "AT-084"
+      ],
+      "exit_criteria": [
+        "Only disposable explicitly permitted profiles/providers used.",
+        "Exact native support/failure domains recorded; unavailable permission remains blocked."
+      ],
+      "write_lease": null,
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": "native_authorization_and_environment",
+      "completion_policy": "Reporting work may complete with an explicit blocked native-evidence gate; do not convert blocked native requirements to confirmed. Final report delivery must remain possible.",
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before marking complete."
+    },
+    {
+      "id": "T29",
+      "workstream": "WS-F",
+      "title": "Finalize migration, recovery, operator and contributor docs",
+      "dependencies": [
+        "T24",
+        "T25",
+        "T27"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-F",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "docs/",
+        "README.md",
+        "quality/",
+        "integration/"
+      ],
+      "requirements": [
+        "WF-085",
+        "WF-086"
+      ],
+      "acceptance_tests": [
+        "AT-085",
+        "AT-086"
+      ],
+      "exit_criteria": [
+        "Runbooks cover commands, recovery limits, migrations, rollback and retention.",
+        "No phase-2/browser feature or unsupported live-recovery claim."
+      ],
+      "write_lease": null,
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T30",
+      "workstream": "WS-G",
+      "title": "Integrate exact heads and repair scoped CI/conflicts",
+      "dependencies": [
+        "T26",
+        "T27",
+        "T29"
+      ],
+      "state": "verification",
+      "depth1_owner": "WS-G",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "integration/",
+        "quality/",
+        "owner-approved integration branches"
+      ],
+      "requirements": [
+        "WF-087",
+        "WF-088"
+      ],
+      "acceptance_tests": [
+        "AT-087",
+        "AT-088"
+      ],
+      "exit_criteria": [
+        "Exact integrated revisions revalidated; all mandatory source/component gates satisfied or qualified.",
+        "No test weakening, broad cleanup or unrelated code changes."
+      ],
+      "write_lease": null,
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    },
+    {
+      "id": "T31",
+      "workstream": "WS-G",
+      "title": "Prepare linked draft PRs and truthful final report",
+      "dependencies": [
+        "T28",
+        "T30"
+      ],
+      "state": "in_progress",
+      "depth1_owner": "WS-G",
+      "depth2_coordinator": null,
+      "depth3_implementer": null,
+      "depth3_verifier": null,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "candidate_owned_paths": [
+        "docs/evidence/",
+        "quality/",
+        "integration/",
+        "GitHub issues and draft PR metadata"
+      ],
+      "requirements": [
+        "WF-089",
+        "WF-090"
+      ],
+      "acceptance_tests": [
+        "AT-089",
+        "AT-090"
+      ],
+      "exit_criteria": [
+        "Changes assigned to authenticated operator where supported; nothing merged/deployed without permission.",
+        "Every requirement has implementation/evidence or a precise blocker, and agents are closed."
+      ],
+      "write_lease": null,
+      "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "special_gate": null,
+      "blocker_refs": [
+        "B-005"
+      ],
+      "reviewer": null,
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "preparation_only": false,
+      "independent_reviewer": null,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
+    }
+  ]
+}

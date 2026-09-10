@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-09",
+  "environment": "Linux x86_64; workspace-local Rust 1.97.1",
+  "commands": [
+    {
+      "repository": "AI-Ascension/sts2-harness",
+      "commit": "fc44d3ef65fefa6d13ecd5f690e5335a6ef60080",
+      "command": "cargo test --workspace --all-targets --all-features --locked",
+      "exit_code": 0,
+      "suites": 34,
+      "passed": 236,
+      "failed": 0,
+      "ignored": 1,
+      "log_sha256": "9ef7354f9735266f8f11a528b7478a607bb26ea5e70129299181599c4051085f"
+    },
+    {
+      "repository": "AI-Ascension/sts2-harness",
+      "commit": "fc44d3ef65fefa6d13ecd5f690e5335a6ef60080",
+      "command": "cargo fmt --all --check",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "repository": "AI-Ascension/sts2-harness",
+      "commit": "fc44d3ef65fefa6d13ecd5f690e5335a6ef60080",
+      "command": "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings",
+      "exit_code": 0,
+      "log_sha256": "27e2da9989275ecb096c0660dbc1acdf16076d77e8d2d16905ed49a49c4a9f96"
+    },
+    {
+      "repository": "AI-Ascension/sts2-harness",
+      "commit": "baabf9767264de11e09cd65cc7262ba36664ec2d",
+      "command": "cargo test --workspace --all-targets --all-features --locked",
+      "exit_code": 0,
+      "suites": 51,
+      "passed": 544,
+      "failed": 0,
+      "ignored": 1,
+      "log_sha256": "eeb3762012974b486f216fa9bfc2c0504cb661c15f3e5dbcb1bb081451197726"
+    }
+  ],
+  "ignored_test": {
+    "name": "executable_runtime_v4_composes_unknown_reconcile_and_foreign_state_fence",
+    "existing_reason": "operator-only test; requires explicitly built gateway, MCP, and harness binaries",
+    "status": "not executed in these baseline suites"
+  },
+  "logs": "Original logs retained locally outside Git because compiler diagnostics contain workspace paths",
+  "evidence_scope": "Baseline and unmerged candidate Rust tests only; not workflow product acceptance or native evidence",
+  "candidate_admission": "PR40 is not adopted wholesale; selective owner-local store reuse is under review"
+}

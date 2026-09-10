@@ -1,0 +1,2307 @@
+{
+  "schema_version": 1,
+  "status": "live_candidate_verification",
+  "requirements": [
+    {
+      "id": "WF-001",
+      "task_id": "T00",
+      "requirement": "Actual three-descendant-level Luna Max hierarchy is used.",
+      "acceptance_test_id": "AT-001",
+      "expected_assertion": "Tool-derived parentage covers D0/D1/D2/D3 and no leaf spawns D4.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-A",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-001",
+        "B-005"
+      ],
+      "implementation_commit": null,
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Restore native D1/D2/D3 tools and obtain independent review before completion.",
+      "preparation_refs": [
+        "orchestration/agents/preflight-lead.json"
+      ]
+    },
+    {
+      "id": "WF-002",
+      "task_id": "T00",
+      "requirement": "All descendant model and effort settings are verified or explicitly qualified.",
+      "acceptance_test_id": "AT-002",
+      "expected_assertion": "Requested, accepted and observed metadata remain separate; no silent substitution.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-A",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-001",
+        "B-005"
+      ],
+      "implementation_commit": null,
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Restore native D1/D2/D3 tools and obtain independent review before completion.",
+      "preparation_refs": [
+        "docs/evidence/runtime-preflight.json"
+      ]
+    },
+    {
+      "id": "WF-003",
+      "task_id": "T00",
+      "requirement": "Scope, permissions and global concurrency are recorded before writes.",
+      "acceptance_test_id": "AT-003",
+      "expected_assertion": "At most 12 actual descendants or lower client limit; no unauthorized action observed.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-A",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-001",
+        "B-005"
+      ],
+      "implementation_commit": null,
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Restore native D1/D2/D3 tools and obtain independent review before completion.",
+      "preparation_refs": [
+        "orchestration/authorization.json"
+      ]
+    },
+    {
+      "id": "WF-004",
+      "task_id": "T01",
+      "requirement": "Current source and standards are inspected and exact heads locked.",
+      "acceptance_test_id": "AT-004",
+      "expected_assertion": "Source lock names real commits/profiles and documents baseline drift.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-A",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
+      "preparation_refs": [
+        "integration/source-lock.json"
+      ]
+    },
+    {
+      "id": "WF-005",
+      "task_id": "T01",
+      "requirement": "Relevant existing changes and dirty work are preserved.",
+      "acceptance_test_id": "AT-005",
+      "expected_assertion": "Discovery records overlapping PRs and worktree status; no resets or duplicated authority.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-A",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
+      "preparation_refs": [
+        "integration/source-lock.json"
+      ]
+    },
+    {
+      "id": "WF-006",
+      "task_id": "T02",
+      "requirement": "New delivery repository is created or safely resumed with bounded visibility.",
+      "acceptance_test_id": "AT-006",
+      "expected_assertion": "Exact owner/name and actual creation/access result are recorded.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-A",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
+      "preparation_refs": [
+        "docs/evidence/delivery.json"
+      ]
+    },
+    {
+      "id": "WF-007",
+      "task_id": "T02",
+      "requirement": "The new repository has substantive workflow/conformance/integration deliverables.",
+      "acceptance_test_id": "AT-007",
+      "expected_assertion": "No empty shell, empty crate, or duplicate scheduler is accepted.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-A",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
+      "preparation_refs": [
+        "docs/evidence/delivery.json"
+      ]
+    },
+    {
+      "id": "WF-008",
+      "task_id": "T03",
+      "requirement": "Canonical ownership and cross-repository interfaces are documented.",
+      "acceptance_test_id": "AT-008",
+      "expected_assertion": "All required ADR topics have owner and compatibility/test consequences.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-A",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-009",
+      "task_id": "T04",
+      "requirement": "Definitions have independent schema, identity, version and semantic digest.",
+      "acceptance_test_id": "AT-009",
+      "expected_assertion": "Same identity/version and different executable bytes conflicts.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-A",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-010",
+      "task_id": "T04",
+      "requirement": "Production schemas are strict, node-specific and locally resolvable.",
+      "acceptance_test_id": "AT-010",
+      "expected_assertion": "Unknown fields/kinds/refs and unbounded data reject before execution.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-A",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-011",
+      "task_id": "T04",
+      "requirement": "Artifacts are producer-owned, digest-bound, and explicitly consumed.",
+      "acceptance_test_id": "AT-011",
+      "expected_assertion": "Delivery catalog accepts exact harness-exported bytes; no sibling implementation copy.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-A",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-012",
+      "task_id": "T04",
+      "requirement": "Canonicalization preserves execution semantics and excludes cosmetic metadata.",
+      "acceptance_test_id": "AT-012",
+      "expected_assertion": "Golden vectors prove stable digest and semantic/cosmetic diff behavior.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-A",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-013",
+      "task_id": "T05",
+      "requirement": "Duplicate keys, non-finite numbers and unsafe integers are rejected.",
+      "acceptance_test_id": "AT-013",
+      "expected_assertion": "Malformed raw JSON fixtures fail before data loss from ordinary parsing.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-014",
+      "task_id": "T05",
+      "requirement": "Typed ports, data dependencies and graph references are validated.",
+      "acceptance_test_id": "AT-014",
+      "expected_assertion": "Missing producers/ports, wrong types and unreachable required exits reject.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-015",
+      "task_id": "T05",
+      "requirement": "Strict graphs forbid unrestricted cycles and unbounded invocation recursion.",
+      "acceptance_test_id": "AT-015",
+      "expected_assertion": "Only explicit bounded loops execute; invocation graph cycles reject.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-016",
+      "task_id": "T05",
+      "requirement": "Guards are deterministic and three-valued.",
+      "acceptance_test_id": "AT-016",
+      "expected_assertion": "Unknown/unavailable differs from false/null/zero and follows explicit routing.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-017",
+      "task_id": "T05",
+      "requirement": "No executable scripts, remote schema loads or policy escalation in definitions.",
+      "acceptance_test_id": "AT-017",
+      "expected_assertion": "Synthetic malicious definitions cannot invoke arbitrary tools or weaken policy.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-018",
+      "task_id": "T06",
+      "requirement": "Legacy runner functionality is reused behind owner-local ports.",
+      "acceptance_test_id": "AT-018",
+      "expected_assertion": "Existing observation/catalog/settlement/cleanup behavior remains testable.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-019",
+      "task_id": "T06",
+      "requirement": "Primary errors and cleanup errors are both preserved.",
+      "acceptance_test_id": "AT-019",
+      "expected_assertion": "Dispatch failure plus cleanup failure retains original operation and both causes.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-020",
+      "task_id": "T07",
+      "requirement": "Strict runtime executes immutable graphs with typed outcomes.",
+      "acceptance_test_id": "AT-020",
+      "expected_assertion": "Synthetic fixed graphs execute without topology modification.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-021",
+      "task_id": "T07",
+      "requirement": "Loop/subworkflow counters and return stacks are bounded and persistent-ready.",
+      "acceptance_test_id": "AT-021",
+      "expected_assertion": "Nested iteration/depth limits prevent unbounded work.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-022",
+      "task_id": "T07",
+      "requirement": "Scheduler state cannot bypass a pending game mutation.",
+      "acceptance_test_id": "AT-022",
+      "expected_assertion": "No route/command/terminal transition clears uncertainty without validated resolution.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-023",
+      "task_id": "T08",
+      "requirement": "Action proposals bind current observation and matching legal catalog.",
+      "acceptance_test_id": "AT-023",
+      "expected_assertion": "Stale state/catalog/action/provider result rejects before mutation.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-024",
+      "task_id": "T08",
+      "requirement": "Machine-enforced constraints supplement string prompt constraints.",
+      "acceptance_test_id": "AT-024",
+      "expected_assertion": "Violating action is blocked even when model rationale approves it.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-025",
+      "task_id": "T08",
+      "requirement": "Effect intent and pending slot commit before external dispatch.",
+      "acceptance_test_id": "AT-025",
+      "expected_assertion": "Faults show zero unjournaled dispatches.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-026",
+      "task_id": "T08",
+      "requirement": "Action settlement requires correlated independent evidence.",
+      "acceptance_test_id": "AT-026",
+      "expected_assertion": "A newer generation, admission ACK or unrelated receipt cannot settle an action.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-027",
+      "task_id": "T08",
+      "requirement": "Only one outstanding mutation per instance across runs and clients.",
+      "acceptance_test_id": "AT-027",
+      "expected_assertion": "Concurrent runs/commands yield one admitted effect and typed conflicts.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-028",
+      "task_id": "T08",
+      "requirement": "Stable operation identity is distinct from repeated node invocation.",
+      "acceptance_test_id": "AT-028",
+      "expected_assertion": "Same operation payload conflict rejects; loop reentry uses a new invocation without stale reuse.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-B",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-029",
+      "task_id": "T09",
+      "requirement": "Workflow, episode, plan, command and game operation identities remain distinct.",
+      "acceptance_test_id": "AT-029",
+      "expected_assertion": "Schema/newtypes prevent namespace conflation and immutable payload reassignment.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-030",
+      "task_id": "T09",
+      "requirement": "Durable events are monotonic per run and reconstruct workflow state.",
+      "acceptance_test_id": "AT-030",
+      "expected_assertion": "Reducer replay matches current projection at exact sequence.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-031",
+      "task_id": "T10",
+      "requirement": "A real transactional local store exists and is exercised.",
+      "acceptance_test_id": "AT-031",
+      "expected_assertion": "Actual database migration/uniqueness/atomicity tests run in processes.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-032",
+      "task_id": "T10",
+      "requirement": "Store settings and filesystem durability assumptions are explicit.",
+      "acceptance_test_id": "AT-032",
+      "expected_assertion": "Effective journaling/sync/foreign-key settings verified; unsupported storage rejected.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-033",
+      "task_id": "T10",
+      "requirement": "No database transaction or lock spans external work.",
+      "acceptance_test_id": "AT-033",
+      "expected_assertion": "Blocked synthetic external port does not retain long-running store write transaction.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-034",
+      "task_id": "T10",
+      "requirement": "Store corruption, disk-full and newer-schema states fail safely.",
+      "acceptance_test_id": "AT-034",
+      "expected_assertion": "No silent ledger reset, unjournaled send, or destructive downgrade.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-035",
+      "task_id": "T11",
+      "requirement": "Intent/send crash ambiguity is reconciled as possibly dispatched.",
+      "acceptance_test_id": "AT-035",
+      "expected_assertion": "Missing sent marker never creates proof of no effect.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-036",
+      "task_id": "T11",
+      "requirement": "Unknown effects are reconciled by original operation identity.",
+      "acceptance_test_id": "AT-036",
+      "expected_assertion": "No blind mutation resend under a new ID in any covered crash window.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-037",
+      "task_id": "T11",
+      "requirement": "Pause/cancel/restart preserve outstanding effects and budgets.",
+      "acceptance_test_id": "AT-037",
+      "expected_assertion": "Unresolved mutation stays visible; counters/reservations do not reset.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-038",
+      "task_id": "T11",
+      "requirement": "Missing/expired/conflicting receipts produce NeedsOperator.",
+      "acceptance_test_id": "AT-038",
+      "expected_assertion": "No guessed settlement or automatic fresh dispatch follows receipt loss.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-039",
+      "task_id": "T12",
+      "requirement": "Authority and boot/fencing identity are validated at the owner boundary.",
+      "acceptance_test_id": "AT-039",
+      "expected_assertion": "Stale harness or prior boot cannot mutate under old authority.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-gateway@1a29e425eca96eba6d88caf85c1b2dc71c4b072c"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "existing boundary owners; allocation requires completed source review",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-gateway@1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-040",
+      "task_id": "T12",
+      "requirement": "Supported recovery failure domains are capability-gated.",
+      "acceptance_test_id": "AT-040",
+      "expected_assertion": "Harness/gateway/host/machine restart support is distinguished and tested separately.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-gateway@1a29e425eca96eba6d88caf85c1b2dc71c4b072c"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "existing boundary owners; allocation requires completed source review",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-gateway@1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-041",
+      "task_id": "T12",
+      "requirement": "Receipt retention scope and recovery-only access have defined contracts.",
+      "acceptance_test_id": "AT-041",
+      "expected_assertion": "An old operation ID does not grant new mutation authority.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-gateway@1a29e425eca96eba6d88caf85c1b2dc71c4b072c"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "existing boundary owners; allocation requires completed source review",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-gateway@1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-042",
+      "task_id": "T13",
+      "requirement": "MCP remains a thin admitted mapper and protocol stays narrowly shared.",
+      "acceptance_test_id": "AT-042",
+      "expected_assertion": "One declared mapping per route with artifact conformance and no embedded workflow policy.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [
+        "AI-Ascension/sts2-mcp-server@16ca0cb06dc93564c14963bc544bef282b38d26d"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "existing boundary owners; allocation requires completed source review",
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-mcp-server@16ca0cb06dc93564c14963bc544bef282b38d26d",
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
+    },
+    {
+      "id": "WF-043",
+      "task_id": "T13",
+      "requirement": "Watchdog cannot choose actions or own the workflow cursor.",
+      "acceptance_test_id": "AT-043",
+      "expected_assertion": "Synthetic supervisor integration reads recovery admission and never calls game-action authority.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-C",
+      "owner_repository": "existing boundary owners; allocation requires completed source review",
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "implementation_commit": null,
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
+    },
+    {
+      "id": "WF-044",
+      "task_id": "T14",
+      "requirement": "Provider/context inputs are typed, approved and bounded.",
+      "acceptance_test_id": "AT-044",
+      "expected_assertion": "Hidden fields/unapproved provider/prompt refs cannot enter provider requests.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-045",
+      "task_id": "T14",
+      "requirement": "Provider budgets reserve before dispatch and retain uncertain cost.",
+      "acceptance_test_id": "AT-045",
+      "expected_assertion": "Timeout/restart never refunds unknown usage to zero or silently duplicates billing.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-046",
+      "task_id": "T14",
+      "requirement": "No hidden gameplay fallback or inherited coding-agent privileges.",
+      "acceptance_test_id": "AT-046",
+      "expected_assertion": "Provider failure takes an authored route; gameplay cannot spawn coding agents.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-047",
+      "task_id": "T15",
+      "requirement": "Dynamic regions admit registered subworkflow selection.",
+      "acceptance_test_id": "AT-047",
+      "expected_assertion": "Valid pinned selection runs; unknown/unpinned/forbidden references reject.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-048",
+      "task_id": "T15",
+      "requirement": "Dynamic regions admit bounded typed DAG composition.",
+      "acceptance_test_id": "AT-048",
+      "expected_assertion": "At least two topology-distinct accepted plans exist for controlled contexts.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-049",
+      "task_id": "T15",
+      "requirement": "Plans cannot add mutation/script/policy/authority nodes.",
+      "acceptance_test_id": "AT-049",
+      "expected_assertion": "Original malformed plans reject before any plan side effect.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-050",
+      "task_id": "T15",
+      "requirement": "Plan budget, base revision and dependencies are validated.",
+      "acceptance_test_id": "AT-050",
+      "expected_assertion": "Stale/over-budget/incomplete/ambiguous plans fail admission.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-051",
+      "task_id": "T16",
+      "requirement": "Adaptive execution returns proposals to the fixed outer graph.",
+      "acceptance_test_id": "AT-051",
+      "expected_assertion": "Only outer execute-action invokes the protected kernel.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-052",
+      "task_id": "T16",
+      "requirement": "Parallel analyses are pure, bounded and joined deterministically.",
+      "acceptance_test_id": "AT-052",
+      "expected_assertion": "Completion order changes do not change output ordering or bypass limits.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-053",
+      "task_id": "T16",
+      "requirement": "Accepted plan bytes and revision persist before execution.",
+      "acceptance_test_id": "AT-053",
+      "expected_assertion": "Crash/replay observes the same accepted plan rather than regenerating it.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-054",
+      "task_id": "T17",
+      "requirement": "Dependency changes invalidate plan reuse.",
+      "acceptance_test_id": "AT-054",
+      "expected_assertion": "Relevant HP/turn/hand/capability/objective changes reject stale outputs.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-055",
+      "task_id": "T17",
+      "requirement": "Superseded plan outputs cannot reach action dispatch.",
+      "acceptance_test_id": "AT-055",
+      "expected_assertion": "Late result from old plan is ignored/rejected with recorded reason.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-056",
+      "task_id": "T17",
+      "requirement": "Replanning/no-progress and global budgets are bounded across restart.",
+      "acceptance_test_id": "AT-056",
+      "expected_assertion": "Identical plans and repeat failures cannot loop indefinitely or reset limits.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-D",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-057",
+      "task_id": "T18",
+      "requirement": "Every coarse STS2 stage has a substantive workflow and fixture.",
+      "acceptance_test_id": "AT-057",
+      "expected_assertion": "Setup/map/combat/reward/shop/event/rest/selection/recovery/terminal routes are covered.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-F",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-058",
+      "task_id": "T18",
+      "requirement": "Strict and dynamic combat/map workflows preserve the same action boundary.",
+      "acceptance_test_id": "AT-058",
+      "expected_assertion": "Catalog conformance demonstrates no alternative mutation path.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-F",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-059",
+      "task_id": "T19",
+      "requirement": "Required and optional capabilities are admitted separately.",
+      "acceptance_test_id": "AT-059",
+      "expected_assertion": "Required absence blocks; optional absence takes authored fallback without invented data.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-F",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-060",
+      "task_id": "T19",
+      "requirement": "Fair-play observation and generation binding are preserved.",
+      "acceptance_test_id": "AT-060",
+      "expected_assertion": "Hidden-state and stale map/expert projections reject; no native co-op actuation inferred.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-F",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-061",
+      "task_id": "T19",
+      "requirement": "Blocked modal and selection states are handled authoritatively.",
+      "acceptance_test_id": "AT-061",
+      "expected_assertion": "No click-through while blocked; supported selection interrupts preserve parent stack.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-F",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-062",
+      "task_id": "T19",
+      "requirement": "Terminal states close gameplay admissions without provider calls.",
+      "acceptance_test_id": "AT-062",
+      "expected_assertion": "Victory/defeat observations produce typed terminal handling and no decision request.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-F",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-063",
+      "task_id": "T20",
+      "requirement": "All required CLI commands are implemented and tested as a real binary.",
+      "acceptance_test_id": "AT-063",
+      "expected_assertion": "Serve and client command process tests cover normal/invalid/blocked paths, client disconnect/reattach, and stable nonzero errors.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-E",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-064",
+      "task_id": "T20",
+      "requirement": "Read/validate/diff/offline commands cannot mutate game or call providers.",
+      "acceptance_test_id": "AT-064",
+      "expected_assertion": "Effect-owning fake counters remain zero.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-E",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-065",
+      "task_id": "T20",
+      "requirement": "Step executes a safe semantic unit including full protected action handling.",
+      "acceptance_test_id": "AT-065",
+      "expected_assertion": "No partially skipped settlement from a single-step command.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-E",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-066",
+      "task_id": "T21",
+      "requirement": "API is authenticated loopback and strictly bounded by default.",
+      "acceptance_test_id": "AT-066",
+      "expected_assertion": "Bad auth/origin/path/body/oversize input rejects; no wildcard public exposure.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-E",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-067",
+      "task_id": "T21",
+      "requirement": "Commands are idempotent and optimistic-revision guarded.",
+      "acceptance_test_id": "AT-067",
+      "expected_assertion": "Same-ID repeat returns same outcome, conflicting payload/stale revision rejects.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-E",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-068",
+      "task_id": "T21",
+      "requirement": "Status distinguishes admission, pending effects, workflow outcome and game outcome.",
+      "acceptance_test_id": "AT-068",
+      "expected_assertion": "Accepted command/action never appears as verified completion.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-E",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-069",
+      "task_id": "T21",
+      "requirement": "Events support durable cursors, bounded clients and explicit retention gaps.",
+      "acceptance_test_id": "AT-069",
+      "expected_assertion": "Reconnect/duplicate/slow-client tests preserve gameplay independence.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-E",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-070",
+      "task_id": "T22",
+      "requirement": "Telemetry is bounded, redacted and non-authoritative.",
+      "acceptance_test_id": "AT-070",
+      "expected_assertion": "Backend outage does not lose journal state or create unbounded buffers.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "docs/evidence/candidate-validation-20260910.json"
+      ],
+      "owner_workstream": "WS-E",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
+    },
+    {
+      "id": "WF-071",
+      "task_id": "T22",
+      "requirement": "Secrets, proprietary data and private reasoning never leak.",
+      "acceptance_test_id": "AT-071",
+      "expected_assertion": "Sentinel tests inspect logs/errors/exports/telemetry/handoff artifacts.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "docs/evidence/candidate-validation-20260910.json",
+        "AI-Ascension/sts2-harness/tests/management.rs::redacted_export_removes_untrusted_operation_and_cursor_fields"
+      ],
+      "owner_workstream": "WS-E",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
+    },
+    {
+      "id": "WF-072",
+      "task_id": "T23",
+      "requirement": "Offline replay uses exact pinned artifacts and recorded typed results only.",
+      "acceptance_test_id": "AT-072",
+      "expected_assertion": "Zero provider/game requests while reproducing strict and dynamic traces.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-E",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-073",
+      "task_id": "T23",
+      "requirement": "Missing or privacy-excluded replay material is explicit.",
+      "acceptance_test_id": "AT-073",
+      "expected_assertion": "Replay never calls a provider to fill gaps or retains forbidden raw output.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-E",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-074",
+      "task_id": "T23",
+      "requirement": "Workflow checkpoint is never represented as a game save/rollback.",
+      "acceptance_test_id": "AT-074",
+      "expected_assertion": "CLI/docs/tests distinguish offline reconstruction from separately authorized game replay.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-E",
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-075",
+      "task_id": "T24",
+      "requirement": "Conformance drives the built harness rather than duplicating interpretation.",
+      "acceptance_test_id": "AT-075",
+      "expected_assertion": "Integration driver contains no gameplay scheduler and binds exact candidate heads.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-F",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-076",
+      "task_id": "T24",
+      "requirement": "Copied release-like artifacts verify digests and producer versions.",
+      "acceptance_test_id": "AT-076",
+      "expected_assertion": "Drift/tampering rejects before catalog execution.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
+      "owner_workstream": "WS-F",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-077",
+      "task_id": "T25",
+      "requirement": "Real-process fault injection covers all enumerated windows.",
+      "acceptance_test_id": "AT-077",
+      "expected_assertion": "Each fault case records setup, injected failure, observed boundary effects and result.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-G",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
+    },
+    {
+      "id": "WF-078",
+      "task_id": "T25",
+      "requirement": "Stale owners, simultaneous writers and changed authority are tested.",
+      "acceptance_test_id": "AT-078",
+      "expected_assertion": "No two harness processes can safely admit conflicting mutation ownership.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-G",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
+    },
+    {
+      "id": "WF-079",
+      "task_id": "T26",
+      "requirement": "Independent review adds original adversarial cases.",
+      "acceptance_test_id": "AT-079",
+      "expected_assertion": "Different D3 reviewer verifies candidate rather than repeating implementer claims.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "docs/evidence/review-wave-20260910.json"
+      ],
+      "owner_workstream": "WS-G",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
+    },
+    {
+      "id": "WF-080",
+      "task_id": "T26",
+      "requirement": "No phase-2 code or unauthorized scope creep is present.",
+      "acceptance_test_id": "AT-080",
+      "expected_assertion": "Repository diff contains no visual editor/browser runtime/new scheduler.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-G",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
+    },
+    {
+      "id": "WF-081",
+      "task_id": "T27",
+      "requirement": "Current full owner suites and legacy differential tests run on integrated heads.",
+      "acceptance_test_id": "AT-081",
+      "expected_assertion": "Commands, exit codes and evidence point to final candidate revisions.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-G",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-082",
+      "task_id": "T27",
+      "requirement": "Performance claims are measured and bounded to the fixture.",
+      "acceptance_test_id": "AT-082",
+      "expected_assertion": "No invented latency/win-rate/production-readiness assertion.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-G",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/sts2-harness@6e0272511997165ebba337a15d22f73acd36a4c4",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-083",
+      "task_id": "T28",
+      "requirement": "Native validation obeys explicit profile/provider authorization.",
+      "acceptance_test_id": "AT-083",
+      "expected_assertion": "No valued profile, unexpected expense, host restart or deployment is used.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-G",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
+    },
+    {
+      "id": "WF-084",
+      "task_id": "T28",
+      "requirement": "Native claims distinguish source/component/native/recovery coverage.",
+      "acceptance_test_id": "AT-084",
+      "expected_assertion": "Blocked native gate remains visible; forced terminal observation is not model victory.",
+      "mandatory": true,
+      "status": "blocked",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-G",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-003",
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "blocked_pending_required_gate",
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before completion."
+    },
+    {
+      "id": "WF-085",
+      "task_id": "T29",
+      "requirement": "Operating, migration, backup, retention and rollback docs are usable.",
+      "acceptance_test_id": "AT-085",
+      "expected_assertion": "Documented commands and safe recovery decisions match implemented behavior.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-F",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-086",
+      "task_id": "T29",
+      "requirement": "Live definition migration is absent in v1 and versions stay pinned.",
+      "acceptance_test_id": "AT-086",
+      "expected_assertion": "New publication cannot change an active run; rollback retains unresolved effects.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-F",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-087",
+      "task_id": "T30",
+      "requirement": "Scoped CI/conflict repair preserves standards and tests.",
+      "acceptance_test_id": "AT-087",
+      "expected_assertion": "No broad cleanup, weakened checks, ignored failures or unrelated refactors.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-G",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-088",
+      "task_id": "T30",
+      "requirement": "Exact integration locks and source provenance are finalized.",
+      "acceptance_test_id": "AT-088",
+      "expected_assertion": "Every consuming candidate references compatible immutable producer bytes.",
+      "mandatory": true,
+      "status": "verification",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-G",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "component_candidate_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion."
+    },
+    {
+      "id": "WF-089",
+      "task_id": "T31",
+      "requirement": "Delivery uses linked draft PRs and authenticated-operator assignment.",
+      "acceptance_test_id": "AT-089",
+      "expected_assertion": "Actual issue/PR IDs and assignment success/limitations reported; no unauthorized merge.",
+      "mandatory": true,
+      "status": "in_progress",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-G",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "in_progress_candidate_delivery",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
+      "preparation_refs": [
+        "docs/evidence/delivery.json"
+      ]
+    },
+    {
+      "id": "WF-090",
+      "task_id": "T31",
+      "requirement": "Final report is evidence-based and resumable.",
+      "acceptance_test_id": "AT-090",
+      "expected_assertion": "Every requirement has executed evidence or explicit blocker; all agents/leases accounted for.",
+      "mandatory": true,
+      "status": "in_progress",
+      "implementation_refs": [
+        "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924"
+      ],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
+      "owner_workstream": "WS-G",
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "blocker_refs": [
+        "B-005"
+      ],
+      "implementation_commit": "AI-Ascension/ascension-workflow@29465ebbc52de169ca15e01c47cafd1bdd198924",
+      "independent_reviewer": null,
+      "implementation_status": "in_progress_candidate_delivery",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
+      "preparation_refs": [
+        "docs/evidence/EXECUTION_REPORT.md"
+      ]
+    }
+  ]
+}

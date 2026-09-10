@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-10",
+  "harness_repository": "AI-Ascension/sts2-harness",
+  "harness_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
+  "harness_base": "33437ddb18f69f68d88521d947efa3568a32a3bf",
+  "commands": [
+    {"command": "cargo fmt --all --check", "exit_code": 0},
+    {"command": "cargo run --locked --package repo-policy -- --strict", "exit_code": 0, "result": "644 sized files; zero warnings; zero errors"},
+    {"command": "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings", "exit_code": 0},
+    {"command": "cargo test --workspace --all-targets --all-features --locked", "exit_code": 0, "result": "all workspace targets passed; 167 runtime tests passed and 1 operator-only runtime test was explicitly ignored"},
+    {"command": "cargo test -p sts2-harness --test management --locked", "exit_code": 0, "result": "6 passed"},
+    {"command": "cargo test -p sts2-harness --test management_sqlite --locked", "exit_code": 0, "result": "5 passed; independent SQLite connections serialize unresolved command admission"},
+    {"command": "cargo test --locked --test runtime_v4_executable_composition -- --ignored --nocapture", "exit_code": 0, "result": "1 executable gateway/MCP/harness composition test passed with the explicitly built candidate binaries"},
+    {"command": "cargo test --locked --test runtime_v4_rest_executable_composition -- --ignored --nocapture", "exit_code": 0, "result": "2 executable REST composition tests passed, covering synthetic and native-shaped selector IDs with the explicitly built candidate binaries"}
+  ],
+  "process_conformance": {
+    "driver": "tools/conformance-driver",
+    "exit_code": 0,
+    "definitions_validated": 13,
+    "negative_required_capability": "passed",
+    "authenticated_loopback_run": "passed",
+    "status_events_pause_resume_step": "passed",
+    "typed_recovery_admission": "passed; process status exposes safely_resumable with synthetic.workflow.resume.v1 and the typed recovery object carries no cursor, action or provider fields",
+    "offline_replay": "passed; tampered persisted event rejected",
+    "redacted_export": "passed; export response is bounded and contains no serialized operation identifier",
+    "served_management_restart": "passed; SQLite store and synthetic runtime snapshot restored after service restart",
+    "native_game": false,
+    "live_provider": false
+  },
+  "management_component_conformance": {
+    "durable_command_admission": "passed; independent SQLite connections return typed pending for a second command while the first command is in flight and leave the durable run revision unchanged",
+    "authoritative_recovery_boundary": "passed; authoritative reconciliation replaces provisional Accepted/Unknown transport evidence for the same operation, and direct Settled receipts are idempotent"
+  },
+  "executable_process_composition": {
+    "processes": ["sts2-gateway", "sts2-mcp-server", "sts2-harness-runtime"],
+    "scope": "candidate gateway and MCP child processes over synthetic loopback fixtures; REST tests include synthetic and native-shaped selector IDs",
+    "status": "passed; owner-issued authority flow, protocol/watchdog integration and native compatibility remain unverified"
+  },
+  "gateway_candidate": {
+    "commit": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
+    "base": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0",
+    "tests_passed": 148
+  },
+  "mcp_candidate": {
+    "commit": "16ca0cb06dc93564c14963bc544bef282b38d26d",
+    "base": "73e777b96700917cca5ff8f6ce0f5a72009384bc",
+    "pull_request": "https://github.com/AI-Ascension/sts2-mcp-server/pull/37",
+    "policy_sized_files": 195,
+    "policy_warnings": 0,
+    "targeted_runtime_v2_tests": 7,
+    "executable_runtime_v2_session_tests": 3,
+    "workspace_tests": "passed",
+    "authority_forwarding": "optional workflow_boot_epoch maps to x-sts2-workflow-boot-epoch through the executable loopback path; malformed values rejected before gateway access"
+  },
+  "orchestration": {
+    "d2_d3_observed": false,
+    "reason": "native collaboration tools unavailable in D1 environments",
+    "fresh_d1_probe": {
+      "agent_id": "01a08ad5-4011-72c1-8396-7a0e1a0dd680",
+      "requested_model": "gpt-5.6-luna",
+      "requested_effort": "max",
+      "d2_d3_spawned": false,
+      "delegation_tool_observed": false,
+      "result": "read-only probe; no source changes",
+      "findings": [
+        "current harness serve path remains SQLite-backed synthetic management/runtime",
+        "restart and tamper evidence remains synthetic process evidence",
+        "no descendant model, effort or parentage evidence was available"
+      ]
+    },
+    "independent_review": false,
+    "review_wave": "docs/evidence/review-wave-20260910.json"
+  }
+}
