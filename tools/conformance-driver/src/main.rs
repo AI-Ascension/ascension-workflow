@@ -44,22 +44,8 @@ fn run() -> Result<(), String> {
     let port = free_port()?;
     let address = format!("127.0.0.1:{port}");
     let store = temporary_store_path();
-    let mut server = Command::new(&arguments.binary)
-        .args([
-            "serve",
-            "--listen",
-            &address,
-            "--store",
-            store.to_str().ok_or("temporary store path is not UTF-8")?,
-            "--auth-profile",
-            "synthetic",
-        ])
-        .env("STS2_WORKFLOW_TOKEN_SYNTHETIC", TOKEN)
-        .stdout(Stdio::null())
-        .stderr(Stdio::null())
-        .spawn()
-        .map_err(|error| format!("start service: {error}"))?;
-    let result = exercise_process(&arguments, &address, &definitions, &mut server);
+    let mut server = start_server(&arguments.binary, &address, &store)?;
+    let result = exercise_process(&arguments, &address, &store, &definitions, &mut server);
     let _ = server.kill();
     let _ = server.wait();
     let _ = fs::remove_file(store);
@@ -69,26 +55,11 @@ fn run() -> Result<(), String> {
 fn exercise_process(
     arguments: &Arguments,
     address: &str,
+    store: &Path,
     definitions: &[PathBuf],
     server: &mut Child,
 ) -> Result<(), String> {
-    let deadline = Instant::now() + Duration::from_secs(5);
-    while Instant::now() < deadline {
-        if server
-            .try_wait()
-            .map_err(|error| format!("poll service: {error}"))?
-            .is_some()
-        {
-            return Err("service exited before health was ready".to_owned());
-        }
-        if http_status(address, "/v1/health", None, None).is_ok() {
-            break;
-        }
-        thread::sleep(Duration::from_millis(25));
-    }
-    if http_status(address, "/v1/health", None, None).is_err() {
-        return Err("service health did not become ready".to_owned());
-    }
+    wait_for_health(address, server)?;
     for definition in definitions {
         let validation = run_cli(
             &arguments.binary,
@@ -199,6 +170,44 @@ fn exercise_process(
             ],
         )?;
     }
+    server
+        .kill()
+        .map_err(|error| format!("stop service for restart: {error}"))?;
+    server
+        .wait()
+        .map_err(|error| format!("wait for service restart: {error}"))?;
+    *server = start_server(&arguments.binary, address, store)?;
+    wait_for_health(address, server)?;
+    let _ = run_cli(
+        &arguments.binary,
+        &[
+            "status",
+            &run_id,
+            "--format",
+            "json",
+            "--listen",
+            address,
+            "--auth-profile",
+            "synthetic",
+        ],
+    )?;
+    let _ = run_cli(
+        &arguments.binary,
+        &[
+            "events",
+            &run_id,
+            "--after-sequence",
+            "0",
+            "--limit",
+            "64",
+            "--format",
+            "json",
+            "--listen",
+            address,
+            "--auth-profile",
+            "synthetic",
+        ],
+    )?;
     let _ = run_cli(
         &arguments.binary,
         &[
@@ -246,6 +255,42 @@ fn exercise_process(
         return Err("redacted export failed the privacy assertions".to_owned());
     }
     Ok(())
+}
+
+fn start_server(binary: &Path, address: &str, store: &Path) -> Result<Child, String> {
+    Command::new(binary)
+        .args([
+            "serve",
+            "--listen",
+            address,
+            "--store",
+            store.to_str().ok_or("temporary store path is not UTF-8")?,
+            "--auth-profile",
+            "synthetic",
+        ])
+        .env("STS2_WORKFLOW_TOKEN_SYNTHETIC", TOKEN)
+        .stdout(Stdio::null())
+        .stderr(Stdio::null())
+        .spawn()
+        .map_err(|error| format!("start service: {error}"))
+}
+
+fn wait_for_health(address: &str, server: &mut Child) -> Result<(), String> {
+    let deadline = Instant::now() + Duration::from_secs(5);
+    while Instant::now() < deadline {
+        if server
+            .try_wait()
+            .map_err(|error| format!("poll service: {error}"))?
+            .is_some()
+        {
+            return Err("service exited before health was ready".to_owned());
+        }
+        if http_status(address, "/v1/health", None, None).is_ok() {
+            return Ok(());
+        }
+        thread::sleep(Duration::from_millis(25));
+    }
+    Err("service health did not become ready".to_owned())
 }
 
 fn run_cli(binary: &Path, arguments: &[&str]) -> Result<String, String> {
