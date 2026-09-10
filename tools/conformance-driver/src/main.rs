@@ -90,19 +90,27 @@ fn exercise_process(
         return Err("service health did not become ready".to_owned());
     }
     for definition in definitions {
-        let _ = run_cli(
+        let validation = run_cli(
             &arguments.binary,
             &[
                 "validate",
                 definition_to_str(definition)?,
                 "--capabilities",
                 path_to_str(&arguments.capabilities)?,
+                "--format",
+                "json",
                 "--listen",
                 address,
                 "--auth-profile",
                 "synthetic",
             ],
         )?;
+        if !json_bool(&validation, "valid")? {
+            return Err(format!(
+                "catalog definition {} did not validate",
+                definition.display()
+            ));
+        }
     }
     let negative = run_cli(
         &arguments.binary,
@@ -205,6 +213,38 @@ fn exercise_process(
             "synthetic",
         ],
     )?;
+    let export_path = temporary_export_path(&run_id);
+    let export_result = run_cli(
+        &arguments.binary,
+        &[
+            "export",
+            &run_id,
+            "--redacted",
+            "--output",
+            path_to_str(&export_path)?,
+            "--format",
+            "json",
+            "--listen",
+            address,
+            "--auth-profile",
+            "synthetic",
+        ],
+    );
+    let export_bytes = fs::read(&export_path);
+    let _ = fs::remove_file(&export_path);
+    export_result?;
+    let export_bytes = export_bytes.map_err(|error| format!("read redacted export: {error}"))?;
+    if export_bytes.len() > 1024 * 1024 {
+        return Err("redacted export exceeded the process response bound".to_owned());
+    }
+    let export_text = String::from_utf8(export_bytes)
+        .map_err(|error| format!("redacted export is not UTF-8 JSON: {error}"))?;
+    if !json_bool(&export_text, "redacted")?
+        || export_text.contains("\"operation_id\":\"")
+        || export_text.contains("sentinel")
+    {
+        return Err("redacted export failed the privacy assertions".to_owned());
+    }
     Ok(())
 }
 
@@ -236,6 +276,22 @@ fn json_string(body: &str, key: &str) -> Result<String, String> {
         .map(|index| start + index)
         .ok_or_else(|| format!("JSON response has an unterminated {key}"))?;
     Ok(body[start..end].to_owned())
+}
+
+fn json_bool(body: &str, key: &str) -> Result<bool, String> {
+    let marker = format!("\"{key}\":");
+    let start = body
+        .find(&marker)
+        .map(|index| index + marker.len())
+        .ok_or_else(|| format!("JSON response does not contain {key}"))?;
+    let value = body[start..].trim_start();
+    if value.starts_with("true") {
+        Ok(true)
+    } else if value.starts_with("false") {
+        Ok(false)
+    } else {
+        Err(format!("JSON response field {key} is not boolean"))
+    }
 }
 
 fn http_status(
@@ -333,6 +389,16 @@ fn temporary_store_path() -> PathBuf {
         .duration_since(UNIX_EPOCH)
         .map_or(0, |value| value.as_millis());
     env::temp_dir().join(format!("ascension-conformance-{millis}.json"))
+}
+
+fn temporary_export_path(run_id: &str) -> PathBuf {
+    let millis = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map_or(0, |value| value.as_millis());
+    let safe_run_id = run_id.replace('.', "-");
+    env::temp_dir().join(format!(
+        "ascension-conformance-export-{safe_run_id}-{millis}.json"
+    ))
 }
 
 fn path_to_str(path: &Path) -> Result<&str, String> {
