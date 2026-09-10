@@ -225,7 +225,7 @@
         "Canonical digest and immutable artifact consumption tested."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -277,7 +277,7 @@
         "Bounded loops/subworkflows and deterministic guard routing compile."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -323,7 +323,7 @@
         "Primary and cleanup errors plus pending operation identity preserved."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -372,7 +372,7 @@
         "No pending transition can be bypassed by graph cursor changes."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -429,7 +429,7 @@
         "Current catalog, policy, identity and no-parallel-mutation checks enforced."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -476,7 +476,7 @@
         "Reducer reconstructs state from recorded normalized events."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -527,7 +527,7 @@
         "No lock/transaction held over external effects; disk/corruption behavior tested."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -580,7 +580,7 @@
         "Changed authorities and missing receipts gate automatic resume."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -728,7 +728,7 @@
         "Reservations survive uncertain provider costs and no hidden provider fallback."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -779,7 +779,7 @@
         "Mutation/script/policy/unknown-provider/stale revision plans rejected."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -829,7 +829,7 @@
         "Outputs join deterministically; outer graph alone invokes action kernel."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -878,7 +878,7 @@
         "Budgets/replan/loop counts persist without resetting on restart."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -1031,7 +1031,7 @@
         "Read/validate/offline operations have no game/provider side effects."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json",
@@ -1084,7 +1084,7 @@
         "Duplicate commands, reconnect/gaps/slow clients and auth failures tested."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json",
@@ -1185,7 +1185,7 @@
         "Missing, redacted or incompatible replay data yields explicit unavailability/divergence."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -1287,7 +1287,7 @@
         "No original uncertain operation is replaced by a new mutating identity."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"
@@ -1388,7 +1388,7 @@
         "Measured synthetic overhead reported without invented performance targets."
       ],
       "write_lease": null,
-      "candidate_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+      "candidate_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json"

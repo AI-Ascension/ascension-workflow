@@ -2,15 +2,17 @@
   "schema_version": 1,
   "date": "2026-09-10",
   "harness_repository": "AI-Ascension/sts2-harness",
-  "harness_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
+  "harness_commit": "6e0272511997165ebba337a15d22f73acd36a4c4",
   "harness_base": "33437ddb18f69f68d88521d947efa3568a32a3bf",
   "commands": [
     {"command": "cargo fmt --all --check", "exit_code": 0},
     {"command": "cargo run --locked --package repo-policy -- --strict", "exit_code": 0, "result": "644 sized files; zero warnings; zero errors"},
     {"command": "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings", "exit_code": 0},
-    {"command": "cargo test --workspace --all-targets --all-features --locked", "exit_code": 0, "result": "all workspace targets passed; 168 runtime tests passed and operator-only tests were explicitly ignored"},
+    {"command": "cargo test --workspace --all-targets --all-features --locked", "exit_code": 0, "result": "all workspace targets passed; 167 runtime tests passed and 1 operator-only runtime test was explicitly ignored"},
     {"command": "cargo test -p sts2-harness --test management --locked", "exit_code": 0, "result": "6 passed"},
-    {"command": "cargo test -p sts2-harness --test management_sqlite --locked", "exit_code": 0, "result": "5 passed; independent SQLite connections serialize unresolved command admission"}
+    {"command": "cargo test -p sts2-harness --test management_sqlite --locked", "exit_code": 0, "result": "5 passed; independent SQLite connections serialize unresolved command admission"},
+    {"command": "cargo test --locked --test runtime_v4_executable_composition -- --ignored --nocapture", "exit_code": 0, "result": "1 executable gateway/MCP/harness composition test passed with the explicitly built candidate binaries"},
+    {"command": "cargo test --locked --test runtime_v4_rest_executable_composition -- --ignored --nocapture", "exit_code": 0, "result": "2 executable REST composition tests passed, covering synthetic and native-shaped selector IDs with the explicitly built candidate binaries"}
   ],
   "process_conformance": {
     "driver": "tools/conformance-driver",
@@ -27,7 +29,8 @@
     "live_provider": false
   },
   "management_component_conformance": {
-    "durable_command_admission": "passed; independent SQLite connections return typed pending for a second command while the first command is in flight and leave the durable run revision unchanged"
+    "durable_command_admission": "passed; independent SQLite connections return typed pending for a second command while the first command is in flight and leave the durable run revision unchanged",
+    "authoritative_recovery_boundary": "passed; authoritative reconciliation replaces provisional Accepted/Unknown transport evidence for the same operation, and direct Settled receipts are idempotent"
   },
   "gateway_candidate": {
     "commit": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
