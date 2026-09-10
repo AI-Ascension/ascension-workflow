@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "candidate_validation_and_delivery",
-  "captured_at": "2026-09-10T10:37:50Z",
+  "captured_at": "2026-09-10T10:51:47Z",
   "root": "/root",
   "requested_descendant_model": "gpt-5.6-luna",
   "requested_descendant_effort": "max",
@@ -58,7 +58,7 @@
       "branch": "codex/workflow-integration-20260910",
       "paths": ["crates/harness/src/workflow/", "crates/harness/src/execution/", "crates/harness/src/management/", "crates/harness/tests/"],
       "status": "closed_integrated_local_candidate",
-      "commit": "30ae44e814b1bf16a73b1f3253a3cf555ac5bce6"
+      "commit": "aa70a828528a092e106084aaec1320dbd4bb219a"
     },
     {
       "repository": "AI-Ascension/ascension-workflow",

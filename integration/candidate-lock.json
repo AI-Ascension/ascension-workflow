@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "local_candidates_validated",
-  "captured_at": "2026-09-10T10:37:50Z",
+  "captured_at": "2026-09-10T10:51:47Z",
   "delivery_repository": {
     "repository": "AI-Ascension/ascension-workflow",
     "branch": "codex/phase1-preflight-20260909",
@@ -13,7 +13,7 @@
     {
       "repository": "AI-Ascension/sts2-harness",
       "branch": "codex/workflow-integration-20260910",
-      "commit": "30ae44e814b1bf16a73b1f3253a3cf555ac5bce6",
+      "commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
       "base": "33437ddb18f69f68d88521d947efa3568a32a3bf",
       "components": [
         "workflow-v1 contract/compiler/decoder",
@@ -22,7 +22,8 @@
         "protected episode ports",
         "authenticated management API and sts2-workflow CLI",
         "SQLite-backed served management store and durable synthetic runtime adapter",
-        "typed recovery admission status contract"
+        "typed recovery admission status contract",
+        "durable per-run command admission across independent SQLite connections"
       ],
       "evidence": [
         "cargo fmt --all --check",
@@ -31,7 +32,8 @@
         "cargo test --workspace --all-targets --all-features --locked",
         "authenticated loopback catalog/process conformance",
         "SQLite service/runtime restart and tampered-event replay tests",
-        "process conformance assertion for bounded safely-resumable recovery admission"
+        "process conformance assertion for bounded safely-resumable recovery admission",
+        "independent-connection command admission test returns typed pending while a prior command is unresolved"
       ],
       "publication": "draft PR https://github.com/AI-Ascension/sts2-harness/pull/52; not merged to main"
     },
@@ -69,7 +71,7 @@
     {
       "path": "contract-artifact/workflow-v1/manifest.json",
       "producer": "AI-Ascension/sts2-harness",
-      "producer_commit": "30ae44e814b1bf16a73b1f3253a3cf555ac5bce6",
+      "producer_commit": "aa70a828528a092e106084aaec1320dbd4bb219a",
       "semantic_contract": "ascension.workflow/v1",
       "schema_sha256": "f8f79e115cd3bd736125ad17e33676bfe110f8a1b2673577cbbe93f1d5cc937d"
     }

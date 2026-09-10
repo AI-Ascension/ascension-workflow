@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date": "2026-09-10",
   "candidate_harness": "5deb48e3dd2c275d3cc7ae2c0ad5c75840c42b20",
-  "current_candidate_harness": "30ae44e814b1bf16a73b1f3253a3cf555ac5bce6",
+  "current_candidate_harness": "aa70a828528a092e106084aaec1320dbd4bb219a",
   "review_scope": "Reviewers inspected candidate_harness and candidate_gateway; current component candidates contain the listed post-review changes and have not received a new independent D3 review.",
   "candidate_gateway": "e5543403e7ac0fa13929c296adfab877bea4212a",
   "current_candidate_gateway": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
@@ -60,7 +60,8 @@
     "The conformance driver and delivery evidence now exercise positive validation and bounded redacted export.",
     "The management status contract now exposes bounded typed recovery admission; the delivery process driver asserts safely-resumable capability without cursor/action fields.",
     "The MCP Runtime-v2 mapper now optionally forwards a bounded workflow boot epoch to the gateway authority boundary.",
-    "The served SQLite store now explicitly enables WAL, synchronous=FULL and foreign-key pragmas, with direct management coverage."
+    "The served SQLite store now explicitly enables WAL, synchronous=FULL and foreign-key pragmas, with direct management coverage.",
+    "Durable management command admission now serializes unresolved commands across independent SQLite connections and returns typed pending to the later caller."
   ],
   "acceptance": "held; this wave is independent D1 review evidence and does not close the D3/G6 gate"
 }
