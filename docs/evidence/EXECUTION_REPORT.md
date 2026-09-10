@@ -9,7 +9,7 @@ ledgers. The exact revisions and publication limits are recorded in
 [`integration/candidate-lock.json`](../../integration/candidate-lock.json) and
 [`integration/source-lock-20260910.json`](../../integration/source-lock-20260910.json).
 
-The harness candidate is `2239c8e31a40a3076a1bbaf86c4d9aae155b67b6`, based on
+The harness candidate is `9c281717ed257476b179f186ee3d174b8a5cf0f2`, based on
 refreshed default head `33437ddb18f69f68d88521d947efa3568a32a3bf`. It contains
 the current owner recovery and telemetry implementation integrated with the
 workflow-v1 decoder, typed definitions, canonical compiler/artifact boundary,
@@ -42,7 +42,7 @@ The following harness checks passed on the integrated candidate:
 - `cargo test --workspace --all-targets --all-features --locked` — all workspace
   targets passed, including 167 runtime tests; repository operator-only tests
   remain explicitly ignored; the SQLite management integration target passed its
-  3 tests
+  4 tests
 - the Rust delivery conformance driver required `valid:true` for all 13 catalog
   definitions, rejected the missing-map capability case with a structured
   diagnostic, and exercised authenticated run/status/events, pause/resume/step,

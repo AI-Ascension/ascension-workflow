@@ -6,7 +6,7 @@ original archive, stable IDs, dirty work and exact locks. Start with
 [`orchestration/current-run.json`](../../orchestration/current-run.json), and
 [`integration/candidate-lock.json`](../../integration/candidate-lock.json).
 
-The harness candidate `2239c8e31a40a3076a1bbaf86c4d9aae155b67b6` passed format, strict policy,
+The harness candidate `9c281717ed257476b179f186ee3d174b8a5cf0f2` passed format, strict policy,
 Clippy and the full workspace suite. The delivery Rust process driver passed authenticated
 loopback catalog and control conformance, including positive validation assertions and redacted
 export checks; the SQLite management target also passed its restart and tamper tests. Re-run the

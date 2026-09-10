@@ -3,7 +3,7 @@
   "captured_at": "2026-09-10T10:03:26Z",
   "scope": "Phase 1 exact-head discovery and candidate admission",
   "repositories": [
-    {"repository": "AI-Ascension/sts2-harness", "default_branch": "main", "commit": "33437ddb18f69f68d88521d947efa3568a32a3bf", "candidate": "2239c8e31a40a3076a1bbaf86c4d9aae155b67b6"},
+    {"repository": "AI-Ascension/sts2-harness", "default_branch": "main", "commit": "33437ddb18f69f68d88521d947efa3568a32a3bf", "candidate": "9c281717ed257476b179f186ee3d174b8a5cf0f2"},
     {"repository": "AI-Ascension/sts2-gateway", "default_branch": "main", "commit": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0", "candidate": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c"},
     {"repository": "AI-Ascension/sts2-game-mod", "default_branch": "main", "commit": "b9754b803cbff79836143d5c115146f65b55184c", "candidate": null},
     {"repository": "AI-Ascension/sts2-mcp-server", "default_branch": "main", "commit": "73e777b96700917cca5ff8f6ce0f5a72009384bc", "candidate": "16ca0cb06dc93564c14963bc544bef282b38d26d"},

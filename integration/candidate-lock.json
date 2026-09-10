@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "local_candidates_validated",
-  "captured_at": "2026-09-10T10:07:53Z",
+  "captured_at": "2026-09-10T10:11:35Z",
   "delivery_repository": {
     "repository": "AI-Ascension/ascension-workflow",
     "branch": "codex/phase1-preflight-20260909",
@@ -13,7 +13,7 @@
     {
       "repository": "AI-Ascension/sts2-harness",
       "branch": "codex/workflow-integration-20260910",
-      "commit": "2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
+      "commit": "9c281717ed257476b179f186ee3d174b8a5cf0f2",
       "base": "33437ddb18f69f68d88521d947efa3568a32a3bf",
       "components": [
         "workflow-v1 contract/compiler/decoder",
@@ -67,7 +67,7 @@
     {
       "path": "contract-artifact/workflow-v1/manifest.json",
       "producer": "AI-Ascension/sts2-harness",
-      "producer_commit": "2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
+      "producer_commit": "9c281717ed257476b179f186ee3d174b8a5cf0f2",
       "semantic_contract": "ascension.workflow/v1",
       "schema_sha256": "f8f79e115cd3bd736125ad17e33676bfe110f8a1b2673577cbbe93f1d5cc937d"
     }

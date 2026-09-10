@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date": "2026-09-10",
   "harness_repository": "AI-Ascension/sts2-harness",
-  "harness_commit": "2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
+  "harness_commit": "9c281717ed257476b179f186ee3d174b8a5cf0f2",
   "harness_base": "33437ddb18f69f68d88521d947efa3568a32a3bf",
   "commands": [
     {"command": "cargo fmt --all --check", "exit_code": 0},
@@ -10,7 +10,7 @@
     {"command": "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings", "exit_code": 0},
     {"command": "cargo test --workspace --all-targets --all-features --locked", "exit_code": 0, "result": "all workspace targets passed; 167 runtime tests passed and operator-only tests were explicitly ignored"},
     {"command": "cargo test -p sts2-harness --test management --locked", "exit_code": 0, "result": "6 passed"},
-    {"command": "cargo test -p sts2-harness --test management_sqlite --locked", "exit_code": 0, "result": "3 passed"}
+    {"command": "cargo test -p sts2-harness --test management_sqlite --locked", "exit_code": 0, "result": "4 passed"}
   ],
   "process_conformance": {
     "driver": "tools/conformance-driver",

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date": "2026-09-10",
   "candidate_harness": "5deb48e3dd2c275d3cc7ae2c0ad5c75840c42b20",
-  "current_candidate_harness": "2239c8e31a40a3076a1bbaf86c4d9aae155b67b6",
+  "current_candidate_harness": "9c281717ed257476b179f186ee3d174b8a5cf0f2",
   "review_scope": "Reviewers inspected candidate_harness and candidate_gateway; current component candidates contain the listed post-review changes and have not received a new independent D3 review.",
   "candidate_gateway": "e5543403e7ac0fa13929c296adfab877bea4212a",
   "current_candidate_gateway": "1a29e425eca96eba6d88caf85c1b2dc71c4b072c",
@@ -58,7 +58,8 @@
     "The synthetic runtime persists its definition, snapshot and cancellation state and restores them after service restart.",
     "Persisted run events carry integrity seals and offline replay rejects tampered events.",
     "The conformance driver and delivery evidence now exercise positive validation and bounded redacted export.",
-    "The MCP Runtime-v2 mapper now optionally forwards a bounded workflow boot epoch to the gateway authority boundary."
+    "The MCP Runtime-v2 mapper now optionally forwards a bounded workflow boot epoch to the gateway authority boundary.",
+    "The served SQLite store now explicitly enables WAL, synchronous=FULL and foreign-key pragmas, with direct management coverage."
   ],
   "acceptance": "held; this wave is independent D1 review evidence and does not close the D3/G6 gate"
 }
