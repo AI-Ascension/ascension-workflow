@@ -1,0 +1,11 @@
+{
+  "schema_version": "ascension.conformance/management-v1",
+  "provenance": "synthetic-phase1",
+  "assertions": [
+    "event cursors are monotonic",
+    "replay is offline and provider-free",
+    "export requires redacted=true",
+    "private prompts and credentials are absent from fixtures"
+  ],
+  "max_event_page": 128
+}

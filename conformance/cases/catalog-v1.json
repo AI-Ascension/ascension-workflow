@@ -1,0 +1,17 @@
+{
+  "schema_version": "ascension.conformance/catalog-v1",
+  "provenance": "synthetic-phase1",
+  "positive": {
+    "directory": "workflows/sts2",
+    "capabilities": "catalog/capabilities/synthetic-full.json",
+    "expected_definitions": 13
+  },
+  "negative": [
+    {
+      "definition": "workflows/sts2/map.strict.json",
+      "capabilities": "catalog/capabilities/synthetic-missing-map.json",
+      "error_class": "capability"
+    }
+  ],
+  "process_driver": "tools/conformance-driver"
+}

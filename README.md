@@ -1,27 +1,35 @@
 # Ascension Workflow
 
-Phase 1 is **blocked before runtime implementation**. This repository preserves the
-instruction package, current source inventory, requirement and task ledgers, and the
-execution handoff. It does not yet provide a workflow engine or runnable workflow catalog.
+This repository is the Phase 1 delivery surface for the STS2 workflow package.
+It owns first-party workflow definitions, capability manifests, pinned contract
+artifacts, conformance inputs and process evidence. The authoritative compiler,
+runtime, management server, protected effect boundary and durable store remain
+in `AI-Ascension/sts2-harness`; gateway remains the game-instance authority.
 
-The authoritative interpreter, scheduler, protected gameplay operations, storage adapters,
-and CLI/API belong in `AI-Ascension/sts2-harness`. This repository owns first-party workflow
-definitions, pinned contract consumption, conformance, integration evidence, and operating docs.
-There must be one gameplay runtime.
+The catalog contains 13 substantive strict and dynamic definitions covering the
+campaign, setup, combat, map, reward, shop, event, rest, selection, recovery and
+terminal stages. The synthetic Rust conformance driver invokes the built
+`sts2-workflow` binary over authenticated loopback, validates the catalog,
+checks required-capability rejection, and exercises durable run/status/events,
+control, and offline replay behavior.
 
-Read the [execution report](docs/evidence/EXECUTION_REPORT.md),
-[source discovery](docs/discovery/BASELINE.md), and
-[resume instructions](docs/operations/RESUME.md). The original package is retained as an
-[inert archive](prompts/phase1/README.md); its examples are proposed seeds, not implemented behavior.
+Useful entry points:
 
-The runtime preflight verified one D1 worker on `gpt-5.6-luna` with `max` effort using structured
-runtime metadata. That worker had no callable native collaboration tools, preventing D2/D3
-creation. A fresh D1 recheck after the permission change reported the same limitation.
-No flat or subprocess substitute was used. Rust 1.97.1 is also unavailable locally.
+- [catalog documentation](docs/catalog/README.md)
+- [conformance instructions](conformance/README.md)
+- [workflow-v1 contract artifact](contract-artifact/workflow-v1/manifest.json)
+- [execution report](docs/evidence/EXECUTION_REPORT.md)
+- [resume instructions](docs/operations/RESUME.md)
 
-No Phase 1 product acceptance test has passed in this execution. Package integrity and its
-12 unit tests passed; these do not establish gameplay, durability, or CLI/API behavior.
-No merge, release, deployment, game launch, or gameplay provider call occurred.
+The current harness implementation candidate is locally integrated and tested;
+its exact commit and base are recorded in [the candidate lock](integration/candidate-lock.json).
+The gateway authority work is a separate tested candidate and is recorded in the
+same lock without claiming that it is present on its default branch.
 
-Original repository material is MIT licensed. Imported instruction assets retain their own
-provenance and do not acquire a new license by being stored here.
+The archive under `prompts/phase1/` is retained as inert provenance. D2/D3
+native recursive delegation was unavailable in this execution and is recorded
+explicitly in the orchestration evidence. Native game compatibility, live
+provider use, merge, release, deployment and installation were not performed.
+
+All fixtures are synthetic and carry provenance. They contain no credentials,
+private prompts, raw provider output, proprietary game data or saves.

@@ -1,108 +1,93 @@
 # Phase 1 execution report
 
-## Resume update
+## Current continuation — 2026-09-10
 
-The latest [runtime recheck](resume-preflight.json) supersedes the historical recursion blocker:
-native D1 to D2 to D3 delegation now succeeds. Explicit Luna/Max spawn requests succeeded,
-but effective model/effort metadata was not exposed. Model attestation remains configuration-only.
-Rust, Cargo and rustup remain absent from PATH; workspace-local installation authorization
-has been requested again and remains pending. No product build or acceptance test has run.
+The implementation is split across an exact local harness candidate and a
+separate gateway authority candidate. The delivery branch contains the catalog,
+contract artifact, conformance inputs, process driver, ADR set and evidence
+ledgers. The exact revisions and publication limits are recorded in
+[`integration/candidate-lock.json`](../../integration/candidate-lock.json) and
+[`integration/source-lock-20260910.json`](../../integration/source-lock-20260910.json).
 
-All eight default remote heads remain unchanged. Harness PR 41 advanced to
-`30eaf19ccb5b2ed118b5cf1baaef3793a408f499`; its branch was fetched without integration.
-The existing private delivery repository and open draft PR 2 were verified live.
-The same native chain completed a [bounded source review](../discovery/RESUME_SEAMS.md).
-All three descendants finished, with no source write leases or pending external operations.
-The sections below describe the earlier preparation execution.
+The harness candidate is `623848ed6dc8b2bbfa07cd287df7aa4feba18c87`, based on
+default head `68e4f935f251c5e20d07b929c6b1c096d0b7b183`. It contains the
+workflow-v1 decoder, typed definitions, canonical compiler/artifact boundary,
+three-valued guards, strict reducer, bounded dynamic plan registry/runtime,
+provider and budget boundaries, durable workflow event/invocation storage,
+protected episode ports, authenticated loopback management API, `sts2-workflow`
+CLI, and a synthetic management adapter that invokes the shared runtime.
 
-Outcome: **partially prepared; runtime implementation blocked**. This is not source/component
-completion, production readiness, native compatibility, or unattended restart safety.
+The gateway authority candidate is `e5543403e7ac0fa13929c296adfab877bea4212a`,
+based on `6b6c7f2fac67de22fdf78c9fd818c6781f689ba0`. It passed its owner policy,
+format, Clippy and full test suite with 147 passing tests. Neither candidate is
+merged to its default branch.
 
-The user requested execution of the original Phase 1 package. Its failure policy requires safe
-independent preparation when recursive delegation is unavailable. That is the scope completed
-here; no implementation requirement was removed, weakened, or marked complete.
+The following harness checks passed on the integrated candidate:
 
-## Implemented behavior and coverage
+- `cargo fmt --all --check`
+- `cargo run -p repo-policy -- --strict` — 560 sized files, zero warnings/errors
+- `cargo clippy --workspace --all-targets --all-features --locked -- -D warnings`
+- `cargo test --workspace --all-targets --all-features --locked` — 128 runtime
+  tests passed in the final successful run; repository operator-only tests remain
+  explicitly ignored
+- the Rust delivery conformance driver validated all 13 catalog definitions,
+  rejected the missing-map capability case with a structured diagnostic, and
+  exercised authenticated run/status/events, pause/resume/step and offline replay
 
-| Required capability | This execution |
-| --- | --- |
-| Strict compiler/scheduler and protected kernel extraction | Not implemented |
-| Dynamic subworkflow selection and typed analysis DAGs | Not implemented |
-| Transactional store, durable budgets, recovery admission | Not implemented |
-| Headless CLI/API, commands and durable events | Not implemented |
-| First-party compiled workflow catalog | Not implemented; original seeds remain inert |
-| Workflow replay and redacted telemetry | Not implemented |
-| Source/component/native verification | Not executed |
+One full-suite attempt had a transient existing `MCP process failed to start`
+failure in an operator lifecycle test. The exact test passed on immediate rerun;
+the final full-suite run is the evidence cited above. No code change was made for
+that environment race.
 
-The live ledgers retain all 90 mandatory WF/AT pairs, 32 tasks, and 40 fault cases. No task has
-the required different-D3 verification. Zero requirements are accepted as complete. G0 is partial;
-G1–G4 and G6 are blocked; G5 is separately blocked by missing authorization/environment.
+The implementation currently proves deterministic synthetic source/component
+behavior. The default synthetic management profile has no provider or game
+authority and produces only bounded fixture outcomes through the shared runtime.
+Live profiles remain capability- and scope-gated. Native game compatibility,
+provider expenditure, host restart, deployment, installation, merge and release
+were not performed.
 
-## Orchestration and permission evidence
+## Archive, standards and orchestration
 
-The root's observed metadata is `gpt-6-astra`, effort `xhigh`, CLI 0.153.4. The initial D1
-preflight worker ran `gpt-5.6-luna`, effort `max`, verified by structured session metadata.
-The sanitized attestation preserves actual thread/parent IDs and requested/accepted/observed
-fields separately. No D2/D3 exists: D1 reported no callable native collaboration tools.
-The root could not independently observe the child's tool schema; this limitation is recorded.
-The hierarchy gate fails even though D1's effective model/effort is verified. A second fresh
-D1 preflight after the environment permission change independently reported the same unavailable
-native tools. These sequential D1 checks are not a replacement for D2/D3 or independent D3 review.
-The recheck has a tool-returned canonical task ID and requested Luna/Max configuration, but no
-observed model/effort metadata; those fields remain null in its separate attestation.
+The package inventory, SHA-256, JSON/TOML/DAG/traceability/link checks and its 12
+unit tests passed. Optional Python `jsonschema` validation remained skipped because
+that development dependency was absent; it was not installed. The package is
+retained byte-for-byte under `prompts/phase1/`.
 
-Peak live descendants: one; runtime capacity: four total. No flat implementation, external
-agent chain, model substitution, account switch, global configuration edit, or D4 spawn occurred.
-Both preflight workers finished. No source write leases were granted to descendants.
+Rust 1.97.1, rustfmt and Clippy are available from the workspace-local toolchain.
+The delivery standards profile is recorded in `standards-profile.toml`; the
+delivery driver invokes the built harness binary and contains no graph
+interpreter, scheduler, sibling-source dependency or native game call.
 
-The authenticated GitHub operator is `CompleteDotTech`. Scope includes the package's private
-repository bootstrap and draft delivery. Native game/provider, installs, merge, releases,
-deployment, host restart, remote listeners and global configuration remain separately gated.
-Rust installation approval was requested and remained pending when this report was prepared.
+The requested D0→D1→D2→D3 native hierarchy was not observed. The D1 workers used
+`gpt-5.6-luna` with `max` effort as requested, but their environments exposed no
+callable native collaboration tools, so D2/D3 could not be created. No flat or
+subprocess substitute was used. This is an orchestration evidence limitation,
+separate from the component tests above; it prevents a complete Phase 1 claim.
 
-## Validation and limits
+Scoped branches, commits, pushes, private repository bootstrap, issue and draft
+PR preparation were authorized by the launch package. No merge, release,
+deployment, installation, remote exposure, native game launch or live provider
+call occurred.
 
-The package inventory/checksum/JSON/TOML/DAG/traceability/link verifier passed, and all 12
-package unit tests passed. Optional `jsonschema` fixture validation returned its documented
-skipped result (exit 2), because the development dependency is absent. It was not installed.
-These checks establish original instruction-package integrity only.
+## Historical preparation checkpoint
 
-Preparation validation and exact command/exit/evidence digests are recorded in
-[`commands.json`](commands.json). Required Rust commands cannot run without Cargo. No CI,
-native test, independent D3 review, or product conformance result is inferred from those checks.
+The earlier 2026-09-09 checkpoint was blocked before product implementation. Its
+source locks, preflight attestations and handoff remain in Git history and the
+original ledgers. They are historical evidence only; the current continuation
+above supersedes its “not implemented” product table and missing-toolchain note.
 
-## Delivery and exact state
+## Remaining gates
 
-See [`delivery.json`](delivery.json) for actual repository ID/visibility, bootstrap head,
-tracking issue, draft PR, branch and assignment receipts. See
-[`source-lock.json`](../../integration/source-lock.json) for inspected source heads and
-unmerged dependency candidates. No compatible product candidate has been selected.
-The original package is retained byte-for-byte with provenance; imported archive assets
-are not installed tools or canonical harness contracts.
+- D2/D3 independent review and exact hierarchy evidence remain unavailable.
+- Cross-repository MCP/protocol/watchdog conformance is not complete; only the
+  harness and gateway candidates were built and tested in this continuation.
+- Full crash/fault matrix, independent adversarial review, legacy differential
+  measurements, redacted telemetry integration and complete offline replay
+  artifact retention still require additional evidence.
+- Native compatibility and unattended live recovery remain separately gated by
+  authorization and environment.
 
-Private repository `AI-Ascension/ascension-workflow` was created (ID `1363224464`) with initial
-main commit `20bb8fe06708ae70666711fc975baf475d827c2a`. The isolated preparation branch is
-`codex/phase1-preflight-20260909`; its initial content commit is
-`6bfb47fe8edb63ef326fa8172356cbecd743b82f`. The delivery-receipt follow-up is retained in its Git
-history. [Tracking issue 1](https://github.com/AI-Ascension/ascension-workflow/issues/1) and
-[draft PR 2](https://github.com/AI-Ascension/ascension-workflow/pull/2) were created and both
-assignments to `CompleteDotTech` were read back. No CI status checks are configured or reported.
-
-No existing owner source was changed. Nothing was merged, released, installed, deployed,
-or used to launch a game/provider. No gameplay operation, store, valued profile, receipt,
-or lease was created, so no unresolved game effect needs reconciliation.
-
-## Blockers and ownership
-
-- B-001 — Runtime/client owner: native recursive delegation is unavailable in D1. Restore
-  supported tools and rerun T00 before hierarchy-dependent write work.
-- B-002 — Operator/environment owner: Rust 1.97.1/rustfmt/Clippy is unavailable. Resolve
-  workspace-local installation authorization or supply the pinned toolchain.
-- B-003 — WS-A and boundary owners: complete current source/standards admission and select
-  compatible recovery/map/setup candidates; current discovery is partial.
-- B-004 — Operator/native owner: no native disposable profile/provider budget is authorized.
-  This blocks G5 claims independently of deterministic implementation.
-- B-005 — WS-G: no D3 independent review or exact-head product validation has occurred.
-
-Every unimplemented requirement retains its assigned workstream/task and blocker in the live
-ledger. Follow the [resume procedure](../operations/RESUME.md); no background work is promised.
+Resume from [the operations guide](../operations/RESUME.md), preserve the exact
+candidate locks, and update the live requirement/task ledgers only with new
+tool-derived evidence. Do not claim a default-branch merge from a local
+candidate.

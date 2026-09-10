@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "status": "candidate_validation_and_delivery",
+  "captured_at": "2026-09-10T08:35:00Z",
+  "root": "/root",
+  "requested_descendant_model": "gpt-5.6-luna",
+  "requested_descendant_effort": "max",
+  "observed_hierarchy": {
+    "native_d1_d2_d3": false,
+    "reason": "D1 environments exposed no callable native collaboration tools",
+    "subprocess_substitute": false,
+    "independent_d3": false
+  },
+  "global_descendant_ceiling": 12,
+  "active_agents": [],
+  "closed_lanes": [
+    {
+      "id": "01a08a01-2f46-74d1-bc50-82c69b3b3921",
+      "role": "protected episode operations",
+      "candidate": "db5cfae3bfbc5ea562e51ef4654528511aeffcdb",
+      "integrated": "9e0243b"
+    },
+    {
+      "id": "01a08a02-51a7-7fe1-a48b-a5370a84e1b5",
+      "role": "gateway authority",
+      "candidate": "1aa0d32a1f5fd7784cb4754efb09f27169fbb898",
+      "integrated": "e5543403e7ac0fa13929c296adfab877bea4212a"
+    },
+    {
+      "id": "01a08a00-ac64-7663-afdd-ddcd3d6fe7c0",
+      "role": "workflow contract",
+      "candidate": "18a774e1bd10cf5d52709fde0dcd62219185892",
+      "integrated": "3a2a1b5"
+    },
+    {
+      "id": "01a08a02-de1b-7870-aa29-e6701744010d",
+      "role": "durable store and invocation journal",
+      "candidate": "bb2ab7dd3ef5fe7f8d5087397a8c4cbd7a0370d8",
+      "integrated": "7094f92"
+    },
+    {
+      "id": "01a08a20-cbde-7df0-a4d0-48258dc995ef",
+      "role": "STS2 catalog",
+      "candidate": "a9aa3b9dcf8d4291168a04d24a26288b398f9f80",
+      "integrated": "c525648"
+    },
+    {
+      "id": "01a08a21-daef-7d80-b1ba-f132ff4433b4",
+      "role": "management API and CLI",
+      "candidate": "9a9a7a6cee17ecedfeb76422a8c88b975e4570dc",
+      "integrated": "c33c77d",
+      "closed": true
+    }
+  ],
+  "leases": [
+    {
+      "repository": "AI-Ascension/sts2-harness",
+      "branch": "codex/workflow-integration-20260910",
+      "paths": ["crates/harness/src/workflow/", "crates/harness/src/execution/", "crates/harness/src/management/", "crates/harness/tests/"],
+      "status": "integrated_local_candidate",
+      "commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87"
+    },
+    {
+      "repository": "AI-Ascension/ascension-workflow",
+      "branch": "codex/phase1-preflight-20260909",
+      "paths": ["orchestration/", "integration/", "docs/", "quality/", "conformance/", "tools/"],
+      "status": "root_delivery_lease",
+      "commit_before_delivery": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0"
+    }
+  ],
+  "pending_external_operations": [],
+  "next_safe_actions": [
+    "finish truthfully updating live task and requirement ledgers",
+    "run archive and delivery JSON/link validation",
+    "commit and push scoped candidates; preserve no-merge boundary",
+    "retain D2/D3 and native gates as blocked"
+  ]
+}

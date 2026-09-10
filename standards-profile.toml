@@ -1,0 +1,32 @@
+# Phase 1 delivery profile; original owner-local policy, not an imported standards bundle.
+profile_version = 1
+profile_id = "ascension-workflow-rust-v1"
+status = "admitted_for_phase1_implementation"
+language = "rust"
+rust_version = "1.97.1"
+edition = "2024"
+license = "MIT"
+rustfmt_width = 100
+unsafe_code = "forbid"
+clippy_warnings = "deny"
+production_nonblank_preferred = 300
+production_nonblank_max = 400
+test_nonblank_preferred = 400
+test_nonblank_max = 600
+workflow_nonblank_preferred = 160
+workflow_nonblank_max = 200
+markdown_nonblank_preferred = 500
+markdown_nonblank_max = 700
+runtime_owner = "AI-Ascension/sts2-harness"
+tooling_scope = "artifact integrity, conformance clients and exact-process integration"
+forbidden_scope = "workflow interpretation, scheduling, direct gameplay or sibling source dependencies"
+
+[provenance]
+organization_repository = "AI-Ascension/.github"
+organization_commit = "dbdc1f19b623a5bfe67ab86a8e986b07201c85ca"
+organization_documents = ["GOVERNANCE.md", "CONTRIBUTING.md"]
+reference_owner = "AI-Ascension/sts2-harness"
+reference_commit = "fc44d3ef65fefa6d13ecd5f690e5335a6ef60080"
+reference_documents = ["AGENTS.md", "docs/CODING_STANDARDS.md", "docs/LICENSING.md"]
+implementation_source_copied = false
+enforcement_status = "profile admitted; executable delivery policy checks pending implementation"

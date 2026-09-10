@@ -1,14 +1,15 @@
 {
   "schema_version": 1,
-  "status": "blocked_preparation_only",
+  "status": "integrated_candidate_validation",
   "root_agent_id": "/root",
-  "resume_evidence_ref": "docs/evidence/resume-preflight.json",
-  "source_lock_ref": "integration/source-lock.json",
+  "captured_at": "2026-09-10T08:35:00Z",
+  "resume_evidence_ref": "docs/evidence/EXECUTION_REPORT.md",
+  "source_lock_ref": "integration/source-lock-20260910.json",
   "integration_lock_ref": "integration/candidate-lock.json",
   "task_ledger_ref": "orchestration/tasks.json",
   "requirement_ledger_ref": "quality/requirements.json",
   "active_agents": [],
-  "write_leases": [],
+  "write_leases": ["orchestration/current-run.json"],
   "pending_commands": [],
   "pending_external_operations": [],
   "candidate_branches": [
@@ -16,46 +17,60 @@
       "repository": "AI-Ascension/ascension-workflow",
       "branch": "codex/phase1-preflight-20260909",
       "base_commit": "20bb8fe06708ae70666711fc975baf475d827c2a",
-      "kind": "preparation_only_not_product_candidate"
+      "head_before_delivery_edits": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "kind": "delivery_candidate"
+    },
+    {
+      "repository": "AI-Ascension/sts2-harness",
+      "branch": "codex/workflow-integration-20260910",
+      "base_commit": "68e4f935f251c5e20d07b929c6b1c096d0b7b183",
+      "head": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "kind": "integrated_component_candidate"
+    },
+    {
+      "repository": "AI-Ascension/sts2-gateway",
+      "branch": "codex/workflow-authority-integration",
+      "base_commit": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0",
+      "head": "e5543403e7ac0fa13929c296adfab877bea4212a",
+      "kind": "authority_component_candidate"
     }
   ],
   "issue_pr_ids": [
     "https://github.com/AI-Ascension/ascension-workflow/issues/1",
     "https://github.com/AI-Ascension/ascension-workflow/pull/2"
   ],
-  "last_verified_gate": "original package integrity and unit checks only; no product gate",
-  "next_tasks": [
-    "T00",
-    "T01",
-    "T02",
-    "T03"
-  ],
+  "last_verified_gate": "harness strict policy, format, clippy, full tests, and authenticated catalog process conformance",
+  "next_tasks": ["T22", "T23", "T25", "T26", "T27", "T28", "T30", "T31"],
   "blockers": [
     {
       "id": "B-001",
       "owner": "runtime/client owner",
-      "reason": "Native D1/D2/D3 delegation now succeeds; effective model/effort metadata remains unexposed",
-      "status": "recursion_resolved_model_attestation_qualified"
+      "reason": "D1 environments exposed no callable native collaboration tools; D2/D3 hierarchy was not created",
+      "status": "active_orchestration_blocker"
     },
     {
       "id": "B-002",
       "owner": "operator/environment owner",
-      "reason": "Rust 1.97.1 absent; workspace installation authorization pending"
+      "reason": "resolved: workspace-local Rust 1.97.1, rustfmt and Clippy are installed and verified",
+      "status": "resolved"
     },
     {
       "id": "B-003",
-      "owner": "WS-A and boundary owners",
-      "reason": "Complete source/standards admission and compatible candidate selection pending"
+      "owner": "boundary owners",
+      "reason": "cross-repository MCP/protocol/watchdog candidate conformance is not complete",
+      "status": "active"
     },
     {
       "id": "B-004",
       "owner": "operator/native owner",
-      "reason": "No native disposable environment or provider budget authorized"
+      "reason": "no native disposable environment or live provider budget is authorized",
+      "status": "active_native_gate"
     },
     {
       "id": "B-005",
-      "owner": "WS-G",
-      "reason": "No different-D3 verification or final integrated product validation"
+      "owner": "independent review owner",
+      "reason": "no independent D3 reviewer or final G6 review was available",
+      "status": "active_review_gate"
     }
   ]
 }

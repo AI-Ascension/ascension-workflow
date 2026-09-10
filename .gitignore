@@ -1,4 +1,5 @@
 /target/
+/tools/conformance-driver/target/
 /.local/
 *.db
 *.db-shm

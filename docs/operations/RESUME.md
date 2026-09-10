@@ -1,36 +1,26 @@
 # Resume Phase 1
 
-This handoff is blocked preparation. Do not start from an empty plan or treat seed fixtures as
-implemented features. Preserve this branch, the original archive, all stable IDs, and source locks.
+The current run has local harness and gateway candidates plus a delivery branch. Preserve the
+original archive, stable IDs, dirty work and exact locks. Start with
+[`execution-state.json`](../../execution-state.json),
+[`orchestration/current-run.json`](../../orchestration/current-run.json), and
+[`integration/candidate-lock.json`](../../integration/candidate-lock.json).
 
-1. The latest [preflight](../evidence/resume-preflight.json) confirms native D1/D2/D3 delegation.
-   Effective model metadata remains unavailable; preserve configuration-only attestation.
-   If the runtime changes, recheck that a Luna Max D1 can call native collaboration tools to create
-   D2, and D2 can create D3. Rerun the read-only preflight, recording actual parentage/effective
-   metadata and enforcing the D3 no-spawn rule. Do not use another account, flattening, or hidden
-   CLI/API process ancestry to bypass the missing tools. Four concurrent slots can fit one chain.
-2. Resolve the pending workspace-local Rust 1.97.1/rustfmt/Clippy installation authorization,
-   or provide the existing pinned toolchain. Broader tool permissions do not authorize installs.
-3. Read `execution-state.json`, `orchestration/tasks.json`, `quality/requirements.json`,
-   `quality/fault-injection-cases.json`, and `integration/source-lock.json`. Reconcile recorded
-   GitHub IDs before creating anything. Fetch current refs and preserve dirty work.
-4. Finish T01: inspect current owner instructions, complete relevant source/tests, artifact
-   producers/consumers and overlapping PRs. PR 40 and PR 41 overlap the proposed recovery and
-   runner work. Select reviewed compatible candidates; keep main and feature heads distinct.
-5. Finish T02 standards/profile admission and independent bootstrap verification. Freeze
-   ADR-WF-001 through ADR-WF-009 in T03 before contracts or implementation depend on them.
-   Root owns schemas/locks; every write leaf receives an exact base, worktree, lease, and oracle.
-6. Implement T04–T30 in the package's dependency order through the required hierarchy. Keep
-   production code in the harness and minimum authority/receipt changes in their existing owners.
-   Retain the legacy path for equivalence tests. Run exact-head policy/format/Clippy/workspace,
-   process/store/fault, artifact, privacy and replay gates. A different D3 verifies each task.
-7. Complete linked draft owner PRs and independent G6 integration review. G5 native/provider
-   validation needs its own disposable environment/budget authorization. Never mark that gate
-   passed by running archive tests, a synthetic game, or reading a prior campaign report.
+The harness candidate `623848ed6dc8b2bbfa07cd287df7aa4feba18c87` passed format, strict policy,
+Clippy and the full workspace suite. The delivery Rust process driver passed authenticated
+loopback catalog and control conformance. Re-run the commands and driver from the current locks
+before changing the candidate. The gateway candidate is separate and is not on its default branch.
 
-The package archive extracts to its original directory name. Run its own documented verifier
-after extraction; do not execute its configuration examples or install them globally. The archive
-contains Python package checks only; implement product conformance in its admitted Rust profile.
+The native D0→D1→D2→D3 hierarchy was not observed: D1 environments had no callable native
+collaboration tools. Do not flatten the hierarchy or substitute subprocesses. Keep B-001 and B-005
+active until a real independent review is available. Rust 1.97.1, rustfmt and Clippy are already
+installed in the workspace-local toolchain; B-002 is resolved.
 
-No gameplay operation is pending from this run. No store migration, game save, lease, or provider
-execution was created. There is therefore no runtime restart or recovery command to execute yet.
+Remaining work is the cross-repository MCP/protocol/watchdog conformance, full crash/privacy/
+telemetry/replay evidence, independent review, legacy differential measurements and the separately
+authorized native gate. Do not mark a requirement complete from a file existing or a unit test
+alone. The current requirement ledger distinguishes `verification`, `blocked` and `in_progress`.
+
+The package archive contains provenance checks only. Keep product conformance in the admitted Rust
+driver and invoke the built harness binary; do not add a second graph interpreter or scheduler.
+No gameplay operation, valued save, live provider call or unresolved game effect is pending.

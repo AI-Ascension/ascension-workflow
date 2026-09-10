@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "blocked_preparation_only",
+  "status": "candidate_validation",
   "tasks": [
     {
       "id": "T00",
@@ -36,18 +36,19 @@
       "candidate_commit": null,
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
-        "orchestration/agents/preflight-lead.json"
+        "orchestration/agents/preflight-lead.json",
+        "integration/candidate-lock.json"
       ],
       "special_gate": null,
       "blocker_refs": [
         "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
       "owner_repository": "AI-Ascension/ascension-workflow",
-      "preparation_only": true
+      "preparation_only": false,
+      "independent_reviewer": null,
+      "next_safe_action": "Restore native D1/D2/D3 tools and obtain independent review before final completion."
     },
     {
       "id": "T01",
@@ -56,10 +57,10 @@
       "dependencies": [
         "T00"
       ],
-      "state": "blocked",
-      "depth1_owner": "WS-A",
-      "depth2_coordinator": null,
-      "depth3_implementer": null,
+      "state": "verification",
+      "depth1_owner": "/root/preflight",
+      "depth2_coordinator": "/root/preflight/d2",
+      "depth3_implementer": "/root/preflight/d2/d3",
       "depth3_verifier": null,
       "model": "gpt-5.6-luna",
       "reasoning_effort": "max",
@@ -80,20 +81,20 @@
         "Baseline drift and overlapping PRs documented without duplicating work."
       ],
       "write_lease": null,
-      "candidate_commit": null,
+      "candidate_commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
       "evidence_refs": [
-        "docs/evidence/EXECUTION_REPORT.md"
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
       ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
       "owner_repository": "AI-Ascension/ascension-workflow",
-      "preparation_only": true
+      "preparation_only": false,
+      "independent_reviewer": null,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T02",
@@ -102,7 +103,7 @@
       "dependencies": [
         "T01"
       ],
-      "state": "blocked",
+      "state": "verification",
       "depth1_owner": "WS-A",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -129,20 +130,20 @@
         "Substantive deliverable layout, approved standards, and linked tracking issue established."
       ],
       "write_lease": null,
-      "candidate_commit": null,
+      "candidate_commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
       "evidence_refs": [
-        "docs/evidence/EXECUTION_REPORT.md"
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
       ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
       "owner_repository": "AI-Ascension/ascension-workflow",
-      "preparation_only": true
+      "preparation_only": false,
+      "independent_reviewer": null,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T03",
@@ -152,9 +153,9 @@
         "T01",
         "T02"
       ],
-      "state": "not_started",
-      "depth1_owner": "WS-A",
-      "depth2_coordinator": null,
+      "state": "verification",
+      "depth1_owner": "/root/contracts_review",
+      "depth2_coordinator": "/root/contracts_review/d2_coordinator",
       "depth3_implementer": null,
       "depth3_verifier": null,
       "model": "gpt-5.6-luna",
@@ -173,17 +174,20 @@
         "Semantics, durability, authority, dynamic, API and privacy decisions recorded."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/ascension-workflow"
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T04",
@@ -192,10 +196,10 @@
       "dependencies": [
         "T03"
       ],
-      "state": "not_started",
-      "depth1_owner": "WS-A",
-      "depth2_coordinator": null,
-      "depth3_implementer": null,
+      "state": "verification",
+      "depth1_owner": "/root/contracts_review",
+      "depth2_coordinator": "/root/contracts_review/d2_contracts",
+      "depth3_implementer": "/root/contracts_review/d2_contracts/implementer",
       "depth3_verifier": null,
       "model": "gpt-5.6-luna",
       "reasoning_effort": "max",
@@ -221,17 +225,20 @@
         "Canonical digest and immutable artifact consumption tested."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T05",
@@ -240,7 +247,7 @@
       "dependencies": [
         "T04"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-B",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -270,17 +277,20 @@
         "Bounded loops/subworkflows and deterministic guard routing compile."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T06",
@@ -289,7 +299,7 @@
       "dependencies": [
         "T03"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-B",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -313,17 +323,20 @@
         "Primary and cleanup errors plus pending operation identity preserved."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T07",
@@ -333,7 +346,7 @@
         "T05",
         "T06"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-B",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -359,17 +372,20 @@
         "No pending transition can be bypassed by graph cursor changes."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T08",
@@ -380,7 +396,7 @@
         "T09",
         "T10"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-B",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -413,17 +429,20 @@
         "Current catalog, policy, identity and no-parallel-mutation checks enforced."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T09",
@@ -432,7 +451,7 @@
       "dependencies": [
         "T04"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-C",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -457,17 +476,20 @@
         "Reducer reconstructs state from recorded normalized events."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T10",
@@ -476,7 +498,7 @@
       "dependencies": [
         "T09"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-C",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -505,17 +527,20 @@
         "No lock/transaction held over external effects; disk/corruption behavior tested."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T11",
@@ -527,7 +552,7 @@
         "T12",
         "T13"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-C",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -555,17 +580,20 @@
         "Changed authorities and missing receipts gate automatic resume."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T12",
@@ -575,7 +603,7 @@
         "T03",
         "T09"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-C",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -601,17 +629,20 @@
         "Harness/gateway/host/machine failure domains separately supported or safely blocked."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "e5543403e7ac0fa13929c296adfab877bea4212a",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "existing boundary owners; allocation requires completed source review"
+      "owner_repository": "AI-Ascension/sts2-gateway",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T13",
@@ -621,7 +652,7 @@
         "T12",
         "T04"
       ],
-      "state": "not_started",
+      "state": "blocked",
       "depth1_owner": "WS-C",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -647,16 +678,20 @@
       ],
       "write_lease": null,
       "candidate_commit": null,
-      "evidence_refs": [],
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
         "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "existing boundary owners; allocation requires completed source review"
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before marking complete."
     },
     {
       "id": "T14",
@@ -666,7 +701,7 @@
         "T04",
         "T09"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-D",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -693,17 +728,20 @@
         "Reservations survive uncertain provider costs and no hidden provider fallback."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T15",
@@ -713,7 +751,7 @@
         "T05",
         "T14"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-D",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -741,17 +779,20 @@
         "Mutation/script/policy/unknown-provider/stale revision plans rejected."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T16",
@@ -762,7 +803,7 @@
         "T10",
         "T15"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-D",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -788,17 +829,20 @@
         "Outputs join deterministically; outer graph alone invokes action kernel."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T17",
@@ -808,7 +852,7 @@
         "T11",
         "T16"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-D",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -834,17 +878,20 @@
         "Budgets/replan/loop counts persist without resetting on restart."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T18",
@@ -855,7 +902,7 @@
         "T16",
         "T19"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-F",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -880,17 +927,21 @@
         "Strict/dynamic combat and map paths preserve authority/capability boundaries."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/ascension-workflow"
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T19",
@@ -900,7 +951,7 @@
         "T04",
         "T06"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-F",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -929,17 +980,21 @@
         "Blocked modals, supported selection and terminal states are tested."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T20",
@@ -950,7 +1005,7 @@
         "T11",
         "T14"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-E",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -976,17 +1031,21 @@
         "Read/validate/offline operations have no game/provider side effects."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T21",
@@ -997,7 +1056,7 @@
         "T11",
         "T20"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-E",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -1025,17 +1084,21 @@
         "Duplicate commands, reconnect/gaps/slow clients and auth failures tested."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T22",
@@ -1046,7 +1109,7 @@
         "T14",
         "T21"
       ],
-      "state": "not_started",
+      "state": "blocked",
       "depth1_owner": "WS-E",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -1071,17 +1134,21 @@
         "Synthetic sentinel/private/hidden data excluded from every export surface."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
         "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before marking complete."
     },
     {
       "id": "T23",
@@ -1092,7 +1159,7 @@
         "T10",
         "T16"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-E",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -1118,17 +1185,20 @@
         "Missing, redacted or incompatible replay data yields explicit unavailability/divergence."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/sts2-harness"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T24",
@@ -1140,7 +1210,7 @@
         "T21",
         "T23"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-F",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -1165,17 +1235,21 @@
         "Exact producer artifact digests and candidate source heads are bound."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json",
+        "conformance/README.md"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/ascension-workflow"
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T25",
@@ -1187,7 +1261,7 @@
         "T17",
         "T21"
       ],
-      "state": "not_started",
+      "state": "blocked",
       "depth1_owner": "WS-G",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -1213,17 +1287,21 @@
         "No original uncertain operation is replaced by a new mutating identity."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
         "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/ascension-workflow"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before marking complete."
     },
     {
       "id": "T26",
@@ -1235,7 +1313,7 @@
         "T22",
         "T24"
       ],
-      "state": "not_started",
+      "state": "blocked",
       "depth1_owner": "WS-G",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -1260,17 +1338,21 @@
         "Actual requested/accepted/observed model settings and parentage are not conflated."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
         "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/ascension-workflow"
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before marking complete."
     },
     {
       "id": "T27",
@@ -1281,7 +1363,7 @@
         "T17",
         "T24"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-G",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -1306,17 +1388,20 @@
         "Measured synthetic overhead reported without invented performance targets."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/ascension-workflow"
+      "owner_repository": "AI-Ascension/sts2-harness",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T28",
@@ -1327,7 +1412,7 @@
         "T26",
         "T27"
       ],
-      "state": "not_started",
+      "state": "blocked",
       "depth1_owner": "WS-G",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -1351,19 +1436,22 @@
         "Exact native support/failure domains recorded; unavailable permission remains blocked."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": "native_authorization_and_environment",
       "completion_policy": "Reporting work may complete with an explicit blocked native-evidence gate; do not convert blocked native requirements to confirmed. Final report delivery must remain possible.",
       "blocker_refs": [
-        "B-001",
-        "B-002",
         "B-003",
-        "B-005",
-        "B-004"
+        "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/ascension-workflow"
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Complete the remaining cross-repository, fault, privacy, native or independent-review gate before marking complete."
     },
     {
       "id": "T29",
@@ -1374,7 +1462,7 @@
         "T25",
         "T27"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-F",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -1400,17 +1488,20 @@
         "No phase-2/browser feature or unsupported live-recovery claim."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/ascension-workflow"
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T30",
@@ -1421,7 +1512,7 @@
         "T27",
         "T29"
       ],
-      "state": "not_started",
+      "state": "verification",
       "depth1_owner": "WS-G",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -1446,17 +1537,20 @@
         "No test weakening, broad cleanup or unrelated code changes."
       ],
       "write_lease": null,
-      "candidate_commit": null,
-      "evidence_refs": [],
+      "candidate_commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+      "evidence_refs": [
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
+      ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
-      "owner_repository": "AI-Ascension/ascension-workflow"
+      "owner_repository": "AI-Ascension/ascension-workflow",
+      "independent_reviewer": null,
+      "preparation_only": false,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T31",
@@ -1466,7 +1560,7 @@
         "T28",
         "T30"
       ],
-      "state": "blocked",
+      "state": "in_progress",
       "depth1_owner": "WS-G",
       "depth2_coordinator": null,
       "depth3_implementer": null,
@@ -1492,20 +1586,20 @@
         "Every requirement has implementation/evidence or a precise blocker, and agents are closed."
       ],
       "write_lease": null,
-      "candidate_commit": null,
+      "candidate_commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
       "evidence_refs": [
-        "docs/evidence/EXECUTION_REPORT.md"
+        "docs/evidence/EXECUTION_REPORT.md",
+        "integration/candidate-lock.json"
       ],
       "special_gate": null,
       "blocker_refs": [
-        "B-001",
-        "B-002",
-        "B-003",
         "B-005"
       ],
       "reviewer": null,
       "owner_repository": "AI-Ascension/ascension-workflow",
-      "preparation_only": true
+      "preparation_only": false,
+      "independent_reviewer": null,
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     }
   ]
 }

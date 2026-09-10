@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-10",
+  "harness_repository": "AI-Ascension/sts2-harness",
+  "harness_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+  "harness_base": "68e4f935f251c5e20d07b929c6b1c096d0b7b183",
+  "commands": [
+    {"command": "cargo fmt --all --check", "exit_code": 0},
+    {"command": "cargo run -p repo-policy -- --strict", "exit_code": 0, "result": "560 sized files; zero warnings; zero errors"},
+    {"command": "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings", "exit_code": 0},
+    {"command": "cargo test --workspace --all-targets --all-features --locked", "exit_code": 0, "result": "128 runtime tests passed; operator-only tests explicitly ignored"},
+    {"command": "cargo test -p sts2-harness --test management --locked", "exit_code": 0, "result": "5 passed"}
+  ],
+  "process_conformance": {
+    "driver": "tools/conformance-driver",
+    "exit_code": 0,
+    "definitions_validated": 13,
+    "negative_required_capability": "passed",
+    "authenticated_loopback_run": "passed",
+    "status_events_pause_resume_step": "passed",
+    "offline_replay": "passed",
+    "native_game": false,
+    "live_provider": false
+  },
+  "gateway_candidate": {
+    "commit": "e5543403e7ac0fa13929c296adfab877bea4212a",
+    "base": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0",
+    "tests_passed": 147
+  },
+  "orchestration": {
+    "d2_d3_observed": false,
+    "reason": "native collaboration tools unavailable in D1 environments",
+    "independent_review": false
+  }
+}

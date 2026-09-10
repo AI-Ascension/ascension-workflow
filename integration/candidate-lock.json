@@ -1,7 +1,70 @@
 {
   "schema_version": 1,
-  "status": "not_selected",
-  "candidate_revisions": [],
-  "accepted_contract_artifacts": [],
-  "reason": "B-001 and B-003; no contracts frozen or implementation integrated"
+  "status": "local_candidates_validated",
+  "captured_at": "2026-09-10T08:30:00Z",
+  "delivery_repository": {
+    "repository": "AI-Ascension/ascension-workflow",
+    "branch": "codex/phase1-preflight-20260909",
+    "commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+    "base": "20bb8fe06708ae70666711fc975baf475d827c2a",
+    "claim": "catalog and delivery artifacts are present on this local candidate"
+  },
+  "candidate_revisions": [
+    {
+      "repository": "AI-Ascension/sts2-harness",
+      "branch": "codex/workflow-integration-20260910",
+      "commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "base": "68e4f935f251c5e20d07b929c6b1c096d0b7b183",
+      "components": [
+        "workflow-v1 contract/compiler/decoder",
+        "strict and bounded dynamic runtime",
+        "durable workflow store and invocation journal",
+        "protected episode ports",
+        "authenticated management API and sts2-workflow CLI",
+        "synthetic management process adapter"
+      ],
+      "evidence": [
+        "cargo fmt --all --check",
+        "cargo run -p repo-policy -- --strict",
+        "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings",
+        "cargo test --workspace --all-targets --all-features --locked",
+        "authenticated loopback catalog/process conformance"
+      ],
+      "publication": "local candidate; not merged to main"
+    },
+    {
+      "repository": "AI-Ascension/sts2-gateway",
+      "branch": "codex/workflow-authority-integration",
+      "commit": "e5543403e7ac0fa13929c296adfab877bea4212a",
+      "base": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0",
+      "components": ["workflow authority boot/fence/receipt recovery contract"],
+      "evidence": [
+        "cargo fmt --all --check",
+        "cargo run --locked --package repo-policy -- --strict",
+        "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings",
+        "cargo test --workspace --all-targets --all-features --locked (147 passed)"
+      ],
+      "publication": "local candidate; not merged to main"
+    }
+  ],
+  "accepted_contract_artifacts": [
+    {
+      "path": "contract-artifact/workflow-v1/manifest.json",
+      "producer": "AI-Ascension/sts2-harness",
+      "producer_commit": "623848ed6dc8b2bbfa07cd287df7aa4feba18c87",
+      "semantic_contract": "ascension.workflow/v1",
+      "schema_sha256": "f8f79e115cd3bd736125ad17e33676bfe110f8a1b2673577cbbe93f1d5cc937d"
+    }
+  ],
+  "authority": {
+    "gateway_default_branch": "6b6c7f2fac67de22fdf78c9fd818c6781f689ba0",
+    "harness_default_branch": "68e4f935f251c5e20d07b929c6b1c096d0b7b183",
+    "native_game": "not invoked",
+    "live_provider": "not invoked"
+  },
+  "limitations": [
+    "D2/D3 native recursive delegation was unavailable and is recorded in orchestration evidence.",
+    "The candidate lock does not claim a merge, release, deployment, installation, or native compatibility.",
+    "The synthetic management adapter is the only default execution profile; live ports remain capability-gated."
+  ]
 }

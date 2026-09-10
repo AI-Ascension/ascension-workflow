@@ -47,8 +47,8 @@ positive cases cover every published stage family. Its negative cases cover
 required capability absence, optional fallback, stale generation, hidden-state
 input, blocked modal mutation, provider failure, and terminal provider calls.
 
-For a later harness conformance run, validate each workflow against the
-harness-exported workflow-v1 schema, then run semantic validation and publish
-the resulting source and semantic digests. This catalog commit does not copy
-the harness implementation or claim that an unmerged harness candidate is
-already integrated.
+The checked-in contract artifact is copied from the harness producer at the
+candidate revision recorded in `integration/candidate-lock.json`. The Rust
+process driver validates every published definition against the built harness
+binary and records the required-capability negative case; it does not copy or
+reinterpret the harness implementation.

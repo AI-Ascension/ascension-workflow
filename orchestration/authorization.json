@@ -32,6 +32,6 @@
     "prompts/phase1/provenance.json",
     "docs/evidence/runtime-preflight.json"
   ],
-  "toolchain_installation": "pending separate user response; not attempted",
+  "toolchain_installation": "User explicitly approved workspace-local Rust 1.97.1, rustfmt and Clippy installation; installed and version-checked on 2026-09-09",
   "permission_mode_change": "User resumed after environment changed to unrestricted/never; product authority unchanged"
 }
