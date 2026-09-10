@@ -5,7 +5,7 @@
   "delivery_repository": {
     "repository": "AI-Ascension/ascension-workflow",
     "branch": "codex/phase1-preflight-20260909",
-    "commit": "c5256489ee6d1da0fdd3bab1419ca59a6b180df0",
+    "commit": "7853fc5e0e7b480f825ace284a456c5b65a525fb",
     "base": "20bb8fe06708ae70666711fc975baf475d827c2a",
     "claim": "catalog and delivery artifacts are present on this local candidate"
   },
@@ -30,7 +30,7 @@
         "cargo test --workspace --all-targets --all-features --locked",
         "authenticated loopback catalog/process conformance"
       ],
-      "publication": "local candidate; not merged to main"
+      "publication": "draft PR https://github.com/AI-Ascension/sts2-harness/pull/52; not merged to main"
     },
     {
       "repository": "AI-Ascension/sts2-gateway",
@@ -44,7 +44,7 @@
         "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings",
         "cargo test --workspace --all-targets --all-features --locked (147 passed)"
       ],
-      "publication": "local candidate; not merged to main"
+      "publication": "draft PR https://github.com/AI-Ascension/sts2-gateway/pull/36; not merged to main"
     }
   ],
   "accepted_contract_artifacts": [
