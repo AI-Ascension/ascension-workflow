@@ -1,0 +1,125 @@
+{
+  "schema_version": "ascension.sts2.fixture/v1",
+  "suite_id": "sts2.synthetic.stage-suite",
+  "provenance": {
+    "kind": "synthetic",
+    "generator": "hand-authored-catalog-fixtures",
+    "claims_live_observation": false,
+    "reference_build": "synthetic-only",
+    "privileged_fields": []
+  },
+  "cases": [
+    {
+      "fixture_id": "sts2.synthetic.campaign.001",
+      "workflow_id": "sts2.campaign.strict",
+      "mode": "strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "observation": {"state_id": "campaign.route", "generation": 1, "stage": "campaign", "input_enabled": true, "legal_actions": ["route.visible.1"]},
+      "expected": {"admission": "accepted", "mutation_nodes": ["iteration_execute"], "bounded_loop_max_iterations": 16, "terminal": "completed", "provider_calls": 1, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.setup.001",
+      "workflow_id": "sts2.setup.strict",
+      "mode": "strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "observation": {"state_id": "setup.ready", "generation": 2, "stage": "setup", "input_enabled": true, "legal_actions": ["setup.visible.1"]},
+      "expected": {"admission": "accepted", "mutation_nodes": ["execute"], "terminal": "completed", "provider_calls": 1, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.combat.strict.001",
+      "workflow_id": "sts2.combat.strict",
+      "mode": "strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "observation": {"state_id": "combat.player-turn", "generation": 3, "stage": "combat", "input_enabled": true, "legal_actions": ["combat.visible.1"]},
+      "expected": {"admission": "accepted", "mutation_nodes": ["iteration_execute"], "bounded_loop_max_iterations": 32, "terminal": "completed", "provider_calls": 1, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.combat.dynamic.001",
+      "workflow_id": "sts2.combat.dynamic",
+      "mode": "dynamic",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "observation": {"state_id": "combat.player-turn", "generation": 4, "stage": "combat", "input_enabled": true, "legal_actions": ["combat.visible.1"]},
+      "expected": {"admission": "accepted", "analysis_nodes": ["iteration_adaptive"], "mutation_nodes": ["iteration_execute"], "same_action_boundary_as": "sts2.combat.strict", "terminal": "completed", "provider_calls": 2, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.map.strict.001",
+      "workflow_id": "sts2.map.strict",
+      "mode": "strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "observation": {"state_id": "map.visible", "generation": 5, "stage": "map", "input_enabled": true, "legal_actions": ["map.visible.1", "map.visible.2"]},
+      "expected": {"admission": "accepted", "mutation_nodes": ["execute"], "terminal": "completed", "provider_calls": 1, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.map.dynamic.001",
+      "workflow_id": "sts2.map.dynamic",
+      "mode": "dynamic",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "observation": {"state_id": "map.visible", "generation": 6, "stage": "map", "input_enabled": true, "legal_actions": ["map.visible.1", "map.visible.2"]},
+      "expected": {"admission": "accepted", "analysis_nodes": ["adaptive"], "mutation_nodes": ["execute"], "same_action_boundary_as": "sts2.map.strict", "terminal": "completed", "provider_calls": 2, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.reward.001",
+      "workflow_id": "sts2.reward.strict",
+      "mode": "strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "observation": {"state_id": "reward.visible", "generation": 7, "stage": "reward", "input_enabled": true, "legal_actions": ["reward.visible.1", "reward.skip"]},
+      "expected": {"admission": "accepted", "mutation_nodes": ["execute"], "terminal": "completed", "provider_calls": 1, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.shop.001",
+      "workflow_id": "sts2.shop.strict",
+      "mode": "strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "observation": {"state_id": "shop.visible", "generation": 8, "stage": "shop", "input_enabled": true, "legal_actions": ["shop.visible.1", "shop.proceed"]},
+      "expected": {"admission": "accepted", "mutation_nodes": ["execute"], "one_action_per_settlement": true, "terminal": "completed", "provider_calls": 1, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.event.001",
+      "workflow_id": "sts2.event.strict",
+      "mode": "strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "observation": {"state_id": "event.visible", "generation": 9, "stage": "event", "input_enabled": true, "legal_actions": ["event.visible.1"]},
+      "expected": {"admission": "accepted", "mutation_nodes": ["execute"], "terminal": "completed", "provider_calls": 1, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.rest.001",
+      "workflow_id": "sts2.rest.strict",
+      "mode": "strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "observation": {"state_id": "rest.visible", "generation": 10, "stage": "rest", "input_enabled": true, "legal_actions": ["rest.visible.1"]},
+      "expected": {"admission": "accepted", "mutation_nodes": ["execute"], "replan_after_settlement": true, "terminal": "completed", "provider_calls": 1, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.selection.001",
+      "workflow_id": "sts2.selection.strict",
+      "mode": "strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "observation": {"state_id": "selection.visible", "generation": 11, "stage": "selection", "input_enabled": true, "legal_actions": ["selection.visible.1"], "parent_cursor": "parent.synthetic.1"},
+      "expected": {"admission": "accepted", "mutation_nodes": ["execute"], "parent_cursor_preserved": true, "terminal": "completed", "provider_calls": 1, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.recovery.001",
+      "workflow_id": "sts2.recovery.strict",
+      "mode": "strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "observation": {"state_id": "recovery.unknown", "generation": 12, "stage": "recovery", "input_enabled": false, "stability": "unknown", "legal_actions": ["recovery.reobserve"]},
+      "expected": {"admission": "accepted", "mutation_nodes": [], "read_only": true, "terminal": "needs_operator", "provider_calls": 0, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.terminal.victory.001",
+      "workflow_id": "sts2.terminal.strict",
+      "mode": "strict",
+      "capability_manifest": "catalog/capabilities/synthetic-terminal-only.json",
+      "observation": {"state_id": "terminal.visible", "generation": 13, "stage": "terminal", "input_enabled": false, "game_outcome": "victory", "legal_actions": []},
+      "expected": {"admission": "accepted", "mutation_nodes": [], "workflow_terminal": "completed", "game_outcome": "victory", "provider_calls": 0, "native_coverage": false}
+    },
+    {
+      "fixture_id": "sts2.synthetic.terminal.defeat.001",
+      "workflow_id": "sts2.terminal.strict",
+      "mode": "strict",
+      "capability_manifest": "catalog/capabilities/synthetic-terminal-only.json",
+      "observation": {"state_id": "terminal.visible", "generation": 14, "stage": "terminal", "input_enabled": false, "game_outcome": "defeat", "legal_actions": []},
+      "expected": {"admission": "accepted", "mutation_nodes": [], "workflow_terminal": "completed", "game_outcome": "defeat", "provider_calls": 0, "native_coverage": false}
+    }
+  ]
+}

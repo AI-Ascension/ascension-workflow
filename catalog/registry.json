@@ -1,0 +1,151 @@
+{
+  "schema_version": "ascension.sts2.catalog/v1",
+  "catalog_id": "sts2.first-party",
+  "catalog_version": "0.1.0",
+  "workflow_schema": "ascension.workflow/v1",
+  "profile": "sts2-synthetic-v1",
+  "policy_ref": "sts2.fair-play.v1",
+  "planner_profiles": ["sts2.combat.planner.v1", "sts2.map.planner.v1"],
+  "regions": ["sts2.combat.analysis", "sts2.map.analysis"],
+  "guard_fields": ["state.game_outcome", "combat.transition"],
+  "local_only": true,
+  "remote_refs": [],
+  "scripts": false,
+  "provider_credentials": false,
+  "native_game_calls": false,
+  "capabilities": {
+    "baseline": [
+      "observe.fair-play.v1",
+      "actions.catalog.v1",
+      "actions.settlement.v1",
+      "authority.generation-fence.v1"
+    ],
+    "stage_actions": [
+      "actions.setup.v1",
+      "actions.map.v1",
+      "actions.combat.v1",
+      "actions.reward.v1",
+      "actions.shop.v1",
+      "actions.event.v1",
+      "actions.rest.v1",
+      "actions.selection.v1",
+      "operations.reconcile.v1",
+      "terminal.observation.v1"
+    ],
+    "stage_observations": ["observe.map.v1"],
+    "optional_analysis": [
+      "analysis.combat.v1",
+      "analysis.map.v1"
+    ]
+  },
+  "projections": [
+    {
+      "id": "sts2.campaign.fair-play.v1",
+      "required_fields": ["state.identity", "state.generation", "state.stage", "state.input_enabled", "derived.legal_actions"],
+      "stage_fields": ["campaign.route_kind"],
+      "forbidden_fields": ["security.hidden_rng", "state.unrevealed_rewards", "state.host_private"]
+    },
+    {
+      "id": "sts2.setup.fair-play.v1",
+      "required_fields": ["state.identity", "state.generation", "state.stage", "state.input_enabled", "derived.legal_actions"],
+      "stage_fields": ["setup.visible_options"],
+      "forbidden_fields": ["security.hidden_rng", "state.unrevealed_rewards", "state.host_private"]
+    },
+    {
+      "id": "sts2.combat.fair-play.v1",
+      "required_fields": ["state.identity", "state.generation", "state.stage", "state.input_enabled", "derived.legal_actions"],
+      "stage_fields": ["combat.visible_turn", "combat.visible_targets"],
+      "forbidden_fields": ["security.hidden_rng", "state.unrevealed_rewards", "state.host_private"]
+    },
+    {
+      "id": "sts2.map.fair-play.v1",
+      "required_fields": ["state.identity", "state.generation", "state.stage", "state.input_enabled", "derived.legal_actions"],
+      "stage_fields": ["map.visible_nodes", "map.visible_reachability"],
+      "forbidden_fields": ["security.hidden_rng", "state.unrevealed_rewards", "state.host_private"]
+    },
+    {
+      "id": "sts2.reward.fair-play.v1",
+      "required_fields": ["state.identity", "state.generation", "state.stage", "state.input_enabled", "derived.legal_actions"],
+      "stage_fields": ["reward.visible_offers"],
+      "forbidden_fields": ["security.hidden_rng", "state.unrevealed_rewards", "state.host_private"]
+    },
+    {
+      "id": "sts2.shop.fair-play.v1",
+      "required_fields": ["state.identity", "state.generation", "state.stage", "state.input_enabled", "derived.legal_actions"],
+      "stage_fields": ["shop.visible_offers", "player.visible_resources"],
+      "forbidden_fields": ["security.hidden_rng", "state.unrevealed_rewards", "state.host_private"]
+    },
+    {
+      "id": "sts2.event.fair-play.v1",
+      "required_fields": ["state.identity", "state.generation", "state.stage", "state.input_enabled", "derived.legal_actions"],
+      "stage_fields": ["event.visible_options"],
+      "forbidden_fields": ["security.hidden_rng", "state.unrevealed_rewards", "state.host_private"]
+    },
+    {
+      "id": "sts2.rest.fair-play.v1",
+      "required_fields": ["state.identity", "state.generation", "state.stage", "state.input_enabled", "derived.legal_actions"],
+      "stage_fields": ["rest.visible_services"],
+      "forbidden_fields": ["security.hidden_rng", "state.unrevealed_rewards", "state.host_private"]
+    },
+    {
+      "id": "sts2.selection.fair-play.v1",
+      "required_fields": ["state.identity", "state.generation", "state.stage", "state.input_enabled", "derived.legal_actions"],
+      "stage_fields": ["selection.visible_domain", "selection.parent_cursor"],
+      "forbidden_fields": ["security.hidden_rng", "state.unrevealed_rewards", "state.host_private"]
+    },
+    {
+      "id": "sts2.recovery.fair-play.v1",
+      "required_fields": ["state.identity", "state.generation", "state.stage", "state.input_enabled", "state.stability", "derived.legal_actions"],
+      "stage_fields": ["recovery.uncertainty", "operation.identity"],
+      "forbidden_fields": ["security.hidden_rng", "state.unrevealed_rewards", "state.host_private"]
+    },
+    {
+      "id": "sts2.terminal.fair-play.v1",
+      "required_fields": ["state.identity", "state.generation", "state.stage", "state.input_enabled", "state.game_outcome"],
+      "stage_fields": ["terminal.outcome"],
+      "forbidden_fields": ["security.hidden_rng", "state.unrevealed_rewards", "state.host_private"]
+    }
+  ],
+  "decisions": [
+    "sts2.campaign.decision.v1",
+    "sts2.setup.decision.v1",
+    "sts2.combat.decision.v1",
+    "sts2.map.decision.v1",
+    "sts2.reward.decision.v1",
+    "sts2.shop.decision.v1",
+    "sts2.event.decision.v1",
+    "sts2.rest.decision.v1",
+    "sts2.selection.decision.v1"
+  ],
+  "contexts": [
+    "sts2.campaign.context.v1",
+    "sts2.setup.context.v1",
+    "sts2.combat.context.v1",
+    "sts2.map.context.v1",
+    "sts2.reward.context.v1",
+    "sts2.shop.context.v1",
+    "sts2.event.context.v1",
+    "sts2.rest.context.v1",
+    "sts2.selection.context.v1",
+    "sts2.recovery.context.v1"
+  ],
+  "selectors": [
+    "sts2.campaign.stage-selector.v1",
+    "sts2.terminal.outcome-selector.v1",
+    "sts2.recovery.authority-selector.v1"
+  ],
+  "dynamic_operations": {
+    "combat": [
+      "analyze.threat.v1",
+      "analyze.resources.v1",
+      "decide.synthesize.v1",
+      "select.subworkflow.v1"
+    ],
+    "map": [
+      "analyze.map.routes.v1",
+      "analyze.map.resources.v1",
+      "decide.map.synthesize.v1",
+      "select.map.subworkflow.v1"
+    ]
+  }
+}

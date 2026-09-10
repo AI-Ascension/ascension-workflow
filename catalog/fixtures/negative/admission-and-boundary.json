@@ -1,0 +1,75 @@
+{
+  "schema_version": "ascension.sts2.fixture/v1",
+  "suite_id": "sts2.synthetic.negative-admission-boundary",
+  "provenance": {
+    "kind": "synthetic",
+    "generator": "hand-authored-catalog-fixtures",
+    "claims_live_observation": false,
+    "privileged_fields": []
+  },
+  "cases": [
+    {
+      "fixture_id": "sts2.negative.required-map-capability.001",
+      "workflow_id": "sts2.map.dynamic",
+      "capability_manifest": "catalog/capabilities/synthetic-missing-map.json",
+      "input": {"stage": "map", "generation": 1, "legal_actions": ["map.visible.1"]},
+      "expected": {"admission": "rejected", "reason": "missing_required_capability", "capability": "observe.map.v1", "execute_calls": 0}
+    },
+    {
+      "fixture_id": "sts2.negative.required-setup-capability.001",
+      "workflow_id": "sts2.setup.strict",
+      "capability_manifest": "catalog/capabilities/synthetic-terminal-only.json",
+      "input": {"stage": "setup", "generation": 1, "legal_actions": ["setup.visible.1"]},
+      "expected": {"admission": "rejected", "reason": "missing_required_capability", "capability": "actions.setup.v1", "execute_calls": 0}
+    },
+    {
+      "fixture_id": "sts2.negative.optional-analysis-absence.001",
+      "workflow_id": "sts2.combat.dynamic",
+      "capability_manifest": "catalog/capabilities/synthetic-baseline-no-analysis.json",
+      "input": {"stage": "combat", "generation": 2, "legal_actions": ["combat.visible.1"]},
+      "expected": {"admission": "accepted", "optional_capability": "analysis.combat.v1", "fallback": "registered_provider_free_operation", "hidden_state_used": false}
+    },
+    {
+      "fixture_id": "sts2.negative.stale-generation.001",
+      "workflow_id": "sts2.map.strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "input": {"stage": "map", "generation": 3, "legal_actions": ["map.visible.1"], "proposal_generation": 2},
+      "expected": {"admission": "accepted", "execution": "rejected", "reason": "stale_generation", "execute_calls": 0}
+    },
+    {
+      "fixture_id": "sts2.negative.hidden-state-input.001",
+      "workflow_id": "sts2.combat.strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "input": {"stage": "combat", "generation": 4, "legal_actions": ["combat.visible.1"], "security.hidden_rng": "redacted"},
+      "expected": {"admission": "rejected", "reason": "forbidden_observation_field", "execute_calls": 0}
+    },
+    {
+      "fixture_id": "sts2.negative.blocked-modal-mutation.001",
+      "workflow_id": "sts2.event.strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "input": {"stage": "event", "generation": 5, "input_enabled": false, "active_modal": "selection.blocked", "legal_actions": []},
+      "expected": {"admission": "accepted", "execution": "rejected", "reason": "input_blocked", "execute_calls": 0}
+    },
+    {
+      "fixture_id": "sts2.negative.dynamic-provider-failure.001",
+      "workflow_id": "sts2.combat.dynamic",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "input": {"stage": "combat", "generation": 6, "legal_actions": ["combat.visible.1"], "adaptive_result": "error"},
+      "expected": {"admission": "accepted", "workflow_terminal": "needs_operator", "reason": "adaptive_analysis_error", "execute_calls": 0}
+    },
+    {
+      "fixture_id": "sts2.negative.terminal-provider-call.001",
+      "workflow_id": "sts2.terminal.strict",
+      "capability_manifest": "catalog/capabilities/synthetic-terminal-only.json",
+      "input": {"stage": "terminal", "generation": 7, "game_outcome": "victory", "provider_request": "unexpected"},
+      "expected": {"admission": "accepted", "workflow_terminal": "completed", "provider_calls": 0, "reason": "terminal_forbids_provider"}
+    },
+    {
+      "fixture_id": "sts2.negative.selection-click-through.001",
+      "workflow_id": "sts2.selection.strict",
+      "capability_manifest": "catalog/capabilities/synthetic-full.json",
+      "input": {"stage": "selection", "generation": 8, "input_enabled": false, "active_modal": "selection.blocked", "attempted_action": "parent.visible.1"},
+      "expected": {"admission": "accepted", "execution": "rejected", "reason": "parent_cursor_blocked", "execute_calls": 0}
+    }
+  ]
+}

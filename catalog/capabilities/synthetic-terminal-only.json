@@ -1,0 +1,17 @@
+{
+  "schema_version": "ascension.capabilities/v1",
+  "producer": "runtime.synthetic.sts2",
+  "profile": "sts2-synthetic-terminal-v1",
+  "artifact_digest": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "instance_id": "instance.synthetic.terminal",
+  "boot_epoch": "boot.synthetic.4",
+  "capabilities": ["observe.fair-play.v1", "terminal.observation.v1"],
+  "recovery": {
+    "harness_restart": true,
+    "gateway_restart": false,
+    "host_restart": false,
+    "machine_reboot": false,
+    "receipt_retention_seconds": 3600
+  },
+  "evidence_scope": "synthetic"
+}
