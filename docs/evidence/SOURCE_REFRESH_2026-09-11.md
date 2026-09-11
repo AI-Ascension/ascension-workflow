@@ -34,6 +34,13 @@ checkouts:
 - `cargo test --locked --workspace --all-targets --all-features`
   at `AI-Ascension/sts2-mcp-server@30398bcb7a066e3641e5baaa41cb48dcaefaf65b`.
   The full workspace completed with exit code 0.
+- `cargo test --locked --workspace --all-targets --all-features`
+  at `AI-Ascension/sts2-protocol@58a158c7c4a722f33b0d11d8760d4a6eec03dc98`.
+  The full workspace completed with exit code 0.
+- `node --test tests/recorded-run-*.test.mjs`
+  at `AI-Ascension/ai-agent-observability@bb04e1cd7ca41330475161fd29bcefc8cc217247`
+  on Node `v24.16.0`. The recorded-run consumer reported 60 passing tests and
+  no failures.
 
 The harness test log is a local transient artifact at
 `/tmp/phase1-harness-refresh-20260911.log`; this document records its command,
