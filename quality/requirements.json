@@ -108,7 +108,9 @@
       "implementation_status": "component_candidate_verified_pending_independent_review",
       "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
       "preparation_refs": [
-        "integration/source-lock.json"
+        "integration/source-lock.json",
+        "integration/source-lock-20260911.json",
+        "docs/evidence/SOURCE_REFRESH_2026-09-11.md"
       ]
     },
     {

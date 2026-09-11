@@ -1,5 +1,14 @@
 # Phase 1 execution report
 
+## Source refresh — 2026-09-11
+
+A post-candidate source refresh is recorded in
+[`SOURCE_REFRESH_2026-09-11.md`](SOURCE_REFRESH_2026-09-11.md) with exact
+default heads in
+[`integration/source-lock-20260911.json`](../../integration/source-lock-20260911.json).
+It is additive evidence: the candidate snapshot and its remaining gates below
+remain historical and authoritative for their stated scope.
+
 ## Current continuation — 2026-09-10
 
 The implementation is split across an exact local harness candidate, a
