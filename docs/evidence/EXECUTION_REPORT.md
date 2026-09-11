@@ -9,6 +9,22 @@ default heads in
 It is additive evidence: the candidate snapshot and its remaining gates below
 remain historical and authoritative for their stated scope.
 
+## Current verification — 2026-09-11
+
+The delivery package verifier passed under Python 3.11.2, followed by all 12
+package checker tests. The package check covers archive integrity, task DAG,
+traceability, contracts, and synthetic fixtures only; it does not replace
+product or native-host evidence.
+
+The merged delivery commit `7254e35` makes the Rust process-conformance driver
+retry isolated loopback startup and include bounded harness stderr when a child
+process fails. The driver compiled and passed against the exact pinned harness
+candidate `6e0272511997165ebba337a15d22f73acd36a4c4`: all 13 catalog definitions
+validated, the required map capability was rejected against the missing-map
+manifest, and the synthetic authenticated run, restart, replay, and redacted
+export checks completed. A workspace-local temporary directory was used because
+the system `/tmp` tmpfs was full; no unrelated temporary data was removed.
+
 ## Current continuation — 2026-09-10
 
 The implementation is split across an exact local harness candidate, a
