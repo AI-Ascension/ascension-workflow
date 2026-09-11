@@ -28,6 +28,12 @@ checkouts:
 - `cargo test --locked --manifest-path tools/recorded-run-driver/Cargo.toml`
   at `AI-Ascension/ascension-workflow@32c1d5b46d2ac62f8df9ddd2020308df78bfe8e2`.
   The driver reported 10 passing tests and no failures.
+- `cargo test --locked --workspace --all-targets --all-features`
+  at `AI-Ascension/sts2-gateway@f4d14091ce1f3b5327925a7a536e2c7bf7b0c56b`.
+  The full workspace completed with exit code 0.
+- `cargo test --locked --workspace --all-targets --all-features`
+  at `AI-Ascension/sts2-mcp-server@30398bcb7a066e3641e5baaa41cb48dcaefaf65b`.
+  The full workspace completed with exit code 0.
 
 The harness test log is a local transient artifact at
 `/tmp/phase1-harness-refresh-20260911.log`; this document records its command,
