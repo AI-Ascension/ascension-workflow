@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-09-11T00:00:00Z",
+  "status": "refreshed_default_heads",
+  "purpose": "Continuation source provenance after the prior candidate snapshot. This lock does not assert cross-repository release readiness.",
+  "repositories": [
+    {"repository": "AI-Ascension/sts2-harness", "default_branch": "main", "commit": "e70fce12afebb38503a450c8bd242bd8ad532817"},
+    {"repository": "AI-Ascension/sts2-gateway", "default_branch": "main", "commit": "f4d14091ce1f3b5327925a7a536e2c7bf7b0c56b"},
+    {"repository": "AI-Ascension/sts2-mcp-server", "default_branch": "main", "commit": "30398bcb7a066e3641e5baaa41cb48dcaefaf65b"},
+    {"repository": "AI-Ascension/sts2-game-mod", "default_branch": "main", "commit": "afa44d6f8da66625b67a10d758725da01492a27a"},
+    {"repository": "AI-Ascension/sts2-protocol", "default_branch": "main", "commit": "58a158c7c4a722f33b0d11d8760d4a6eec03dc98"},
+    {"repository": "AI-Ascension/ai-agent-observability", "default_branch": "main", "commit": "bb04e1cd7ca41330475161fd29bcefc8cc217247"},
+    {"repository": "AI-Ascension/ascension-workflow-studio", "default_branch": "main", "commit": "a3c1506d8ce0cb32c890571165334277d873c884"},
+    {"repository": "AI-Ascension/ascension-workflow", "default_branch": "main", "commit": "32c1d5b46d2ac62f8df9ddd2020308df78bfe8e2"}
+  ],
+  "verification": {
+    "remote_query": "git ls-remote <repository> refs/heads/main",
+    "checked_default_branch": "main"
+  }
+}
