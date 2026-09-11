@@ -1,5 +1,6 @@
 /target/
 /tools/conformance-driver/target/
+/tools/recorded-run-driver/target/
 /.local/
 *.db
 *.db-shm

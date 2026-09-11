@@ -1,0 +1,50 @@
+{
+  "status": "review2_actual_train_interoperability_passed",
+  "scope": "Coordinator-produced final Train export evidence, consumed by this repository's bounded ordered runner and cross-consumer matrix. This is not contract admission or a release claim.",
+  "wire_version": "1.0.0-candidate.3",
+  "schema_sha256": "a6c32127290f4d5e670d8863f97a74a7b8e3e411e735d81394b51fe1578b4eb6",
+  "inventory_sha256": "580c1cf3be4bb3e4eb37b9acd9166808b7386b0eb84286cc0798a0d88e35bb35",
+  "bundle": {
+    "sha256": "fe10fe2d9674493469f17a51f59d2b01f07b4cbd1c5179e061148e97bf476317",
+    "bytes": 11506,
+    "semantic_digest": "e5bd1aaac5209573192861c81f3bbac6b6356c24f48c129b52e93e508454b686",
+    "repeated_exports_byte_identical": true
+  },
+  "source_reconciliation": {
+    "input_records": 240,
+    "emitted_rows": 9,
+    "events": 8,
+    "accounting": 1,
+    "filtered_rows": 231,
+    "unsupported_rows": 0,
+    "rejected_rows": 0,
+    "nine_inventoried_source_files_unchanged": true
+  },
+  "semantic_boundary": {
+    "seed_start": "accepted_settled_observed",
+    "episode": "failed",
+    "action_outcomes_unknown": 2,
+    "raw_seed_omission_affected_rows": 3
+  },
+  "consumers": {
+    "protocol": "passed",
+    "studio": "passed",
+    "observability": "passed",
+    "observability_exact_persistence_and_duplicate_revision_count": 1,
+    "mlflow_collector": "passed: 19 spans, one revision, retry/restart stable",
+    "lan_chromium": "passed: imported actual bundle, privacy negatives and designer contrast"
+  },
+  "evidence_paths": [
+    "../../../recorded-run-integration/train-candidate3-review2-export-result.json",
+    "../../../recorded-run-integration/train-candidate3-review2-seed-evidence.json",
+    "../../../recorded-run-integration/train-candidate3-review2-cross-consumer.json",
+    "../../../recorded-run-integration/train-candidate3-review2-backend.json",
+    "../../../recorded-run-integration/train-lan-candidate3-review2.json"
+  ],
+  "limitations": [
+    "candidate remains nonadmitted",
+    "Laminar remains unverified",
+    "Docker image build checks remain unverified",
+    "source snapshot completeness remains unverified"
+  ]
+}

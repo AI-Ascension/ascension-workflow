@@ -1,0 +1,473 @@
+{
+  "provenance": "Protocol proposed candidate 2; existing exported bundle inspection; no exporter execution or Train provenance inferred",
+  "existing_bundle": true,
+  "contract": [
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/README.md",
+      "sha256": "9802dccdc498b6cedcb778925a017f85b41a07cf6fcb0b66c20da295151e8e68"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/SHA256SUMS",
+      "sha256": "41d760f8c41064c4e6b49a48dbe6e1a6c8f2a9958afbc50374986a54858fd598"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/conformance.json",
+      "sha256": "210f4d6bf6da8e9d09c1502425e115b911a6e73a57752b5b9cdd374fa6d8ec7a"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/golden/accounting.ndjson",
+      "sha256": "c24f45f70e63ff1a831287e8634f39d3cf232b10df2152d2d95ed5539db61209"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/golden/completed-gameplay.zip",
+      "sha256": "a1c7e0c4a9cd38d25803cd796e69192fa365586fca0ffdb1149e39b8622502af"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/golden/events.ndjson",
+      "sha256": "1d6bf8a878098b6e187020bc8e28b316c72eacdad1c481016f1f3084913fbbe6"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/golden/legacy-failed-deflated.zip",
+      "sha256": "2feaa1bb1e37ff9e56ba456d1f4f03433d53ca84bad0d6218360726846eb7416"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/golden/legacy-failed.zip",
+      "sha256": "a4f7b97df3ee55c35bb42c97ef57518e7a634c700c332025e08db4a3af785c1c"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/golden/manifest.json",
+      "sha256": "287c36b2129387c447b69cbd03be510e4cd6de31b87a6698a64b1c91b49e00b9"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/golden/missing-accounting.zip",
+      "sha256": "598d50ab8cd60c6bbda2ee81eac67e2f4c2c0401928d5323386eadb7ed3ffcce"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/golden/omissions.json",
+      "sha256": "b3942a36f8c1e7275ed81c9e493daeb5495a1cab163a05c724eb406cd28f7ed1"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/golden/optional-unknown.zip",
+      "sha256": "90341607411c70d5db0e092d1c362b5914c717ebcdd5cc48356b224d653aa6b6"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/golden/source-partial.zip",
+      "sha256": "c43e46ee08f30cb4df3f615f2f26e14043b2cb27f51c9972175d692828813e45"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/duplicate-json-key.zip",
+      "sha256": "758d8a7011646ab742a790b673c1b1c851ec64ff2430a2133c3d42e07babae6a"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/duplicate-source-ordinal.zip",
+      "sha256": "ff26eca6df2dbfeef25c82242a6f1b3293b0698fe2a5047f104ca330d41f689f"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/incomplete-source-as-complete.zip",
+      "sha256": "8f018eb4e31a8b2d10ca7a2883021dfb973caf6ebbbc75075f9458995f06d404"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/invented-model-join.zip",
+      "sha256": "1b61bf8a82454da8faa20e14803936502745457ad03271f76ba458efd5191a26"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/missing-evidence.zip",
+      "sha256": "7fcd17c06a6f760bd2c46fd387b8d830324cd2d6241f5a5e0f2dc1eac158e2ca"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/missing-manifest.zip",
+      "sha256": "642376e1ed0c3fc217f66d52491714107c601f102746e93e6294d757cadcd12b"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/omission-arithmetic.zip",
+      "sha256": "bbed96a3dc93d3be4dec6077b6d2fd1d38aee29f47419caacd4d44bedf945e4f"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/overlapping-row-disposition.zip",
+      "sha256": "ad12b2e5a9309431f63d920f7c788a15c5885567a8be67551ff944ad1eeeb53e"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/partial-output.zip",
+      "sha256": "b0937e79aeeae9e7caac37cdf387280fcd7fd8f2c671f90d55e64fcd9374fdac"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/precision-number.zip",
+      "sha256": "bf44e50bd3b2c9112b54d3e576cc5ce74a594c5b4491394ec109b82440c2a7ab"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/provider-as-game-success.zip",
+      "sha256": "27243a1ab5f22701906f8726eb331e9286aa881784b3df0f90c8186608a378ca"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/raw-action-id.zip",
+      "sha256": "ef6c306b774c919a3401dc3b4d170e98ce91de89944cd77d35d2564ca1cc5123"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/raw-rationale.zip",
+      "sha256": "1fbcc1d939da479803b1d343fdced3e7b098bf91c2fd085299eb09d16b178558"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/tampered-content.zip",
+      "sha256": "1ace5a96f707c03d59256f68bfd74a0851aa51e40efe2db6619dfea1ec64adac"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/undeclared-entry.zip",
+      "sha256": "b003fac4b717963842d28c4c11b5bf28c56980ad074cb17b345269e95650dd80"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/unknown-action-as-settled.zip",
+      "sha256": "ba09017a430c9257e7bcbfe5a2a64649c39403191a4131f6639aac17fcb479af"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/unknown-usage-zero.zip",
+      "sha256": "3ecc8f0c97672a149e283ce60c22cdd392fc80089135b74c362fb615c1b25adf"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/unsafe-path.zip",
+      "sha256": "090b26e9e51be82aaf443c360098718150d114972a3213898736a602c0e86c69"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/unsupported-major.zip",
+      "sha256": "4344da4fe4b849617ad7840a378ed6c03cc263ab90a0ffb6e7ff7e308570ed73"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/unsupported-required.zip",
+      "sha256": "7fc37bda0fa934bef28a338550b302044de2e66e7186d5d367a9fc189e16e1bd"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/invalid/workflow-field-invention.zip",
+      "sha256": "dca9c3f7fa4026fa26601904f3a23fd5feb636fd8278330887ae897ffb2d624d"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/manifest.json",
+      "sha256": "f12954596b5f64e599df9e46075cb18734575cbb039f803529b200ecc650ba37"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/schema.json",
+      "sha256": "d5098e5f969d99707d3ad1d97acdbc803285b93f1eb1dcfe5dc3f63c534192af"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/tooling.json",
+      "sha256": "cfd169c37089ee1f329abd33a573a428bd955c2f6345f5e432c272f2263ee49f"
+    },
+    {
+      "path": "/usr/local/bin/node",
+      "sha256": "b2959781cc5a74c357ffa02367efa8a0330cbb1c9cb347732fdfaaaca381cbcd"
+    }
+  ],
+  "stages": {
+    "export": null,
+    "validate": {
+      "cwd": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol",
+      "revision": "0bc689eabc5542ede2b09b030d9ea32daa8a73e7",
+      "executable": {
+        "path": "/usr/local/bin/node",
+        "sha256": "b2959781cc5a74c357ffa02367efa8a0330cbb1c9cb347732fdfaaaca381cbcd"
+      },
+      "args": [
+        "tools/recorded-run/validate.mjs",
+        "{bundle}"
+      ],
+      "timeout_seconds": 120,
+      "stdout_json": true,
+      "source_pins": [
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/conformance.json",
+          "sha256": "210f4d6bf6da8e9d09c1502425e115b911a6e73a57752b5b9cdd374fa6d8ec7a"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/golden/manifest.json",
+          "sha256": "287c36b2129387c447b69cbd03be510e4cd6de31b87a6698a64b1c91b49e00b9"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/golden/omissions.json",
+          "sha256": "b3942a36f8c1e7275ed81c9e493daeb5495a1cab163a05c724eb406cd28f7ed1"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/manifest.json",
+          "sha256": "f12954596b5f64e599df9e46075cb18734575cbb039f803529b200ecc650ba37"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/schema.json",
+          "sha256": "d5098e5f969d99707d3ad1d97acdbc803285b93f1eb1dcfe5dc3f63c534192af"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/artifacts/recorded-run-bundle-v1/tooling.json",
+          "sha256": "cfd169c37089ee1f329abd33a573a428bd955c2f6345f5e432c272f2263ee49f"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/tools/recorded-run/cases.mjs",
+          "sha256": "0209d58afbf1d4a9efbc0b6a813b1ff33c6e7fcb4348f2791e643daa915c44a9"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/tools/recorded-run/fixtures.mjs",
+          "sha256": "ba4a18698ca126199e49503e77ff853b5d9712303104a7cad07c01b1db058c73"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/tools/recorded-run/generate.mjs",
+          "sha256": "058268a1f22182c4fd91101cecf5c63cd658c5396a077d3706c60966cdde5517"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/tools/recorded-run/jcs.mjs",
+          "sha256": "b9994a9eb11e0c92cd1cd7ced8d3e47c69f03b39e10509cd923db93c1a47785c"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/tools/recorded-run/schema.mjs",
+          "sha256": "8e9e30ea21f4d346049352cfd72dc40f5d82d59e73cd4a5776d997972701de7d"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/tools/recorded-run/semantics.mjs",
+          "sha256": "42f8606cefbba91f68633c5072f5804b237eb979bdea90f10aafa426751dbeed"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/tools/recorded-run/validate.mjs",
+          "sha256": "0bfaecb115d5d15e3b594632237780591465b223e400cbbd2ad3537ac011d1cf"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-protocol/tools/recorded-run/zip.mjs",
+          "sha256": "7404f842619866aed9961088a4293198b785f00cdda913bc96d4d1a3883cd969"
+        }
+      ],
+      "source_roots": [
+        "artifacts/recorded-run-bundle-v1/conformance.json",
+        "artifacts/recorded-run-bundle-v1/golden/manifest.json",
+        "artifacts/recorded-run-bundle-v1/golden/omissions.json",
+        "artifacts/recorded-run-bundle-v1/manifest.json",
+        "artifacts/recorded-run-bundle-v1/schema.json",
+        "artifacts/recorded-run-bundle-v1/tooling.json",
+        "tools/recorded-run/cases.mjs",
+        "tools/recorded-run/fixtures.mjs",
+        "tools/recorded-run/generate.mjs",
+        "tools/recorded-run/jcs.mjs",
+        "tools/recorded-run/schema.mjs",
+        "tools/recorded-run/semantics.mjs",
+        "tools/recorded-run/validate.mjs",
+        "tools/recorded-run/zip.mjs"
+      ]
+    },
+    "studio": {
+      "cwd": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio",
+      "revision": "2959d09b8e58e92d9777907c60162a928ecca096",
+      "executable": {
+        "path": "/usr/local/bin/node",
+        "sha256": "b2959781cc5a74c357ffa02367efa8a0330cbb1c9cb347732fdfaaaca381cbcd"
+      },
+      "args": [
+        "tools/inspect-recording.mjs",
+        "{bundle}"
+      ],
+      "timeout_seconds": 120,
+      "stdout_json": true,
+      "source_pins": [
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/contracts/recorded-run-candidate/conformance.json",
+          "sha256": "210f4d6bf6da8e9d09c1502425e115b911a6e73a57752b5b9cdd374fa6d8ec7a"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/contracts/recorded-run-candidate/golden/manifest.json",
+          "sha256": "287c36b2129387c447b69cbd03be510e4cd6de31b87a6698a64b1c91b49e00b9"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/contracts/recorded-run-candidate/golden/omissions.json",
+          "sha256": "b3942a36f8c1e7275ed81c9e493daeb5495a1cab163a05c724eb406cd28f7ed1"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/contracts/recorded-run-candidate/manifest.json",
+          "sha256": "f12954596b5f64e599df9e46075cb18734575cbb039f803529b200ecc650ba37"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/contracts/recorded-run-candidate/schema.json",
+          "sha256": "d5098e5f969d99707d3ad1d97acdbc803285b93f1eb1dcfe5dc3f63c534192af"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/contracts/recorded-run-candidate/studio-pin.json",
+          "sha256": "2d33af3662fb64646395a14ba4cf2c666b9a0ab32bd7363725f7d2a8bc95d531"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/contracts/recorded-run-candidate/synthetic-entries.json",
+          "sha256": "3d0283786c77ffd9a758865805dbd1de5b47da4f05f45611850c9145c3021ba7"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/contracts/recorded-run-candidate/tooling.json",
+          "sha256": "cfd169c37089ee1f329abd33a573a428bd955c2f6345f5e432c272f2263ee49f"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/package-lock.json",
+          "sha256": "eb501088a25c1cf140a237d73b57f2ea3b7d3a29d13dba5f28c13675ff41ffd3"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/package.json",
+          "sha256": "4962d3e46265b1591069e355bec8f3750a799ca857b4ea2e24253d72af807fc4"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/packages/contracts/src/index.ts",
+          "sha256": "1d559bf42ef4d18678bfa3c3700e5522bc88fafd074a721d4f27a319478ec132"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/packages/document/src/index.ts",
+          "sha256": "3d73856cdf1e6149d9244f9559f0316948478522b739d2fb70fbe151ecb740c9"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/packages/recording/src/evidence.ts",
+          "sha256": "fc8268206589fd5d860a255583dd44ffd5aef18eaf4dc856c0164f8492bc2438"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/packages/recording/src/import.ts",
+          "sha256": "41f47b3c07dae66cb43e32bbff2d65a3ea8604c62a50e628beb41250de714d49"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/packages/recording/src/model.ts",
+          "sha256": "2b9c7e0b6743a9e09e8c70ac2cc454977e2c8e322741b1a212a7412212755ea8"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/packages/recording/src/primitives.ts",
+          "sha256": "3b4d42d619d3372c3451ccde2eb385326564faedc7b12d4c33b210995691d89c"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/packages/recording/src/zip.ts",
+          "sha256": "4f5e8eb8bc201ce9c065986e303a68b6cd4e5c603097ff682779d57a3a285240"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/tools/inspect-recording.mjs",
+          "sha256": "838087ba9e9129f76cd52f02990b1f0bf425b0832fa420f09de933f9cfad053d"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow-studio/vite.config.ts",
+          "sha256": "e6062a5150f0eac93789c42a4dc8481b14eefb6932074e5ea7e51a299b52b380"
+        }
+      ],
+      "source_roots": [
+        "contracts/recorded-run-candidate/conformance.json",
+        "contracts/recorded-run-candidate/golden/manifest.json",
+        "contracts/recorded-run-candidate/golden/omissions.json",
+        "contracts/recorded-run-candidate/manifest.json",
+        "contracts/recorded-run-candidate/schema.json",
+        "contracts/recorded-run-candidate/studio-pin.json",
+        "contracts/recorded-run-candidate/synthetic-entries.json",
+        "contracts/recorded-run-candidate/tooling.json",
+        "package-lock.json",
+        "package.json",
+        "packages/contracts/src/index.ts",
+        "packages/document/src/index.ts",
+        "packages/recording/src/evidence.ts",
+        "packages/recording/src/import.ts",
+        "packages/recording/src/model.ts",
+        "packages/recording/src/primitives.ts",
+        "packages/recording/src/zip.ts",
+        "tools/inspect-recording.mjs",
+        "vite.config.ts"
+      ]
+    },
+    "observability": {
+      "cwd": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability",
+      "revision": "4c4486b5a6a691268c4f7e4b47c2be425082be85",
+      "executable": {
+        "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow/tools/recorded-run-driver/target/debug/observability-report",
+        "sha256": "bbb02b24f8212789e87945bcc3b92549cfb2b18fec3786d189aeb2ae0d03ba4b"
+      },
+      "args": [
+        "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability",
+        "{bundle}",
+        "{summary}.sqlite3"
+      ],
+      "timeout_seconds": 120,
+      "stdout_json": true,
+      "source_pins": [
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/contract/recorded-run-bundle-v1/conformance.json",
+          "sha256": "210f4d6bf6da8e9d09c1502425e115b911a6e73a57752b5b9cdd374fa6d8ec7a"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/contract/recorded-run-bundle-v1/golden/manifest.json",
+          "sha256": "287c36b2129387c447b69cbd03be510e4cd6de31b87a6698a64b1c91b49e00b9"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/contract/recorded-run-bundle-v1/golden/omissions.json",
+          "sha256": "b3942a36f8c1e7275ed81c9e493daeb5495a1cab163a05c724eb406cd28f7ed1"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/contract/recorded-run-bundle-v1/manifest.json",
+          "sha256": "f12954596b5f64e599df9e46075cb18734575cbb039f803529b200ecc650ba37"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/contract/recorded-run-bundle-v1/schema.json",
+          "sha256": "d5098e5f969d99707d3ad1d97acdbc803285b93f1eb1dcfe5dc3f63c534192af"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/contract/recorded-run-bundle-v1/tooling.json",
+          "sha256": "cfd169c37089ee1f329abd33a573a428bd955c2f6345f5e432c272f2263ee49f"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/deploy/recorded-run/bundle.mjs",
+          "sha256": "ba2dddc2a8c57969ed4bfec2f4056cbf25dc166bd9535ae801eea5a0e1e29ecd"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/deploy/recorded-run/delivery.mjs",
+          "sha256": "cb6b35612b2420cfbb08102a21e500dd7033351f55fd6bcb76f266facd323eff"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/deploy/recorded-run/import.mjs",
+          "sha256": "32d494642f97a9bc84bd3158ffbdd18c94146b181484573b20de5254e150b05c"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/deploy/recorded-run/projection.mjs",
+          "sha256": "f4c7e47fc91c490d48ad3012dae255d3eebfc1ff33ca2ae2982c8bfa21c8e523"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/deploy/recorded-run/store.mjs",
+          "sha256": "ed8002a113371018fba8d3bd3a33702be8ca279e5ee36a0415802c97772230a1"
+        },
+        {
+          "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/deploy/recorded-run/validation.mjs",
+          "sha256": "800142cdefc0c864ded3be618f02b5d24d2fa72a3a11be27bdb3e025380c3f22"
+        }
+      ],
+      "source_roots": [
+        "contract/recorded-run-bundle-v1/conformance.json",
+        "contract/recorded-run-bundle-v1/golden/manifest.json",
+        "contract/recorded-run-bundle-v1/golden/omissions.json",
+        "contract/recorded-run-bundle-v1/manifest.json",
+        "contract/recorded-run-bundle-v1/schema.json",
+        "contract/recorded-run-bundle-v1/tooling.json",
+        "deploy/recorded-run/bundle.mjs",
+        "deploy/recorded-run/delivery.mjs",
+        "deploy/recorded-run/import.mjs",
+        "deploy/recorded-run/projection.mjs",
+        "deploy/recorded-run/store.mjs",
+        "deploy/recorded-run/validation.mjs"
+      ]
+    }
+  },
+  "comparison": {
+    "studio": {
+      "semantic_digest": "/semantic_digest",
+      "evidence": "/evidence",
+      "completeness": "/completeness",
+      "streams": "/streams",
+      "event_records": "/event_records",
+      "accounting_records": "/accounting_records",
+      "unsupported_records": "/unsupported_records",
+      "run_identity": "/recording_identity"
+    },
+    "observability": {
+      "semantic_digest": "/semantic_digest",
+      "evidence": "/evidence",
+      "completeness": "/completeness",
+      "streams": "/streams",
+      "event_records": "/event_records",
+      "accounting_records": "/accounting_records",
+      "unsupported_records": "/unsupported_records",
+      "run_identity": "/recording_identity"
+    },
+    "validate": {
+      "semantic_digest": "/semantic_digest",
+      "evidence": "/evidence",
+      "completeness": "/completeness",
+      "streams": "/streams",
+      "event_records": "/event_records",
+      "accounting_records": "/accounting_records",
+      "unsupported_records": "/unsupported_records",
+      "run_identity": "/recording_identity"
+    }
+  }
+}

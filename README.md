@@ -17,6 +17,8 @@ Useful entry points:
 
 - [catalog documentation](docs/catalog/README.md)
 - [conformance instructions](conformance/README.md)
+- [recorded-run integration suite](conformance/recorded-run.md) and
+  [compatibility matrix](integration/recorded-run-matrix.md) (implementation in progress)
 - [workflow-v1 contract artifact](contract-artifact/workflow-v1/manifest.json)
 - [execution report](docs/evidence/EXECUTION_REPORT.md)
 - [resume instructions](docs/operations/RESUME.md)

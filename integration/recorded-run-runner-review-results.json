@@ -1,0 +1,14 @@
+{
+  "scope": "coordinator timeout reproducer; marker and output relocated into own worktree; original untouched",
+  "executable": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow/tools/recorded-run-driver/target/debug/recorded-run-driver",
+  "executable_sha256": "5f096a5780c9256aa74aacb28cf5978ebfbb61514cd2406ad9293d8fd6be3d86",
+  "args": [
+    "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow/.local/review-timeout-fixed-001/plan.json",
+    "/tmp/recorded-driver-independent-j2meji6d/source",
+    "/home/agent/sts2-project/workflow/worktrees/recorded-run-ascension-workflow/.local/review-timeout-fixed-001/result"
+  ],
+  "exit": 1,
+  "diagnostic": "stage timed out or exceeded report bound",
+  "descendant_wrote_after_timeout": false,
+  "post_return_observation_ms": 2300
+}

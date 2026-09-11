@@ -1,0 +1,3 @@
+{"event":"model_decision","model_execution_id":7,"reused_model_execution":false,"action_id":"SYNTHETIC_PRIVATE_ACTION","observation":{"generation":3,"state_id":"SYNTHETIC_PRIVATE_STATE","legal_actions":[],"player":{"hp":80,"max_hp":80,"energy":0,"gold":99}}}
+{"event":"action_receipt","operation_id":"synthetic-operation","action_id":"SYNTHETIC_PRIVATE_ACTION","status":"Unknown","effect":null,"observation":null}
+{"event":"episode_failed","error_code":"SYNTHETIC_PRIVATE_ERROR"}

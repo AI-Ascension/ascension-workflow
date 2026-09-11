@@ -1,0 +1,81 @@
+{
+  "wire_version": "1.0.0-candidate.3",
+  "source_base": "4c5b1012efb0b8ffd0e95b76654678b170de4720",
+  "source_inventory_sha256": "f04ac7c27c727f9beb58268795d3e818f28bd7636795f44fd83e666aa2264bc1",
+  "source_manifest_sha256": "238cb18796752e27c26faf50c8a9e6d67f6034d7c27a5406e7f1da32d848cc00",
+  "adapter_source_revision": "2d7f42903b3378714bf4afdd11f7e7c0f47ffef1cc34e6fc8dded37ec79b8d81",
+  "adapter_source_files": [
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/crates/harness/src/recorded_run.rs",
+      "sha256": "c6a83fc3625db27a3a35ce7e8f43b98e01c7e9939681b097b5dffb741e877356"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/crates/harness/src/recorded_run_accounting.rs",
+      "sha256": "cccd49433733a54b0a34f514b096edcad372a2657b2e8023961f3028ea59e65f"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/crates/harness/src/recorded_run_trajectory.rs",
+      "sha256": "ae0614299a58204e6720986432c3e772ecc7dc90b25267c33133a070fc45fb67"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/crates/harness/src/recorded_run_support.rs",
+      "sha256": "eaa7991d76533b88662e15244230e612de0c051ee1f9ea69061e309914c93827"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/crates/harness/src/recorded_run_observation.rs",
+      "sha256": "b48b7dd3ad4c045a169c2c83876763ec5590dcf592f37064447370789951cf88"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/crates/harness/src/recorded_run_projection.rs",
+      "sha256": "f50e8e7c5842d374e7d2af4d8563978d3d41691381de9fbb7f54cf9f81579fa3"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/crates/harness/src/recorded_run_snapshot.rs",
+      "sha256": "800317700ad5cbeb7b5652474ed9a28a5048c55a3d04bcbab560cb32a9081001"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/crates/harness/src/recorded_run_json.rs",
+      "sha256": "4ea1bae3ac461abf20549129c28cb6dd4fee688c57971095930712e0e5730f55"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/crates/harness/src/recorded_run_seed.rs",
+      "sha256": "dad3e6a18576301948644183601b4b70d9076bb7c2d121b20b7473eae35584ec"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/crates/harness/src/recorded_run_encoding.rs",
+      "sha256": "c27c003cb4e8a295f3c6e7760720bb0a7616b127e754e0cb93dbf1095797da9e"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/crates/harness/src/bin/sts2-recorded-run-export.rs",
+      "sha256": "4badc8f245d2bd7904bf4de0040d299ddf356654cb9281b8d74077e23a37dcdc"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/crates/harness/Cargo.toml",
+      "sha256": "4a05773ce4ce5deed69aacffe1635ad6b5634b8aedb0e4ab95559c5db1a8e6f7"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/Cargo.toml",
+      "sha256": "8c0d3e45da611dc213f2d9fc7cf2b42edfdb72dd275e1e671e251b04dd42a17d"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/rust-toolchain.toml",
+      "sha256": "8e390d6a0838315f972690f46ef8bae8b7ecc9ee6c1ed70140ef852869c2482e"
+    },
+    {
+      "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/Cargo.lock",
+      "sha256": "a122d1a7cbc2b2f17a33b15a9f75c3c82b0e8eaa6522212736faa0d92af9a231"
+    }
+  ],
+  "immutable_binary": {
+    "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-sts2-harness/artifacts/recorded-run/sts2-recorded-run-export-candidate3-review1",
+    "sha256": "e748cdff61119eb4500e9b6709e6bdc2a301ab3beb3f200a88e5ed45718c518e"
+  },
+  "executed_binary": {
+    "path": "/home/agent/sts2-project/workflow/recorded-export-candidate3-bp5423m7/sts2-recorded-run-export",
+    "sha256": "3ccfda7c4acfd2a2313a94a216d04096d757168bc671c879e9ff825af11a7cbb"
+  },
+  "transport_report_sha256": "da8c2a743460b275e775d650f0b2869f2baddce6c526336b0f9bca455c1a3ab4",
+  "fixture_equivalence_report_sha256": "d2f7cc3533bb824f3d37cf5773d91e4ff9706b66554ac24a3e2d9200a6af8344",
+  "immutable_source_commit": "d79be7e6a19e80c71aae6a85b142c520216f6611",
+  "runtime_scope": "Compiled immutable review1 binary; source files verified against Git commit, not mutable ongoing review2 worktree"
+}
