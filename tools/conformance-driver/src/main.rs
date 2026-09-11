@@ -41,15 +41,24 @@ fn run() -> Result<(), String> {
             definitions.len()
         ));
     }
-    let port = free_port()?;
-    let address = format!("127.0.0.1:{port}");
-    let store = temporary_store_path();
-    let mut server = start_server(&arguments.binary, &address, &store)?;
-    let result = exercise_process(&arguments, &address, &store, &definitions, &mut server);
-    let _ = server.kill();
-    let _ = server.wait();
-    let _ = fs::remove_file(store);
-    result
+    let mut failures = Vec::new();
+    for attempt in 1..=3 {
+        let port = free_port()?;
+        let address = format!("127.0.0.1:{port}");
+        let store = temporary_store_path();
+        let mut server = start_server(&arguments.binary, &address, &store)?;
+        let result = exercise_process(&arguments, &address, &store, &definitions, &mut server);
+        let server_diagnostics = stop_server(&mut server);
+        let _ = fs::remove_file(store);
+        match result {
+            Ok(()) => return Ok(()),
+            Err(error) => failures.push(format!("attempt {attempt}: {error}{server_diagnostics}")),
+        }
+    }
+    Err(format!(
+        "conformance process did not complete after three isolated loopback attempts: {}",
+        failures.join("; ")
+    ))
 }
 
 fn exercise_process(
@@ -272,9 +281,24 @@ fn start_server(binary: &Path, address: &str, store: &Path) -> Result<Child, Str
         ])
         .env("STS2_WORKFLOW_TOKEN_SYNTHETIC", TOKEN)
         .stdout(Stdio::null())
-        .stderr(Stdio::null())
+        .stderr(Stdio::piped())
         .spawn()
         .map_err(|error| format!("start service: {error}"))
+}
+
+fn stop_server(server: &mut Child) -> String {
+    let _ = server.kill();
+    let _ = server.wait();
+    let mut stderr = String::new();
+    if let Some(mut reader) = server.stderr.take() {
+        let _ = reader.read_to_string(&mut stderr);
+    }
+    let stderr = stderr.trim();
+    if stderr.is_empty() {
+        String::new()
+    } else {
+        format!("; server stderr: {stderr}")
+    }
 }
 
 fn wait_for_health(address: &str, server: &mut Child) -> Result<(), String> {
