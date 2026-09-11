@@ -1,0 +1,144 @@
+{
+  "status": "synthetic_matrix_passed",
+  "scope": "synthetic protocol vectors; actual owner import code; local SQLite only; no browser or Train proof",
+  "version": "1.0.0-candidate.2",
+  "artifact_inventory_sha256": "41d760f8c41064c4e6b49a48dbe6e1a6c8f2a9958afbc50374986a54858fd598",
+  "schema_sha256": "d5098e5f969d99707d3ad1d97acdbc803285b93f1eb1dcfe5dc3f63c534192af",
+  "findings": [],
+  "roles": [
+    {
+      "role": "protocol",
+      "cases": 27,
+      "accepted": 6,
+      "rejected": 21
+    },
+    {
+      "role": "studio",
+      "cases": 27,
+      "accepted": 6,
+      "rejected": 21
+    },
+    {
+      "role": "observability",
+      "cases": 27,
+      "accepted": 6,
+      "rejected": 21
+    }
+  ],
+  "valid_cases": [
+    {
+      "path": "golden/legacy-failed.zip",
+      "semantic_digest": "de818d975e78dc7ac9bc235a7192abbfeef9859308bffb0dc34a54d12b198bc9",
+      "counts": {
+        "accounting_records": 1,
+        "event_records": 8,
+        "settled_action_outcomes": 0,
+        "unknown_action_outcomes": 2,
+        "unsupported_records": 0
+      },
+      "evidence": {
+        "action": "unknown",
+        "gameplay": "episode_failed",
+        "outcome": "unknown",
+        "process_exit": "completed",
+        "request": "unknown"
+      }
+    },
+    {
+      "path": "golden/legacy-failed-deflated.zip",
+      "semantic_digest": "de818d975e78dc7ac9bc235a7192abbfeef9859308bffb0dc34a54d12b198bc9",
+      "counts": {
+        "accounting_records": 1,
+        "event_records": 8,
+        "settled_action_outcomes": 0,
+        "unknown_action_outcomes": 2,
+        "unsupported_records": 0
+      },
+      "evidence": {
+        "action": "unknown",
+        "gameplay": "episode_failed",
+        "outcome": "unknown",
+        "process_exit": "completed",
+        "request": "unknown"
+      }
+    },
+    {
+      "path": "golden/missing-accounting.zip",
+      "semantic_digest": "7afd6b1324f8c05be3764a43f58c64fab9caf76bdb3e74f73fd3a13729cee4be",
+      "counts": {
+        "accounting_records": 0,
+        "event_records": 8,
+        "settled_action_outcomes": 0,
+        "unknown_action_outcomes": 2,
+        "unsupported_records": 0
+      },
+      "evidence": {
+        "action": "unknown",
+        "gameplay": "episode_failed",
+        "outcome": "unknown",
+        "process_exit": "completed",
+        "request": "unknown"
+      }
+    },
+    {
+      "path": "golden/source-partial.zip",
+      "semantic_digest": "01866747e48d63e067f737cf5c00c550ba5ed85a58a95e2ccf96b43700e2f13a",
+      "counts": {
+        "accounting_records": 1,
+        "event_records": 8,
+        "settled_action_outcomes": 0,
+        "unknown_action_outcomes": 2,
+        "unsupported_records": 0
+      },
+      "evidence": {
+        "action": "unknown",
+        "gameplay": "episode_failed",
+        "outcome": "unknown",
+        "process_exit": "completed",
+        "request": "unknown"
+      }
+    },
+    {
+      "path": "golden/optional-unknown.zip",
+      "semantic_digest": "ead9f24f611c447a402575d79cd1c61ca27626d455f3cf7e1876588bc03ad654",
+      "counts": {
+        "accounting_records": 1,
+        "event_records": 8,
+        "settled_action_outcomes": 0,
+        "unknown_action_outcomes": 2,
+        "unsupported_records": 1
+      },
+      "evidence": {
+        "action": "unknown",
+        "gameplay": "episode_failed",
+        "outcome": "unknown",
+        "process_exit": "completed",
+        "request": "unknown"
+      }
+    },
+    {
+      "path": "golden/completed-gameplay.zip",
+      "semantic_digest": "98e9a7b6f6d12df38b922579a2c9de7a6c7081edb3f3d0808d0e64304047dcf9",
+      "counts": {
+        "accounting_records": 1,
+        "event_records": 3,
+        "settled_action_outcomes": 0,
+        "unknown_action_outcomes": 0,
+        "unsupported_records": 0
+      },
+      "evidence": {
+        "action": "unknown",
+        "gameplay": "completed",
+        "outcome": "observed",
+        "process_exit": "completed",
+        "request": "unknown"
+      }
+    }
+  ],
+  "evidence_sha256": "b3154f84ff85cc3a64787ee5ec6fbf9c23329144747ff5c99862bed4e98952c4",
+  "limitations": [
+    "Synthetic inputs; no Train export",
+    "Studio recording identity compared as owner presentation string in vector matrix; actual CLI suite compares structured identity",
+    "No browser rendering or MLflow/Laminar persistence proof"
+  ]
+}

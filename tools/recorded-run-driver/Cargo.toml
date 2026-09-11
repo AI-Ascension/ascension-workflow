@@ -1,0 +1,16 @@
+[package]
+name = "recorded-run-driver"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+publish = false
+default-run = "recorded-run-driver"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+nix = { version = "0.30", features = ["signal", "process"] }
+
+[lints.rust]
+unsafe_code = "forbid"

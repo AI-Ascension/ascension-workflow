@@ -1,0 +1,409 @@
+{
+  "status": "actual_and_full_synthetic_process_plans_passed",
+  "actual_train": {
+    "bundle_sha256": "2575de7ba78baa30d1036233a0fc234a5b0e1e6d8988e10df62c139aaee37f8b",
+    "input_mode": "existing_export; exporter not executed",
+    "pending": [],
+    "plan_sha256": "721b8da46b04eabed94542d84457464820341061f2b76ea0d6662d6d12c069d3",
+    "provenance": "Protocol proposed candidate 2; existing exported bundle inspection; no exporter execution or Train provenance inferred",
+    "scope": "local process integration only; no admission, browser, tracking persistence or deployment claim",
+    "stages": [
+      {
+        "args": [
+          "tools/recorded-run/validate.mjs",
+          "{bundle}"
+        ],
+        "executable_sha256": "b2959781cc5a74c357ffa02367efa8a0330cbb1c9cb347732fdfaaaca381cbcd",
+        "name": "validate",
+        "report_sha256": "1cfcfd96743183ef0f1baf30445be1f1e474965dbdd4cd55a7f1997da7cfafac",
+        "revision": "0bc689eabc5542ede2b09b030d9ea32daa8a73e7",
+        "status": "process_passed"
+      },
+      {
+        "args": [
+          "tools/inspect-recording.mjs",
+          "{bundle}"
+        ],
+        "executable_sha256": "b2959781cc5a74c357ffa02367efa8a0330cbb1c9cb347732fdfaaaca381cbcd",
+        "name": "studio",
+        "report_sha256": "76b9e74a6c2a89e438f4fdf04896619b9328cf9a04550f64500022e7e6aa7f01",
+        "revision": "2959d09b8e58e92d9777907c60162a928ecca096",
+        "status": "process_passed"
+      },
+      {
+        "args": [
+          "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability",
+          "{bundle}",
+          "{summary}.sqlite3"
+        ],
+        "executable_sha256": "bbb02b24f8212789e87945bcc3b92549cfb2b18fec3786d189aeb2ae0d03ba4b",
+        "name": "observability",
+        "report_sha256": "2e8c3e091fe49f59ef9463c7a78d8886af9089bfe91b8674aad8a24025cab187",
+        "revision": "4c4486b5a6a691268c4f7e4b47c2be425082be85",
+        "status": "process_passed"
+      }
+    ],
+    "status": "process_comparison_passed"
+  },
+  "synthetic_source_pipeline": {
+    "bundle_sha256": "43f2911b4d7d348dce0f97ecd623402175d46398f194b0425704228a603788ab",
+    "pending": [],
+    "plan_sha256": "6a0aef17d91409445644029deb9c1ef705453f87cc63cc6140b3b445fc58baff",
+    "provenance": "Protocol proposed candidate 2; four-stage pipeline pins coordinator-tested exporter binary; source directory required; binary source revision linkage remains unverified",
+    "scope": "local process integration only; no admission, browser, tracking persistence or deployment claim",
+    "stages": [
+      {
+        "args": [
+          "export",
+          "{source}",
+          "--output",
+          "{bundle}"
+        ],
+        "executable_sha256": "6c2cb070d1812133e3d136a151a32d98ade52ec20498b99f6b573430072d3a89",
+        "name": "export",
+        "report_sha256": "0a03b5f4accc6647238f4ae552c1d21188c012978b29bfd6944efc54bd387b42",
+        "revision": "4c5b1012efb0b8ffd0e95b76654678b170de4720",
+        "status": "process_passed"
+      },
+      {
+        "args": [
+          "tools/recorded-run/validate.mjs",
+          "{bundle}"
+        ],
+        "executable_sha256": "b2959781cc5a74c357ffa02367efa8a0330cbb1c9cb347732fdfaaaca381cbcd",
+        "name": "validate",
+        "report_sha256": "23cdbedea5fa2360dc6e852ce3e7c3f1b216bea080254698e491012b81d95b8b",
+        "revision": "0bc689eabc5542ede2b09b030d9ea32daa8a73e7",
+        "status": "process_passed"
+      },
+      {
+        "args": [
+          "tools/inspect-recording.mjs",
+          "{bundle}"
+        ],
+        "executable_sha256": "b2959781cc5a74c357ffa02367efa8a0330cbb1c9cb347732fdfaaaca381cbcd",
+        "name": "studio",
+        "report_sha256": "b73a2a54594bae2c82b2683812932f9d1902c9fe9f35071fdde13fe5e1b62d9a",
+        "revision": "2959d09b8e58e92d9777907c60162a928ecca096",
+        "status": "process_passed"
+      },
+      {
+        "args": [
+          "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability",
+          "{bundle}",
+          "{summary}.sqlite3"
+        ],
+        "executable_sha256": "bbb02b24f8212789e87945bcc3b92549cfb2b18fec3786d189aeb2ae0d03ba4b",
+        "name": "observability",
+        "report_sha256": "c514102f216b10eeaf50cf2e7cb30ac67289fd2403f09a795929d806d043da14",
+        "revision": "4c4486b5a6a691268c4f7e4b47c2be425082be85",
+        "status": "process_passed"
+      }
+    ],
+    "status": "process_comparison_passed"
+  },
+  "synthetic_summary": {
+    "valid": true,
+    "semantic_digest": "632f7c9b2e1a0503098492e8eaba5c1932e5be3d8d86966bf1ce268f8082e8dc",
+    "recording_identity": {
+      "namespace": "seed-readiness.recording.sha256",
+      "value": "6e0e4519aba540c56f13ea7b6ac758ae804c80d277cf1ab3f8158caf4cce87d7"
+    },
+    "evidence": {
+      "action": "unknown",
+      "gameplay": "episode_failed",
+      "outcome": "unknown",
+      "process_exit": "failed",
+      "request": "unknown"
+    },
+    "completeness": {
+      "source_snapshot": "unverified",
+      "status": "partial"
+    },
+    "streams": [
+      {
+        "dispositions": [],
+        "emitted_rows": 1,
+        "field_omissions": [],
+        "filtered_rows": 0,
+        "input_records": 1,
+        "output_records": 1,
+        "rejected_rows": 0,
+        "state": "present",
+        "stream": "decisions",
+        "unsupported_rows": 0
+      },
+      {
+        "dispositions": [
+          {
+            "disposition": "filtered",
+            "first": 0,
+            "last": 0,
+            "reason": "private_source_metadata"
+          }
+        ],
+        "emitted_rows": 0,
+        "field_omissions": [],
+        "filtered_rows": 1,
+        "input_records": 1,
+        "output_records": 0,
+        "rejected_rows": 0,
+        "state": "omitted",
+        "stream": "manifest",
+        "unsupported_rows": 0
+      },
+      {
+        "dispositions": [
+          {
+            "disposition": "filtered",
+            "first": 0,
+            "last": 0,
+            "reason": "raw_mcp_disallowed"
+          }
+        ],
+        "emitted_rows": 0,
+        "field_omissions": [],
+        "filtered_rows": 1,
+        "input_records": 1,
+        "mcp_redacted_path_count": 0,
+        "output_records": 0,
+        "rejected_rows": 0,
+        "state": "omitted",
+        "stream": "mcp",
+        "unsupported_rows": 0
+      },
+      {
+        "dispositions": [],
+        "emitted_rows": 1,
+        "field_omissions": [],
+        "filtered_rows": 0,
+        "input_records": 1,
+        "output_records": 1,
+        "rejected_rows": 0,
+        "state": "present",
+        "stream": "provider-accounting",
+        "unsupported_rows": 0
+      },
+      {
+        "dispositions": [],
+        "emitted_rows": 1,
+        "field_omissions": [],
+        "filtered_rows": 0,
+        "input_records": 1,
+        "output_records": 1,
+        "rejected_rows": 0,
+        "state": "present",
+        "stream": "result",
+        "unsupported_rows": 0
+      },
+      {
+        "dispositions": [],
+        "emitted_rows": 3,
+        "field_omissions": [],
+        "filtered_rows": 0,
+        "input_records": 3,
+        "output_records": 3,
+        "rejected_rows": 0,
+        "state": "present",
+        "stream": "trajectory",
+        "unsupported_rows": 0
+      }
+    ],
+    "event_records": 5,
+    "accounting_records": 1,
+    "unsupported_records": 0,
+    "accounting": [
+      {
+        "evidence": {
+          "action": "unknown",
+          "gameplay": "unknown",
+          "outcome": "unknown",
+          "process_exit": "unknown",
+          "request": "unknown"
+        },
+        "identities": {
+          "model_execution": {
+            "namespace": "seed-readiness.accounting.model-execution",
+            "value": "synthetic-execution-1"
+          }
+        },
+        "payload": {
+          "kind": "accounting",
+          "profile": "ai-ascension.sts2.seed-readiness.v1",
+          "value": {
+            "counts": {},
+            "decision_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+            "decision_status": "valid",
+            "input_written": false,
+            "model": "synthetic-model",
+            "provider": "synthetic-provider",
+            "provider_execution_status": "completed",
+            "provider_request_identity_kind": "codex_thread_id",
+            "provider_request_identity_status": "reported",
+            "request_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "source_schema": "sts2.provider-accounting-v1",
+            "usage": {
+              "cache_write_input_tokens": {
+                "scope": "model_execution",
+                "unit": "tokens",
+                "value": "0",
+                "value_status": "reported"
+              },
+              "cached_input_tokens": {
+                "scope": "model_execution",
+                "unit": "tokens",
+                "value": "0",
+                "value_status": "reported"
+              },
+              "input_tokens": {
+                "scope": "model_execution",
+                "unit": "tokens",
+                "value": "3",
+                "value_status": "reported"
+              },
+              "output_tokens": {
+                "scope": "model_execution",
+                "unit": "tokens",
+                "value": "4",
+                "value_status": "reported"
+              },
+              "reasoning_output_tokens": {
+                "scope": "model_execution",
+                "unit": "tokens",
+                "value": "0",
+                "value_status": "reported"
+              }
+            }
+          }
+        },
+        "profile": "ai-ascension.recorded-run.common.v1",
+        "source": {
+          "record_ordinal": 0,
+          "stream": "provider-accounting",
+          "subrecord_ordinal": 0
+        }
+      }
+    ],
+    "local_tracking": {
+      "first": "imported",
+      "retry": "duplicate",
+      "revisions": 1,
+      "delivery": "local_only"
+    }
+  },
+  "synthetic_repeat": {
+    "byte_identical": true,
+    "zip_sha256": "43f2911b4d7d348dce0f97ecd623402175d46398f194b0425704228a603788ab",
+    "sentinel_absent": true
+  },
+  "synthetic_source_after": {
+    "README.md": {
+      "bytes": 1333,
+      "mtime_ms": 1789100646996.846,
+      "sha256": "8029e571af0b005fb91f8cc1bbe00d09d510c3b263f630b8a18c1628bb6b61c5"
+    },
+    "decisions.jsonl": {
+      "bytes": 173,
+      "mtime_ms": 1789100530918.4626,
+      "sha256": "1476a28d8f90d9ab0d6a831a0016c99ac465f2a929e7c058619b37c901c4e306"
+    },
+    "manifest.json": {
+      "bytes": 127,
+      "mtime_ms": 1789100530916.6902,
+      "sha256": "307c2251387afd8c7aeb384a871f1b0d13da2b74380df6deb14cfa429f6f73d3"
+    },
+    "mcp.jsonl": {
+      "bytes": 56,
+      "mtime_ms": 1789100530918.4626,
+      "sha256": "25f63e0df7abf347350596e275957f66f6c2860820f464f810c9868f0d4e0b36"
+    },
+    "provider-accounting.jsonl": {
+      "bytes": 408,
+      "mtime_ms": 1789100646996.846,
+      "sha256": "46e2269eed16b655b6e537c1b2c8b0e8d5b3d23642f4be6184450e8da52ae25a"
+    },
+    "result.json": {
+      "bytes": 83,
+      "mtime_ms": 1789100530918.4626,
+      "sha256": "6bc8c31d5f9cbfaf8ce50dbc8a9c3d9debc7d67bd19cc0edc52d9635b1d69c97"
+    },
+    "trajectory.jsonl": {
+      "bytes": 480,
+      "mtime_ms": 1789100530918.4626,
+      "sha256": "3f2ae0067330076d09f0c4204df29996e81455a50ae4b4c02adef1561c71207d"
+    }
+  },
+  "vector_rerun": {
+    "status": "synthetic_matrix_passed",
+    "findings": [],
+    "roles": [
+      {
+        "role": "protocol",
+        "cases": 27,
+        "accepted": 6,
+        "rejected": 21
+      },
+      {
+        "role": "studio",
+        "cases": 27,
+        "accepted": 6,
+        "rejected": 21
+      },
+      {
+        "role": "observability",
+        "cases": 27,
+        "accepted": 6,
+        "rejected": 21
+      }
+    ]
+  },
+  "expected_preliminary_source_rejection": {
+    "result": "exporter rejected missing accounting counters before validation/consumers",
+    "evidence_sha256": "888bc4295738e6cf61e77d2c700dd313e4a11a03cd2f82267ec066601ba47665"
+  },
+  "evidence_sha256": {
+    ".local/train-current-proof-001/evidence.json": "e4dd69c2502030b94bff60574d53900566ff444ae9984037b3b3f17c92af07b2",
+    ".local/synthetic-source-proof-002/evidence.json": "1fdddc5ae13057687aaf216c8e2afa1ad05e847086440f4221e326a417afdf31",
+    ".local/candidate2-current-matrix-001/matrix.json": "d73af40588accbe67f4b722a25af5f0dadbc4e7c10f9811019cfc9cd9b69026d",
+    "integration/recorded-run-consume-plan.json": "721b8da46b04eabed94542d84457464820341061f2b76ea0d6662d6d12c069d3",
+    "integration/recorded-run-plan.json": "6a0aef17d91409445644029deb9c1ef705453f87cc63cc6140b3b445fc58baff"
+  },
+  "synthetic_source_before": {
+    "README.md": {
+      "bytes": 1333,
+      "mtime_ms": 1789100646996.846,
+      "sha256": "8029e571af0b005fb91f8cc1bbe00d09d510c3b263f630b8a18c1628bb6b61c5"
+    },
+    "decisions.jsonl": {
+      "bytes": 173,
+      "mtime_ms": 1789100530918.4626,
+      "sha256": "1476a28d8f90d9ab0d6a831a0016c99ac465f2a929e7c058619b37c901c4e306"
+    },
+    "manifest.json": {
+      "bytes": 127,
+      "mtime_ms": 1789100530916.6902,
+      "sha256": "307c2251387afd8c7aeb384a871f1b0d13da2b74380df6deb14cfa429f6f73d3"
+    },
+    "mcp.jsonl": {
+      "bytes": 56,
+      "mtime_ms": 1789100530918.4626,
+      "sha256": "25f63e0df7abf347350596e275957f66f6c2860820f464f810c9868f0d4e0b36"
+    },
+    "provider-accounting.jsonl": {
+      "bytes": 408,
+      "mtime_ms": 1789100646996.846,
+      "sha256": "46e2269eed16b655b6e537c1b2c8b0e8d5b3d23642f4be6184450e8da52ae25a"
+    },
+    "result.json": {
+      "bytes": 83,
+      "mtime_ms": 1789100530918.4626,
+      "sha256": "6bc8c31d5f9cbfaf8ce50dbc8a9c3d9debc7d67bd19cc0edc52d9635b1d69c97"
+    },
+    "trajectory.jsonl": {
+      "bytes": 480,
+      "mtime_ms": 1789100530918.4626,
+      "sha256": "3f2ae0067330076d09f0c4204df29996e81455a50ae4b4c02adef1561c71207d"
+    }
+  },
+  "synthetic_source_fingerprints_unchanged": 7
+}

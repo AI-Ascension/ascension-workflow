@@ -1,0 +1,284 @@
+{
+  "status": "actual_train_export_validated_and_consumed",
+  "wire_version": "1.0.0-candidate.2",
+  "contract_schema_sha256": "d5098e5f969d99707d3ad1d97acdbc803285b93f1eb1dcfe5dc3f63c534192af",
+  "artifact_inventory_sha256": "41d760f8c41064c4e6b49a48dbe6e1a6c8f2a9958afbc50374986a54858fd598",
+  "bundle_sha256": "2575de7ba78baa30d1036233a0fc234a5b0e1e6d8988e10df62c139aaee37f8b",
+  "bundle_bytes": 10347,
+  "semantic_digest": "ebf13df215c02d1b8b31821e25a8696cb2901ca49cea413509be877ba8f36b60",
+  "recording_identity": {
+    "namespace": "seed-readiness.recording.sha256",
+    "value": "5d047717a0b3a81bb57e232b9272708fe07d728c46d80282be5d9333f69ba487"
+  },
+  "producer": {
+    "name": "sts2-harness",
+    "source_format": "seed-readiness-controller-release-v2",
+    "version": "0.0.0"
+  },
+  "adapter": {
+    "name": "sts2-recorded-run-export",
+    "source_revision": "unreleased-candidate",
+    "version": "0.0.0"
+  },
+  "component_versions": {},
+  "export": {
+    "owner": "coordinator host execution",
+    "exit_code": 0,
+    "exporter_sha256": "6c2cb070d1812133e3d136a151a32d98ade52ec20498b99f6b573430072d3a89",
+    "unstripped_source_binary_sha256": "c2121c4ab87d8238846a13c050da76f9a5b9b342d71f6bd2277d87a012faf0b6",
+    "transport_binary_sha256": "6c2cb070d1812133e3d136a151a32d98ade52ec20498b99f6b573430072d3a89"
+  },
+  "summary": {
+    "semantic_digest": "ebf13df215c02d1b8b31821e25a8696cb2901ca49cea413509be877ba8f36b60",
+    "recording_identity": {
+      "namespace": "seed-readiness.recording.sha256",
+      "value": "5d047717a0b3a81bb57e232b9272708fe07d728c46d80282be5d9333f69ba487"
+    },
+    "evidence": {
+      "action": "unknown",
+      "gameplay": "episode_failed",
+      "outcome": "unknown",
+      "process_exit": "failed",
+      "request": "unknown"
+    },
+    "completeness": {
+      "source_snapshot": "unverified",
+      "status": "partial"
+    },
+    "streams": [
+      {
+        "dispositions": [],
+        "emitted_rows": 1,
+        "field_omissions": [],
+        "filtered_rows": 0,
+        "input_records": 1,
+        "output_records": 1,
+        "rejected_rows": 0,
+        "state": "present",
+        "stream": "decisions",
+        "unsupported_rows": 0
+      },
+      {
+        "dispositions": [
+          {
+            "disposition": "filtered",
+            "first": 0,
+            "last": 0,
+            "reason": "private_source_metadata"
+          }
+        ],
+        "emitted_rows": 0,
+        "field_omissions": [],
+        "filtered_rows": 1,
+        "input_records": 1,
+        "output_records": 0,
+        "rejected_rows": 0,
+        "state": "omitted",
+        "stream": "manifest",
+        "unsupported_rows": 0
+      },
+      {
+        "dispositions": [
+          {
+            "disposition": "filtered",
+            "first": 0,
+            "last": 229,
+            "reason": "raw_mcp_disallowed"
+          }
+        ],
+        "emitted_rows": 0,
+        "field_omissions": [],
+        "filtered_rows": 230,
+        "input_records": 230,
+        "mcp_redacted_path_count": 0,
+        "output_records": 0,
+        "rejected_rows": 0,
+        "state": "omitted",
+        "stream": "mcp",
+        "unsupported_rows": 0
+      },
+      {
+        "dispositions": [],
+        "emitted_rows": 1,
+        "field_omissions": [],
+        "filtered_rows": 0,
+        "input_records": 1,
+        "output_records": 1,
+        "rejected_rows": 0,
+        "state": "present",
+        "stream": "provider-accounting",
+        "unsupported_rows": 0
+      },
+      {
+        "dispositions": [],
+        "emitted_rows": 1,
+        "field_omissions": [],
+        "filtered_rows": 0,
+        "input_records": 1,
+        "output_records": 1,
+        "rejected_rows": 0,
+        "state": "present",
+        "stream": "result",
+        "unsupported_rows": 0
+      },
+      {
+        "dispositions": [],
+        "emitted_rows": 6,
+        "field_omissions": [],
+        "filtered_rows": 0,
+        "input_records": 6,
+        "output_records": 6,
+        "rejected_rows": 0,
+        "state": "present",
+        "stream": "trajectory",
+        "unsupported_rows": 0
+      }
+    ],
+    "event_records": 8,
+    "accounting_records": 1,
+    "unsupported_records": 0
+  },
+  "reconciliation_totals": {
+    "input_records": 240,
+    "emitted_rows": 9,
+    "filtered_rows": 231,
+    "unsupported_rows": 0,
+    "rejected_rows": 0,
+    "output_records": 9
+  },
+  "accounting_usage": [
+    {
+      "cache_write_input_tokens": {
+        "scope": "model_execution",
+        "unit": "tokens",
+        "value": "0",
+        "value_status": "reported"
+      },
+      "cached_input_tokens": {
+        "scope": "model_execution",
+        "unit": "tokens",
+        "value": "0",
+        "value_status": "reported"
+      },
+      "input_tokens": {
+        "scope": "model_execution",
+        "unit": "tokens",
+        "value": "11428",
+        "value_status": "reported"
+      },
+      "output_tokens": {
+        "scope": "model_execution",
+        "unit": "tokens",
+        "value": "44",
+        "value_status": "reported"
+      },
+      "reasoning_output_tokens": {
+        "scope": "model_execution",
+        "unit": "tokens",
+        "value": "0",
+        "value_status": "reported"
+      }
+    }
+  ],
+  "event_kinds": [
+    "decision_summary",
+    "process_result",
+    "seed_start",
+    "decision_summary",
+    "action_outcome",
+    "action_outcome",
+    "diagnostic",
+    "diagnostic"
+  ],
+  "cli_pipeline": {
+    "bundle_sha256": "2575de7ba78baa30d1036233a0fc234a5b0e1e6d8988e10df62c139aaee37f8b",
+    "input_mode": "existing_export; exporter not executed",
+    "pending": [],
+    "plan_sha256": "62bfb704decc728f3586fb81e56aad92c5321ba043263ba0e75908daa0acd01b",
+    "provenance": "Protocol proposed candidate 2; existing exported bundle inspection; no exporter execution or Train provenance inferred",
+    "scope": "local process integration only; no admission, browser, tracking persistence or deployment claim",
+    "stages": [
+      {
+        "args": [
+          "tools/recorded-run/validate.mjs",
+          "{bundle}"
+        ],
+        "executable_sha256": "b2959781cc5a74c357ffa02367efa8a0330cbb1c9cb347732fdfaaaca381cbcd",
+        "name": "validate",
+        "report_sha256": "1cfcfd96743183ef0f1baf30445be1f1e474965dbdd4cd55a7f1997da7cfafac",
+        "revision": "0bc689eabc5542ede2b09b030d9ea32daa8a73e7",
+        "status": "process_passed"
+      },
+      {
+        "args": [
+          "tools/inspect-recording.mjs",
+          "{bundle}"
+        ],
+        "executable_sha256": "b2959781cc5a74c357ffa02367efa8a0330cbb1c9cb347732fdfaaaca381cbcd",
+        "name": "studio",
+        "report_sha256": "76b9e74a6c2a89e438f4fdf04896619b9328cf9a04550f64500022e7e6aa7f01",
+        "revision": "2959d09b8e58e92d9777907c60162a928ecca096",
+        "status": "process_passed"
+      },
+      {
+        "args": [
+          "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability",
+          "{bundle}",
+          "{summary}.sqlite3"
+        ],
+        "executable_sha256": "bbb02b24f8212789e87945bcc3b92549cfb2b18fec3786d189aeb2ae0d03ba4b",
+        "name": "observability",
+        "report_sha256": "2e8c3e091fe49f59ef9463c7a78d8886af9089bfe91b8674aad8a24025cab187",
+        "revision": "9deae812443dd56e95788af657e06a1fb75b731e",
+        "status": "process_passed"
+      }
+    ],
+    "status": "process_comparison_passed"
+  },
+  "payload_comparison": {
+    "status": "provided_bundle_matrix_passed",
+    "findings": [],
+    "roles": [
+      {
+        "role": "protocol",
+        "accepted": true
+      },
+      {
+        "role": "studio",
+        "accepted": true
+      },
+      {
+        "role": "observability",
+        "accepted": true
+      }
+    ],
+    "accounting_compared": true,
+    "standalone_observation_records": 0,
+    "local_tracking": {
+      "first": "imported",
+      "retry": "duplicate",
+      "revisions": 1,
+      "delivery": "local_only"
+    }
+  },
+  "source_evidence_digests": {
+    "train-candidate2.zip": "2575de7ba78baa30d1036233a0fc234a5b0e1e6d8988e10df62c139aaee37f8b",
+    "train-export-result.json": "c745d9d51bb1844e486b727fd875fc125841a55ffa1c9816b858e2fb0bb36c9f",
+    "exporter-transport.json": "a26dfeffec100104203c4809041e6debfefc034f35e374de2947ce20447f2b8f",
+    "train-protocol-summary.json": "1cfcfd96743183ef0f1baf30445be1f1e474965dbdd4cd55a7f1997da7cfafac",
+    "train-studio-summary.json": "76b9e74a6c2a89e438f4fdf04896619b9328cf9a04550f64500022e7e6aa7f01",
+    "train-observability-result.json": "95192ae4238ee8c7e8961880fffff718c9a72169a12badf54a1d882e0e2b4232"
+  },
+  "local_evidence_digests": {
+    "train-candidate2-proof-001/evidence.json": "d6c65bd5cac009fb498442c3929558e4bbbda6892c733639991206182c878de0",
+    "train-candidate2-payload-001/matrix.json": "b81ca15fda75325c7657d67f8ad064e247c2e1a682d402be2e7d2307a3759076"
+  },
+  "remaining_limits": [
+    "Source snapshot unverified; bundle completeness partial",
+    "Producer and adapter versions 0.0.0; adapter source_revision unreleased-candidate; component versions empty",
+    "Coordinator export execution consumed as evidence; this thread did not access host sources or repeat export",
+    "Local SQLite persistence/retry verified; actual Train MLflow/Laminar persistence not exercised here",
+    "Browser and LAN deployment remain coordinator evidence",
+    "Candidate admission and independent final review pending"
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "status": "deployed_actual_train_browser_and_integrity_evidence_verified",
+  "scope": "coordinator executed host/browser checks; workflow lead verified supplied JSON, fingerprints, asset inventory and screenshots; VM-origin, not independent physical LAN client",
+  "url": "http://192.168.1.146:4173/",
+  "artifact_sha256": "2575de7ba78baa30d1036233a0fc234a5b0e1e6d8988e10df62c139aaee37f8b",
+  "semantic_digest": "ebf13df215c02d1b8b31821e25a8696cb2901ca49cea413509be877ba8f36b60",
+  "source_fingerprints": {
+    "entries": 9,
+    "all_equal": true,
+    "fields": [
+      "state",
+      "bytes",
+      "mtime_ns",
+      "sha256"
+    ]
+  },
+  "persisted_actual_records": {
+    "events": 8,
+    "accounting": 1,
+    "revisions_after_retry": 1,
+    "duplicate_disposition": "duplicate",
+    "original_records_compared_locally": true
+  },
+  "browser": {
+    "scope": "VM-origin Chromium against deployed Train LAN listener; actual sanitized Train export",
+    "url": "http://192.168.1.146:4173/",
+    "artifactSHA256": "2575de7ba78baa30d1036233a0fc234a5b0e1e6d8988e10df62c139aaee37f8b",
+    "rows": 9,
+    "unknownActions": 2,
+    "checks": [
+      "actual file import",
+      "precise nanosecond timestamp",
+      "numeric observations",
+      "accounting",
+      "duplicate no-op",
+      "invalid import retains prior",
+      "no live controls",
+      "six readable designer nodes"
+    ],
+    "errors": [],
+    "unexpectedRequests": [],
+    "colors": [
+      {
+        "color": "rgb(16, 34, 56)",
+        "background": "rgb(219, 234, 254)"
+      },
+      {
+        "color": "rgb(16, 34, 56)",
+        "background": "rgb(219, 234, 254)"
+      },
+      {
+        "color": "rgb(16, 34, 56)",
+        "background": "rgb(219, 234, 254)"
+      },
+      {
+        "color": "rgb(16, 34, 56)",
+        "background": "rgb(219, 234, 254)"
+      },
+      {
+        "color": "rgb(16, 34, 56)",
+        "background": "rgb(219, 234, 254)"
+      },
+      {
+        "color": "rgb(16, 34, 56)",
+        "background": "rgb(219, 234, 254)"
+      }
+    ]
+  },
+  "served_build": {
+    "release_digest": "4984edd81b7562bc561a2b592c95f8202f8e0cdbe59d708ae8b0307af3a68231",
+    "files": {
+      "assets/import.worker-DfIcyr04.js": {
+        "bytes": 263058,
+        "sha256": "46d1afb0c4f44015707657866847e9a50ce0886dcf007511e9cc4cba407ac70a"
+      },
+      "assets/index-CH-lmpfA.js": {
+        "bytes": 564358,
+        "sha256": "644a6b90f1f326400a02c0fabf41dccae1bd11c731fd20a885914ea9888720c2"
+      },
+      "assets/index-DqRSN1mq.css": {
+        "bytes": 37725,
+        "sha256": "3d9a0bb16f24cedcba9cbac379767af02ed4793aa877fa17f67c421c2aa76413"
+      },
+      "index.html": {
+        "bytes": 700,
+        "sha256": "d36bef2e9e42ff0d15de722fb7d531a48e54609d17e4870790bf95c2dca4b997"
+      }
+    },
+    "tested_manifest_equal": true
+  },
+  "service": {
+    "name": "ascension-workflow-studio.service",
+    "active": true,
+    "enabled": true,
+    "main_pid": 3826423,
+    "same_pid_after_fresh_session": true,
+    "linger": true,
+    "listener": "192.168.1.146:4173",
+    "firewall": "existing active UFW rule allows TCP 4173 from 192.168.1.0/24"
+  },
+  "rollback": {
+    "preserved": true,
+    "release_digest": "6015d7eeb321666766b590ec90a1da80672d78e3a3026e4bb9df0c094d741699",
+    "verified_file_count": 5,
+    "activated": false,
+    "exercise_verified": false
+  },
+  "independent_review": {
+    "status": "interim findings open",
+    "scope": "protocol candidate 2",
+    "severity_counts": {
+      "high": 1,
+      "medium": 5,
+      "low": 1
+    },
+    "findings": [
+      "Known payload/source stream mapping permits process_result from decisions",
+      "Unsupported source diagnostic value digest optional",
+      "Recording identity can equal runtime/session identity",
+      "Optional profile declaration grammar differs from opaque payload grammar",
+      "Disposition reason/class mapping incomplete",
+      "Global record cap checked after both files parsed",
+      "ZIP parser copies oversized input before checking bound"
+    ]
+  },
+  "evidence_sha256": {
+    "train-cross-consumer-check.json": "38b943859c09089136cc8f2025c12fe5b26ececa91f957b8662994d714d081c8",
+    "train-source-before.json": "6e64ff77b90ae1baebd377b6b4a84c5ad67120dd7aaa59b5f675ee87ff82326e",
+    "train-source-after.json": "6e64ff77b90ae1baebd377b6b4a84c5ad67120dd7aaa59b5f675ee87ff82326e",
+    "train-lan-browser.json": "05327bff335e29484826d45d92b94b1746e8dccd947f1437fa63ef43a4cb81aa",
+    "train-lan-accounting.png": "9f137462efa0b3a7f8eb0b442fd160a9ad102e67db1edc689ee6f8c167f5a1da",
+    "train-lan-observation.png": "3491df457c1ab3b2da297de3f6a932626eabacb6334cc17259d346937a4d92b7",
+    "train-lan-designer.png": "a9e2483bd74395c6745a82537be18455052a64371ead7e0d93b994d38ded36dc",
+    "preview-served-files.json": "ba4f44d8ccf9721b498dd589b0d49acf4758d201fee8b8eec7872db2dc52eea3",
+    "preview-activation.json": "c079be9d3ad45b1578b389767fc1c27d0c70e179ebcf5acb88868f9494ca4873",
+    "preview-reconnected-state.json": "70852e4a51e2a1c155e3bfed9c8b021888d7df6fbca675065ecff080afaad9b7",
+    "preview-rollback.json": "b09ae1d1673360159b32a02b414cb94b832799b59fcacbdf64e1c05afe646e6f",
+    "preview-deployment.md": "e0c04f77b7911456d29dce2829f22dd2919878cce84daa1413614517aec6b7a9",
+    "host-firewall.txt": "279eb202d2e24ce2e671ef4496cfcdb250c915ab8ce6e10925a737e7698f1104",
+    "reviews/protocol-independent.md": "8da7437dfbd260124087990a44237b0a36cafcd65e5b2c95fb3b6d335362eb76"
+  },
+  "remaining_gates": [
+    "Resolve independent review findings and revalidate any changed artifact/version",
+    "Contract admission and release authorization",
+    "Independent physical LAN-client proof not supplied",
+    "Actual rollback activation/restart exercise not supplied",
+    "Actual Train MLflow/Laminar persistence not exercised by this lead",
+    "Producer source revision/build linkage remains qualified; bundle source_snapshot stays unverified"
+  ]
+}

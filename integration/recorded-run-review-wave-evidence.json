@@ -1,0 +1,271 @@
+{
+  "scope": "Coordinator/consumer-owner executed host, browser and Collector/MLflow; workflow read and bound these reports, no new service calls",
+  "sources": {
+    "preview-privacy-stage.json": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/preview-privacy-stage.json",
+      "sha256": "aa7a26f8ee3dc75826775270a0cfdb446cc91ec32b72950322df6410078386b6"
+    },
+    "preview-privacy-activation.json": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/preview-privacy-activation.json",
+      "sha256": "c43515418fd1d6f1d3b34597331a1be2b98612d5447b8a829ec804187501109d"
+    },
+    "train-lan-privacy-patch.json": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/train-lan-privacy-patch.json",
+      "sha256": "b4f1e9c027aca05c8dec5e3f93a51b1e88444c3b9eb735678a9dbdc2de4bc468"
+    },
+    "preview-rollback-exercise.jsonl": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/preview-rollback-exercise.jsonl",
+      "sha256": "ddbf8b030623a47ca1047475a12ea6c1bbfe4d0e5ae71ac122fa2a87a1bb1dba"
+    },
+    "preview-post-rollback-browser-output.json": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/preview-post-rollback-browser-output.json",
+      "sha256": "353e9a53b25c71e4b3aac5105a73c75936b20de328addbde3331d3dca872dabe"
+    },
+    "reviews/protocol-independent.md": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/reviews/protocol-independent.md",
+      "sha256": "fb5dc221e7713bd8cce82cbe017ea600f24e17fdded4a101225844fba83dc564"
+    },
+    "reviews/studio-independent.md": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/reviews/studio-independent.md",
+      "sha256": "6cf862c96b094a8a2e5b31c2115db858a053c81dbf0842e977dcb6d044cee4f8"
+    },
+    "reviews/harness-independent.md": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/reviews/harness-independent.md",
+      "sha256": "d94faaead7f475dcf3760541916fda64eec572034a326960f8a14d9e21798147"
+    },
+    "reviews/workflow-timeout-probe.json": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/reviews/workflow-timeout-probe.json",
+      "sha256": "4115d4b0f5931b51a142ad55ce63631656a557e1a3fcd865fdff0b1d8f51e0d6"
+    },
+    "reviews/observability-independent.md": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/reviews/observability-independent.md",
+      "sha256": "d7717b4fd7b44b3ac4280b0e0b0e53afbf0ed822be37c9e9e00bc0f73deecfa4"
+    },
+    "reviews/workflow-timeout-fixed-probe.json": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/reviews/workflow-timeout-fixed-probe.json",
+      "sha256": "6e073c6deb6f03288916b7086729adb7dfb97a8eb915a2ebfbac91b05a22103d"
+    },
+    "ai-agent-observability.md": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/ai-agent-observability.md",
+      "sha256": "66695ca54c9da41149bc907f786c239bc23941d8719729e85379b56227d9d06b"
+    },
+    "sts2-game-mod.md": {
+      "path": "/home/agent/sts2-project/workflow/recorded-run-integration/sts2-game-mod.md",
+      "sha256": "51fb133613606d3c4ee7202e3a89da713716efaaf6abeef985967b58f46695f0"
+    }
+  },
+  "actual_candidate2_tracking": {
+    "path": "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability/docs/evidence/recorded-run-train-local-tracking.json",
+    "sha256": "a8faf8a6f8eb8e9e7e462607b4286c36a5d8e60658e536c0b0a30732cc8486d3",
+    "report": {
+      "result": "passed",
+      "fixtureProvenance": "supplied_bundle",
+      "mlflowVersion": "3.16.0",
+      "collectorVersion": "0.160.0",
+      "schemaDigest": "d5098e5f969d99707d3ad1d97acdbc803285b93f1eb1dcfe5dc3f63c534192af",
+      "wireVersion": "1.0.0-candidate.2",
+      "inventoryDigest": "41d760f8c41064c4e6b49a48dbe6e1a6c8f2a9958afbc50374986a54858fd598",
+      "revisionsVerified": 1,
+      "storedSpans": 19,
+      "accountingVerified": true,
+      "identitiesVerified": true,
+      "recordEvidenceVerified": true,
+      "streamCountsVerified": true,
+      "duplicateTraceUnchanged": true,
+      "restartTraceUnchanged": true,
+      "sourceArtifactUnchanged": true,
+      "completeness": {
+        "source_snapshot": "unverified",
+        "status": "partial"
+      },
+      "artifactSha256": "2575de7ba78baa30d1036233a0fc234a5b0e1e6d8988e10df62c139aaee37f8b",
+      "semanticDigest": "ebf13df215c02d1b8b31821e25a8696cb2901ca49cea413509be877ba8f36b60",
+      "logicalRunKey": "00f887d1fd70c6e6a7c0266df194169e8c0c2e47df83d7cc5c847ae95c084dd4",
+      "traceId": "tr-ca60e4ea95c3800022fd12a96ebabc06",
+      "tracesBefore": 1,
+      "tracesAfterRetry": 1,
+      "tracesAfterRestart": 1,
+      "counts": {
+        "event_records": 8,
+        "accounting_records": 1,
+        "unsupported_records": 0,
+        "unknown_action_outcomes": 2,
+        "settled_action_outcomes": 0
+      },
+      "evidence": {
+        "action": "unknown",
+        "gameplay": "episode_failed",
+        "outcome": "unknown",
+        "process_exit": "failed",
+        "request": "unknown"
+      },
+      "mlflowTelemetryDisabled": true,
+      "laminar": "unverified",
+      "topology": "loopback-collector-to-mlflow"
+    }
+  },
+  "rollback_exercised": [
+    {
+      "activated": true,
+      "release_digest": "4984edd81b7562bc561a2b592c95f8202f8e0cdbe59d708ae8b0307af3a68231",
+      "rollback_digest": "f5722374a5de4e7bd3393b42a64479b43c78cd7a0889d71f629e8d0885f3ca35",
+      "service": "ascension-workflow-studio.service",
+      "service_state": "MainPID=4141654\nActiveState=active\nSubState=running\nUnitFileState=enabled\n"
+    },
+    {
+      "activated": true,
+      "release_digest": "f5722374a5de4e7bd3393b42a64479b43c78cd7a0889d71f629e8d0885f3ca35",
+      "rollback_digest": "4984edd81b7562bc561a2b592c95f8202f8e0cdbe59d708ae8b0307af3a68231",
+      "service": "ascension-workflow-studio.service",
+      "service_state": "MainPID=4141750\nActiveState=active\nSubState=running\nUnitFileState=enabled\n"
+    }
+  ],
+  "current_browser": {
+    "scope": "VM-origin Chromium to LAN, actual Train candidate2 plus six synthetic privacy regressions",
+    "url": "http://192.168.1.146:4173/",
+    "release": "f5722374a5de4e7bd3393b42a64479b43c78cd7a0889d71f629e8d0885f3ca35",
+    "rows": 9,
+    "rejected": [
+      "manifest-action.zip",
+      "manifest-provider_request.zip",
+      "common-gameplay-action.zip",
+      "common-gameplay-provider_request.zip",
+      "opaque-action.zip",
+      "opaque-provider_request.zip"
+    ],
+    "previousRetained": true,
+    "duplicateNoOp": true,
+    "designerNodes": 6,
+    "errors": [],
+    "outgoing": [],
+    "served": {
+      "assets/import.worker-CqCFfTad.js": {
+        "bytes": 266067,
+        "sha256": "187aa6503ba43f7d7b05eff8b807ce9b4c050690863f1bdf607c447b42b81e62"
+      },
+      "assets/index-Ckc_P-jb.js": {
+        "bytes": 564358,
+        "sha256": "ca989367614ed521d4084c7f582e981e9a820e20bddc2556211393ade81c65eb"
+      },
+      "assets/index-DqRSN1mq.css": {
+        "bytes": 37725,
+        "sha256": "3d9a0bb16f24cedcba9cbac379767af02ed4793aa877fa17f67c421c2aa76413"
+      },
+      "index.html": {
+        "bytes": 700,
+        "sha256": "ed00bc2e03dab3b54a21e699d3bc99f2ca731f4118f38464433f302bd475cd6b"
+      }
+    }
+  },
+  "current_deployment_wire": "1.0.0-candidate.2",
+  "candidate3_host_deployment": "pending",
+  "candidate3_process_cli": {
+    "path": ".local/candidate3-cli-golden-004/evidence.json",
+    "sha256": "23aff02f9c79ba849e39e1f62a7150ba2408f0f6832899776d0e48e8d86f227f",
+    "report": {
+      "bundle_sha256": "5fe3184847f46edf93c661e4b7327c81e50299b71a0787dcf20292c5b1df3a6d",
+      "input_mode": "existing_export; exporter not executed",
+      "pending": [],
+      "plan_sha256": "77a80a6bc29ba54c21185247ff62e61f4fb190e5f9cb362405de4e7403c473fa",
+      "provenance": "Final proposed candidate3; protocol 6cdcf099, Studio ad9f764, obs 3f611e52 including 6c5ee3f review fixes; exporter handoff pending",
+      "scope": "local process integration only; no admission, browser, tracking persistence or deployment claim",
+      "stages": [
+        {
+          "args": [
+            "tools/recorded-run/validate.mjs",
+            "{bundle}"
+          ],
+          "executable_sha256": "b2959781cc5a74c357ffa02367efa8a0330cbb1c9cb347732fdfaaaca381cbcd",
+          "name": "validate",
+          "report_sha256": "af11f3e34ed4d97fb1a8638615f6b64fbf3551760b6b47ee32d19e092b5287c6",
+          "revision": "6cdcf0995b25185e59c57d21b1e7a23c2d9b5f8a",
+          "status": "process_passed"
+        },
+        {
+          "args": [
+            "tools/inspect-recording.mjs",
+            "{bundle}"
+          ],
+          "executable_sha256": "b2959781cc5a74c357ffa02367efa8a0330cbb1c9cb347732fdfaaaca381cbcd",
+          "name": "studio",
+          "report_sha256": "35be6fffe1ae0a8ce5f2afccafeb2e4326d4236a7f6a059fd86cc464d2aea830",
+          "revision": "ad9f764c5caf6a7208b55d380e4f79f7ad8e6455",
+          "status": "process_passed"
+        },
+        {
+          "args": [
+            "/home/agent/sts2-project/workflow/worktrees/recorded-run-ai-agent-observability",
+            "{bundle}",
+            "{summary}.sqlite3"
+          ],
+          "executable_sha256": "13eb77f12e3676e2e01b161865837b32a5e4042f35a60c287633a041f1c153f3",
+          "name": "observability",
+          "report_sha256": "0b0157d38ba56e606a11431baa044f68b5b00f4bb0b15e62ad559f53aac2b7f2",
+          "revision": "3f611e52c96cfbef6d37b0e1a553eaa8184010b1",
+          "status": "process_passed"
+        }
+      ],
+      "status": "process_comparison_passed"
+    }
+  },
+  "intermediate_failed_runs": [
+    {
+      "path": ".local/candidate3-cli-golden-002/evidence.json",
+      "sha256": "1ae6c930fdb14dc4787cf37eab8f2dcec0b3149c954f9a6beff3261fd3cee6d5",
+      "report": {
+        "failure": "stage repository revision mismatch",
+        "pending": [],
+        "plan_sha256": "3db3d895e2606eeb40f04997fd7fa13877394d6dbcec3d53fe83e2feae641a25",
+        "provenance": "Final proposed candidate3 bytes; Studio ad9f764 and observability c5f9d367; local import only; full export waits for corrected harness candidate3",
+        "scope": "local process integration only; no admission, browser, tracking persistence or deployment claim",
+        "stages": [],
+        "status": "failed"
+      }
+    },
+    {
+      "path": ".local/candidate3-cli-golden-003/evidence.json",
+      "sha256": "1ae6c930fdb14dc4787cf37eab8f2dcec0b3149c954f9a6beff3261fd3cee6d5",
+      "report": {
+        "failure": "stage repository revision mismatch",
+        "pending": [],
+        "plan_sha256": "3db3d895e2606eeb40f04997fd7fa13877394d6dbcec3d53fe83e2feae641a25",
+        "provenance": "Final proposed candidate3 bytes; Studio ad9f764 and observability c5f9d367; local import only; full export waits for corrected harness candidate3",
+        "scope": "local process integration only; no admission, browser, tracking persistence or deployment claim",
+        "stages": [],
+        "status": "failed"
+      }
+    }
+  ],
+  "intermediate_failure_disposition": "Both runs rejected before executing a stage because observability advanced/amended its commits; refreshed final inspected owner pins, then golden-004 passed.",
+  "candidate3_vector_matrix": {
+    "path": ".local/candidate3-matrix-003/matrix.json",
+    "sha256": "3e5de25fe5125f70d260a3ea4baa36666e9826a77761a5c999369abe4c3c2103",
+    "status": "synthetic_matrix_passed"
+  },
+  "local_checks": {
+    "unit_tests": 10,
+    "unit_failed": 0,
+    "clippy_all_targets": "passed -D warnings",
+    "fmt": "passed",
+    "build_bins": "passed"
+  },
+  "runner_source_files": {
+    "src/main.rs": "35c85fc7aa80fdf9d5cbc028d227fd600ffa9697e02b5e1c32fc571065ffe4bd",
+    "src/lib.rs": "df21a4cc4a0afe58c9e45be458a3c4566f9832932a28427ad921ac8ba4e020c7",
+    "src/tests.rs": "f8af933069cb4edcd8dfdf62345b9ae84cdd3f9b62e6812ef58f93f22611674e",
+    "src/bin/candidate-matrix.rs": "2ac65e632e066103af8c37caecf2fbc4b7fe9e48f1d60341396ae01604b2b4f9",
+    "src/bin/observability-report.rs": "4f74883639c4ccfa83ee69feaf4de92ad5a72bf783df4411b03624db577bda31",
+    "Cargo.toml": "e658217d2a77417d7305f432714855de0888494d1408eda3c46e0a69e3ed5210",
+    "Cargo.lock": "fb0a0c03b7eaf095c7c3207f3da067bd7206c8be57112380764f69080385ab68"
+  },
+  "runner_executable_sha256": "8056b092bf745bf5dfdbaccece4eab44e0a85ec6af69422afd7e07d58dabc994",
+  "owner_observability_final": {
+    "revision": "3f611e52c96cfbef6d37b0e1a553eaa8184010b1",
+    "consumer_fix": "6c5ee3fd7aecda4fd641931d990daef57367a5ee",
+    "tests_passed": 60,
+    "real_backend_regression": "passed",
+    "materializer_guards": "passed",
+    "Dockerfile_build": "unrun; no Docker daemon",
+    "independent_review_closure": "pending"
+  }
+}
