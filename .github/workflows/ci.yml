@@ -1,0 +1,70 @@
+name: Delivery conformance
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: delivery-conformance-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  conformance:
+    name: Delivery conformance
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Check out delivery candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install fixed Rust toolchain
+        run: rustup toolchain install 1.97.1 --profile minimal --no-self-update
+
+      - name: Verify JSON, locks, checksums, and catalog declaration
+        run: |
+          bash tools/verify-ci-inputs.sh
+          bash tools/verify-ci-inputs.test.sh
+
+      - name: Build and test independent conformance tools from locks
+        run: |
+          cargo +1.97.1 test --locked --manifest-path tools/conformance-driver/Cargo.toml
+          cargo +1.97.1 build --locked --manifest-path tools/conformance-driver/Cargo.toml
+          cargo +1.97.1 test --locked --manifest-path tools/recorded-run-driver/Cargo.toml
+          cargo +1.97.1 build --locked --manifest-path tools/recorded-run-driver/Cargo.toml
+
+      # This is a deliberately unmerged candidate recorded in candidate-lock.json,
+      # not a claim that its default branch has that revision.
+      - name: Check out exact harness candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: AI-Ascension/sts2-harness
+          ref: 6e0272511997165ebba337a15d22f73acd36a4c4
+          path: harness
+          persist-credentials: false
+
+      - name: Build exact harness management binary
+        working-directory: harness
+        run: cargo +1.97.1 build --locked --bin sts2-workflow
+
+      - name: Assert checked-out harness lock and record binary digest
+        run: |
+          expected=$(jq -r '.candidate_revisions[] | select(.repository == "AI-Ascension/sts2-harness") | .commit' integration/candidate-lock.json)
+          test "$expected" = 6e0272511997165ebba337a15d22f73acd36a4c4
+          test "$(git -C harness rev-parse HEAD)" = "$expected"
+          sha256sum harness/target/debug/sts2-workflow
+
+      - name: Exercise real synthetic process conformance
+        run: |
+          tools/conformance-driver/target/debug/ascension-conformance-driver \
+            --binary "$GITHUB_WORKSPACE/harness/target/debug/sts2-workflow" \
+            --catalog "$GITHUB_WORKSPACE/workflows/sts2" \
+            --capabilities "$GITHUB_WORKSPACE/catalog/capabilities/synthetic-full.json" \
+            --missing-capabilities "$GITHUB_WORKSPACE/catalog/capabilities/synthetic-missing-map.json" \
+            --negative "$GITHUB_WORKSPACE/workflows/sts2/map.strict.json"

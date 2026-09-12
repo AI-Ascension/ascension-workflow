@@ -1,0 +1,4 @@
+f8f79e115cd3bd736125ad17e33676bfe110f8a1b2673577cbbe93f1d5cc937d  ../../schemas/workflow-v1.schema.json
+0b235014398cc02f1001153358a5ce6d188fa97ad0befe18e4a1c62394ad2f31  ../../conformance/cases/workflow-v1.json
+dd0c29102af1728d4977a7c36b94e4c37fb9bc8ba7cbd36de3905ab8bae96c27  canonical-vectors.json
+930e2c889725bfaf59ba792ed2de55c5a35b3c04f60ca8ab63f8c47efbb51a86  manifest.json
