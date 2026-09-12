@@ -1,0 +1,18 @@
+{
+  "artifact": "sts2-harness/workflow-context-association-v1",
+  "contract_version": "ascension.workflow-context-association/v1",
+  "schema": "../../schemas/workflow-context-association-v1.schema.json",
+  "producer": "sts2-harness",
+  "provenance": {
+    "source": "crates/harness/src/management and crates/harness/src/context_control",
+    "generator": "hand-authored integration contract",
+    "license": "MIT"
+  },
+  "consumers": ["ascension-workflow-studio", "ascension-context-console"],
+  "conformance": ["conformance/cases/workflow-context-association-v1.json"],
+  "privacy": {
+    "retained_context_content": "not_in_contract",
+    "provider_credentials": "not_in_contract",
+    "raw_provider_payload": "not_in_contract"
+  }
+}

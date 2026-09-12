@@ -1,0 +1,51 @@
+{
+  "schema_version": "ascension.workflow-context-association-conformance/v1",
+  "cases": [
+    {
+      "id": "available-bound-association",
+      "valid": true,
+      "value": {
+        "schema_version": "ascension.workflow-context-association/v1",
+        "workflow": {"workflow_run_id": "run.demo.1", "definition_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "graph_id": "main", "node_id": "decide", "node_execution_id": "run.demo.1.node.4"},
+        "context": {"availability": "available", "context_ref": "sts2.combat.context.v1", "run_id": "run.demo.1", "episode_id": "episode.demo.1", "agent_id": "agent.demo.1", "snapshot_id": "snapshot.demo.4", "approved_revision_id": "revision.demo.2", "plan_epoch": 3},
+        "capture": {"mode": "metadata", "state": "prepared", "attempt_id": "attempt.demo.4"},
+        "capabilities": {"inspect_metadata": true, "read_retained_content": false, "edit_context": false, "control_context": false, "memory_search": false, "provider_session_inspect": false}
+      }
+    },
+    {
+      "id": "unavailable-does-not-invent-identities",
+      "valid": true,
+      "value": {
+        "schema_version": "ascension.workflow-context-association/v1",
+        "workflow": {"workflow_run_id": "run.demo.1", "definition_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "graph_id": "main", "node_id": "observe", "node_execution_id": "run.demo.1.node.1"},
+        "context": {"availability": "not_applicable", "context_ref": null, "run_id": null, "episode_id": null, "agent_id": null, "snapshot_id": null, "approved_revision_id": null, "plan_epoch": null, "reason_code": "node_has_no_context_binding"},
+        "capture": {"mode": "off", "state": "not_captured", "attempt_id": null},
+        "capabilities": {"inspect_metadata": true, "read_retained_content": false, "edit_context": false, "control_context": false, "memory_search": false, "provider_session_inspect": false}
+      }
+    },
+    {
+      "id": "available-requires-bound-identities",
+      "valid": false,
+      "reason": "available associations require context run, episode, agent, snapshot, revision, and plan epoch rather than inferred placeholders",
+      "value": {
+        "schema_version": "ascension.workflow-context-association/v1",
+        "workflow": {"workflow_run_id": "run.demo.1", "definition_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "graph_id": "main", "node_id": "decide", "node_execution_id": "run.demo.1.node.4"},
+        "context": {"availability": "available", "context_ref": "sts2.combat.context.v1", "run_id": "run.demo.1", "episode_id": "episode.demo.1", "agent_id": "agent.demo.1", "snapshot_id": null, "approved_revision_id": "revision.demo.2", "plan_epoch": 3},
+        "capture": {"mode": "metadata", "state": "prepared", "attempt_id": "attempt.demo.4"},
+        "capabilities": {"inspect_metadata": true, "read_retained_content": false, "edit_context": false, "control_context": false, "memory_search": false, "provider_session_inspect": false}
+      }
+    },
+    {
+      "id": "unavailable-cannot-invent-identities",
+      "valid": false,
+      "reason": "unavailable and not-applicable associations must not infer Context identities from workflow names or timeline proximity",
+      "value": {
+        "schema_version": "ascension.workflow-context-association/v1",
+        "workflow": {"workflow_run_id": "run.demo.1", "definition_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "graph_id": "main", "node_id": "observe", "node_execution_id": "run.demo.1.node.1"},
+        "context": {"availability": "unavailable", "context_ref": "invented.context", "run_id": "run.demo.1", "episode_id": null, "agent_id": null, "snapshot_id": null, "approved_revision_id": null, "plan_epoch": null, "reason_code": "adapter_unavailable"},
+        "capture": {"mode": "unavailable", "state": "unavailable", "attempt_id": null},
+        "capabilities": {"inspect_metadata": true, "read_retained_content": false, "edit_context": false, "control_context": false, "memory_search": false, "provider_session_inspect": false}
+      }
+    }
+  ]
+}

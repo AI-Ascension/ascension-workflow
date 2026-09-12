@@ -1,0 +1,25 @@
+{
+  "schema_version": "ascension.workflow-context-binding-catalog-conformance/v1",
+  "cases": [
+    {
+      "id": "pinned-decision-binding",
+      "valid": true,
+      "value": {
+        "schema_version": "ascension.workflow-context-binding-catalog/v1",
+        "context_bindings": [
+          {"context_ref": "sts2.combat.context.v1", "node_kinds": ["decide"]}
+        ]
+      }
+    },
+    {
+      "id": "binding-requires-supported-node-kind",
+      "valid": false,
+      "value": {
+        "schema_version": "ascension.workflow-context-binding-catalog/v1",
+        "context_bindings": [
+          {"context_ref": "sts2.combat.context.v1", "node_kinds": []}
+        ]
+      }
+    }
+  ]
+}

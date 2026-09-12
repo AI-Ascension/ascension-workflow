@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-ascension.example/contracts/workflow-context-association-v1.schema.json",
+  "title": "Workflow context association",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "workflow", "context", "capture", "capabilities"],
+  "properties": {
+    "schema_version": {"const": "ascension.workflow-context-association/v1"},
+    "workflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["workflow_run_id", "definition_digest", "graph_id", "node_id", "node_execution_id"],
+      "properties": {
+        "workflow_run_id": {"$ref": "#/$defs/identifier"},
+        "definition_digest": {"$ref": "#/$defs/sha256"},
+        "graph_id": {"$ref": "#/$defs/identifier"},
+        "node_id": {"$ref": "#/$defs/identifier"},
+        "node_execution_id": {"$ref": "#/$defs/identifier"}
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["availability", "context_ref", "run_id", "episode_id", "agent_id", "snapshot_id", "approved_revision_id", "plan_epoch"],
+      "properties": {
+        "availability": {"enum": ["available", "unavailable", "not_applicable"]},
+        "context_ref": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]},
+        "run_id": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]},
+        "episode_id": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]},
+        "agent_id": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]},
+        "snapshot_id": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]},
+        "approved_revision_id": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]},
+        "plan_epoch": {"anyOf": [{"type": "integer", "minimum": 0}, {"type": "null"}]},
+        "reason_code": {"type": "string", "minLength": 1, "maxLength": 128}
+      }
+    },
+    "capture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "state", "attempt_id"],
+      "properties": {
+        "mode": {"enum": ["off", "metadata", "memory", "private", "unavailable"]},
+        "state": {"enum": ["not_captured", "prepared", "input_write_completed", "provider_receipt_reported", "unknown", "unavailable"]},
+        "attempt_id": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]},
+        "reason_code": {"type": "string", "minLength": 1, "maxLength": 128}
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inspect_metadata", "read_retained_content", "edit_context", "control_context", "memory_search", "provider_session_inspect"],
+      "properties": {
+        "inspect_metadata": {"type": "boolean"},
+        "read_retained_content": {"type": "boolean"},
+        "edit_context": {"type": "boolean"},
+        "control_context": {"type": "boolean"},
+        "memory_search": {"type": "boolean"},
+        "provider_session_inspect": {"type": "boolean"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "type": "object",
+            "properties": {"availability": {"const": "available"}},
+            "required": ["availability"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "context": {
+            "type": "object",
+            "properties": {
+              "context_ref": {"$ref": "#/$defs/identifier"},
+              "run_id": {"$ref": "#/$defs/identifier"},
+              "episode_id": {"$ref": "#/$defs/identifier"},
+              "agent_id": {"$ref": "#/$defs/identifier"},
+              "snapshot_id": {"$ref": "#/$defs/identifier"},
+              "approved_revision_id": {"$ref": "#/$defs/identifier"},
+              "plan_epoch": {"type": "integer", "minimum": 1}
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "context": {
+            "type": "object",
+            "properties": {
+              "context_ref": {"type": "null"},
+              "run_id": {"type": "null"},
+              "episode_id": {"type": "null"},
+              "agent_id": {"type": "null"},
+              "snapshot_id": {"type": "null"},
+              "approved_revision_id": {"type": "null"},
+              "plan_epoch": {"type": "null"}
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "identifier": {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"},
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

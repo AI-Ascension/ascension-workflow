@@ -1,0 +1,13 @@
+{
+  "artifact": "sts2-harness/workflow-context-binding-catalog-v1",
+  "contract_version": "ascension.workflow-context-binding-catalog/v1",
+  "schema": "../../schemas/workflow-context-binding-catalog-v1.schema.json",
+  "producer": "sts2-harness",
+  "consumers": ["ascension-workflow-studio"],
+  "conformance": ["conformance/cases/workflow-context-binding-catalog-v1.json"],
+  "privacy": {
+    "context_content": "not_in_contract",
+    "provider_credentials": "not_in_contract",
+    "runtime_context_identity": "not_in_contract"
+  }
+}
