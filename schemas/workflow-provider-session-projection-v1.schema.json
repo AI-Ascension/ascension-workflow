@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-ascension.example/contracts/workflow-provider-session-projection-v1.schema.json",
+  "title": "Workflow provider-session projection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "operation", "value", "effect_class", "inference_calls", "game_effects"],
+  "properties": {
+    "schema": {"const": "ascension.provider-session.api-result.v1"},
+    "operation": {"const": "list"},
+    "value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "bindings", "operations", "next_cursor"],
+      "properties": {
+        "run_id": {"$ref": "#/$defs/identifier"},
+        "bindings": {
+          "type": "array",
+          "maxItems": 128,
+          "items": {"$ref": "#/$defs/binding"}
+        },
+        "operations": {
+          "type": "array",
+          "maxItems": 128,
+          "items": {"$ref": "#/$defs/operation"}
+        },
+        "next_cursor": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]}
+      }
+    },
+    "effect_class": {"const": "local_metadata_only"},
+    "inference_calls": {"const": 0},
+    "game_effects": {"const": 0}
+  },
+  "$defs": {
+    "identifier": {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"},
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["binding_id", "state", "history_coverage", "game_dispatch_capability"],
+      "properties": {
+        "binding_id": {"$ref": "#/$defs/identifier"},
+        "state": {"enum": ["candidate", "held", "active", "recovering", "quarantined", "retired", "closed"]},
+        "history_coverage": {"enum": ["application_manifest_verified", "reported_partial", "unknown"]},
+        "game_dispatch_capability": {"const": false}
+      }
+    },
+    "operation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation_id", "state", "game_effects", "auto_resume"],
+      "properties": {
+        "operation_id": {"$ref": "#/$defs/identifier"},
+        "state": {"enum": ["planned", "intent_persisted", "sent", "acknowledged", "completed", "rejected", "unknown", "cancelled", "quarantined"]},
+        "game_effects": {"const": 0},
+        "auto_resume": {"const": false}
+      }
+    }
+  }
+}

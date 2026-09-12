@@ -1,0 +1,19 @@
+{
+  "artifact": "sts2-harness/workflow-provider-session-projection-v1",
+  "contract_version": "ascension.provider-session.api-result.v1",
+  "schema": "../../schemas/workflow-provider-session-projection-v1.schema.json",
+  "producer": "sts2-harness",
+  "provenance": {
+    "source": "crates/harness/src/management and crates/harness/src/provider_session",
+    "generator": "hand-authored integration contract",
+    "license": "MIT"
+  },
+  "consumers": ["ascension-workflow-studio"],
+  "conformance": ["conformance/cases/workflow-provider-session-projection-v1.json"],
+  "privacy": {
+    "native_thread_identifiers": "not_in_contract",
+    "credential_realm_references": "not_in_contract",
+    "provider_rpc_methods": "not_in_contract",
+    "provider_request_or_response_bytes": "not_in_contract"
+  }
+}

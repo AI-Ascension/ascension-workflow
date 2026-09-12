@@ -1,0 +1,58 @@
+{
+  "schema_version": "ascension.workflow-provider-session-projection-conformance/v1",
+  "cases": [
+    {
+      "id": "redacted-workflow-scoped-list",
+      "valid": true,
+      "value": {
+        "schema": "ascension.provider-session.api-result.v1",
+        "operation": "list",
+        "value": {
+          "run_id": "workflow.run.1",
+          "bindings": [{"binding_id": "binding.1", "state": "held", "history_coverage": "unknown", "game_dispatch_capability": false}],
+          "operations": [{"operation_id": "operation.1", "state": "intent_persisted", "game_effects": 0, "auto_resume": false}],
+          "next_cursor": null
+        },
+        "effect_class": "local_metadata_only",
+        "inference_calls": 0,
+        "game_effects": 0
+      }
+    },
+    {
+      "id": "rejects-native-or-credential-details",
+      "valid": false,
+      "reason": "the workflow projection deliberately exposes summaries only",
+      "value": {
+        "schema": "ascension.provider-session.api-result.v1",
+        "operation": "list",
+        "value": {
+          "run_id": "workflow.run.1",
+          "bindings": [{"binding_id": "binding.1", "state": "held", "history_coverage": "unknown", "game_dispatch_capability": false, "native_thread_ref": "forbidden"}],
+          "operations": [],
+          "next_cursor": null
+        },
+        "effect_class": "local_metadata_only",
+        "inference_calls": 0,
+        "game_effects": 0
+      }
+    },
+    {
+      "id": "rejects-effectful-or-resumable-metadata",
+      "valid": false,
+      "reason": "inspection cannot report or grant effects, inference, or automatic resume",
+      "value": {
+        "schema": "ascension.provider-session.api-result.v1",
+        "operation": "list",
+        "value": {
+          "run_id": "workflow.run.1",
+          "bindings": [],
+          "operations": [{"operation_id": "operation.1", "state": "sent", "game_effects": 1, "auto_resume": true}],
+          "next_cursor": null
+        },
+        "effect_class": "local_metadata_only",
+        "inference_calls": 0,
+        "game_effects": 0
+      }
+    }
+  ]
+}
