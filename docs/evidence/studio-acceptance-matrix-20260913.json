@@ -1,7 +1,7 @@
 {
   "schema_version": "ascension.studio-acceptance-matrix/v1",
   "matrix_id": "studio-acceptance-2026-09-13",
-  "captured_at": "2026-09-13T20:24:27Z",
+  "captured_at": "2026-09-13T20:30:15Z",
   "source_issue": {
     "repository": "AI-Ascension/ascension-workflow",
     "number": 11,
@@ -136,7 +136,7 @@
       "feature_issue": "AI-Ascension/sts2-harness#94",
       "title": "Execute Studio-authored workflows through authoritative live harness ports",
       "owner_repository": "AI-Ascension/sts2-harness",
-      "issue_state": "open",
+      "issue_state": "closed",
       "owner_implementation_children": [],
       "required_companion_prs": [
         {"repository": "AI-Ascension/sts2-harness", "issue": 94, "pr": 134, "status": "open", "required": true, "disposition": "required_pr_open"}
@@ -247,22 +247,22 @@
       "feature_issue": "AI-Ascension/ascension-workflow-studio#110",
       "title": "Make the Studio node and edge editors faithfully round-trip the owner workflow contract",
       "owner_repository": "AI-Ascension/ascension-workflow-studio",
-      "issue_state": "open",
+      "issue_state": "closed",
       "owner_implementation_children": [],
       "required_companion_prs": [
         {"repository": "AI-Ascension/ascension-workflow-studio", "issue": 110, "pr": 124, "status": "merged", "required": true, "disposition": "merged_partial"},
         {"repository": "AI-Ascension/ascension-workflow-studio", "issue": 110, "pr": 125, "status": "merged", "required": true, "disposition": "merged_partial"},
-        {"repository": "AI-Ascension/ascension-workflow-studio", "issue": 110, "pr": 126, "status": "open", "required": true, "disposition": "required_pr_open"}
+        {"repository": "AI-Ascension/ascension-workflow-studio", "issue": 110, "pr": 126, "status": "merged", "required": true, "disposition": "merged_component"}
       ],
-      "exact_merged_pins": ["P-S124", "P-S125"],
+      "exact_merged_pins": ["P-S124", "P-S125", "P-S126"],
       "schema_capability_versions": [
         {"name": "ascension.workflow/v1", "status": "owner_contract_consumed"},
         {"name": "studio.owner_workflow_roundtrip", "version": null, "status": "owner_contract_incomplete"}
       ],
       "commands_ci_evidence": ["C-JSON", "C-EVIDENCE", "C-CI", "C-PIN-AUDIT", "C-OWNER"],
-      "remaining_acceptance_gates": ["G-STUDIO-110", "G-D3"],
+      "remaining_acceptance_gates": ["G-D3"],
       "outcome": "partial_component_only",
-      "disposition": "PRs #124 and #125 are merged slices; PR #126 is open and issue #110 remains open, so round-trip acceptance is not complete."
+      "disposition": "PRs #124, #125 and #126 are merged; owner unit/type/build, Chromium/Firefox/WebKit, recorded-run browser and authenticated live-owner browser checks passed. Aggregate cross-repository acceptance remains gated."
     },
     {
       "row_id": "STUDIO-F07",
@@ -652,7 +652,7 @@
     {"feature_issue": "AI-Ascension/ascension-workflow-studio#108", "required_prs": [], "disposition": "required_pr_open_unlinked"},
     {"feature_issue": "AI-Ascension/sts2-harness#95", "required_prs": [{"number": 131, "state": "merged_partial"}, {"number": 133, "state": "merged_partial"}], "disposition": "merged_partial_issue_open"},
     {"feature_issue": "AI-Ascension/ascension-workflow-studio#109", "required_prs": [], "disposition": "required_pr_open_unlinked"},
-    {"feature_issue": "AI-Ascension/ascension-workflow-studio#110", "required_prs": [{"number": 124, "state": "merged_partial"}, {"number": 125, "state": "merged_partial"}, {"number": 126, "state": "open"}], "disposition": "required_pr_open"},
+    {"feature_issue": "AI-Ascension/ascension-workflow-studio#110", "required_prs": [{"number": 124, "state": "merged_partial"}, {"number": 125, "state": "merged_partial"}, {"number": 126, "state": "component_passed"}], "disposition": "component_passed_external_gate_open"},
     {"feature_issue": "AI-Ascension/sts2-gateway#50", "required_prs": [], "disposition": "required_pr_open_unlinked"},
     {"feature_issue": "AI-Ascension/sts2-harness#96", "required_prs": [], "disposition": "required_pr_open_unlinked"},
     {"feature_issue": "AI-Ascension/sts2-game-mod#78", "required_prs": [{"number": 118, "state": "merged_partial"}], "disposition": "merged_partial_issue_open"},
@@ -689,6 +689,7 @@
     {"id": "P-GM118", "repository": "AI-Ascension/sts2-game-mod", "pr": 118, "head_commit": "6017e2d795ebfa91974cbe86f2d1d3830c018b17", "merge_commit": "2e7ccb68d030ed84f05e267fff28d209857bad84", "merged_at": "2026-09-13T18:56:42Z", "scope": "disposable profile safety foundation", "acceptance_effect": "partial_issue_78"},
     {"id": "P-S124", "repository": "AI-Ascension/ascension-workflow-studio", "pr": 124, "head_commit": "2421af49b914e05f13acac5a11919bdccfd4911d", "merge_commit": "8abd739074168291ff85d7996cde70a7c2c78a54", "merged_at": "2026-09-13T18:23:01Z", "scope": "owner node/edge kind round-trip slice", "acceptance_effect": "partial_issue_110"},
     {"id": "P-S125", "repository": "AI-Ascension/ascension-workflow-studio", "pr": 125, "head_commit": "10d78431fb887f51b7d595da71fc2d870ce5cf50", "merge_commit": "aa132cfd6f48b33214ded65c6d08ad2019e8dcc9", "merged_at": "2026-09-13T18:55:57Z", "scope": "owner archive isolation slice", "acceptance_effect": "partial_issue_110"},
+    {"id": "P-S126", "repository": "AI-Ascension/ascension-workflow-studio", "pr": 126, "head_commit": "6f57d2ddaeba9de62d05b16772861bb1f4a06d44", "merge_commit": "7777ebf058f9b799a8a0e0652a94e7c486f22fd8", "merged_at": "2026-09-13T20:26:19Z", "scope": "owner workflow round-trip validation and browser coverage", "acceptance_effect": "component_passed_issue_110"},
     {"id": "P-CC2", "repository": "AI-Ascension/ascension-context-console", "pr": 2, "head_commit": "3ee19f55c55bf0586d8e4897570266d031ea495d", "merge_commit": "2e1bfe0d4e62ac7f1efcefe4b1cc940182146880", "merged_at": "2026-09-10T15:56:07Z", "scope": "context console phase1", "acceptance_effect": "component_foundation_only"},
     {"id": "P-CC3", "repository": "AI-Ascension/ascension-context-console", "pr": 3, "head_commit": "4d035e9514daee4258971eebeaa7db623372fe5e", "merge_commit": "114b3e5ae28cd60d9dafc421711dee859b602c4d", "merged_at": "2026-09-11T04:10:04Z", "scope": "memory facade", "acceptance_effect": "component_foundation_only"},
     {"id": "P-CC12", "repository": "AI-Ascension/ascension-context-console", "pr": 12, "head_commit": "ed0a9d82dce849a033c9755cde271c37a48ad3b4", "merge_commit": "e4ab38a2e9db46582b99a813238d8a69e97d15c8", "merged_at": "2026-09-11T23:23:12Z", "scope": "persistent-provider boundary fixture", "acceptance_effect": "component_foundation_only"},
@@ -697,13 +698,12 @@
     {"id": "P-GC14", "repository": "AI-Ascension/sts2-game-core", "pr": 14, "head_commit": "ea8a0565039bddbbfafebf0f337d3bb624c89f51", "merge_commit": "b31d5ef0ed99a51a04830ca87ca5351912451efe", "merged_at": "2026-09-13T18:47:05Z", "scope": "evidence-qualified rules reference", "acceptance_effect": "justified_dependency_only"}
   ],
   "open_prs": [
-    {"repository": "AI-Ascension/sts2-harness", "pr": 134, "title": "feat: execute authored workflows through live harness ports", "state": "open", "head_commit": "7d56473921736d5184882869e3d964db22b49db3", "merge_commit": null, "gate": "live_executor_open"},
-    {"repository": "AI-Ascension/ascension-workflow-studio", "pr": 126, "title": "fix(studio): validate owner workflow round trips", "state": "open", "head_commit": "0f4740493edfb8f127af2e3fcbd6e4ab88a289e7", "merge_commit": null, "gate": "studio_round_trip_open"}
+    {"repository": "AI-Ascension/sts2-harness", "pr": 134, "title": "feat: execute authored workflows through live harness ports", "state": "open", "head_commit": "7d56473921736d5184882869e3d964db22b49db3", "merge_commit": null, "gate": "live_executor_open"}
   ],
   "repository_heads": [
     {"repository": "AI-Ascension/ascension-workflow", "default_branch": "main", "commit": "fc0c82416c5cb52b9c15f7cfcf743ab4992e7354", "observed_via": "gh api repos/AI-Ascension/ascension-workflow/commits/main"},
     {"repository": "AI-Ascension/sts2-harness", "default_branch": "main", "commit": "63fdd2c6d54eb57d9b106d0196e96235bbf2ca07", "observed_via": "gh api repos/AI-Ascension/sts2-harness/commits/main"},
-    {"repository": "AI-Ascension/ascension-workflow-studio", "default_branch": "main", "commit": "aa132cfd6f48b33214ded65c6d08ad2019e8dcc9", "observed_via": "gh api repos/AI-Ascension/ascension-workflow-studio/commits/main"},
+    {"repository": "AI-Ascension/ascension-workflow-studio", "default_branch": "main", "commit": "7777ebf058f9b799a8a0e0652a94e7c486f22fd8", "observed_via": "gh api repos/AI-Ascension/ascension-workflow-studio/commits/main"},
     {"repository": "AI-Ascension/sts2-gateway", "default_branch": "main", "commit": "55bec41878e34d37c3304b2893931865e1a697f1", "observed_via": "gh api repos/AI-Ascension/sts2-gateway/commits/main"},
     {"repository": "AI-Ascension/sts2-mcp-server", "default_branch": "main", "commit": "ab117105725f0873a5da7ea3393e724e96cf01a3", "observed_via": "gh api repos/AI-Ascension/sts2-mcp-server/commits/main"},
     {"repository": "AI-Ascension/sts2-game-mod", "default_branch": "main", "commit": "ec68305b67697bc75143cfdbd076dd551f46b9d6", "observed_via": "gh api repos/AI-Ascension/sts2-game-mod/commits/main"},
@@ -714,7 +714,7 @@
   "owner_dispositions": [
     {"repository": "AI-Ascension/ascension-workflow", "disposition": "required_pr", "issue_refs": [11], "reason": "This matrix, refreshed artifacts and evidence are the workflow-owned delivery for issue #11.", "workflow_pr_required": true},
     {"repository": "AI-Ascension/sts2-harness", "disposition": "required_pr", "issue_refs": [94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114], "merged_prs": [131, 133], "open_prs": [134], "reason": "Harness owns the interpreter, scheduler, live ports and backend contracts; this repository only copies pinned artifacts and fixtures.", "workflow_pr_required": false},
-    {"repository": "AI-Ascension/ascension-workflow-studio", "disposition": "required_pr", "issue_refs": [107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121], "merged_prs": [124, 125], "open_prs": [126], "reason": "Studio owns UI and authoring behavior; no duplicate UI implementation is added here.", "workflow_pr_required": false},
+    {"repository": "AI-Ascension/ascension-workflow-studio", "disposition": "required_pr", "issue_refs": [107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121], "merged_prs": [124, 125, 126], "open_prs": [], "reason": "Studio owns UI and authoring behavior; no duplicate UI implementation is added here. Owner CI for PR #126 passed, while aggregate cross-repository acceptance remains separate.", "workflow_pr_required": false},
     {"repository": "AI-Ascension/sts2-gateway", "disposition": "required_pr", "issue_refs": [50, 51], "reason": "Gateway owns process authority and save-profile forwarding; no route or host operation is copied here.", "workflow_pr_required": false},
     {"repository": "AI-Ascension/sts2-mcp-server", "disposition": "required_pr", "issue_refs": [50], "reason": "MCP owns bounded tool mapping; no tool server is copied here.", "workflow_pr_required": false},
     {"repository": "AI-Ascension/sts2-game-mod", "disposition": "required_pr", "issue_refs": [78, 79], "merged_prs": [113, 118], "reason": "Game-mod owns profile/native admission. PR #113 is a source-only probe and issue #79 remains open_unverified for acceptance.", "workflow_pr_required": false},
@@ -735,7 +735,7 @@
     {"id": "G-CONTEXT", "status": "open", "scope": "Studio#109, harness#100, context-console#18; Studio#118/#120 dependencies", "precondition": "Merge authoritative context association/binding owner work and run scoped cross-repository checks."},
     {"id": "G-READINESS", "status": "open", "scope": "sts2-harness#96", "precondition": "Publish and pin identity-bound loading/readiness contract; run native readiness waits."},
     {"id": "G-CHILDREN", "status": "open", "scope": "harness#99-114, gateway#51, mcp#50, game-mod#79, context-console#18/#19", "precondition": "Every required backend child needs a merged owner PR or a reviewed justified disposition plus exact acceptance evidence."},
-    {"id": "G-STUDIO-110", "status": "open", "scope": "Studio#110 and PR #126", "precondition": "Merge the remaining round-trip validation slice and run the required browser journeys."},
+    {"id": "G-STUDIO-110", "status": "component_passed", "scope": "Studio#110 and PR #126", "precondition": "PR #126 is merged; owner unit/type/build, Chromium/Firefox/WebKit, recorded-run browser and authenticated live-owner browser checks passed. Cross-repository workflow acceptance remains under G-LIVE/G-D3."},
     {"id": "G-NATIVE", "status": "open", "scope": "game-mod#78/#79, gateway#50/#51, harness#96", "precondition": "Separate authorization, disposable profile, exact-host/native compatibility, settlement and restart evidence."},
     {"id": "G-PROVIDER", "status": "open", "scope": "Studio#113/#114/#121 and harness#108/#109/#114", "precondition": "Separate provider authorization, continuity, compaction and budget evidence; no credentials or raw output in this repository."},
     {"id": "G-D3", "status": "open", "scope": "Phase 1 issue #1 and issue #11 final review", "precondition": "Observe native D0-to-D1-to-D2-to-D3 delegation and independent G6 review; existing preflight remains blocked."},

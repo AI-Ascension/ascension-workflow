@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "captured_at": "2026-09-13T20:24:27Z",
+  "captured_at": "2026-09-13T20:30:15Z",
   "status": "studio_acceptance_matrix_audit",
   "purpose": "Additive current-head and merged-pin provenance for issue #11. Historical candidate locks remain unchanged; this lock does not assert cross-repository, provider or native completion.",
   "delivery_repository": {
@@ -13,7 +13,7 @@
   "repositories": [
     {"repository": "AI-Ascension/ascension-workflow", "default_branch": "main", "commit": "fc0c82416c5cb52b9c15f7cfcf743ab4992e7354", "role": "catalog_conformance_evidence_owner"},
     {"repository": "AI-Ascension/sts2-harness", "default_branch": "main", "commit": "63fdd2c6d54eb57d9b106d0196e96235bbf2ca07", "role": "canonical_interpreter_scheduler_and_live_contract_owner"},
-    {"repository": "AI-Ascension/ascension-workflow-studio", "default_branch": "main", "commit": "aa132cfd6f48b33214ded65c6d08ad2019e8dcc9", "role": "Studio_authoring_consumer"},
+    {"repository": "AI-Ascension/ascension-workflow-studio", "default_branch": "main", "commit": "7777ebf058f9b799a8a0e0652a94e7c486f22fd8", "role": "Studio_authoring_consumer"},
     {"repository": "AI-Ascension/sts2-gateway", "default_branch": "main", "commit": "55bec41878e34d37c3304b2893931865e1a697f1", "role": "process_authority_owner"},
     {"repository": "AI-Ascension/sts2-mcp-server", "default_branch": "main", "commit": "ab117105725f0873a5da7ea3393e724e96cf01a3", "role": "bounded_tool_mapping_owner"},
     {"repository": "AI-Ascension/sts2-game-mod", "default_branch": "main", "commit": "ec68305b67697bc75143cfdbd076dd551f46b9d6", "role": "game_profile_and_native_boundary_owner"},
@@ -40,6 +40,7 @@
     {"repository": "AI-Ascension/sts2-game-mod", "pr": 118, "head_commit": "6017e2d795ebfa91974cbe86f2d1d3830c018b17", "merge_commit": "2e7ccb68d030ed84f05e267fff28d209857bad84", "merged_at": "2026-09-13T18:56:42Z", "acceptance_effect": "partial_issue_78"},
     {"repository": "AI-Ascension/ascension-workflow-studio", "pr": 124, "head_commit": "2421af49b914e05f13acac5a11919bdccfd4911d", "merge_commit": "8abd739074168291ff85d7996cde70a7c2c78a54", "merged_at": "2026-09-13T18:23:01Z", "acceptance_effect": "partial_issue_110"},
     {"repository": "AI-Ascension/ascension-workflow-studio", "pr": 125, "head_commit": "10d78431fb887f51b7d595da71fc2d870ce5cf50", "merge_commit": "aa132cfd6f48b33214ded65c6d08ad2019e8dcc9", "merged_at": "2026-09-13T18:55:57Z", "acceptance_effect": "partial_issue_110"},
+    {"repository": "AI-Ascension/ascension-workflow-studio", "pr": 126, "head_commit": "6f57d2ddaeba9de62d05b16772861bb1f4a06d44", "merge_commit": "7777ebf058f9b799a8a0e0652a94e7c486f22fd8", "merged_at": "2026-09-13T20:26:19Z", "acceptance_effect": "component_passed_issue_110"},
     {"repository": "AI-Ascension/ascension-context-console", "pr": 2, "head_commit": "3ee19f55c55bf0586d8e4897570266d031ea495d", "merge_commit": "2e1bfe0d4e62ac7f1efcefe4b1cc940182146880", "merged_at": "2026-09-10T15:56:07Z", "acceptance_effect": "component_foundation_only"},
     {"repository": "AI-Ascension/ascension-context-console", "pr": 3, "head_commit": "4d035e9514daee4258971eebeaa7db623372fe5e", "merge_commit": "114b3e5ae28cd60d9dafc421711dee859b602c4d", "merged_at": "2026-09-11T04:10:04Z", "acceptance_effect": "component_foundation_only"},
     {"repository": "AI-Ascension/ascension-context-console", "pr": 12, "head_commit": "ed0a9d82dce849a033c9755cde271c37a48ad3b4", "merge_commit": "e4ab38a2e9db46582b99a813238d8a69e97d15c8", "merged_at": "2026-09-11T23:23:12Z", "acceptance_effect": "component_foundation_only"},
@@ -48,15 +49,14 @@
     {"repository": "AI-Ascension/sts2-game-core", "pr": 14, "head_commit": "ea8a0565039bddbbfafebf0f337d3bb624c89f51", "merge_commit": "b31d5ef0ed99a51a04830ca87ca5351912451efe", "merged_at": "2026-09-13T18:47:05Z", "acceptance_effect": "justified_dependency_only"}
   ],
   "open_prs": [
-    {"repository": "AI-Ascension/sts2-harness", "pr": 134, "state": "open", "head_commit": "7d56473921736d5184882869e3d964db22b49db3", "merge_commit": null, "feature_issue": 94},
-    {"repository": "AI-Ascension/ascension-workflow-studio", "pr": 126, "state": "open", "head_commit": "0f4740493edfb8f127af2e3fcbd6e4ab88a289e7", "merge_commit": null, "feature_issue": 110}
+    {"repository": "AI-Ascension/sts2-harness", "pr": 134, "state": "open", "head_commit": "7d56473921736d5184882869e3d964db22b49db3", "merge_commit": null, "feature_issue": 94}
   ],
   "issue_states": [
     {"repository": "AI-Ascension/sts2-harness", "number": 94, "state": "open", "acceptance_state": "open"},
     {"repository": "AI-Ascension/ascension-workflow-studio", "number": 107, "state": "open", "acceptance_state": "open"},
     {"repository": "AI-Ascension/ascension-workflow-studio", "number": 108, "state": "open", "acceptance_state": "open"},
     {"repository": "AI-Ascension/ascension-workflow-studio", "number": 109, "state": "open", "acceptance_state": "open"},
-    {"repository": "AI-Ascension/ascension-workflow-studio", "number": 110, "state": "open", "acceptance_state": "open"},
+    {"repository": "AI-Ascension/ascension-workflow-studio", "number": 110, "state": "closed", "acceptance_state": "component_passed_external_gate_open"},
     {"repository": "AI-Ascension/sts2-gateway", "number": 50, "state": "open", "acceptance_state": "open"},
     {"repository": "AI-Ascension/sts2-harness", "number": 96, "state": "open", "acceptance_state": "open"},
     {"repository": "AI-Ascension/sts2-game-mod", "number": 78, "state": "open", "acceptance_state": "open"},
@@ -111,7 +111,7 @@
     {"path": "contract-artifact/workflow-v1/SHA256SUMS", "sha256": "bf31d36d70f9580a41577e95c6fb4e94b9cda9e3f693c303ab1701a1faaf5b84"},
     {"path": "contract-artifact/workflow-v1/manifest.json", "sha256": "930e2c889725bfaf59ba792ed2de55c5a35b3c04f60ca8ab63f8c47efbb51a86"},
     {"path": "contract-artifact/workflow-v1/canonical-vectors.json", "sha256": "dd0c29102af1728d4977a7c36b94e4c37fb9bc8ba7cbd36de3905ab8bae96c27"},
-    {"path": "docs/evidence/studio-acceptance-matrix-20260913.json", "sha256": "15dbe1794072b42a9f3ae5a48dec02e9f5ebb1935b86ea2dc47bfe2365333ff2"},
+    {"path": "docs/evidence/studio-acceptance-matrix-20260913.json", "sha256": "a1a13434762593fc085b6ee9e8896f3bf71be6afa727a72f417f1d72ab6cfa78"},
     {"path": "docs/evidence/studio-acceptance-journey-20260913.json", "sha256": "9c73cff376d6242a8d5603e03b8c521d30c31c1a9003d3e227d6dea3fe6f9ea7"},
     {"path": "catalog/capabilities/synthetic-full.json", "sha256": "4752271bb93a059002f22ffe450316ab195875b0c09a7305ecffaf85092f3be4"},
     {"path": "catalog/fixtures/index.json", "sha256": "d7f1a771db1338cc162822dcae1f456c58dd25d43dc7bb40e271d899c098d6c9"},

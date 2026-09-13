@@ -20,9 +20,12 @@ interpretation and scheduling remain owned by `sts2-harness`.
 
 The audit found five rows with merged but explicitly partial component pins:
 harness #95 (PRs #131 and #133, used by two budget/limits rows), Studio #110
-(PRs #124 and #125), game-mod #78 (PR #118), and the Studio seed row's
-game-mod probe (PR #113). Harness #94's live-executor PR #134 and Studio
-#110's PR #126 are still open. The
+(PRs #124, #125 and #126; owner component checks passed), game-mod #78 (PR #118), and the Studio seed row's
+game-mod probe (PR #113). Studio PR #126 subsequently merged and its owner
+unit/type/build, Chromium/Firefox/WebKit, recorded-run browser and
+authenticated live-owner browser checks passed; aggregate cross-repository
+acceptance remains gated. Harness #94's live-executor PR #134 is still open.
+The
 other required owner children have no merged companion PR observed. Game-mod
 #79 is API-closed, but its source-only PR #113 states that native
 authorization, live-host settlement and failure recovery remain unverified;
