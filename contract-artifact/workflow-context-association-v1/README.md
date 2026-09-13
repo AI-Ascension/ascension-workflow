@@ -30,3 +30,9 @@ GET /v1/workflow-runs/{workflow_run_id}/context
 It is authenticated, scoped to the workflow run, and read-only. Context
 editing, retained-content access, memory retrieval, session inspection, pause,
 commit, and resume retain their separate owner capabilities.
+
+The copied schema and conformance bytes are pinned in `manifest.json` to the
+producer revision recorded there and checked by `SHA256SUMS`. The current
+cross-repository audit and its remaining owner gates are recorded in
+[`docs/evidence/studio-acceptance-matrix-20260913.json`](../../docs/evidence/studio-acceptance-matrix-20260913.json)
+and [`integration/source-lock-20260913.json`](../../integration/source-lock-20260913.json).

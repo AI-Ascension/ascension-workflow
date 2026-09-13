@@ -34,6 +34,38 @@ jobs:
           bash tools/verify-evidence.sh
           bash tools/verify-evidence.test.sh
 
+      - name: Verify Studio acceptance matrix and copied context artifacts
+        run: |
+          set -euo pipefail
+          for artifact in \
+            contract-artifact/workflow-context-association-v1 \
+            contract-artifact/workflow-context-binding-catalog-v1 \
+            contract-artifact/workflow-provider-session-projection-v1; do
+            (cd "$artifact" && sha256sum --strict --check SHA256SUMS)
+          done
+          jq --exit-status '
+            (.features | length == 22) and
+            (.features | [.[].row_id] | length == (unique | length)) and
+            (.features | all(.[]; (.outcome != "complete") and
+              (.required_companion_prs | type == "array") and
+              (.exact_merged_pins | type == "array") and
+              (.schema_capability_versions | type == "array") and
+              (.commands_ci_evidence | type == "array") and
+              (.remaining_acceptance_gates | type == "array"))) and
+            (.backend_children | length == 21) and
+            (.owner_feature_pr_dispositions | length == 22) and
+            (.dependency_graph.acyclic == true) and
+            (.evidence_lanes.provider.status == "unverified") and
+            (.evidence_lanes.native_game.status == "unverified")
+            ' docs/evidence/studio-acceptance-matrix-20260913.json
+          jq --exit-status '
+            (.issue_states | length == 43) and
+            (.artifact_digests | length >= 20)
+          ' integration/source-lock-20260913.json
+          while IFS=$'\t' read -r path expected; do
+            test "$(sha256sum "$path" | awk '{print $1}')" = "$expected"
+          done < <(jq -r '.artifact_digests[] | [.path, .sha256] | @tsv' integration/source-lock-20260913.json)
+
       - name: Build and test independent conformance tools from locks
         run: |
           cargo +1.97.1 test --locked --manifest-path tools/conformance-driver/Cargo.toml

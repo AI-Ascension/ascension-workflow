@@ -3,6 +3,9 @@
   "contract_version": "ascension.provider-session.api-result.v1",
   "schema": "../../schemas/workflow-provider-session-projection-v1.schema.json",
   "producer": "sts2-harness",
+  "producer_commit": "4ea5012f1250aa1cd69e6fb1b3460a6a7940a80e",
+  "producer_ref": "main",
+  "schema_sha256": "137e2f5ff056adb37712cd5a1e3d4e170a677dfcb46b7939d93f0a291753f447",
   "provenance": {
     "source": "crates/harness/src/management and crates/harness/src/provider_session",
     "generator": "hand-authored integration contract",
@@ -10,6 +13,9 @@
   },
   "consumers": ["ascension-workflow-studio"],
   "conformance": ["conformance/cases/workflow-provider-session-projection-v1.json"],
+  "conformance_sha256": "7e776002c13009e0b2595f112b765abf756ac1652a7d4e6498bdaffa24a4fe21",
+  "checksums": "SHA256SUMS",
+  "source_lock": "../../integration/source-lock-20260913.json",
   "privacy": {
     "native_thread_identifiers": "not_in_contract",
     "credential_realm_references": "not_in_contract",

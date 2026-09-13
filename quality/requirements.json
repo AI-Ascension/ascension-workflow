@@ -285,7 +285,9 @@
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
-        "integration/candidate-lock.json"
+        "integration/candidate-lock.json",
+        "docs/evidence/studio-acceptance-matrix-20260913.json",
+        "integration/source-lock-20260913.json"
       ],
       "owner_workstream": "WS-A",
       "owner_repository": "AI-Ascension/sts2-harness",
@@ -1930,7 +1932,11 @@
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
         "integration/candidate-lock.json",
-        "conformance/README.md"
+        "conformance/README.md",
+        "conformance/cases/studio-acceptance-matrix-v1.json",
+        "docs/evidence/studio-acceptance-matrix-20260913.json",
+        "docs/evidence/studio-acceptance-journey-20260913.json",
+        "integration/source-lock-20260913.json"
       ],
       "owner_workstream": "WS-F",
       "owner_repository": "AI-Ascension/ascension-workflow",
@@ -2237,7 +2243,10 @@
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
-        "integration/candidate-lock.json"
+        "integration/candidate-lock.json",
+        "conformance/cases/studio-acceptance-matrix-v1.json",
+        "docs/evidence/studio-acceptance-matrix-20260913.json",
+        "integration/source-lock-20260913.json"
       ],
       "owner_workstream": "WS-G",
       "owner_repository": "AI-Ascension/ascension-workflow",
@@ -2262,7 +2271,11 @@
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
-        "integration/candidate-lock.json"
+        "integration/candidate-lock.json",
+        "conformance/cases/studio-acceptance-matrix-v1.json",
+        "docs/evidence/studio-acceptance-matrix-20260913.json",
+        "docs/evidence/studio-acceptance-journey-20260913.json",
+        "integration/source-lock-20260913.json"
       ],
       "owner_workstream": "WS-G",
       "owner_repository": "AI-Ascension/ascension-workflow",
@@ -2290,7 +2303,10 @@
       ],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
-        "integration/candidate-lock.json"
+        "integration/candidate-lock.json",
+        "docs/evidence/studio-acceptance-matrix-20260913.json",
+        "docs/evidence/studio-acceptance-journey-20260913.json",
+        "integration/source-lock-20260913.json"
       ],
       "owner_workstream": "WS-G",
       "owner_repository": "AI-Ascension/ascension-workflow",

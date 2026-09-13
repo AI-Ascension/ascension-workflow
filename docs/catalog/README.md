@@ -47,8 +47,17 @@ positive cases cover every published stage family. Its negative cases cover
 required capability absence, optional fallback, stale generation, hidden-state
 input, blocked modal mutation, provider failure, and terminal provider calls.
 
-The checked-in contract artifact is copied from the harness producer at the
-candidate revision recorded in `integration/candidate-lock.json`. The Rust
-process driver validates every published definition against the built harness
-binary and records the required-capability negative case; it does not copy or
-reinterpret the harness implementation.
+The checked-in workflow-v1 contract artifact remains tied to the historical
+candidate revision recorded in `integration/candidate-lock.json`; that
+historical pin is preserved. The context association, binding-catalog and
+provider-session projection artifacts carry their own producer pins and
+`SHA256SUMS` files. The current cross-repository Studio gate, exact default
+heads, merged pins and explicit open gates are recorded in
+[`studio-acceptance-matrix-20260913.json`](../evidence/studio-acceptance-matrix-20260913.json)
+and [`integration/source-lock-20260913.json`](../../integration/source-lock-20260913.json).
+
+The Rust process driver validates every published definition against the built
+harness binary and records the required-capability negative case; it does not
+copy or reinterpret the harness implementation. The driver result cited by
+the current matrix is historical synthetic/component evidence, not live,
+provider or native-game acceptance.

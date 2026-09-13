@@ -1,0 +1,80 @@
+{
+  "schema_version": "ascension.studio-acceptance-conformance/v1",
+  "fixture_id": "studio.acceptance.matrix.20260913",
+  "provenance": {
+    "kind": "authored_synthetic",
+    "claims_live_observation": false,
+    "source_issue": "AI-Ascension/ascension-workflow#11",
+    "matrix": "docs/evidence/studio-acceptance-matrix-20260913.json"
+  },
+  "contract_versions": [
+    "ascension.workflow/v1",
+    "ascension.workflow-context-association/v1",
+    "ascension.workflow-context-binding-catalog/v1",
+    "ascension.provider-session.api-result/v1"
+  ],
+  "cases": [
+    {
+      "id": "exact-pinned-component-admission",
+      "valid": true,
+      "execution_status": "unverified",
+      "input": {
+        "workflow_schema": "ascension.workflow/v1",
+        "context_association": "ascension.workflow-context-association/v1",
+        "context_binding_catalog": "ascension.workflow-context-binding-catalog/v1",
+        "provider_projection": "ascension.provider-session.api-result/v1",
+        "schema_digests_match": true,
+        "capability_revision_bound": true
+      },
+      "expected": {"admission": "component_only", "forbidden_effects": 0}
+    },
+    {
+      "id": "stale-schema-pin",
+      "valid": false,
+      "execution_status": "unverified",
+      "input": {"schema_digests_match": false, "capability_revision_bound": true},
+      "expected": {"admission": "reject", "fail_closed": true, "forbidden_effects": 0}
+    },
+    {
+      "id": "unauthorized-owner-capability",
+      "valid": false,
+      "execution_status": "unverified",
+      "input": {"schema_digests_match": true, "capability_revision_bound": false},
+      "expected": {"admission": "reject", "fail_closed": true, "forbidden_effects": 0}
+    },
+    {
+      "id": "unavailable-context-binding",
+      "valid": false,
+      "execution_status": "unverified",
+      "input": {"binding_availability": "unavailable", "infer_identity_from_run_id": true},
+      "expected": {"admission": "reject", "fail_closed": true, "forbidden_effects": 0}
+    },
+    {
+      "id": "oversized-prepared-input",
+      "valid": false,
+      "execution_status": "unverified",
+      "input": {"effective_budget_exceeded": true, "provider_dispatch": "requested"},
+      "expected": {"admission": "reject_before_dispatch", "fail_closed": true, "forbidden_effects": 0}
+    },
+    {
+      "id": "cancellation-race",
+      "valid": false,
+      "execution_status": "unverified",
+      "input": {"operation_state": "unresolved", "stop_requested": true},
+      "expected": {"admission": "stop_dominates_and_hold", "fail_closed": true, "new_mutating_identity": false}
+    },
+    {
+      "id": "restart-with-unknown-outcome",
+      "valid": false,
+      "execution_status": "unverified",
+      "input": {"operation_state": "unknown_after_restart", "same_operation_identity": false},
+      "expected": {"admission": "reconcile_or_explicit_unknown", "fail_closed": true, "new_mutating_identity": false}
+    }
+  ],
+  "execution_summary": {
+    "cases_executed": 0,
+    "native_game_calls": 0,
+    "provider_calls": 0,
+    "status": "fixture_only_until_owner_and_independent_gates"
+  }
+}

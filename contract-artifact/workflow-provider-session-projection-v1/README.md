@@ -19,3 +19,9 @@ resume authority. `game_dispatch_capability`, operation `game_effects`,
 operation `auto_resume`, and envelope effects are all fixed to false or zero.
 Mutation and provider execution remain Harness-only operations outside this
 contract.
+
+The copied schema and conformance bytes are pinned in `manifest.json` to the
+producer revision recorded there and checked by `SHA256SUMS`. The current
+cross-repository audit and its remaining owner gates are recorded in
+[`docs/evidence/studio-acceptance-matrix-20260913.json`](../../docs/evidence/studio-acceptance-matrix-20260913.json)
+and [`integration/source-lock-20260913.json`](../../integration/source-lock-20260913.json).

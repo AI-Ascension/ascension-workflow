@@ -5,6 +5,10 @@
   "captured_at": "2026-09-10T11:28:50Z",
   "resume_evidence_ref": "docs/evidence/EXECUTION_REPORT.md",
   "source_lock_ref": "integration/source-lock-20260910.json",
+  "current_source_lock_ref": "integration/source-lock-20260913.json",
+  "acceptance_matrix_ref": "docs/evidence/studio-acceptance-matrix-20260913.json",
+  "acceptance_journey_ref": "docs/evidence/studio-acceptance-journey-20260913.json",
+  "studio_acceptance_status": "blocked_until_external_gates",
   "integration_lock_ref": "integration/candidate-lock.json",
   "task_ledger_ref": "orchestration/tasks.json",
   "requirement_ledger_ref": "quality/requirements.json",
@@ -45,6 +49,8 @@
   ],
   "issue_pr_ids": [
     "https://github.com/AI-Ascension/ascension-workflow/issues/1",
+    "https://github.com/AI-Ascension/ascension-workflow/issues/11",
+    "https://github.com/AI-Ascension/ascension-workflow-studio/issues/122",
     "https://github.com/AI-Ascension/ascension-workflow/pull/2"
   ],
   "last_verified_gate": "harness strict policy, format, clippy, full tests, authenticated catalog process conformance with typed recovery admission before and after restart, durable per-run command admission, executable gateway/MCP/harness composition, and isolated MCP mapping checks",
