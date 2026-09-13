@@ -75,7 +75,7 @@ expect_failure contradictory-observed-parentage bash "$fixture_root/tools/verify
 cp "$root/docs/evidence/native-preflight-20260913.json" \
   "$fixture_root/docs/evidence/native-preflight-20260913.json"
 
-jq '.d2.accepted.spawn_result.nickname = "Hume"' \
+jq '.d2.accepted.spawn_result.task_name = "/root/workflow_native_d1_20260913/workflow_native_d2_20260913" | .d2.accepted.spawn_result.nickname = "Hume"' \
   "$fixture_root/docs/evidence/native-preflight-20260913.json" \
   > "$fixture_root/docs/evidence/native-preflight-20260913.json.next"
 mv "$fixture_root/docs/evidence/native-preflight-20260913.json.next" \
