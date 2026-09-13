@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "evidence_id": "native-preflight-2026-09-13",
+  "captured_at": "2026-09-13T10:18:27Z",
+  "evidence_level": "confirmed",
+  "scope": "Fresh native delegation capability preflight for the Phase 1 delivery repository.",
+  "target": {
+    "repository": "AI-Ascension/ascension-workflow",
+    "observed_head": "952b2392ac2a7066fd1a519d459c5440cc218107"
+  },
+  "root": {
+    "agent_path": "/root",
+    "requested_child_path": "/root/workflow_native_d1",
+    "requested_model": "gpt-5.6-luna",
+    "requested_effort": "max",
+    "spawn_result": "confirmed",
+    "effective_model": "unverified",
+    "effective_effort": "unverified"
+  },
+  "d1": {
+    "agent_path": "/root/workflow_native_d1",
+    "parent_agent_path": "/root",
+    "depth": 1,
+    "tool_surface": {
+      "native_collaboration": false,
+      "reported_namespaces": [
+        "functions",
+        "image_gen",
+        "web"
+      ],
+      "reported_by_child": true,
+      "independently_inspected": false
+    },
+    "d2_spawn": "not_callable",
+    "d3_spawn": "not_attempted"
+  },
+  "outcome": {
+    "hierarchy_compliant": false,
+    "independent_d3_review": false,
+    "source_writes": false,
+    "external_agent_processes": false,
+    "status": "blocked"
+  },
+  "blockers": [
+    {
+      "id": "B-001",
+      "status": "active",
+      "reason": "D1 could not call the native collaboration tool needed to create D2 and D3."
+    },
+    {
+      "id": "B-005",
+      "status": "active",
+      "reason": "No independent D3 reviewer or final G6 review was available."
+    }
+  ],
+  "evidence_limits": [
+    "The child-reported tool surface was not independently inspectable from the root.",
+    "Requested model and effort are recorded separately from unverified effective settings.",
+    "No D2, D3, cross-repository authority, fault, privacy, replay, or native-game acceptance was executed."
+  ],
+  "privacy": {
+    "contains_credentials": false,
+    "contains_private_prompts": false,
+    "contains_raw_provider_output": false,
+    "contains_proprietary_game_data": false
+  }
+}

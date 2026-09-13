@@ -1,5 +1,21 @@
 # Phase 1 execution report
 
+## Fresh native preflight — 2026-09-13
+
+The fresh D1 native capability check is recorded in
+[`native-preflight.json`](native-preflight.json). Native spawn returned the
+canonical D1 task name, but the child reported no callable native collaboration
+tool, so no D2 or D3 chain could be created. Requested Luna/Max settings remain
+separate from unverified effective settings. The hierarchy and independent D3/G6
+review gates therefore remain blocked; this evidence does not claim cross-
+repository authority, fault/privacy/replay, native-game or unattended-recovery
+acceptance.
+
+`tools/verify-evidence.sh` enforces this failure-closed projection in CI: active
+B-001/B-005 blockers, blocked WF-001/WF-002/WF-003 requirements, and the
+non-success preflight outcome must remain present until a future independently
+reviewed evidence update changes them together.
+
 ## Source refresh — 2026-09-11
 
 A post-candidate source refresh is recorded in
