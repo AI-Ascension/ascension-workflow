@@ -1540,7 +1540,9 @@
       "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
-        "integration/candidate-lock.json"
+        "integration/candidate-lock.json",
+        "docs/evidence/studio-acceptance-matrix-20260913.json",
+        "integration/source-lock-20260913.json"
       ],
       "special_gate": null,
       "blocker_refs": [
@@ -1589,7 +1591,10 @@
       "candidate_commit": "29465ebbc52de169ca15e01c47cafd1bdd198924",
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
-        "integration/candidate-lock.json"
+        "integration/candidate-lock.json",
+        "docs/evidence/studio-acceptance-matrix-20260913.json",
+        "docs/evidence/studio-acceptance-journey-20260913.json",
+        "integration/source-lock-20260913.json"
       ],
       "special_gate": null,
       "blocker_refs": [

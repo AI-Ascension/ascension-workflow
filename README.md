@@ -20,6 +20,8 @@ Useful entry points:
 - [recorded-run integration suite](conformance/recorded-run.md) and
   [compatibility matrix](integration/recorded-run-matrix.md) (implementation in progress)
 - [workflow-v1 contract artifact](contract-artifact/workflow-v1/manifest.json)
+- [Studio acceptance matrix](docs/evidence/studio-acceptance-matrix-20260913.json) and
+  [current source lock](integration/source-lock-20260913.json)
 - [execution report](docs/evidence/EXECUTION_REPORT.md)
 - [resume instructions](docs/operations/RESUME.md)
 

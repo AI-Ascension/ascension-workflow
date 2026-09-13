@@ -1,5 +1,45 @@
 # Phase 1 execution report
 
+## Studio acceptance matrix — 2026-09-13
+
+Issue #11 is recorded as a blocked, additive delivery gate in
+[`studio-acceptance-matrix-20260913.json`](studio-acceptance-matrix-20260913.json).
+The matrix covers all 22 Studio predecessor features and all 21 required
+backend children, with issue state, owner-child mapping, required companion PR
+disposition, exact merged head/merge pins, contract versions, repository
+commands and remaining gates. The deliberately deferred Studio #122 feature is
+downstream of this matrix and was not started.
+
+The current default-branch snapshot and copied-artifact digests are locked in
+[`integration/source-lock-20260913.json`](../../integration/source-lock-20260913.json).
+The context association, binding-catalog and provider-session projection
+manifests now carry their producer revision and schema/conformance digests;
+each has a checked-in `SHA256SUMS`. The catalog registry is revision `0.1.1`
+while retaining `0.1.0` as a supported prior pin. Canonical workflow
+interpretation and scheduling remain owned by `sts2-harness`.
+
+The audit found five rows with merged but explicitly partial component pins:
+harness #95 (PRs #131 and #133, used by two budget/limits rows), Studio #110
+(PRs #124 and #125), game-mod #78 (PR #118), and the Studio seed row's
+game-mod probe (PR #113). Harness #94's live-executor PR #134 and Studio
+#110's PR #126 are still open. The
+other required owner children have no merged companion PR observed. Game-mod
+#79 is API-closed, but its source-only PR #113 states that native
+authorization, live-host settlement and failure recovery remain unverified;
+the matrix therefore keeps that acceptance gate open.
+
+The authored
+[`studio-acceptance-journey-20260913.json`](studio-acceptance-journey-20260913.json)
+describes start, wait, profile, seed, observe, decide, action, conditional
+context inclusion, projection, lifetime, latest-only, persistent pin, budget,
+held preview and history-policy steps, plus unauthorized, unavailable, stale,
+oversized, cancellation, restart and outcome-unknown cases. It is an
+authored synthetic specification: zero journey or failure cases were executed
+in this documentation change. Existing repository JSON, evidence, CI-input
+and checksum checks remain the passing synthetic/component lane. Real-process
+cross-repository, provider, native-game and independent D3/G6 lanes remain
+`unverified` and are listed as external gates in the matrix.
+
 ## Fresh native preflight — 2026-09-13
 
 The fresh D1 native capability check is recorded in

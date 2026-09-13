@@ -1,7 +1,8 @@
 {
   "schema_version": "ascension.sts2.catalog/v1",
   "catalog_id": "sts2.first-party",
-  "catalog_version": "0.1.0",
+  "catalog_version": "0.1.1",
+  "previous_supported_catalog_versions": ["0.1.0"],
   "workflow_schema": "ascension.workflow/v1",
   "profile": "sts2-synthetic-v1",
   "policy_ref": "sts2.fair-play.v1",
@@ -147,5 +148,72 @@
       "decide.map.synthesize.v1",
       "select.map.subworkflow.v1"
     ]
+  },
+  "publication_status": "synthetic_component_only",
+  "acceptance_matrix_ref": "docs/evidence/studio-acceptance-matrix-20260913.json",
+  "source_lock_ref": "integration/source-lock-20260913.json",
+  "workflow_owned_artifacts": [
+    {
+      "artifact": "contract-artifact/workflow-v1/manifest.json",
+      "contract_version": "ascension.workflow/v1",
+      "status": "supported",
+      "schema_sha256": "f8f79e115cd3bd736125ad17e33676bfe110f8a1b2673577cbbe93f1d5cc937d",
+      "manifest_sha256": "930e2c889725bfaf59ba792ed2de55c5a35b3c04f60ca8ab63f8c47efbb51a86",
+      "conformance_sha256": "0b235014398cc02f1001153358a5ce6d188fa97ad0befe18e4a1c62394ad2f31",
+      "producer_pin": "AI-Ascension/sts2-harness@eb0a10f485f28a3f5bf98d1e01c186014414206f"
+    },
+    {
+      "artifact": "contract-artifact/workflow-context-association-v1/manifest.json",
+      "contract_version": "ascension.workflow-context-association/v1",
+      "status": "supported_component_only",
+      "schema_sha256": "de707c972b3bcdb06062c12658eb3acfabbef6e49721ddd65a726811f45f656c",
+      "manifest_sha256": "8e0a33d316094f951dd42e23c681187f4e88e7fc4fb164749c26862004f34778",
+      "conformance_sha256": "e387e7d944c27868fc481184beeb20ae45dbdcc3da02f62470c7ff6c3ce0943a",
+      "producer_pin": "AI-Ascension/sts2-harness@4ea5012f1250aa1cd69e6fb1b3460a6a7940a80e"
+    },
+    {
+      "artifact": "contract-artifact/workflow-context-binding-catalog-v1/manifest.json",
+      "contract_version": "ascension.workflow-context-binding-catalog/v1",
+      "status": "supported_component_only",
+      "schema_sha256": "f9154e9426f882caae16564e4bb27818cdae9a2866846bdb31f052fec7def3c7",
+      "manifest_sha256": "d02eab0af0377b9145a48909fb71db8ccf3d4fe9b5e0e5d015c0b0564e20a44b",
+      "conformance_sha256": "a7b162140aff8b1bc993c6b21242b8690c20373ba3f5e6b884e48a49a63b0d96",
+      "producer_pin": "AI-Ascension/sts2-harness@4ea5012f1250aa1cd69e6fb1b3460a6a7940a80e"
+    },
+    {
+      "artifact": "contract-artifact/workflow-provider-session-projection-v1/manifest.json",
+      "contract_version": "ascension.provider-session.api-result/v1",
+      "status": "supported_component_only",
+      "schema_sha256": "137e2f5ff056adb37712cd5a1e3d4e170a677dfcb46b7939d93f0a291753f447",
+      "manifest_sha256": "73edd8d240f9da19e85f032474a7b9c2a1bf8fd70c64662ff5e8f2c0e9734dc8",
+      "conformance_sha256": "7e776002c13009e0b2595f112b765abf756ac1652a7d4e6498bdaffa24a4fe21",
+      "producer_pin": "AI-Ascension/sts2-harness@4ea5012f1250aa1cd69e6fb1b3460a6a7940a80e"
+    }
+  ],
+  "studio_acceptance_gates": {
+    "live_executor": {
+      "owner_issue": "AI-Ascension/sts2-harness#94",
+      "capability_version": null,
+      "status": "unavailable",
+      "reason": "PR #134 is open; no merged owner-issued live/native/provider acceptance was observed."
+    },
+    "context_association": {
+      "owner_issue": "AI-Ascension/ascension-workflow-studio#109",
+      "contract_version": "ascension.workflow-context-association/v1",
+      "status": "synthetic_component_only",
+      "reason": "The copied metadata contract and negative fixtures pass; Studio and context-console owner integration remain open."
+    },
+    "context_binding_catalog": {
+      "owner_issue": "AI-Ascension/ascension-workflow-studio#109",
+      "contract_version": "ascension.workflow-context-binding-catalog/v1",
+      "status": "synthetic_component_only",
+      "reason": "The copied catalog fixture rejects unresolved node-kind bindings; no live owner binding authority is claimed."
+    },
+    "readiness": {
+      "owner_issue": "AI-Ascension/sts2-harness#96",
+      "capability_version": null,
+      "status": "unavailable",
+      "reason": "No merged readiness extension or native loading evidence was observed."
+    }
   }
 }

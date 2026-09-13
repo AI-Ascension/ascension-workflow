@@ -1,0 +1,220 @@
+{
+  "schema_version": "ascension.studio-acceptance-journey/v1",
+  "evidence_id": "studio-acceptance-journey-2026-09-13",
+  "captured_at": "2026-09-13T19:54:38Z",
+  "source_issue": "AI-Ascension/ascension-workflow#11",
+  "provenance": {
+    "kind": "authored_synthetic_spec",
+    "claims_live_observation": false,
+    "claims_native_game_execution": false,
+    "claims_provider_execution": false,
+    "fixture_data": "synthetic identifiers only",
+    "companion_matrix": "docs/evidence/studio-acceptance-matrix-20260913.json"
+  },
+  "purpose": "Describe the final Studio-to-owner acceptance journey and keep each unavailable lane explicit until owner evidence is merged and independently exercised.",
+  "journey": [
+    {
+      "step": 1,
+      "id": "start",
+      "invocation": "invocation.demo.1",
+      "action": "admit a workflow definition, target descriptor and disposable run identity",
+      "expected_boundary": "owner capability admission before any effectful operation",
+      "status": "authored_not_executed",
+      "evidence_lane": "real_process_cross_repository"
+    },
+    {
+      "step": 2,
+      "id": "wait",
+      "invocation": "invocation.demo.1",
+      "action": "wait for identity-bound game readiness with a bounded deadline",
+      "expected_boundary": "readiness wait returns typed unavailable/timeout without guessing a ready state",
+      "status": "authored_not_executed",
+      "evidence_lane": "native_game"
+    },
+    {
+      "step": 3,
+      "id": "profile",
+      "invocation": "invocation.demo.1",
+      "action": "discover, select and bind a disposable save profile",
+      "expected_boundary": "profile identity and generation are pinned before load",
+      "status": "authored_not_executed",
+      "evidence_lane": "native_game"
+    },
+    {
+      "step": 4,
+      "id": "seed",
+      "invocation": "invocation.demo.1",
+      "action": "resolve an explicit or generate-once seed and persist its witness",
+      "expected_boundary": "replay uses one seed identity and rejects a mismatched generation",
+      "status": "authored_not_executed",
+      "evidence_lane": "real_process_cross_repository"
+    },
+    {
+      "step": 5,
+      "id": "observe",
+      "invocation": "invocation.demo.1",
+      "action": "capture a fair-play observation through the owner projection",
+      "expected_boundary": "hidden/private fields are rejected and the observation carries identity/generation",
+      "status": "authored_not_executed",
+      "evidence_lane": "real_process_cross_repository"
+    },
+    {
+      "step": 6,
+      "id": "decide",
+      "invocation": "invocation.demo.1",
+      "action": "prepare a bounded decision request using only admitted context",
+      "expected_boundary": "decision source is pinned to a permitted profile and context revision",
+      "status": "authored_not_executed",
+      "evidence_lane": "provider"
+    },
+    {
+      "step": 7,
+      "id": "action",
+      "invocation": "invocation.demo.1",
+      "action": "dispatch one capability-gated action and reconcile its receipt",
+      "expected_boundary": "unknown or duplicate effects retain one operation identity and never redispatch blindly",
+      "status": "authored_not_executed",
+      "evidence_lane": "native_game"
+    },
+    {
+      "step": 8,
+      "id": "context_inclusion",
+      "invocation": "invocation.demo.2",
+      "action": "include a scoped context binding for the second invocation while explicitly omitting it from the first",
+      "expected_boundary": "membership is per invocation; unavailable bindings are not inferred from run/timeline identifiers",
+      "status": "authored_not_executed",
+      "evidence_lane": "real_process_cross_repository",
+      "conditional": true,
+      "consumer_contract": "ascension.workflow-context-association/v1 and ascension.workflow-context-binding-catalog/v1"
+    },
+    {
+      "step": 9,
+      "id": "projection",
+      "invocation": "invocation.demo.2",
+      "action": "select an allowed observation projection and preview its fields",
+      "expected_boundary": "projection is closed and preserves forbidden-field rejection",
+      "status": "authored_not_executed",
+      "evidence_lane": "real_process_cross_repository",
+      "consumer_contract": "ascension.provider-session.api-result/v1"
+    },
+    {
+      "step": 10,
+      "id": "lifetime",
+      "invocation": "invocation.demo.2",
+      "action": "consume an invocation-scoped context lifetime at dispatch",
+      "expected_boundary": "expiry is durable and a second dispatch fails closed",
+      "status": "authored_not_executed",
+      "evidence_lane": "real_process_cross_repository"
+    },
+    {
+      "step": 11,
+      "id": "latest_only",
+      "invocation": "invocation.demo.2",
+      "action": "replace an observation in the same semantic slot",
+      "expected_boundary": "the latest identity-bound observation wins without stale accumulation",
+      "status": "authored_not_executed",
+      "evidence_lane": "real_process_cross_repository"
+    },
+    {
+      "step": 12,
+      "id": "persistent_pin",
+      "invocation": "invocation.demo.2",
+      "action": "present a scoped persistent pin and attributed instruction for review",
+      "expected_boundary": "review metadata never grants write/control authority",
+      "status": "authored_not_executed",
+      "evidence_lane": "provider"
+    },
+    {
+      "step": 13,
+      "id": "budget",
+      "invocation": "invocation.demo.2",
+      "action": "measure prepared input against the selected effective model/context budget",
+      "expected_boundary": "oversized input is rejected before provider dispatch with a bounded diagnostic",
+      "status": "authored_not_executed",
+      "evidence_lane": "provider"
+    },
+    {
+      "step": 14,
+      "id": "held_preview",
+      "invocation": "invocation.demo.2",
+      "action": "hold, preview and approve the exact prepared application input",
+      "expected_boundary": "edits are revision-bound and dispatch requires explicit approval",
+      "status": "authored_not_executed",
+      "evidence_lane": "provider"
+    },
+    {
+      "step": 15,
+      "id": "history_policy",
+      "invocation": "invocation.demo.2",
+      "action": "apply an authored truncation or reviewed-summary policy",
+      "expected_boundary": "history selection and compaction remain scoped, attributable and fail closed when unavailable",
+      "status": "authored_not_executed",
+      "evidence_lane": "provider"
+    }
+  ],
+  "failure_matrix": [
+    {
+      "id": "unauthorized",
+      "stimulus": "missing or mismatched owner capability/authority",
+      "expected_result": "reject before effect",
+      "fail_closed": true,
+      "status": "unverified"
+    },
+    {
+      "id": "unavailable",
+      "stimulus": "owner, context binding, provider or native adapter unavailable",
+      "expected_result": "typed unavailable result with no inferred identity or fallback effect",
+      "fail_closed": true,
+      "status": "unverified"
+    },
+    {
+      "id": "stale",
+      "stimulus": "stale schema, capability, generation, profile or context revision",
+      "expected_result": "reject stale input and require a fresh exact pin",
+      "fail_closed": true,
+      "status": "unverified"
+    },
+    {
+      "id": "oversized",
+      "stimulus": "prepared input exceeds the effective budget",
+      "expected_result": "reject before provider dispatch and retain no raw provider payload",
+      "fail_closed": true,
+      "status": "unverified"
+    },
+    {
+      "id": "cancellation",
+      "stimulus": "stop or cancellation races an unresolved operation",
+      "expected_result": "stop dominates; operation identity remains auditable and is not silently redispatched",
+      "fail_closed": true,
+      "status": "unverified"
+    },
+    {
+      "id": "restart",
+      "stimulus": "owner process or host restarts between intent and receipt",
+      "expected_result": "recover by the same operation identity or report explicit unknown",
+      "fail_closed": true,
+      "status": "unverified"
+    },
+    {
+      "id": "outcome_unknown",
+      "stimulus": "transport loses the effect outcome",
+      "expected_result": "hold and reconcile; never create a new mutating identity",
+      "fail_closed": true,
+      "status": "unverified"
+    }
+  ],
+  "lane_summary": {
+    "unit_component": "historical synthetic/component evidence only",
+    "synthetic_process": "historical candidate evidence only",
+    "real_process_cross_repository": "unverified",
+    "provider": "unverified_not_authorized",
+    "native_game": "unverified_not_authorized",
+    "independent_d3": "unverified"
+  },
+  "completion": {
+    "steps_executed": 0,
+    "failure_cases_executed": 0,
+    "native_or_provider_claim": false,
+    "status": "authored_journey_only_external_gates_open"
+  }
+}
