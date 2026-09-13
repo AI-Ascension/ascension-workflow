@@ -46,6 +46,9 @@ jq --exit-status '
   .root.accepted.spawn_result.nickname == "Godel" and
   .root.accepted.model == null and
   .root.accepted.effort == null and
+  .root.observed.agent_path == "/root" and
+  .root.observed.depth == 0 and
+  .root.observed.child_status == "completed" and
   .root.observed.effective_model == "unverified" and
   .root.observed.effective_effort == "unverified" and
   .root.effective_model == "unverified" and
@@ -59,6 +62,9 @@ jq --exit-status '
   .d1.accepted.spawn_result.nickname == "Hume" and
   .d1.accepted.model == null and
   .d1.accepted.effort == null and
+  .d1.observed.agent_path == "/root/workflow_native_d1_20260913" and
+  .d1.observed.parent_agent_path == "/root" and
+  .d1.observed.depth == 1 and
   .d1.observed.effective_model == "unverified" and
   .d1.observed.effective_effort == "unverified" and
   .d1.observed.status == "completed" and
@@ -81,6 +87,9 @@ jq --exit-status '
   .d2.accepted.spawn_result.nickname == "Hume" and
   .d2.accepted.model == null and
   .d2.accepted.effort == null and
+  .d2.observed.agent_path == "/root/workflow_native_d1_20260913/workflow_native_d2_20260913" and
+  .d2.observed.parent_agent_path == "/root/workflow_native_d1_20260913" and
+  .d2.observed.depth == 2 and
   .d2.observed.effective_model == "unverified" and
   .d2.observed.effective_effort == "unverified" and
   .d2.observed.status == "completed" and
@@ -102,6 +111,9 @@ jq --exit-status '
   .d3.accepted.spawn_result.nickname == "Gauss" and
   .d3.accepted.model == null and
   .d3.accepted.effort == null and
+  .d3.observed.agent_path == "/root/workflow_native_d1_20260913/workflow_native_d2_20260913/workflow_native_d3_20260913" and
+  .d3.observed.parent_agent_path == "/root/workflow_native_d1_20260913/workflow_native_d2_20260913" and
+  .d3.observed.depth == 3 and
   .d3.observed.effective_model == "unverified" and
   .d3.observed.effective_effort == "unverified" and
   .d3.observed.status == "completed" and
@@ -122,6 +134,8 @@ jq --exit-status '
     "/root/workflow_native_d1_20260913/workflow_native_d2_20260913/workflow_native_d3_20260913"
   ] and
   .hierarchy.depths == [0, 1, 2, 3] and
+  [.d1.observed.agent_path, .d2.observed.agent_path, .d3.observed.agent_path] == .hierarchy.path[1:] and
+  [.root.observed.depth, .d1.observed.depth, .d2.observed.depth, .d3.observed.depth] == .hierarchy.depths and
   .hierarchy.peak_observed_live_descendants == 3 and
   .hierarchy.global_descendant_ceiling == 12 and
   .hierarchy.d4_spawned == false and

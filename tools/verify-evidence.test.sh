@@ -57,6 +57,24 @@ expect_failure stale-orchestration-blocker bash "$fixture_root/tools/verify-evid
 cp "$root/docs/evidence/native-preflight-20260913.json" \
   "$fixture_root/docs/evidence/native-preflight-20260913.json"
 
+jq 'del(.d1.observed.parent_agent_path)' \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json" \
+  > "$fixture_root/docs/evidence/native-preflight-20260913.json.next"
+mv "$fixture_root/docs/evidence/native-preflight-20260913.json.next" \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json"
+expect_failure missing-observed-parentage bash "$fixture_root/tools/verify-evidence.sh"
+cp "$root/docs/evidence/native-preflight-20260913.json" \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json"
+
+jq '.d2.observed.parent_agent_path = "/root/foreign"' \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json" \
+  > "$fixture_root/docs/evidence/native-preflight-20260913.json.next"
+mv "$fixture_root/docs/evidence/native-preflight-20260913.json.next" \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json"
+expect_failure contradictory-observed-parentage bash "$fixture_root/tools/verify-evidence.sh"
+cp "$root/docs/evidence/native-preflight-20260913.json" \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json"
+
 jq '.requirements |= map(select(.id != "WF-001"))' \
   "$fixture_root/quality/requirements.json" \
   > "$fixture_root/quality/requirements.json.next"
