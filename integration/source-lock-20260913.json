@@ -117,7 +117,7 @@
     {"path": "contract-artifact/workflow-v1/SHA256SUMS", "sha256": "bf31d36d70f9580a41577e95c6fb4e94b9cda9e3f693c303ab1701a1faaf5b84"},
     {"path": "contract-artifact/workflow-v1/manifest.json", "sha256": "930e2c889725bfaf59ba792ed2de55c5a35b3c04f60ca8ab63f8c47efbb51a86"},
     {"path": "contract-artifact/workflow-v1/canonical-vectors.json", "sha256": "dd0c29102af1728d4977a7c36b94e4c37fb9bc8ba7cbd36de3905ab8bae96c27"},
-    {"path": "docs/evidence/studio-acceptance-matrix-20260913.json", "sha256": "38fa513065a59dced3287c4134c02817344c5459b5b4fc1de2989307b6dbcbb7"},
+    {"path": "docs/evidence/studio-acceptance-matrix-20260913.json", "sha256": "a3588b1c8e8e6122e1b4c2f355cbb41ddba66b392bf1d1924b89abe8a5a95405"},
     {"path": "docs/evidence/studio-acceptance-journey-20260913.json", "sha256": "9c73cff376d6242a8d5603e03b8c521d30c31c1a9003d3e227d6dea3fe6f9ea7"},
     {"path": "catalog/capabilities/synthetic-full.json", "sha256": "4752271bb93a059002f22ffe450316ab195875b0c09a7305ecffaf85092f3be4"},
     {"path": "catalog/fixtures/index.json", "sha256": "d7f1a771db1338cc162822dcae1f456c58dd25d43dc7bb40e271d899c098d6c9"},
