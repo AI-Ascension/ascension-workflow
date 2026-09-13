@@ -98,10 +98,13 @@ jq --exit-status '
 # These three requirements are the direct machine-readable projection of the
 # fresh D1 preflight. They must not be promoted independently of B-001/B-005.
 jq --exit-status '
+  ([.requirements[] | select(.id == "WF-001")] | length) == 1 and
   ([.requirements[] | select(.id == "WF-001") |
     .status == "blocked" and (.blocker_refs | sort) == ["B-001", "B-005"]] | all) and
+  ([.requirements[] | select(.id == "WF-002")] | length) == 1 and
   ([.requirements[] | select(.id == "WF-002") |
     .status == "blocked" and (.blocker_refs | sort) == ["B-001", "B-005"]] | all) and
+  ([.requirements[] | select(.id == "WF-003")] | length) == 1 and
   ([.requirements[] | select(.id == "WF-003") |
     .status == "blocked" and (.blocker_refs | sort) == ["B-001", "B-005"]] | all)
 ' "$requirements" >/dev/null

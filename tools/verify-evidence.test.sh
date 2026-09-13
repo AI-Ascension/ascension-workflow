@@ -48,6 +48,24 @@ expect_failure native-tool-claim bash "$fixture_root/tools/verify-evidence.sh"
 cp "$root/docs/evidence/native-preflight.json" \
   "$fixture_root/docs/evidence/native-preflight.json"
 
+jq '.requirements |= map(select(.id != "WF-001"))' \
+  "$fixture_root/quality/requirements.json" \
+  > "$fixture_root/quality/requirements.json.next"
+mv "$fixture_root/quality/requirements.json.next" \
+  "$fixture_root/quality/requirements.json"
+expect_failure requirement-deletion bash "$fixture_root/tools/verify-evidence.sh"
+cp "$root/quality/requirements.json" \
+  "$fixture_root/quality/requirements.json"
+
+jq '.requirements |= map(if .id == "WF-001" then .id = "WF-001-renamed" else . end)' \
+  "$fixture_root/quality/requirements.json" \
+  > "$fixture_root/quality/requirements.json.next"
+mv "$fixture_root/quality/requirements.json.next" \
+  "$fixture_root/quality/requirements.json"
+expect_failure requirement-rename bash "$fixture_root/tools/verify-evidence.sh"
+cp "$root/quality/requirements.json" \
+  "$fixture_root/quality/requirements.json"
+
 jq '.requirements |= map(if .id == "WF-001" then .status = "verification" else . end)' \
   "$fixture_root/quality/requirements.json" \
   > "$fixture_root/quality/requirements.json.next"
