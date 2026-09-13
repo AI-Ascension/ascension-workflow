@@ -9,22 +9,20 @@
       "acceptance_test_id": "AT-001",
       "expected_assertion": "Tool-derived parentage covers D0/D1/D2/D3 and no leaf spawns D4.",
       "mandatory": true,
-      "status": "blocked",
+      "status": "verification",
       "implementation_refs": [],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
+        "docs/evidence/native-preflight-20260913.json",
         "integration/candidate-lock.json"
       ],
       "owner_workstream": "WS-A",
       "owner_repository": "AI-Ascension/ascension-workflow",
-      "blocker_refs": [
-        "B-001",
-        "B-005"
-      ],
+      "blocker_refs": ["B-005"],
       "implementation_commit": null,
       "independent_reviewer": null,
-      "implementation_status": "blocked_pending_required_gate",
-      "next_safe_action": "Restore native D1/D2/D3 tools and obtain independent review before completion.",
+      "implementation_status": "native_hierarchy_verified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
       "preparation_refs": [
         "orchestration/agents/preflight-lead.json"
       ]
@@ -36,22 +34,20 @@
       "acceptance_test_id": "AT-002",
       "expected_assertion": "Requested, accepted and observed metadata remain separate; no silent substitution.",
       "mandatory": true,
-      "status": "blocked",
+      "status": "verification",
       "implementation_refs": [],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
+        "docs/evidence/native-preflight-20260913.json",
         "integration/candidate-lock.json"
       ],
       "owner_workstream": "WS-A",
       "owner_repository": "AI-Ascension/ascension-workflow",
-      "blocker_refs": [
-        "B-001",
-        "B-005"
-      ],
+      "blocker_refs": ["B-005"],
       "implementation_commit": null,
       "independent_reviewer": null,
-      "implementation_status": "blocked_pending_required_gate",
-      "next_safe_action": "Restore native D1/D2/D3 tools and obtain independent review before completion.",
+      "implementation_status": "native_settings_explicitly_qualified_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
       "preparation_refs": [
         "docs/evidence/runtime-preflight.json"
       ]
@@ -63,22 +59,20 @@
       "acceptance_test_id": "AT-003",
       "expected_assertion": "At most 12 actual descendants or lower client limit; no unauthorized action observed.",
       "mandatory": true,
-      "status": "blocked",
+      "status": "verification",
       "implementation_refs": [],
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
+        "docs/evidence/native-preflight-20260913.json",
         "integration/candidate-lock.json"
       ],
       "owner_workstream": "WS-A",
       "owner_repository": "AI-Ascension/ascension-workflow",
-      "blocker_refs": [
-        "B-001",
-        "B-005"
-      ],
+      "blocker_refs": ["B-005"],
       "implementation_commit": null,
       "independent_reviewer": null,
-      "implementation_status": "blocked_pending_required_gate",
-      "next_safe_action": "Restore native D1/D2/D3 tools and obtain independent review before completion.",
+      "implementation_status": "scope_recorded_pending_independent_review",
+      "next_safe_action": "Obtain independent D3 review and rerun integrated candidate gates before completion.",
       "preparation_refs": [
         "orchestration/authorization.json"
       ]

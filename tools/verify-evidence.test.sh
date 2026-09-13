@@ -8,7 +8,7 @@ trap 'rm -rf "$fixture_root"' EXIT
 
 mkdir -p "$fixture_root/docs/evidence" "$fixture_root/orchestration" \
   "$fixture_root/quality" "$fixture_root/tools"
-cp "$root/docs/evidence/native-preflight.json" "$fixture_root/docs/evidence/"
+cp "$root/docs/evidence/native-preflight-20260913.json" "$fixture_root/docs/evidence/"
 cp "$root/execution-state.json" "$fixture_root/"
 cp "$root/orchestration/current-run.json" "$fixture_root/orchestration/"
 cp "$root/orchestration/tasks.json" "$fixture_root/orchestration/"
@@ -31,22 +31,31 @@ expect_failure() {
 }
 
 jq '.outcome.status = "complete"' \
-  "$fixture_root/docs/evidence/native-preflight.json" \
-  > "$fixture_root/docs/evidence/native-preflight.json.next"
-mv "$fixture_root/docs/evidence/native-preflight.json.next" \
-  "$fixture_root/docs/evidence/native-preflight.json"
+  "$fixture_root/docs/evidence/native-preflight-20260913.json" \
+  > "$fixture_root/docs/evidence/native-preflight-20260913.json.next"
+mv "$fixture_root/docs/evidence/native-preflight-20260913.json.next" \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json"
 expect_failure preflight-success-claim bash "$fixture_root/tools/verify-evidence.sh"
-cp "$root/docs/evidence/native-preflight.json" \
-  "$fixture_root/docs/evidence/native-preflight.json"
+cp "$root/docs/evidence/native-preflight-20260913.json" \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json"
 
-jq '.d1.tool_surface.native_collaboration = true' \
-  "$fixture_root/docs/evidence/native-preflight.json" \
-  > "$fixture_root/docs/evidence/native-preflight.json.next"
-mv "$fixture_root/docs/evidence/native-preflight.json.next" \
-  "$fixture_root/docs/evidence/native-preflight.json"
-expect_failure native-tool-claim bash "$fixture_root/tools/verify-evidence.sh"
-cp "$root/docs/evidence/native-preflight.json" \
-  "$fixture_root/docs/evidence/native-preflight.json"
+jq '.outcome.hierarchy_compliant = false' \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json" \
+  > "$fixture_root/docs/evidence/native-preflight-20260913.json.next"
+mv "$fixture_root/docs/evidence/native-preflight-20260913.json.next" \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json"
+expect_failure hierarchy-regression bash "$fixture_root/tools/verify-evidence.sh"
+cp "$root/docs/evidence/native-preflight-20260913.json" \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json"
+
+jq '.blockers |= map(if .id == "B-001" then .status = "active" else . end)' \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json" \
+  > "$fixture_root/docs/evidence/native-preflight-20260913.json.next"
+mv "$fixture_root/docs/evidence/native-preflight-20260913.json.next" \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json"
+expect_failure stale-orchestration-blocker bash "$fixture_root/tools/verify-evidence.sh"
+cp "$root/docs/evidence/native-preflight-20260913.json" \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json"
 
 jq '.requirements |= map(select(.id != "WF-001"))' \
   "$fixture_root/quality/requirements.json" \
@@ -66,7 +75,7 @@ expect_failure requirement-rename bash "$fixture_root/tools/verify-evidence.sh"
 cp "$root/quality/requirements.json" \
   "$fixture_root/quality/requirements.json"
 
-jq '.requirements |= map(if .id == "WF-001" then .status = "verification" else . end)' \
+jq '.requirements |= map(if .id == "WF-001" then .status = "complete" else . end)' \
   "$fixture_root/quality/requirements.json" \
   > "$fixture_root/quality/requirements.json.next"
 mv "$fixture_root/quality/requirements.json.next" \

@@ -20,10 +20,13 @@ accepts authoritative replacement of provisional transport evidence and treats a
 receipt as already reconciled. These fixtures remain synthetic boundary evidence and do not close
 the native compatibility or full fault and authority gates.
 
-The native D0→D1→D2→D3 hierarchy was not observed: D1 environments had no callable native
-collaboration tools. Do not flatten the hierarchy or substitute subprocesses. Keep B-001 and B-005
-active until a real independent review is available. Rust 1.97.1, rustfmt and Clippy are already
-installed in the workspace-local toolchain; B-002 is resolved.
+The fresh native D0→D1→D2→D3 hierarchy is recorded in
+[`native-preflight-20260913.json`](../evidence/native-preflight-20260913.json): D1 spawned D2,
+and D2 spawned D3; D3 did not spawn D4. Do not flatten the hierarchy or substitute subprocesses.
+The fresh run resolves B-001, while B-005 remains active until a real independent review is
+available. Requested Luna/Max settings remain separate from unverified effective settings.
+Rust 1.97.1, rustfmt and Clippy are already installed in the workspace-local toolchain; B-002 is
+resolved.
 
 The MCP candidate `16ca0cb06dc93564c14963bc544bef282b38d26d` forwards the optional bounded
 `workflow_boot_epoch` authority header through the Runtime-v2 mapping. Its isolated workspace checks

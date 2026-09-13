@@ -2,8 +2,9 @@
   "schema_version": 1,
   "status": "integrated_candidate_validation",
   "root_agent_id": "/root",
-  "captured_at": "2026-09-10T11:28:50Z",
+  "captured_at": "2026-09-13T21:52:53Z",
   "resume_evidence_ref": "docs/evidence/EXECUTION_REPORT.md",
+  "fresh_native_preflight_ref": "docs/evidence/native-preflight-20260913.json",
   "source_lock_ref": "integration/source-lock-20260910.json",
   "current_source_lock_ref": "integration/source-lock-20260913.json",
   "acceptance_matrix_ref": "docs/evidence/studio-acceptance-matrix-20260913.json",
@@ -59,8 +60,8 @@
     {
       "id": "B-001",
       "owner": "runtime/client owner",
-      "reason": "D1 environments exposed no callable native collaboration tools; D2/D3 hierarchy was not created",
-      "status": "active_orchestration_blocker"
+      "reason": "resolved: fresh native D1 and D2 children successfully called the native collaboration spawn tool and created the required D0->D1->D2->D3 hierarchy",
+      "status": "resolved"
     },
     {
       "id": "B-002",

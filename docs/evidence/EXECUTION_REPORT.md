@@ -46,21 +46,35 @@ and checksum checks remain the passing synthetic/component lane. Real-process
 cross-repository, provider, native-game and independent D3/G6 lanes remain
 `unverified` and are listed as external gates in the matrix.
 
-## Fresh native preflight — 2026-09-13
+## Historical native preflight — 2026-09-13
 
-The fresh D1 native capability check is recorded in
+The earlier D1 native capability check is retained in
 [`native-preflight.json`](native-preflight.json). Native spawn returned the
 canonical D1 task name, but the child reported no callable native collaboration
 tool, so no D2 or D3 chain could be created. Requested Luna/Max settings remain
-separate from unverified effective settings. The hierarchy and independent D3/G6
-review gates therefore remain blocked; this evidence does not claim cross-
-repository authority, fault/privacy/replay, native-game or unattended-recovery
-acceptance.
+separate from unverified effective settings. This is historical evidence and is
+superseded for current native capability by the rerun below.
 
-`tools/verify-evidence.sh` enforces this failure-closed projection in CI: active
-B-001/B-005 blockers, blocked WF-001/WF-002/WF-003 requirements, and the
-non-success preflight outcome must remain present until a future independently
-reviewed evidence update changes them together.
+## Fresh native preflight rerun — 2026-09-13
+
+The required native chain is recorded in
+[`native-preflight-20260913.json`](native-preflight-20260913.json). D1
+`/root/workflow_native_d1_20260913` successfully spawned D2
+`/root/workflow_native_d1_20260913/workflow_native_d2_20260913`, and D2
+successfully spawned D3
+`/root/workflow_native_d1_20260913/workflow_native_d2_20260913/workflow_native_d3_20260913`.
+The D3 leaf did not spawn D4. The child-reported collaboration namespace exposed
+native spawn and coordination tools at D1, D2 and D3; native spawn responses
+exposed task paths and nicknames only, so effective model/effort values remain
+unverified and are not inferred from the requested Luna/Max settings.
+
+This rerun resolves the historical B-001 orchestration blocker and records a
+hierarchy-compliant capability result, but it is not an independent D3/G6
+review. B-005 remains active, the outcome remains blocked, and no
+cross-repository authority, fault/privacy/replay, native-game or
+unattended-recovery acceptance is claimed. `tools/verify-evidence.sh` now
+failure-closes on this fresh hierarchy projection and rejects completion or
+review promotion without B-005 evidence.
 
 ## Source refresh — 2026-09-11
 
@@ -173,11 +187,11 @@ The delivery standards profile is recorded in `standards-profile.toml`; the
 delivery driver invokes the built harness binary and contains no graph
 interpreter, scheduler, sibling-source dependency or native game call.
 
-The requested D0→D1→D2→D3 native hierarchy was not observed. The D1 workers used
-`gpt-5.6-luna` with `max` effort as requested, but their environments exposed no
-callable native collaboration tools, so D2/D3 could not be created. No flat or
-subprocess substitute was used. This is an orchestration evidence limitation,
-separate from the component tests above; it prevents a complete Phase 1 claim.
+The historical requested D0→D1→D2→D3 native hierarchy was not observed in the
+earlier preflight. The fresh rerun above subsequently observed the exact native
+chain without a flat or subprocess substitute. This remains an orchestration
+capability result, separate from the component tests above, and does not close
+the independent D3/G6 or complete Phase 1 claim.
 Three fresh D1 review lanes independently held acceptance for the integrated
 candidate. Their findings and the unavailable-recursion evidence are recorded in
 [`review-wave-20260910.json`](review-wave-20260910.json); those reviews do not
