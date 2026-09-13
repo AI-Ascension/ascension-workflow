@@ -83,8 +83,8 @@ jq --exit-status '
   .d2.depth == 2 and
   .d2.requested.model == "gpt-5.6-luna" and
   .d2.requested.effort == "max" and
-  .d2.accepted.spawn_result.task_name == "/root/workflow_native_d1_20260913/workflow_native_d2_20260913" and
-  .d2.accepted.spawn_result.nickname == "Hume" and
+  .d2.accepted.spawn_result.task_name == "/root/workflow_native_d1_20260913/workflow_native_d2_20260913/workflow_native_d3_20260913" and
+  .d2.accepted.spawn_result.nickname == "Gauss" and
   .d2.accepted.model == null and
   .d2.accepted.effort == null and
   .d2.observed.agent_path == "/root/workflow_native_d1_20260913/workflow_native_d2_20260913" and
@@ -136,6 +136,9 @@ jq --exit-status '
   .hierarchy.depths == [0, 1, 2, 3] and
   [.d1.observed.agent_path, .d2.observed.agent_path, .d3.observed.agent_path] == .hierarchy.path[1:] and
   [.root.observed.depth, .d1.observed.depth, .d2.observed.depth, .d3.observed.depth] == .hierarchy.depths and
+  .root.accepted.spawn_result.task_name == .d1.agent_path and
+  .d1.accepted.spawn_result.task_name == .d2.agent_path and
+  .d2.accepted.spawn_result.task_name == .d3.agent_path and
   .hierarchy.peak_observed_live_descendants == 3 and
   .hierarchy.global_descendant_ceiling == 12 and
   .hierarchy.d4_spawned == false and

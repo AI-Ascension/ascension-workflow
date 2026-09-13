@@ -112,8 +112,8 @@
     },
     "accepted": {
       "spawn_result": {
-        "task_name": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
-        "nickname": "Hume"
+        "task_name": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913/workflow_native_d3_20260913",
+        "nickname": "Gauss"
       },
       "agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
       "model": null,

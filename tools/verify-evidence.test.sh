@@ -75,6 +75,15 @@ expect_failure contradictory-observed-parentage bash "$fixture_root/tools/verify
 cp "$root/docs/evidence/native-preflight-20260913.json" \
   "$fixture_root/docs/evidence/native-preflight-20260913.json"
 
+jq '.d2.accepted.spawn_result.task_name = "/root/workflow_native_d1_20260913/workflow_native_d2_20260913" | .d2.accepted.spawn_result.nickname = "Hume"' \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json" \
+  > "$fixture_root/docs/evidence/native-preflight-20260913.json.next"
+mv "$fixture_root/docs/evidence/native-preflight-20260913.json.next" \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json"
+expect_failure mismatched-accepted-spawn bash "$fixture_root/tools/verify-evidence.sh"
+cp "$root/docs/evidence/native-preflight-20260913.json" \
+  "$fixture_root/docs/evidence/native-preflight-20260913.json"
+
 jq '.requirements |= map(select(.id != "WF-001"))' \
   "$fixture_root/quality/requirements.json" \
   > "$fixture_root/quality/requirements.json.next"
