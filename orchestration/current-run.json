@@ -1,16 +1,18 @@
 {
   "schema_version": 1,
   "status": "candidate_validation_and_delivery",
-  "captured_at": "2026-09-10T11:24:09Z",
+  "captured_at": "2026-09-13T21:52:53Z",
   "root": "/root",
   "requested_descendant_model": "gpt-5.6-luna",
   "requested_descendant_effort": "max",
   "observed_hierarchy": {
-    "native_d1_d2_d3": false,
-    "reason": "D1 environments exposed no callable native collaboration tools",
+    "native_d1_d2_d3": true,
+    "reason": "Fresh native D1 and D2 children successfully spawned the required D0->D1->D2->D3 chain; D3 did not spawn D4",
     "subprocess_substitute": false,
-    "independent_d3": false
+    "independent_d3": false,
+    "peak_observed_live_descendants": 3
   },
+  "fresh_native_preflight_ref": "docs/evidence/native-preflight-20260913.json",
   "global_descendant_ceiling": 12,
   "active_agents": [],
   "closed_lanes": [
@@ -70,7 +72,7 @@
   ],
   "pending_external_operations": [],
   "next_safe_actions": [
-    "obtain native D2/D3 hierarchy evidence and an independent D3/G6 review when the required tools are available",
+    "obtain an independent D3/G6 review and rerun the integrated candidate gates before completion",
     "complete admitted protocol/watchdog cross-repository conformance under the boundary owners",
     "execute the remaining fault, telemetry/privacy, legacy differential and separately authorized native gates",
     "preserve the exact candidate locks and no-merge, no-release, no-deploy boundary"

@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "evidence_id": "native-preflight-2026-09-13-rerun",
+  "captured_at": "2026-09-13T21:47:34Z",
+  "evidence_level": "confirmed",
+  "scope": "Fresh native D0->D1->D2->D3 delegation capability preflight for the Phase 1 delivery repository.",
+  "target": {
+    "repository": "AI-Ascension/ascension-workflow",
+    "observed_head": "a305a800bb8598033b638e5e85c0eeee165fd083"
+  },
+  "root": {
+    "agent_path": "/root",
+    "requested_child_path": "/root/workflow_native_d1_20260913",
+    "requested_model": "gpt-5.6-luna",
+    "requested_effort": "max",
+    "spawn_result": "confirmed",
+    "requested": {
+      "agent_path": "/root",
+      "child_path": "/root/workflow_native_d1_20260913",
+      "depth": 0,
+      "model": "gpt-5.6-luna",
+      "effort": "max"
+    },
+    "accepted": {
+      "spawn_result": {
+        "task_name": "/root/workflow_native_d1_20260913",
+        "nickname": "Godel"
+      },
+      "agent_path": "/root/workflow_native_d1_20260913",
+      "model": null,
+      "effort": null
+    },
+    "observed": {
+      "agent_path": "/root",
+      "depth": 0,
+      "effective_model": "unverified",
+      "effective_effort": "unverified",
+      "child_status": "completed"
+    },
+    "effective_model": "unverified",
+    "effective_effort": "unverified"
+  },
+  "d1": {
+    "agent_path": "/root/workflow_native_d1_20260913",
+    "parent_agent_path": "/root",
+    "depth": 1,
+    "requested_model": "gpt-5.6-luna",
+    "requested_effort": "max",
+    "requested": {
+      "agent_path": "/root/workflow_native_d1_20260913",
+      "parent_agent_path": "/root",
+      "depth": 1,
+      "model": "gpt-5.6-luna",
+      "effort": "max",
+      "next_depth": 2
+    },
+    "accepted": {
+      "spawn_result": {
+        "task_name": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+        "nickname": "Hume"
+      },
+      "agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+      "model": null,
+      "effort": null
+    },
+    "observed": {
+      "agent_path": "/root/workflow_native_d1_20260913",
+      "parent_agent_path": "/root",
+      "depth": 1,
+      "effective_model": "unverified",
+      "effective_effort": "unverified",
+      "status": "completed",
+      "next_depth_spawn": {
+        "depth": 2,
+        "callable": true,
+        "attempted": true,
+        "result": "confirmed"
+      }
+    },
+    "tool_surface": {
+      "native_collaboration": true,
+      "reported_namespaces": [
+        "collaboration"
+      ],
+      "reported_tools": [
+        "spawn_agent",
+        "followup_task",
+        "interrupt_agent",
+        "list_agents",
+        "send_message",
+        "wait_agent"
+      ],
+      "reported_by_child": true,
+      "independently_inspected": false
+    },
+    "d2_spawn": "confirmed",
+    "d3_spawn": "delegated_by_d2"
+  },
+  "d2": {
+    "agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+    "parent_agent_path": "/root/workflow_native_d1_20260913",
+    "depth": 2,
+    "requested_model": "gpt-5.6-luna",
+    "requested_effort": "max",
+    "requested": {
+      "agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+      "parent_agent_path": "/root/workflow_native_d1_20260913",
+      "depth": 2,
+      "model": "gpt-5.6-luna",
+      "effort": "max",
+      "next_depth": 3
+    },
+    "accepted": {
+      "spawn_result": {
+        "task_name": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+        "nickname": "Hume"
+      },
+      "agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+      "model": null,
+      "effort": null
+    },
+    "observed": {
+      "agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+      "parent_agent_path": "/root/workflow_native_d1_20260913",
+      "depth": 2,
+      "effective_model": "unverified",
+      "effective_effort": "unverified",
+      "status": "completed",
+      "next_depth_spawn": {
+        "depth": 3,
+        "callable": true,
+        "attempted": true,
+        "result": "confirmed"
+      }
+    },
+    "tool_surface": {
+      "native_collaboration": true,
+      "reported_namespaces": [
+        "collaboration"
+      ],
+      "reported_tools": [
+        "spawn_agent",
+        "followup_task",
+        "interrupt_agent",
+        "list_agents",
+        "send_message",
+        "wait_agent"
+      ],
+      "reported_by_child": true,
+      "independently_inspected": false
+    },
+    "d3_spawn": "confirmed"
+  },
+  "d3": {
+    "agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913/workflow_native_d3_20260913",
+    "parent_agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+    "depth": 3,
+    "requested_model": "gpt-5.6-luna",
+    "requested_effort": "max",
+    "requested": {
+      "agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913/workflow_native_d3_20260913",
+      "parent_agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+      "depth": 3,
+      "model": "gpt-5.6-luna",
+      "effort": "max",
+      "next_depth": 4
+    },
+    "accepted": {
+      "spawn_result": {
+        "task_name": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913/workflow_native_d3_20260913",
+        "nickname": "Gauss"
+      },
+      "agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913/workflow_native_d3_20260913",
+      "parent_agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+      "depth": 3,
+      "model": null,
+      "effort": null
+    },
+    "observed": {
+      "agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913/workflow_native_d3_20260913",
+      "parent_agent_path": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+      "depth": 3,
+      "effective_model": "unverified",
+      "effective_effort": "unverified",
+      "status": "completed",
+      "next_depth_spawn": {
+        "depth": 4,
+        "callable": "unverified",
+        "attempted": false,
+        "prohibited": true,
+        "result": "not_attempted"
+      }
+    },
+    "tool_surface": {
+      "native_collaboration": true,
+      "reported_namespaces": [
+        "collaboration"
+      ],
+      "reported_tools": [
+        "spawn_agent",
+        "followup_task",
+        "interrupt_agent",
+        "list_agents",
+        "send_message",
+        "wait_agent"
+      ],
+      "reported_by_child": true,
+      "independently_inspected": false
+    },
+    "d4_spawn": "prohibited_not_attempted"
+  },
+  "hierarchy": {
+    "path": [
+      "/root",
+      "/root/workflow_native_d1_20260913",
+      "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+      "/root/workflow_native_d1_20260913/workflow_native_d2_20260913/workflow_native_d3_20260913"
+    ],
+    "depths": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "peak_observed_live_descendants": 3,
+    "global_descendant_ceiling": 12,
+    "d4_spawned": false
+  },
+  "outcome": {
+    "hierarchy_compliant": true,
+    "independent_d3_review": false,
+    "source_writes": false,
+    "external_agent_processes": false,
+    "status": "blocked"
+  },
+  "blockers": [
+    {
+      "id": "B-001",
+      "status": "resolved",
+      "reason": "Fresh native D1 and D2 children successfully called the native collaboration spawn tool, creating the required D0->D1->D2->D3 hierarchy."
+    },
+    {
+      "id": "B-005",
+      "status": "active",
+      "reason": "No independent D3 reviewer or final G6 review was performed; the native D3 child supplied delegation capability evidence only."
+    }
+  ],
+  "evidence_limits": [
+    "Native child tool surfaces are child-reported and were not independently schema-inspected by the root; successful D1 and D2 spawn calls establish callable spawn capability.",
+    "Native spawn responses exposed task path and nickname but no accepted or effective model/effort fields; requested Luna/Max settings remain separate and effective settings are unverified.",
+    "D3 was instructed not to spawn D4, so D4 callability was not tested.",
+    "This is delegation capability evidence only; no independent D3/G6 review, cross-repository authority, fault, privacy, replay, native-game or unattended-recovery acceptance was executed."
+  ],
+  "privacy": {
+    "contains_credentials": false,
+    "contains_private_prompts": false,
+    "contains_raw_provider_output": false,
+    "contains_proprietary_game_data": false
+  }
+}

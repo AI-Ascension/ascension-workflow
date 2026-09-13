@@ -7,10 +7,10 @@
       "workstream": "WS-A",
       "title": "Verify runtime, model, depth, and permission envelope",
       "dependencies": [],
-      "state": "blocked",
-      "depth1_owner": "/root/preflight_lead",
-      "depth2_coordinator": null,
-      "depth3_implementer": null,
+      "state": "verification",
+      "depth1_owner": "/root/workflow_native_d1_20260913",
+      "depth2_coordinator": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913",
+      "depth3_implementer": "/root/workflow_native_d1_20260913/workflow_native_d2_20260913/workflow_native_d3_20260913",
       "depth3_verifier": null,
       "model": "gpt-5.6-luna",
       "reasoning_effort": "max",
@@ -36,19 +36,17 @@
       "candidate_commit": null,
       "evidence_refs": [
         "docs/evidence/EXECUTION_REPORT.md",
+        "docs/evidence/native-preflight-20260913.json",
         "orchestration/agents/preflight-lead.json",
         "integration/candidate-lock.json"
       ],
       "special_gate": null,
-      "blocker_refs": [
-        "B-001",
-        "B-005"
-      ],
+      "blocker_refs": ["B-005"],
       "reviewer": null,
       "owner_repository": "AI-Ascension/ascension-workflow",
       "preparation_only": false,
       "independent_reviewer": null,
-      "next_safe_action": "Restore native D1/D2/D3 tools and obtain independent review before final completion."
+      "next_safe_action": "Obtain independent D3 review and rerun the integrated candidate gates before completion."
     },
     {
       "id": "T01",

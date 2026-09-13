@@ -126,8 +126,8 @@
     },
     "independent_d3": {
       "status": "unverified",
-      "evidence_refs": ["docs/evidence/native-preflight.json", "docs/evidence/EXECUTION_REPORT.md"],
-      "reason": "The required native D0-to-D1-to-D2-to-D3 hierarchy and G6 review were not observed."
+      "evidence_refs": ["docs/evidence/native-preflight-20260913.json", "docs/evidence/native-preflight.json", "docs/evidence/EXECUTION_REPORT.md"],
+      "reason": "The fresh native D0-to-D1-to-D2-to-D3 hierarchy was observed, but an independent D3/G6 review was not performed."
     }
   },
   "features": [
