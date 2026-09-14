@@ -18,21 +18,22 @@ each has a checked-in `SHA256SUMS`. The catalog registry is revision `0.1.1`
 while retaining `0.1.0` as a supported prior pin. Canonical workflow
 interpretation and scheduling remain owned by `sts2-harness`.
 
-The audit found five rows with merged but explicitly partial component pins:
-harness #95 (PRs #131 and #133, used by two budget/limits rows and now
-owner-closed), Studio #110 (PRs #124, #125 and #126; owner component checks
-passed), game-mod #78 (PRs #118, #123 and #125, with gateway child PR #53),
-and the Studio seed row's game-mod probe (PR #113). Studio PR #126
-subsequently merged and its owner unit/type/build, Chromium/Firefox/WebKit,
-recorded-run browser and authenticated live-owner browser checks passed;
-aggregate cross-repository acceptance remains gated. Harness #94's
-live-executor PR #134 is still open. Gateway PR #54 and Context Console PRs
-#20/#21 are open component slices; the remaining required owner children have
-no merged companion acceptance observed. Game-mod #78 is owner-closed after
-source-only safety slices and #79 is API-closed, but the relevant PRs state
-that native authorization, live-host settlement, game-mod readback and
-cross-restart recovery remain unverified; the matrix therefore keeps those
-acceptance gates open.
+The 2026-09-14 refresh updates the matrix and source lock to the current
+merged owner pins. Harness live-executor PR #134, Studio target-admission PR
+#127, harness run-target PR #150, gateway lifecycle PRs #54/#57, save-profile
+gateway/MCP PRs #53/#58/#59/#54/#56, context-console PRs #20-#23, harness
+context-owner PR #154, game-mod safety PRs #118/#123/#125, the game-mod
+native probe PR #113 and the game-information dependency PRs (gateway
+#55/#56, MCP #53/#55/#57/#61, protocol #49) are recorded as exact merged
+component/dependency pins with their merge commits. None is promoted to
+end-to-end acceptance: issues #94, #95, gateway #50/#51, game-mod #78/#79 and
+observability #28 remain open (several were reopened), and harness #96, the
+unlinked backend children, the versioned contracts and native/provider
+cross-repository recovery remain unverified. Studio PR #126's owner
+unit/type/build, Chromium/Firefox/WebKit, recorded-run browser and
+authenticated live-owner browser checks passed, but aggregate
+cross-repository acceptance remains gated. The matrix therefore keeps every
+external and native acceptance gate open.
 
 The authored
 [`studio-acceptance-journey-20260913.json`](studio-acceptance-journey-20260913.json)

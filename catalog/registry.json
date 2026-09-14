@@ -195,7 +195,7 @@
       "owner_issue": "AI-Ascension/sts2-harness#94",
       "capability_version": null,
       "status": "unavailable",
-      "reason": "PR #134 is open; no merged owner-issued live/native/provider acceptance was observed."
+      "reason": "PR #134 merged as a partial live-port composition foundation, but issue #94 remains open and no merged owner-issued live/native/provider acceptance was observed."
     },
     "context_association": {
       "owner_issue": "AI-Ascension/ascension-workflow-studio#109",
