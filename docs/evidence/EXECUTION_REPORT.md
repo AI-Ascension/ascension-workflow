@@ -1,5 +1,19 @@
 # Phase 1 execution report
 
+## Current sequencing reconciliation — 2026-09-15
+
+The [bounded reconciliation](studio-acceptance-reconciliation-20260915.json)
+updates two sequencing facts from the historical matrix below. Harness #100
+is open: PRs #167/#169 fixed dispatch identity at `0320c05`, while its owner
+still reports durable association and authenticated actual-owner composition
+acceptance outstanding. B-001 native delegation preflight was delivered;
+the PR #14 preflight review and repairs did not discharge B-005 final
+integrated D3/G6 review. The reconciliation cites exact pins and GitHub evidence.
+
+This is source/metadata inspection, with no new process, provider or native
+acceptance. Historical captures, digests and source locks remain unchanged.
+Other rows and aggregate outcomes have not been recounted.
+
 ## Studio acceptance matrix — 2026-09-13
 
 Issue #11 is recorded as a blocked, additive delivery gate in

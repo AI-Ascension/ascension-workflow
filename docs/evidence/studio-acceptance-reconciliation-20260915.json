@@ -1,0 +1,62 @@
+{
+  "schema_version": "ascension.studio-acceptance-reconciliation/v1",
+  "captured_at": "2026-09-15T00:27:00Z",
+  "scope": "Bounded sequencing reconciliation for workflow #11; not a full feature or child audit.",
+  "issue_url": "https://github.com/AI-Ascension/ascension-workflow/issues/11",
+  "source_base": "3d0baa2aa595f97ac65bad732d4edafa78b6b13a",
+  "historical_matrix": "docs/evidence/studio-acceptance-matrix-20260913.json",
+  "historical_capture_preserved": true,
+  "aggregate_outcomes_recounted": false,
+  "acceptance_promoted": false,
+  "evidence_class": "live GitHub metadata and repository source inspection; cited historical results were not rerun",
+  "new_execution_evidence": {
+    "composed_process": false,
+    "provider": false,
+    "native_game": false,
+    "service_deployment": false
+  },
+  "reconciliations": [
+    {
+      "historical_gate": "G-CONTEXT",
+      "issue_url": "https://github.com/AI-Ascension/sts2-harness/issues/100",
+      "observed_issue_state": "OPEN",
+      "historical_scope": "The matrix capture described harness #100 as closed after PR #154.",
+      "delivered": "PR #167 and follow-up #169 fixed dispatch binding identity; the owner reports runtime-allocated invocation identity and persisted-cursor validation.",
+      "fixed_pin": "0320c055109f1767efdaf9aca80465d54be7156b",
+      "sources": [
+        "https://github.com/AI-Ascension/sts2-harness/pull/167",
+        "https://github.com/AI-Ascension/sts2-harness/pull/169",
+        "https://github.com/AI-Ascension/sts2-harness/issues/100#issuecomment-5662643605"
+      ],
+      "remaining_acceptance_reported_by_owner": [
+        "Attach the accepted binding to the durable snapshot/association surface (ContextOwnerPort::association).",
+        "Authenticate the real-owner process sequence and deny foreign run/episode/agent/scope and stale boundary revisions.",
+        "Complete Studio #109 consumer discovery/selection/validation and Console #18/#19 composition."
+      ],
+      "next_action": "Check the current owner association implementation, agree compatible transport pins, and collect the authenticated Console-to-real-owner sequence. Do not revive the fixed live.node.1 defect or infer a current code defect solely from the issue remaining open.",
+      "acceptance_status": "unverified"
+    },
+    {
+      "historical_gate": "G-D3",
+      "delivered": "B-001 native D0-to-D1-to-D2-to-D3 delegation preflight was delivered in PR #14; PR #15 corrected accepted spawn metadata.",
+      "preflight_merge_pin": "55efd3221eda2c3fa3bdd7eb8f6274e412489692",
+      "metadata_correction_merge_pin": "b23758f70f9ca5059b67ec017928c4adcc88fad4",
+      "sources": [
+        "https://github.com/AI-Ascension/ascension-workflow/pull/14",
+        "https://github.com/AI-Ascension/ascension-workflow/pull/14#issuecomment-5656517337",
+        "https://github.com/AI-Ascension/ascension-workflow/pull/15"
+      ],
+      "review_distinction": "The PR #14 merge comment records independent preflight REQUEST_CHANGES, repairs to two majors and green delivery CI; it explicitly preserves B-003/B-004/B-005 as open. This is not final integrated D3/G6 acceptance.",
+      "remaining_gate": "B-005 final integrated independent D3/G6 review remains open.",
+      "next_action": "Preserve delivered preflight evidence and collect exact integrated candidate validation and independent review; do not repeat the superseded missing-recursive-tool diagnosis.",
+      "effective_model_and_effort": "unverified",
+      "acceptance_status": "unverified"
+    }
+  ],
+  "unchanged_boundaries": [
+    "B-003 owner-issued cross-repository and B-004 authorized native acceptance remain open.",
+    "Other matrix rows and aggregate counts were not freshly audited.",
+    "Studio #122 remains downstream and deferred; predecessor acceptance does not wait for aggregate closure.",
+    "No issue closure, native/provider acceptance or copied-artifact/source-lock refresh is implied."
+  ]
+}

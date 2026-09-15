@@ -1,5 +1,13 @@
 # Resume Phase 1
 
+Read the [2026-09-15 sequencing reconciliation](../evidence/studio-acceptance-reconciliation-20260915.json)
+before using the historical candidate guidance below. Harness #100 dispatch
+identity was fixed by PRs #167/#169 at `0320c05`; its reported durable-association
+and real-owner composition acceptance remains outstanding. B-001 preflight is
+delivered. PR #14 received independent preflight review and repaired findings,
+but its merge note explicitly preserved B-005 final integrated D3/G6 review.
+No acceptance or aggregate count is promoted by this bounded update.
+
 The current run has local harness, gateway and MCP candidates plus a delivery branch. Preserve the
 original archive, stable IDs, dirty work and exact locks. Start with
 [`execution-state.json`](../../execution-state.json),
