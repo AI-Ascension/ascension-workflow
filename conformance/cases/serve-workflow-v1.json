@@ -1,0 +1,20 @@
+{
+  "schema_version": "ascension.conformance/served-live-workflow-v1",
+  "source_lock": "integration/served-live-source-lock.json",
+  "definition": "conformance/serve-workflow-v1/definition.json",
+  "production_capability_contract": "conformance/serve-workflow-v1/production-capabilities.json",
+  "expected_target_catalog": "conformance/serve-workflow-v1/target-catalog.json",
+  "provider_capabilities_fixture": "conformance/serve-workflow-v1/provider-capabilities-fixture.json",
+  "instance_id": "instance.workflow.conformance",
+  "execution_profile": "live.workflow.v1",
+  "auth_profile": "served",
+  "expected_validation": "valid",
+  "existing_pinned_peer_acceptance": {
+    "harness_workflow": ".github/workflows/runtime-peer-contract.yml",
+    "harness_tests": [
+      "served_workflow_settles_action_with_adopted_provider_policy",
+      "served_restart_refuses_unknown_effect_without_redispatch"
+    ],
+    "scope": "Separate Harness CI evidence; this fixture driver does not launch Gateway or MCP peers."
+  }
+}

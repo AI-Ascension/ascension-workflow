@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "purpose": "Narrow producer/consumer lock for served live workflow catalog admission; does not replace historical source locks or claim aggregate native acceptance.",
+  "producer": {
+    "repository": "AI-Ascension/sts2-harness",
+    "default_branch": "main",
+    "pull_request": 220,
+    "merge_commit": "f2758655d472da54e1ea05671da5345680f51da1",
+    "contract_owner_paths": [
+      "crates/harness/src/bin/runtime_support/workflow_service.rs",
+      "crates/harness/src/management/validation.rs",
+      "crates/harness/tests/runtime_v4_executable_composition.rs"
+    ]
+  },
+  "served_peer_acceptance": {
+    "workflow": ".github/workflows/runtime-peer-contract.yml",
+    "gateway_revision": "8940fba823a0893b31d1a96301831c182d37ed32",
+    "mcp_revision": "f3b6eaa8bcf2241b8d6c47587c958388a8fe1031",
+    "tests": [
+      "served_workflow_settles_action_with_adopted_provider_policy",
+      "served_restart_refuses_unknown_effect_without_redispatch"
+    ],
+    "scope": "Existing Harness process acceptance, recorded separately from this repository's target catalog and definition validation."
+  },
+  "artifacts": [
+    "conformance/cases/serve-workflow-v1.json",
+    "conformance/serve-workflow-v1/definition.json",
+    "conformance/serve-workflow-v1/production-capabilities.json",
+    "conformance/serve-workflow-v1/target-catalog.json",
+    "conformance/serve-workflow-v1/provider-capabilities-fixture.json"
+  ],
+  "artifact_digests": [
+    {
+      "path": "conformance/cases/serve-workflow-v1.json",
+      "sha256": "50c3ce338c619c011351c38d6cedb03dc96941b40e59eba2be9d7c13e2057cd8"
+    },
+    {
+      "path": "conformance/serve-workflow-v1/definition.json",
+      "sha256": "95bb2f7460f05b3bca1a0fa84cc2b0094041e3b54792a7a9daf7ce36b5c51f05"
+    },
+    {
+      "path": "conformance/serve-workflow-v1/production-capabilities.json",
+      "sha256": "0ed999f9dfa80fa99dc1fc39d7c9eb0e002b2153cabec31992d38b19bdf22d15"
+    },
+    {
+      "path": "conformance/serve-workflow-v1/target-catalog.json",
+      "sha256": "cec6856e08c1b3f52e8bb3e047c689bfa1d1f0e32b690881ed2379067f844059"
+    },
+    {
+      "path": "conformance/serve-workflow-v1/provider-capabilities-fixture.json",
+      "sha256": "65f456736d005ab14f0f283fa728fe41065710e5b198ce914dccba4efd52eb66"
+    }
+  ],
+  "limitations": [
+    "The provider capability fixture exists only to initialize the service and does not call a provider.",
+    "The conformance driver compares the running producer's reported target catalog and capability manifest to separate checked-in expectations.",
+    "Passing this gate does not establish native game, live provider, or full cross-repository issue acceptance."
+  ]
+}

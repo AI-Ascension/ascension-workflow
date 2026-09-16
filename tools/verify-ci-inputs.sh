@@ -4,6 +4,7 @@ set -euo pipefail
 
 readonly candidate_harness_commit="6e0272511997165ebba337a15d22f73acd36a4c4"
 readonly refreshed_harness_commit="e70fce12afebb38503a450c8bd242bd8ad532817"
+readonly served_live_harness_commit="f2758655d472da54e1ea05671da5345680f51da1"
 readonly workflow_schema_sha256="f8f79e115cd3bd736125ad17e33676bfe110f8a1b2673577cbbe93f1d5cc937d"
 readonly workflow_artifact_inventory_sha256="bf31d36d70f9580a41577e95c6fb4e94b9cda9e3f693c303ab1701a1faaf5b84"
 
@@ -60,7 +61,51 @@ jq --exit-status \
    .negative[0].definition == "workflows/sts2/map.strict.json" and
    .negative[0].capabilities == "catalog/capabilities/synthetic-missing-map.json" and
    .negative[0].error_class == "capability" and
-   .process_driver == "tools/conformance-driver"' conformance/cases/catalog-v1.json >/dev/null
+  .process_driver == "tools/conformance-driver"' conformance/cases/catalog-v1.json >/dev/null
+jq --exit-status \
+  --arg harness "$served_live_harness_commit" \
+  '.schema_version == 1 and
+   .producer.repository == "AI-Ascension/sts2-harness" and
+   .producer.pull_request == 220 and .producer.merge_commit == $harness and
+   .served_peer_acceptance.gateway_revision == "8940fba823a0893b31d1a96301831c182d37ed32" and
+   .served_peer_acceptance.mcp_revision == "f3b6eaa8bcf2241b8d6c47587c958388a8fe1031" and
+   (.artifacts | length == 5) and
+   (.artifact_digests | length == 5) and
+   .artifacts == [.artifact_digests[].path]' \
+  integration/served-live-source-lock.json >/dev/null
+while IFS=$'\t' read -r path expected; do
+  test "$(sha256sum "$path" | awk '{print $1}')" = "$expected"
+done < <(jq -r '.artifact_digests[] | [.path, .sha256] | @tsv' integration/served-live-source-lock.json)
+jq --exit-status \
+  '.schema_version == "ascension.conformance/served-live-workflow-v1" and
+   .source_lock == "integration/served-live-source-lock.json" and
+   .definition == "conformance/serve-workflow-v1/definition.json" and
+   .production_capability_contract == "conformance/serve-workflow-v1/production-capabilities.json" and
+   .expected_target_catalog == "conformance/serve-workflow-v1/target-catalog.json" and
+   .instance_id == "instance.workflow.conformance" and
+   .execution_profile == "live.workflow.v1" and
+   .expected_validation == "valid" and
+   (.existing_pinned_peer_acceptance.harness_tests | length == 2)' \
+  conformance/cases/serve-workflow-v1.json >/dev/null
+jq --exit-status \
+  '.schema_version == "ascension.workflow-targets/v1" and
+   .catalog_revision == "runtime-v3:runtime-v4-expert" and
+   (.targets | length == 1) and .targets[0].execution_mode == "live" and
+   .targets[0].instance_id == "instance.workflow.conformance" and
+   .targets[0].execution_profiles == ["live.workflow.v1"] and
+   .targets[0].game_profiles == ["sts2-live-v1"]' \
+  conformance/serve-workflow-v1/target-catalog.json >/dev/null
+jq --exit-status \
+  '.schema_version == "ascension.capabilities/v1" and
+   (.capabilities | index("workflow.node.observe.v1") != null) and
+   (.capabilities | index("workflow.node.decide.v1") != null) and
+   (.capabilities | index("workflow.node.execute_action.v1") != null) and
+   (.capabilities | index("workflow.node.terminal.v1") != null) and
+   (.capabilities | index("workflow.projection.fair-play.live.v1") != null) and
+   (.capabilities | index("workflow.provider.decision.live.v1") != null) and
+   (.capabilities | index("workflow.context.context.live.v1") != null)' \
+  conformance/serve-workflow-v1/production-capabilities.json >/dev/null
+test "$(jq -r '.producer.merge_commit' integration/served-live-source-lock.json)" = "$served_live_harness_commit"
 test "$(find workflows/sts2 -maxdepth 1 -type f -name '*.json' | wc -l | tr -d ' ')" = "13"
 jq --exit-status \
   '.schema_version == "ascension.sts2.catalog/v1" and

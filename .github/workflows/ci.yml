@@ -17,7 +17,7 @@ jobs:
   conformance:
     name: Delivery conformance
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 50
     steps:
       - name: Check out delivery candidate
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -102,3 +102,35 @@ jobs:
             --capabilities "$GITHUB_WORKSPACE/catalog/capabilities/synthetic-full.json" \
             --missing-capabilities "$GITHUB_WORKSPACE/catalog/capabilities/synthetic-missing-map.json" \
             --negative "$GITHUB_WORKSPACE/workflows/sts2/map.strict.json"
+
+      # This merged producer pin supplies the live service's reported target
+      # catalog and capability manifest. The separate Harness peer suite owns
+      # Gateway/MCP process acceptance and is not rerun by this catalog check.
+      - name: Check out merged served-live Harness producer
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: AI-Ascension/sts2-harness
+          ref: f2758655d472da54e1ea05671da5345680f51da1
+          path: harness-live
+          persist-credentials: false
+
+      - name: Build pinned served-live Harness commands
+        working-directory: harness-live
+        run: cargo +1.97.1 build --locked --package sts2-harness --bin sts2-harness-runtime --bin sts2-workflow
+
+      - name: Assert merged Harness producer pin
+        run: |
+          expected=$(jq -r '.producer.merge_commit' integration/served-live-source-lock.json)
+          test "$expected" = f2758655d472da54e1ea05671da5345680f51da1
+          test "$(git -C harness-live rev-parse HEAD)" = "$expected"
+
+      - name: Compare served production contracts and validate the live graph
+        run: |
+          umask 022
+          tools/conformance-driver/target/debug/served-live-conformance-driver \
+            --runtime-binary "$GITHUB_WORKSPACE/harness-live/target/debug/sts2-harness-runtime" \
+            --workflow-binary "$GITHUB_WORKSPACE/harness-live/target/debug/sts2-workflow" \
+            --definition "$GITHUB_WORKSPACE/conformance/serve-workflow-v1/definition.json" \
+            --capability-contract "$GITHUB_WORKSPACE/conformance/serve-workflow-v1/production-capabilities.json" \
+            --target-catalog "$GITHUB_WORKSPACE/conformance/serve-workflow-v1/target-catalog.json" \
+            --provider-capabilities "$GITHUB_WORKSPACE/conformance/serve-workflow-v1/provider-capabilities-fixture.json"
