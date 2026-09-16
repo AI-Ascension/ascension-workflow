@@ -1,0 +1,17 @@
+{
+  "schema_version": "ascension.capabilities/v1",
+  "capabilities": [
+    "workflow.live",
+    "workflow.node.observe.v1",
+    "workflow.node.decide.v1",
+    "workflow.node.execute_action.v1",
+    "workflow.node.terminal.v1",
+    "workflow.execution.fence.mcp-observation.v1",
+    "observe.fair-play.v1",
+    "actions.catalog.v1",
+    "actions.settlement.v1",
+    "workflow.projection.fair-play.live.v1",
+    "workflow.provider.decision.live.v1",
+    "workflow.context.context.live.v1"
+  ]
+}

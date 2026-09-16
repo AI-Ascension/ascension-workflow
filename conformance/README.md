@@ -30,6 +30,25 @@ and [`current source lock`](../integration/source-lock-20260913.json) for the
 cross-repository pin audit. A passing synthetic driver run does not close the
 live executor, readiness, provider or native-game gates.
 
+## Served live admission contract
+
+The separate [`serve-workflow` case](cases/serve-workflow-v1.json) pins the
+merged Harness #220 producer in
+[`served-live-source-lock.json`](../integration/served-live-source-lock.json).
+Its process driver starts that producer's `serve-workflow`, compares the
+reported `/v1/workflow-targets` response and `/v1/capabilities` manifest to
+separate checked-in expectations, then invokes the pinned `sts2-workflow
+validate` command with the manifest fetched from the running service. The live
+graph is the same strict observe/decide/action/terminal graph used by Harness's
+served process tests.
+
+This check verifies served catalog and validation-contract alignment. It does
+not launch Gateway or MCP; their separate pinned process acceptance remains
+recorded by the Harness peer-contract workflow and the source lock. The
+provider-capabilities fixture is only service startup input and causes no
+provider call. Neither check establishes native game or aggregate issue
+acceptance.
+
 The authored composed failure fixture is
 [`studio-acceptance-matrix-v1.json`](cases/studio-acceptance-matrix-v1.json).
 It records exact-pin, unauthorized, unavailable, stale, oversized,

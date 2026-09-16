@@ -1,0 +1,28 @@
+{
+  "schema_version": "ascension.workflow-targets/v1",
+  "catalog_revision": "runtime-v3:runtime-v4-expert",
+  "targets": [
+    {
+      "instance_id": "instance.workflow.conformance",
+      "execution_profiles": ["live.workflow.v1"],
+      "execution_mode": "live",
+      "compatibility_revision": "runtime-v3.mcp.v1",
+      "capability_revision": "runtime-v3.mcp-observation-fence.v1",
+      "availability": "available",
+      "supported_operations": ["workflow:live"],
+      "capabilities": [
+        "workflow.live",
+        "workflow.execution.fence.mcp-observation.v1",
+        "observe.fair-play.v1",
+        "actions.catalog.v1",
+        "actions.settlement.v1",
+        "workflow.projection.fair-play.live.v1",
+        "workflow.provider.decision.live.v1",
+        "workflow.context.context.live.v1"
+      ],
+      "game_profiles": ["sts2-live-v1"],
+      "save_profiles": [],
+      "inference_profiles": ["exo.runtime-v3"]
+    }
+  ]
+}
