@@ -5,6 +5,8 @@ use std::env;
 use std::fs;
 use std::io::{Read, Write};
 use std::net::{SocketAddr, TcpStream};
+#[cfg(unix)]
+use std::os::unix::fs::DirBuilderExt;
 use std::path::{Path, PathBuf};
 use std::process::{Child, Command, ExitCode, Stdio};
 use std::thread;
@@ -34,7 +36,12 @@ impl TemporaryDirectory {
             "ascension-served-live-{}-{nanos}",
             std::process::id()
         ));
-        fs::create_dir(&path).map_err(|error| format!("create temporary directory: {error}"))?;
+        let mut builder = fs::DirBuilder::new();
+        #[cfg(unix)]
+        builder.mode(0o700);
+        builder
+            .create(&path)
+            .map_err(|error| format!("create private temporary directory: {error}"))?;
         Ok(Self(path))
     }
 
@@ -412,7 +419,7 @@ fn path_to_str(path: &Path) -> Result<&str, String> {
 
 #[cfg(test)]
 mod tests {
-    use super::parse_arguments;
+    use super::{TemporaryDirectory, parse_arguments};
 
     #[test]
     fn served_live_arguments_are_closed_and_unique() {
@@ -451,5 +458,19 @@ mod tests {
             ])
             .is_err()
         );
+    }
+
+    #[cfg(unix)]
+    #[test]
+    fn temporary_directory_is_owner_only_under_permissive_umask() {
+        use std::os::unix::fs::PermissionsExt;
+
+        let temporary = TemporaryDirectory::create().expect("create temporary directory");
+        let mode = std::fs::metadata(&temporary.0)
+            .expect("read temporary directory metadata")
+            .permissions()
+            .mode()
+            & 0o777;
+        assert_eq!(mode, 0o700);
     }
 }

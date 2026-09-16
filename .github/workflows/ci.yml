@@ -126,6 +126,7 @@ jobs:
 
       - name: Compare served production contracts and validate the live graph
         run: |
+          umask 022
           tools/conformance-driver/target/debug/served-live-conformance-driver \
             --runtime-binary "$GITHUB_WORKSPACE/harness-live/target/debug/sts2-harness-runtime" \
             --workflow-binary "$GITHUB_WORKSPACE/harness-live/target/debug/sts2-workflow" \
