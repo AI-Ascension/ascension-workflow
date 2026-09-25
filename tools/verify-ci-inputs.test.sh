@@ -66,4 +66,32 @@ cp "$root/contract-artifact/workflow-v1/canonical-vectors.json" contract-artifac
 printf '\n' >> contract-artifact/workflow-v1/SHA256SUMS
 expect_failure artifact-inventory-tamper bash tools/verify-ci-inputs.sh
 
+# `artifact-inventory-tamper` above is the last case of the original suite and
+# leaves the appended inventory line in place; restore it so the cases below fail
+# only for their own reason. (Without this the two digest-vacuity cases below
+# "pass" on a pre-fix tool simply because the inventory is still corrupt.)
+cp "$root/contract-artifact/workflow-v1/SHA256SUMS" contract-artifact/workflow-v1/SHA256SUMS
+
+# A row that is unverifiable in both directions must not count as verified: an
+# emptied digest comparing "" = "" against a path sha256sum cannot read passes
+# the bare `test` regardless of pipefail. Mutate the digest and its path together
+# so the row drifts into that state while the artifact list stays consistent.
+jq '(.artifact_digests[3].sha256) = ""
+    | (.artifact_digests[3].path) = "ghost-served-live.bin"
+    | (.artifacts[3]) = "ghost-served-live.bin"' \
+  integration/served-live-source-lock.json > integration/served-live-source-lock.json.next
+mv integration/served-live-source-lock.json.next integration/served-live-source-lock.json
+expect_failure served-live-digest-vacuity bash tools/verify-ci-inputs.sh
+cp "$root/integration/served-live-source-lock.json" integration/served-live-source-lock.json
+
+# The same vacuity with the row's `sha256` key removed outright rather than
+# emptied -- `jq -r '@tsv'` emits an empty field for both shapes.
+jq '(.artifact_digests[3].path) = "ghost-served-live.bin"
+    | (.artifact_digests[3] |= del(.sha256))
+    | (.artifacts[3]) = "ghost-served-live.bin"' \
+  integration/served-live-source-lock.json > integration/served-live-source-lock.json.next
+mv integration/served-live-source-lock.json.next integration/served-live-source-lock.json
+expect_failure served-live-digest-key-absent bash tools/verify-ci-inputs.sh
+cp "$root/integration/served-live-source-lock.json" integration/served-live-source-lock.json
+
 echo "delivery CI input regressions: PASS"
