@@ -71,9 +71,14 @@ jq --exit-status \
    .served_peer_acceptance.mcp_revision == "f3b6eaa8bcf2241b8d6c47587c958388a8fe1031" and
    (.artifacts | length == 5) and
    (.artifact_digests | length == 5) and
+   (.artifact_digests | all(.[]; ((.sha256 // "") | test("^[0-9a-f]{64}$")))) and
    .artifacts == [.artifact_digests[].path]' \
   integration/served-live-source-lock.json >/dev/null
 while IFS=$'\t' read -r path expected; do
+  if test -z "$expected"; then
+    printf 'served live source lock row has no digest for %s\n' "$path" >&2
+    exit 1
+  fi
   test "$(sha256sum "$path" | awk '{print $1}')" = "$expected"
 done < <(jq -r '.artifact_digests[] | [.path, .sha256] | @tsv' integration/served-live-source-lock.json)
 jq --exit-status \
