@@ -74,6 +74,10 @@ jq --exit-status \
    .artifacts == [.artifact_digests[].path]' \
   integration/served-live-source-lock.json >/dev/null
 while IFS=$'\t' read -r path expected; do
+  if test -z "$expected"; then
+    printf 'served-live source lock row has no digest for %s\n' "$path" >&2
+    exit 1
+  fi
   test "$(sha256sum "$path" | awk '{print $1}')" = "$expected"
 done < <(jq -r '.artifact_digests[] | [.path, .sha256] | @tsv' integration/served-live-source-lock.json)
 jq --exit-status \

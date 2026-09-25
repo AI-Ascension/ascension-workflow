@@ -66,4 +66,33 @@ cp "$root/contract-artifact/workflow-v1/canonical-vectors.json" contract-artifac
 printf '\n' >> contract-artifact/workflow-v1/SHA256SUMS
 expect_failure artifact-inventory-tamper bash tools/verify-ci-inputs.sh
 
+# The artifact-inventory case above deliberately leaves SHA256SUMS tampered, so
+# restore it before the cases below. Without this, they would be rejected by the
+# inventory check at the top of the script and would pass even against a build
+# with no empty-digest guard at all.
+cp "$root/contract-artifact/workflow-v1/SHA256SUMS" contract-artifact/workflow-v1/SHA256SUMS
+
+# A row that is unverifiable in both directions (no digest, unresolvable path)
+# must not count as verified: `test "" = ""` is true, so the digest comparison
+# alone reports success. The row is kept consistent with the served-live lock's
+# `length == 5` and `.artifacts == [.artifact_digests[].path]` invariants so the
+# case exercises the empty-digest guard rather than those unrelated checks.
+jq '.artifact_digests[0].path = "ghost-served-live.bin"
+    | .artifact_digests[0].sha256 = ""
+    | .artifacts[0] = "ghost-served-live.bin"' \
+  integration/served-live-source-lock.json > integration/served-live-source-lock.json.next
+mv integration/served-live-source-lock.json.next integration/served-live-source-lock.json
+expect_failure served-live-empty-digest-tamper bash tools/verify-ci-inputs.sh
+cp "$root/integration/served-live-source-lock.json" integration/served-live-source-lock.json
+
+# The same vacuity with the `sha256` key removed rather than blanked: `jq @tsv`
+# emits an empty field for both, so the guard must not depend on the key existing.
+jq 'del(.artifact_digests[0].sha256)
+    | .artifact_digests[0].path = "ghost-served-live.bin"
+    | .artifacts[0] = "ghost-served-live.bin"' \
+  integration/served-live-source-lock.json > integration/served-live-source-lock.json.next
+mv integration/served-live-source-lock.json.next integration/served-live-source-lock.json
+expect_failure served-live-missing-digest-key-tamper bash tools/verify-ci-inputs.sh
+cp "$root/integration/served-live-source-lock.json" integration/served-live-source-lock.json
+
 echo "delivery CI input regressions: PASS"
