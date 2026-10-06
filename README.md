@@ -42,3 +42,33 @@ provider use, merge, release, deployment and installation were not performed.
 
 All fixtures are synthetic and carry provenance. They contain no credentials,
 private prompts, raw provider output, proprietary game data or saves.
+
+## Status
+
+The catalog, conformance driver and evidence ledgers are in place and pass the
+repository's CI checks. The conformance run uses synthetic fixtures against a
+locally built harness binary; the live executor, provider, native game,
+release and deployment gates remain unverified, and nothing here is live.
+
+## Local validation
+
+The CI workflow in `.github/workflows/ci.yml` runs these checks. The shell
+checks need `bash`, `jq` and `sha256sum`; the Rust tools are built with the
+pinned 1.97.1 toolchain.
+
+```text
+bash tools/verify-ci-inputs.sh
+bash tools/verify-ci-inputs.test.sh
+bash tools/verify-evidence.sh
+cargo +1.97.1 test --locked --manifest-path tools/conformance-driver/Cargo.toml
+cargo +1.97.1 test --locked --manifest-path tools/recorded-run-driver/Cargo.toml
+```
+
+Running the conformance driver against a built `sts2-workflow` binary is
+described in [conformance/README.md](conformance/README.md).
+
+## License
+
+MIT licensed. This project does not distribute game files or grant rights to
+them. AI-Ascension is an independent project. It is not affiliated with or
+endorsed by Mega Crit or Valve.
