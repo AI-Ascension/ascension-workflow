@@ -1,4 +1,8 @@
 //! Bounded local IO and lifecycle control for trusted, non-daemonizing tools.
+mod document;
+
+pub use document::decode_document;
+
 use nix::{
     errno::Errno,
     sys::signal::{Signal, killpg},
