@@ -85,6 +85,19 @@ runtime input set so unrelated documentation changes do not invalidate a run.
 Pins are checked before execution, runtime pins again after each stage, and
 contract pins after every stage and immediately before comparison.
 
+Plans and captured process reports must contain one unambiguous JSON document.
+The runner rejects repeated object fields at any depth, including escaped keys
+that decode to the same name. A later success flag, identity or comparison pointer
+cannot overwrite an earlier conflicting value. Invalid plans stop before output
+creation or process execution; an invalid stage report stops the ordered pipeline
+before the next consumer and cannot yield comparison success. Parser diagnostics
+use fixed messages without input keys or values. The candidate matrix applies this
+check to manifest/schema metadata and owner-bridge reports. Its conformance case
+fixture remains parsed by the Node bridge after verification against the exact
+pinned inventory. Source probes apply this check to their plan, captured report
+and accounting JSONL rows. Bundle formats and semantic validation remain owned by
+the protocol and independent consumers.
+
 Every stage receives a separate Unix process group. Timeout, report overflow,
 nonzero exit, polling failure and normal parent completion terminate inherited
 descendants and reap the direct child before consuming reports. Trusted tools
@@ -118,8 +131,12 @@ git diff --check
 If shared `/tmp` is full, create `.local/test-tmp` and prefix the test command with
 `TMPDIR="$PWD/.local/test-tmp"`. Do not delete another thread's temporary evidence.
 
-Ten tests include four descendant lifecycle paths, bounded/growing descriptor reads,
-contract tampering, early failure, missing pins and semantic comparison.
+Tests cover descendant lifecycle paths, bounded/growing descriptor reads, contract
+tampering, early failure, missing pins, semantic comparison and unambiguous JSON.
+The compiled-runner duplicate-key regressions use explicitly synthetic stage
+scripts and input bytes; they establish delivery-boundary behavior, not owner
+validation or recorded-run acceptance. The separate owner process checks retain
+their own source pins and evidence class.
 The coordinator's separate delayed-write timeout probe was rerun successfully:
 expected exit 1 and no descendant marker after an additional 2.3 seconds.
 
