@@ -1,5 +1,5 @@
 //! Process-only bridge to owner import APIs; no bundle parser or validator here.
-use recorded_run_driver::{REPORT_LIMIT, execute_bounded, read_bounded};
+use recorded_run_driver::{REPORT_LIMIT, decode_document, execute_bounded, read_bounded};
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 use std::{
@@ -122,12 +122,11 @@ fn verify_inventory(artifact: &Path) -> Result<Value> {
     {
         return Err("published candidate pin mismatch".into());
     }
-    let manifest: Value = serde_json::from_slice(&read_bounded(
+    let manifest = decode_document(&read_bounded(
         &artifact.join("manifest.json"),
         REPORT_LIMIT,
     )?)?;
-    let schema: Value =
-        serde_json::from_slice(&read_bounded(&artifact.join("schema.json"), REPORT_LIMIT)?)?;
+    let schema = decode_document(&read_bounded(&artifact.join("schema.json"), REPORT_LIMIT)?)?;
     if manifest["version"] != "1.0.0-candidate.3"
         || schema.pointer("/$defs/manifest/properties/format_version/const")
             != Some(&json!("1.0.0-candidate.3"))
@@ -168,10 +167,7 @@ fn launch(role: &str, roots: &[PathBuf], out: &Path, provided: Option<&Path>) ->
         &output,
         Duration::from_secs(120),
     )?;
-    Ok(serde_json::from_slice(&read_bounded(
-        &output,
-        REPORT_LIMIT,
-    )?)?)
+    Ok(decode_document(&read_bounded(&output, REPORT_LIMIT)?)?)
 }
 fn main() -> Result<()> {
     let args: Vec<_> = std::env::args_os().skip(1).collect();
