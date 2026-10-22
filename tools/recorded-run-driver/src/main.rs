@@ -1,4 +1,4 @@
-use recorded_run_driver::{REPORT_LIMIT, execute_bounded, read_bounded};
+use recorded_run_driver::{REPORT_LIMIT, decode_document, execute_bounded, read_bounded};
 use serde::Deserialize;
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
@@ -90,7 +90,7 @@ fn digest(path: &Path, bound: u64) -> Result<String> {
 #[cfg(test)]
 fn read_json(path: &Path) -> Result<Value> {
     let bytes = read_bounded(path, REPORT_LIMIT).map_err(|e| e.to_string())?;
-    serde_json::from_slice(&bytes).map_err(|_| "invalid JSON report or plan".into())
+    decode_document(&bytes).map_err(|_| "invalid JSON report or plan".into())
 }
 fn pending(plan: &Plan) -> Vec<String> {
     let mut missing = Vec::new();
@@ -249,7 +249,8 @@ fn write_evidence(out: &Path, evidence: &Value) -> Result<()> {
 }
 fn run(plan_path: &Path, source: &Path, out: &Path) -> Result<bool> {
     let plan_bytes = read_bounded(plan_path, REPORT_LIMIT).map_err(|e| e.to_string())?;
-    let plan: Plan = serde_json::from_slice(&plan_bytes).map_err(|_| "invalid integration plan")?;
+    let document = decode_document(&plan_bytes).map_err(|_| "invalid integration plan")?;
+    let plan: Plan = serde_json::from_value(document).map_err(|_| "invalid integration plan")?;
     if let Ok(source) = fs::canonicalize(source) {
         let parent = out
             .parent()
@@ -347,8 +348,7 @@ fn run_ready(plan: &Plan, source: &Path, out: &Path, evidence: &mut Value) -> Re
             evidence["bundle_sha256"] = json!(current);
         }
         let report_bytes = read_bounded(&summary, REPORT_LIMIT).map_err(|e| e.to_string())?;
-        let report: Value =
-            serde_json::from_slice(&report_bytes).map_err(|_| "invalid JSON report")?;
+        let report = decode_document(&report_bytes).map_err(|_| "invalid JSON report")?;
         if name != "export" && report["valid"] != true {
             return Err("stage did not report valid true".into());
         }
