@@ -27,6 +27,24 @@ also passed. These are synthetic proofs. Substitute a fresh coordinator-exported
 candidate 3 ZIP for the golden to run the actual artifact; adding that ZIP as the
 last argument to `candidate-matrix` runs the deeper payload/persistence comparison.
 
+The matrix derives its required case set and expected verdicts from the reviewed
+`conformance.json`, checked against the fixed artifact inventory. Each of the
+three launched owner roles must return exactly one result per required case.
+Missing, duplicate, extra or foreign results fail, including empty result lists.
+The optional supplied-bundle mode requires exactly the single `provided.zip`
+result from each owner. A report cannot redefine the expected verdict.
+The metadata inventory is bounded to 256 unique paths of at most 256 bytes each,
+in addition to the existing 4 MiB JSON input bound.
+
+Every accepted result must include the bridge's required projection fields with
+their metadata types. Comparisons join rows by the reviewed case path, so owner
+row ordering cannot hide or misattribute a result. The protocol and observability
+reports must include original event/accounting arrays, and observability must
+report a first import, duplicate retry, one revision and local-only delivery.
+Missing summaries or projection fields fail rather than comparing as absent.
+Owner payloads retain their values, including unknown/null fields and decimal
+strings; the delivery tool does not interpret bundle or gameplay semantics.
+
 The ordered runner copies the existing artifact, checks byte stability, runs
 `node tools/recorded-run/validate.mjs BUNDLE`, then Studio's exact
 `node tools/inspect-recording.mjs BUNDLE`, then `observability-report`.
@@ -92,9 +110,10 @@ cannot overwrite an earlier conflicting value. Invalid plans stop before output
 creation or process execution; an invalid stage report stops the ordered pipeline
 before the next consumer and cannot yield comparison success. Parser diagnostics
 use fixed messages without input keys or values. The candidate matrix applies this
-check to manifest/schema metadata and owner-bridge reports. Its conformance case
-fixture remains parsed by the Node bridge after verification against the exact
-pinned inventory. Source probes apply this check to their plan, captured report
+check to manifest/schema metadata, its reviewed case inventory and owner-bridge
+reports. The Node bridge reads the same pinned case fixture when invoking owners;
+Rust independently checks returned coverage against the verified inventory.
+Source probes apply this check to their plan, captured report
 and accounting JSONL rows. Bundle formats and semantic validation remain owned by
 the protocol and independent consumers.
 
@@ -137,6 +156,12 @@ The compiled-runner duplicate-key regressions use explicitly synthetic stage
 scripts and input bytes; they establish delivery-boundary behavior, not owner
 validation or recorded-run acceptance. The separate owner process checks retain
 their own source pins and evidence class.
+The compiled matrix regressions retain all production artifact checks using a
+complete, pinned MIT data fixture. Their report-emitter shim is selected only on
+the test child's `PATH`; production has no fixture selector or pin override.
+They cover omitted/empty/duplicate cases, role and verdict substitution, missing
+summaries/projections, persistence, and unchanged opaque values. See the fixture
+[provenance and license](../tools/recorded-run-driver/tests/fixtures/README.md).
 The coordinator's separate delayed-write timeout probe was rerun successfully:
 expected exit 1 and no descendant marker after an additional 2.3 seconds.
 
