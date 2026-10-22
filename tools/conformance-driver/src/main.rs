@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: MIT
 
+mod export;
+mod scenario;
+
 use std::env;
 use std::fs;
 use std::io::{Read, Write};
@@ -47,7 +50,8 @@ fn run() -> Result<(), String> {
         let address = format!("127.0.0.1:{port}");
         let store = temporary_store_path();
         let mut server = start_server(&arguments.binary, &address, &store)?;
-        let result = exercise_process(&arguments, &address, &store, &definitions, &mut server);
+        let result =
+            scenario::exercise_process(&arguments, &address, &store, &definitions, &mut server);
         let server_diagnostics = stop_server(&mut server);
         let _ = fs::remove_file(store);
         match result {
@@ -59,213 +63,6 @@ fn run() -> Result<(), String> {
         "conformance process did not complete after three isolated loopback attempts: {}",
         failures.join("; ")
     ))
-}
-
-fn exercise_process(
-    arguments: &Arguments,
-    address: &str,
-    store: &Path,
-    definitions: &[PathBuf],
-    server: &mut Child,
-) -> Result<(), String> {
-    wait_for_health(address, server)?;
-    for definition in definitions {
-        let validation = run_cli(
-            &arguments.binary,
-            &[
-                "validate",
-                definition_to_str(definition)?,
-                "--capabilities",
-                path_to_str(&arguments.capabilities)?,
-                "--format",
-                "json",
-                "--listen",
-                address,
-                "--auth-profile",
-                "synthetic",
-            ],
-        )?;
-        if !json_bool(&validation, "valid")? {
-            return Err(format!(
-                "catalog definition {} did not validate",
-                definition.display()
-            ));
-        }
-    }
-    let negative = run_cli(
-        &arguments.binary,
-        &[
-            "validate",
-            path_to_str(&arguments.negative)?,
-            "--capabilities",
-            path_to_str(&arguments.missing_capabilities)?,
-            "--format",
-            "json",
-            "--listen",
-            address,
-            "--auth-profile",
-            "synthetic",
-        ],
-    )?;
-    if !negative.contains("\"valid\":false") || !negative.contains("capability_unavailable") {
-        return Err("negative capability case did not report a capability error".to_owned());
-    }
-    let map_definition = definitions
-        .iter()
-        .find(|path| path.file_name().and_then(|name| name.to_str()) == Some("map.strict.json"))
-        .ok_or("catalog is missing map.strict.json")?;
-    let run_response = run_cli(
-        &arguments.binary,
-        &[
-            "run",
-            definition_to_str(map_definition)?,
-            "--instance",
-            "instance.synthetic.full",
-            "--profile",
-            "synthetic",
-            "--format",
-            "json",
-            "--listen",
-            address,
-            "--auth-profile",
-            "synthetic",
-        ],
-    )?;
-    let run_id = json_string(&run_response, "workflow_run_id")?;
-    let status = run_cli(
-        &arguments.binary,
-        &[
-            "status",
-            &run_id,
-            "--format",
-            "json",
-            "--listen",
-            address,
-            "--auth-profile",
-            "synthetic",
-        ],
-    )?;
-    assert_safely_resumable_status(&status)?;
-    let _ = run_cli(
-        &arguments.binary,
-        &[
-            "events",
-            &run_id,
-            "--after-sequence",
-            "0",
-            "--limit",
-            "32",
-            "--format",
-            "json",
-            "--listen",
-            address,
-            "--auth-profile",
-            "synthetic",
-        ],
-    )?;
-    for (command, revision) in [("pause", "1"), ("resume", "2"), ("step", "3")] {
-        let _ = run_cli(
-            &arguments.binary,
-            &[
-                command,
-                &run_id,
-                "--expected-revision",
-                revision,
-                "--format",
-                "json",
-                "--listen",
-                address,
-                "--auth-profile",
-                "synthetic",
-            ],
-        )?;
-    }
-    server
-        .kill()
-        .map_err(|error| format!("stop service for restart: {error}"))?;
-    server
-        .wait()
-        .map_err(|error| format!("wait for service restart: {error}"))?;
-    *server = start_server(&arguments.binary, address, store)?;
-    wait_for_health(address, server)?;
-    let status = run_cli(
-        &arguments.binary,
-        &[
-            "status",
-            &run_id,
-            "--format",
-            "json",
-            "--listen",
-            address,
-            "--auth-profile",
-            "synthetic",
-        ],
-    )?;
-    assert_safely_resumable_status(&status)?;
-    let _ = run_cli(
-        &arguments.binary,
-        &[
-            "events",
-            &run_id,
-            "--after-sequence",
-            "0",
-            "--limit",
-            "64",
-            "--format",
-            "json",
-            "--listen",
-            address,
-            "--auth-profile",
-            "synthetic",
-        ],
-    )?;
-    let _ = run_cli(
-        &arguments.binary,
-        &[
-            "replay",
-            &run_id,
-            "--offline",
-            "--format",
-            "json",
-            "--listen",
-            address,
-            "--auth-profile",
-            "synthetic",
-        ],
-    )?;
-    let export_path = temporary_export_path(&run_id);
-    let export_result = run_cli(
-        &arguments.binary,
-        &[
-            "export",
-            &run_id,
-            "--redacted",
-            "--output",
-            path_to_str(&export_path)?,
-            "--format",
-            "json",
-            "--listen",
-            address,
-            "--auth-profile",
-            "synthetic",
-        ],
-    );
-    let export_bytes = fs::read(&export_path);
-    let _ = fs::remove_file(&export_path);
-    export_result?;
-    let export_bytes = export_bytes.map_err(|error| format!("read redacted export: {error}"))?;
-    if export_bytes.len() > 1024 * 1024 {
-        return Err("redacted export exceeded the process response bound".to_owned());
-    }
-    let export_text = String::from_utf8(export_bytes)
-        .map_err(|error| format!("redacted export is not UTF-8 JSON: {error}"))?;
-    if !json_bool(&export_text, "redacted")?
-        || export_text.contains("\"operation_id\":\"")
-        || export_text.contains("sentinel")
-    {
-        return Err("redacted export failed the privacy assertions".to_owned());
-    }
-    Ok(())
 }
 
 fn start_server(binary: &Path, address: &str, store: &Path) -> Result<Child, String> {
@@ -334,6 +131,23 @@ fn run_cli(binary: &Path, arguments: &[&str]) -> Result<String, String> {
             String::from_utf8_lossy(&output.stderr)
         ))
     }
+}
+
+fn run_export_cli(binary: &Path, arguments: &[&str]) -> Result<(), String> {
+    // The private file is the sole evidence input. Do not also buffer or echo the
+    // unverified export on stdout/stderr, including on a failed exporter command.
+    let status = Command::new(binary)
+        .args(arguments)
+        .env("STS2_WORKFLOW_TOKEN_SYNTHETIC", TOKEN)
+        .stdin(Stdio::null())
+        .stdout(Stdio::null())
+        .stderr(Stdio::null())
+        .status()
+        .map_err(|_| "export_command_start")?;
+    if !status.success() {
+        return Err("export_command_failed".to_owned());
+    }
+    Ok(())
 }
 
 fn json_string(body: &str, key: &str) -> Result<String, String> {
@@ -485,16 +299,6 @@ fn temporary_store_path() -> PathBuf {
         .duration_since(UNIX_EPOCH)
         .map_or(0, |value| value.as_millis());
     env::temp_dir().join(format!("ascension-conformance-{millis}.json"))
-}
-
-fn temporary_export_path(run_id: &str) -> PathBuf {
-    let millis = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .map_or(0, |value| value.as_millis());
-    let safe_run_id = run_id.replace('.', "-");
-    env::temp_dir().join(format!(
-        "ascension-conformance-export-{safe_run_id}-{millis}.json"
-    ))
 }
 
 fn path_to_str(path: &Path) -> Result<&str, String> {

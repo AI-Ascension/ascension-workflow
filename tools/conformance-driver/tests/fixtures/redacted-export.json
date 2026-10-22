@@ -1,0 +1,40 @@
+{
+  "schema_version": "ascension.workflow-export/v1",
+  "workflow_run_id": "run.export-fixture",
+  "redacted": true,
+  "run": {
+    "schema_version": "ascension.workflow-run/v1",
+    "workflow_run_id": "run.export-fixture",
+    "definition_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "run_revision": 4,
+    "status": "paused",
+    "game_outcome": "not_terminal",
+    "cursor": {
+      "graph_id": "[redacted]",
+      "node_id": "[redacted]",
+      "node_execution_id": "[redacted]"
+    },
+    "pending_operation": null,
+    "budget": {
+      "provider_calls_consumed": 0,
+      "provider_calls_reserved": 0,
+      "node_steps_consumed": 1,
+      "replans_consumed": 0
+    },
+    "cleanup": "not_started"
+  },
+  "events": [{
+    "schema_version": "ascension.workflow-event/v1",
+    "workflow_run_id": "run.export-fixture",
+    "sequence": 1,
+    "run_revision": 1,
+    "event_type": "run_started",
+    "definition_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "node_execution_id": "[redacted]",
+    "payload": {
+      "operation_id": null,
+      "classification": null,
+      "reason_code": "event"
+    }
+  }]
+}

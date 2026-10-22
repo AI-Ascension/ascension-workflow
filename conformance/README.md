@@ -19,7 +19,10 @@ cargo run --manifest-path tools/conformance-driver/Cargo.toml -- \
 ```
 
 All service traffic is synthetic and loopback-only. The driver leaves no store
-or credentials in Git; temporary files are removed on exit.
+or credentials in Git. It removes its known temporary store and export output
+on exit; unexpected files in an export directory are preserved. The
+[`export evidence check`](export-privacy.md) verifies the redacted producer
+projection before reporting success.
 
 The consumer fixtures also cover the metadata-only context association,
 context-binding catalog and provider-session projection contracts. Their
