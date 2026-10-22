@@ -213,4 +213,80 @@ jq --exit-status '
     .implementation_status == "scope_recorded_pending_independent_review"] | all)
 ' "$requirements" >/dev/null
 
-echo "delivery evidence gate: PASS (native/review blockers preserved)"
+# Validate the dated overlay against retained historical evidence, without
+# claiming that absent capture bytes or old source-file hashes were rechecked.
+readonly overlay="docs/evidence/studio-acceptance-current-state-20261009.json"
+readonly matrix="docs/evidence/studio-acceptance-matrix-20260913.json"
+jq --exit-status --slurpfile historical "$matrix" '
+  def child_ref: .repository + "#" + (.issue | tostring);
+  def state_counts: {total:length, open:map(select(.snapshot_issue_state == "open"))|length,
+    closed:map(select(.snapshot_issue_state == "closed"))|length, missing:map(select(.issue_record_found != true))|length};
+  def pins($count): length == $count and ([.[].path] | length == (unique|length)) and
+    all(.[]; (.sha256|test("^[0-9a-f]{64}$")) and (.path|test("^[a-zA-Z0-9_.-]+(/[a-zA-Z0-9_.-]+)*$")) and
+      (.path|split("/")|index("..") == null));
+  $historical[0] as $m | .feature_issue_state as $f | .backend_child_state as $c |
+  .current_dependency_graph as $g | ($f + $c) as $rows |
+  .schema_version == "ascension.workflow.studio-acceptance-current-state/v1" and
+  .evidence_id == "studio-acceptance-current-state-20261009" and
+  .source_issue == ($m.source_issue.repository + "#" + ($m.source_issue.number|tostring)) and
+  (.provenance | [.is_live_github_observation,.source_or_issue_mutation,.runtime_test_or_execution,
+    .acceptance_or_issue_closure] | all(.[]; . == false)) and
+  (.provenance.review_verification | .capture_inputs_retained == false and .capture_input_hashes_recomputed == false and
+    .snapshot_claims == "author_recorded_unverified" and .snapshot_claim_scope ==
+      ["input_hashes","coverage","issue_metadata","graph_to_rest_joins"] and (.limitation|length > 0)) and
+  (.provenance.input_hashes|pins(19)) and (.source_revision.source_file_hashes|pins(16)) and
+  ($f|length == 22) and ($c|length == 21) and
+  ([$f[].row_id]|length == (unique|length)) and ([$c[]|child_ref]|length == (unique|length)) and
+  ([$f[]|[.row_id,.feature_issue,.matrix_issue_state,.matrix_outcome_preserved,.remaining_acceptance_gates_at_matrix]]|sort) ==
+    ([$m.features[]|[.row_id,.feature_issue,.issue_state,.outcome,.remaining_acceptance_gates]]|sort) and
+  ([$c[]|[child_ref,.matrix_issue_state,.historical_matrix_acceptance_state,.historical_required_pr]]|sort) ==
+    ([$m.backend_children[]|[child_ref,.state,.acceptance_state,.required_pr]]|sort) and
+  ($f|all(.[]; .issue_url == ("https://github.com/" + (.feature_issue|sub("#";"/issues/"))) and
+    .acceptance_promoted_by_overlay == false)) and
+  ($c|all(.[]; .issue_url == ("https://github.com/" + .repository + "/issues/" + (.issue|tostring)) and
+    .aggregate_acceptance_promoted == false and .closed_issue_state_is_component_disposition_only == (.snapshot_issue_state == "closed") and
+    .issue_state_change == (if .matrix_issue_state == .snapshot_issue_state then "same_as_matrix" else "changed_since_matrix" end))) and
+  ($rows|all(.[]; .issue_record_found == true and (.snapshot_issue_state|IN("open","closed")))) and
+  .counts.features == ($f|state_counts) and
+  (.counts.backend_children|{total,open,closed,missing}) == ($c|state_counts) and
+  .counts.backend_children.changed_since_matrix == ([$c[]|select(.matrix_issue_state != .snapshot_issue_state)]|length) and
+  (.counts.backend_children.newly_closed_refs|sort) == ([$c[]|select(.matrix_issue_state == "open" and .snapshot_issue_state == "closed")|child_ref]|sort) and
+  (.counts.backend_children.newly_closed_refs|length) == 8 and
+  (.counts.backend_children.already_closed_in_matrix_refs|sort) == ([$c[]|select(.matrix_issue_state == "closed")|child_ref]|sort) and
+  (.counts.backend_children.already_closed_in_matrix_refs|length) == 2 and
+  [.outcome_preservation.blocked,.outcome_preservation.partial_component_only,.outcome_preservation.complete] == [7,15,0] and
+  .outcome_preservation.blocked == ([$f[]|select(.matrix_outcome_preserved == "blocked")]|length) and
+  .outcome_preservation.partial_component_only == ([$f[]|select(.matrix_outcome_preserved == "partial_component_only")]|length) and
+  .outcome_preservation.complete == ([$f[]|select(.matrix_outcome_preserved == "complete")]|length) and
+  .outcome_preservation.backend_children_open_or_unverified == $m.matrix_result.backend_children_open_or_unverified and
+  .historical_baseline.matrix_result == $m.matrix_result and .evidence_lanes_preserved == $m.evidence_lanes and
+  [.matrix_gates_at_capture[]|{id,status:.status_at_matrix_capture,scope,precondition}] == $m.external_gates and
+  $g.blocked_by_total == 35 and $g.returned_rows == ($g.edges|length) and $g.returned_rows == 35 and
+  ([$g.edges[].issue_url]|length == (unique|length)) and $g.connection_complete == true and
+  $g.open_count == ([$g.edges[]|select(.rest_issue_state == "open")]|length) and
+  $g.closed_count == ([$g.edges[]|select(.rest_issue_state == "closed")]|length) and
+  $g.open_count + $g.closed_count == 35 and $g.missing_rest_records == 0 and $g.graph_rest_state_mismatches == 0 and
+  ($g.edges|all(.[]; . as $edge | .state_matches_rest_record == true and .rest_record_found == true and
+    .state_in_captured_graph == (.rest_issue_state|ascii_upcase) and
+    .issue_url == ("https://github.com/" + .repository + "/issues/" + (.issue|tostring)) and
+    ([$rows[]|select(.issue_url == $edge.issue_url)|.snapshot_issue_state] == [$edge.rest_issue_state]))) and
+  ($g.unresolved_dependency_urls|sort) == ([$g.edges[]|select(.rest_issue_state == "open")|.issue_url]|sort) and
+  .issue_11.state == "open" and .parent_issue_state.state == "open" and .parent_issue_state.state_reason == "reopened" and
+  .deferred_122.snapshot_state == "open" and .deferred_122.matrix_disposition ==
+    "deliberately_deferred_until_this_matrix_and_all_predecessors_are_accepted" and
+  $g.blocking_count == 1 and $g.blocking_rows == [{number:122,url:.deferred_122.issue_url,state:"open"}] and
+  .acceptance_boundary == {issue_11_open_reopened:true,features_complete:0,real_process_cross_repository:"unverified",
+    provider:"unverified",native_game:"unverified",independent_d3:"unverified",authored_journey_executed:false,
+    new_process_provider_native_or_browser_check_run:false,this_overlay_started_122:false,source_contract_or_schema_changed:false,remote_mutation:false} and
+  .historical_baseline.matrix_path == "docs/evidence/studio-acceptance-matrix-20260913.json" and
+  .historical_baseline.reconciliation_path == "docs/evidence/studio-acceptance-reconciliation-20260915.json" and
+  .historical_baseline.journey_path == "docs/evidence/studio-acceptance-journey-20260913.json"
+' "$overlay" >/dev/null
+for artifact in matrix reconciliation journey; do
+  path=$(jq -r --arg kind "$artifact" '.historical_baseline[$kind + "_path"]' "$overlay")
+  expected=$(jq -r --arg kind "$artifact" '.historical_baseline[$kind + "_sha256"]' "$overlay")
+  [[ "$expected" =~ ^[0-9a-f]{64}$ ]]
+  test "$(sha256sum "$path" | awk '{print $1}')" = "$expected"
+done
+
+echo "delivery evidence gate: PASS (historical limits and native/review blockers preserved)"
