@@ -1,5 +1,5 @@
 //! Synthetic source probes against pinned exporter and canonical owner APIs.
-use recorded_run_driver::{REPORT_LIMIT, execute_bounded, read_bounded};
+use recorded_run_driver::{REPORT_LIMIT, decode_document, execute_bounded, read_bounded};
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 use std::{
@@ -122,7 +122,7 @@ fn probe(plan: &Value, original: &Path, root: &Path, name: &str) -> Result<Value
             let bytes = read_bounded(&accounting, REPORT_LIMIT)?;
             let mut rows: Vec<Value> = std::str::from_utf8(&bytes)?
                 .lines()
-                .map(serde_json::from_str)
+                .map(|line| decode_document(line.as_bytes()))
                 .collect::<std::result::Result<_, _>>()?;
             rows[0]["execution_status"] = json!("synthetic_unsupported_status");
             let mut file = fs::File::create(&accounting)?;
@@ -174,7 +174,7 @@ fn probe(plan: &Value, original: &Path, root: &Path, name: &str) -> Result<Value
         &report,
     )?;
     let bytes = read_bounded(&report, REPORT_LIMIT)?;
-    let b: Value = serde_json::from_slice(&bytes)?;
+    let b = decode_document(&bytes)?;
     require(
         !String::from_utf8_lossy(&bytes).contains("SYNTHETIC_PRIVATE_"),
         "private source sentinel survived",
@@ -234,7 +234,7 @@ fn main() -> Result<()> {
         return Err("usage: source-probes FULL_PLAN SOURCE_FIXTURE NEW_OUTPUT".into());
     }
     let plan_bytes = read_bounded(Path::new(&args[0]), REPORT_LIMIT)?;
-    let plan: Value = serde_json::from_slice(&plan_bytes)?;
+    let plan = decode_document(&plan_bytes)?;
     let source = fs::canonicalize(&args[1])?;
     let parent = Path::new(&args[2])
         .parent()
