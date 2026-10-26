@@ -1,4 +1,6 @@
 //! Process-only bridge to owner import APIs; no bundle parser or validator here.
+#[path = "candidate_matrix/receipt.rs"]
+mod receipt;
 use recorded_run_driver::{REPORT_LIMIT, decode_document, execute_bounded, read_bounded};
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
@@ -59,7 +61,7 @@ try {
    const p=r.provenance;
    return normalize(r.digest,r.bundleIdentity,r.records,r.accounting,r.evidence,r.identities,r.omissions,
     provenance(p.producer,p.adapter,p.versions,p.format_version,p.contract_schema_sha256,p.fixture_provenance),completeness);};
- } else {
+ } else if(role==='observability') {
   const {importBundle}=await load(resolve(obs,'deploy/recorded-run/import.mjs'));
   const {ImportStore}=await load(resolve(obs,'deploy/recorded-run/store.mjs'));
   consume=async(path,index)=>{
@@ -75,6 +77,7 @@ try {
    }finally{store.close();}
   };
  }
+ if(!consume)throw Error('unknown_owner_role');
  const results=[];
  for(const [index,c]of cases.entries()) {
   try {results.push({path:c.path,expected:c.valid,accepted:true,summary:await consume(provided||resolve(artifact,c.path),index)});}
@@ -182,6 +185,14 @@ fn main() -> Result<()> {
         .collect::<std::io::Result<_>>()?;
     let artifact = roots[0].join("artifacts/recorded-run-bundle-v1-candidate3");
     let pins = verify_inventory(&artifact)?;
+    if pins.get("conformance.json").is_none() {
+        return Err("conformance inventory is not checksum verified".into());
+    }
+    let conformance = decode_document(&read_bounded(
+        &artifact.join("conformance.json"),
+        REPORT_LIMIT,
+    )?)?;
+    let mut expected = receipt::expectations(&conformance)?;
     fs::create_dir(&args[3])?;
     let out = fs::canonicalize(&args[3])?;
     let provided = if args.len() == 5 {
@@ -199,6 +210,9 @@ fn main() -> Result<()> {
     } else {
         None
     };
+    if provided.is_some() {
+        expected = [("provided.zip".to_owned(), true)].into();
+    }
     let paths: [&[&str]; 3] = [
         &[
             "tools/recorded-run",
@@ -223,7 +237,7 @@ fn main() -> Result<()> {
         .map(|(r, p)| snapshot(r, p))
         .collect::<Result<_>>()?;
     let mut reports = Vec::new();
-    for role in ["protocol", "studio", "observability"] {
+    for role in receipt::ROLES {
         reports.push(launch(
             role,
             &roots,
@@ -248,71 +262,7 @@ fn main() -> Result<()> {
     if verify_inventory(&artifact)? != pins {
         return Err("contract changed during stages".into());
     }
-    for r in &reports {
-        if r.get("setup_error").is_some() {
-            findings.push(format!("{} setup failed", r["role"]));
-            continue;
-        }
-        for case in r["results"].as_array().ok_or("missing results")? {
-            if case["accepted"] != case["expected"] {
-                findings.push(format!(
-                    "{} {} acceptance mismatch",
-                    r["role"], case["path"]
-                ));
-            }
-        }
-    }
-    if let Some(cases) = reports[0]["results"].as_array() {
-        for (index, case) in cases
-            .iter()
-            .enumerate()
-            .filter(|(_, c)| c["expected"] == true)
-        {
-            for consumer in reports.iter().skip(1) {
-                if let Some(summary) = consumer.pointer(&format!("/results/{index}/summary")) {
-                    for key in [
-                        "digest",
-                        "identity",
-                        "identities",
-                        "counts",
-                        "evidence",
-                        "accounting",
-                        "omissions",
-                        "observations",
-                        "events",
-                        "provenance",
-                        "completeness",
-                    ] {
-                        if summary[key] != case["summary"][key] {
-                            findings.push(format!(
-                                "{} {} {key} disagreement",
-                                consumer["role"], case["path"]
-                            ));
-                        }
-                    }
-                    if consumer["role"] == "observability" {
-                        for key in ["original_events", "original_accounting"] {
-                            if summary[key] != case["summary"][key] {
-                                findings.push(format!(
-                                    "observability {} {key} persistence disagreement",
-                                    case["path"]
-                                ));
-                            }
-                        }
-                    }
-                    if consumer["role"] == "observability"
-                        && (summary["persistence"]["retry"] != "duplicate"
-                            || summary["persistence"]["revisions"] != 1)
-                    {
-                        findings.push(format!(
-                            "observability {} duplicate persistence failed",
-                            case["path"]
-                        ));
-                    }
-                }
-            }
-        }
-    }
+    findings.extend(receipt::validate(&reports, &expected));
     let passed = if provided.is_some() {
         "provided_bundle_matrix_passed"
     } else {
