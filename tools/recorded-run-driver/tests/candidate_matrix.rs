@@ -9,8 +9,16 @@ fn reports() -> Vec<Value> {
     receipt::ROLES.iter().map(|role| {
         let summary = json!({
             "digest":"opaque digest", "identity":"owner:any punctuation!",
-            "identities":{}, "counts":{}, "evidence":{}, "accounting":[],
-            "omissions":{}, "observations":[], "events":[], "provenance":{},
+            "identities":{}, "counts":{
+                "event_records":0, "accounting_records":0, "unsupported_records":0,
+                "unknown_action_outcomes":0, "settled_action_outcomes":0
+            }, "evidence":{}, "accounting":[],
+            "omissions":{}, "observations":[], "events":[], "provenance":{
+                "producer":{}, "adapter":{}, "versions":{},
+                "format_version":"1.0.0-candidate.3",
+                "contract_schema_sha256":"synthetic-contract-digest",
+                "fixture_provenance":"synthetic"
+            },
             "completeness":{}, "original_events":[], "original_accounting":[],
             "persistence":{"first":"imported","retry":"duplicate","revisions":1,"delivery":"local_only"}
         });
@@ -116,6 +124,55 @@ fn compiled_receipt_regressions() {
             "{mode}: {}",
             String::from_utf8_lossy(&output.stdout)
         );
+    }
+}
+
+#[test]
+fn identical_malformed_nested_metadata_fails_closed() {
+    let expected = receipt::expectations(&json!({"cases":[
+        {"path":"good.zip","valid":true},{"path":"bad.zip","valid":false}
+    ]}))
+    .unwrap();
+    assert!(receipt::validate(&reports(), &expected).is_empty());
+
+    for key in [
+        "event_records", "accounting_records", "unsupported_records",
+        "unknown_action_outcomes", "settled_action_outcomes",
+    ] {
+        for malformed in [json!(-1), json!("0"), Value::Null] {
+            let mut owners = reports();
+            for owner in &mut owners {
+                owner["results"][0]["summary"]["counts"][key] = malformed.clone();
+            }
+            assert!(
+                !receipt::validate(&owners, &expected).is_empty(),
+                "shared invalid count unexpectedly admitted: {key}"
+            );
+        }
+    }
+    for key in ["producer", "adapter", "versions"] {
+        for malformed in [json!("placeholder"), Value::Null] {
+            let mut owners = reports();
+            for owner in &mut owners {
+                owner["results"][0]["summary"]["provenance"][key] = malformed.clone();
+            }
+            assert!(
+                !receipt::validate(&owners, &expected).is_empty(),
+                "shared invalid provenance object unexpectedly admitted: {key}"
+            );
+        }
+    }
+    for key in ["format_version", "contract_schema_sha256", "fixture_provenance"] {
+        for malformed in [json!({}), Value::Null] {
+            let mut owners = reports();
+            for owner in &mut owners {
+                owner["results"][0]["summary"]["provenance"][key] = malformed.clone();
+            }
+            assert!(
+                !receipt::validate(&owners, &expected).is_empty(),
+                "shared invalid provenance string unexpectedly admitted: {key}"
+            );
+        }
     }
 }
 

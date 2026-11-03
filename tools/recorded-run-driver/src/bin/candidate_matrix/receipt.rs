@@ -103,6 +103,30 @@ pub fn validate(reports: &[Value], expected: &BTreeMap<String, bool>) -> Vec<Str
                 {
                     findings.push(format!("{role} {path} invalid projection type"));
                 }
+                // Shared projections must also have valid nested types: comparison
+                // alone could accept equally malformed owner receipts.
+                if [
+                    "event_records",
+                    "accounting_records",
+                    "unsupported_records",
+                    "unknown_action_outcomes",
+                    "settled_action_outcomes",
+                ]
+                .iter()
+                .any(|key| summary["counts"][key].as_u64().is_none())
+                    || ["producer", "adapter", "versions"]
+                        .iter()
+                        .any(|key| !summary["provenance"][key].is_object())
+                    || [
+                        "format_version",
+                        "contract_schema_sha256",
+                        "fixture_provenance",
+                    ]
+                    .iter()
+                    .any(|key| !summary["provenance"][key].is_string())
+                {
+                    findings.push(format!("{role} {path} invalid nested metadata"));
+                }
                 if role == "protocol" || role == "observability" {
                     for key in ["original_events", "original_accounting"] {
                         if !summary[key].is_array() {
