@@ -89,6 +89,7 @@ pub fn validate(reports: &[Value], expected: &BTreeMap<String, bool>) -> Vec<Str
                     .iter()
                     .any(|k| !summary[k].is_string())
                     || [
+                        "identities",
                         "counts",
                         "evidence",
                         "omissions",
