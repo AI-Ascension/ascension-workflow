@@ -177,6 +177,27 @@ fn identical_malformed_nested_metadata_fails_closed() {
 }
 
 #[test]
+fn identical_malformed_identities_projection_fails_closed() {
+    let expected = receipt::expectations(&json!({"cases":[
+        {"path":"good.zip","valid":true},{"path":"bad.zip","valid":false}
+    ]}))
+    .unwrap();
+    assert!(receipt::validate(&reports(), &expected).is_empty());
+
+    // An equally malformed value in every owner previously compared equal.
+    for malformed in [json!("not-an-object"), json!([]), json!(123)] {
+        let mut owners = reports();
+        for owner in &mut owners {
+            owner["results"][0]["summary"]["identities"] = malformed.clone();
+        }
+        assert!(
+            !receipt::validate(&owners, &expected).is_empty(),
+            "all owners agreed on a malformed identities projection"
+        );
+    }
+}
+
+#[test]
 fn malformed_inventory_fails_closed() {
     for input in [
         json!({"cases":[]}),
