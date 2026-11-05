@@ -208,6 +208,46 @@ fn malformed_inventory_fails_closed() {
     }
 }
 
+#[test]
+fn conformance_cases_are_bounded_and_bound_to_inventory_pins() {
+    let digest = "a".repeat(64);
+    let document = json!({"cases":[{"path":"golden/case.zip","valid":true,"sha256":digest}]});
+    let pins = json!({"golden/case.zip":digest});
+    let expected = receipt::expectations_pinned(&document, &pins).unwrap();
+    assert_eq!(expected.get("golden/case.zip"), Some(&true));
+
+    for invalid in [
+        "golden/../case.zip",
+        "../case.zip",
+        "./case.zip",
+        "/case.zip",
+        "golden//case.zip",
+        "golden\\case.zip",
+        "",
+    ] {
+        let changed = json!({"cases":[{"path":invalid,"valid":true,"sha256":digest}]});
+        assert!(
+            receipt::expectations_pinned(&changed, &pins).is_err(),
+            "{invalid}"
+        );
+    }
+    let long_path = format!("golden/{}.zip", "x".repeat(257));
+    let changed = json!({"cases":[{"path":long_path,"valid":true,"sha256":digest}]});
+    assert!(receipt::expectations_pinned(&changed, &pins).is_err());
+    for mutated in [
+        json!({"cases":[{"path":"golden/case.zip","valid":true}]}),
+        json!({"cases":[{"path":"golden/case.zip","valid":true,"sha256":"wrong"}]}),
+        json!({"cases":[{"path":"golden/case.zip","valid":true,"sha256":digest.to_uppercase()}]}),
+    ] {
+        assert!(receipt::expectations_pinned(&mutated, &pins).is_err());
+    }
+    assert!(receipt::expectations_pinned(&document, &json!({})).is_err());
+    let too_many: Vec<Value> = (0..257)
+        .map(|i| json!({"path":format!("case-{i}.zip"),"valid":true,"sha256":digest}))
+        .collect();
+    assert!(receipt::expectations_pinned(&json!({"cases":too_many}), &pins).is_err());
+}
+
 fn private_sentinel() -> String {
     format!(
         "UNTRUSTED_RECEIPT_SENTINEL\n{}",

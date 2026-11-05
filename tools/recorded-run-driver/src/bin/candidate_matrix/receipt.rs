@@ -37,6 +37,46 @@ pub fn expectations(document: &Value) -> Result<BTreeMap<String, bool>, String> 
     Ok(expected)
 }
 
+/// Bind reviewed conformance verdicts to SHA256SUMS-pinned fixture bytes.
+pub fn expectations_pinned(
+    document: &Value,
+    pins: &Value,
+) -> Result<BTreeMap<String, bool>, String> {
+    let cases = document["cases"]
+        .as_array()
+        .ok_or("missing conformance cases")?;
+    if cases.is_empty() || cases.len() > 256 {
+        return Err("conformance case count outside bounds".into());
+    }
+    for case in cases {
+        let path = case["path"]
+            .as_str()
+            .ok_or("invalid conformance path")?;
+        if path.is_empty()
+            || path.len() > 256
+            || path.starts_with('/')
+            || path.contains('\\')
+            || path
+                .split('/')
+                .any(|part| part.is_empty() || part == "." || part == "..")
+        {
+            return Err("unsafe or oversized conformance path".into());
+        }
+        let digest = case["sha256"]
+            .as_str()
+            .ok_or("missing conformance digest")?;
+        if digest.len() != 64
+            || !digest
+                .bytes()
+                .all(|byte| byte.is_ascii_hexdigit() && !byte.is_ascii_uppercase())
+            || pins[path].as_str() != Some(digest)
+        {
+            return Err("conformance case pin mismatch".into());
+        }
+    }
+    expectations(document)
+}
+
 pub fn validate(reports: &[Value], expected: &BTreeMap<String, bool>) -> Vec<String> {
     let mut findings = Vec::new();
     let mut owners = BTreeMap::new();

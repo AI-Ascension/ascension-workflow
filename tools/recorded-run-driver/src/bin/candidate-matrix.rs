@@ -192,7 +192,7 @@ fn main() -> Result<()> {
         &artifact.join("conformance.json"),
         REPORT_LIMIT,
     )?)?;
-    let mut expected = receipt::expectations(&conformance)?;
+    let mut expected = receipt::expectations_pinned(&conformance, &pins)?;
     fs::create_dir(&args[3])?;
     let out = fs::canonicalize(&args[3])?;
     let provided = if args.len() == 5 {
