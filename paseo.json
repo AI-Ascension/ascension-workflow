@@ -1,0 +1,20 @@
+{
+  "worktree": {
+    "setup": [
+      "cargo +1.97.1 fetch --locked --manifest-path tools/conformance-driver/Cargo.toml",
+      "cargo +1.97.1 fetch --locked --manifest-path tools/recorded-run-driver/Cargo.toml"
+    ],
+    "teardown": "echo \"Setup starts no persistent services; Paseo handles worktree removal.\""
+  },
+  "scripts": {
+    "diff-check": {
+      "command": "git diff --check"
+    },
+    "test-conformance": {
+      "command": "cargo +1.97.1 test --locked --manifest-path tools/conformance-driver/Cargo.toml"
+    },
+    "test-recorded-run": {
+      "command": "cargo +1.97.1 test --locked --manifest-path tools/recorded-run-driver/Cargo.toml"
+    }
+  }
+}
